@@ -1,6 +1,7 @@
 @extends('admin.base')
 @section('morecss')
-    <link rel="stylesheet" href="{{asset('public/assets/css/etc/dropzone.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('assets/css/etc/basic.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('assets/css/etc/dropzone.css')}}" type="text/css">
     @endsection
 @section('content')
 
@@ -69,14 +70,8 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-lg-12">
-                                        <a>Foto</a>
-                                        <form action="/file-upload" class="dropzone">
-                                            <div class="fallback">
-                                                <input name="file" type="file" multiple />
-                                            </div>
-                                        </form>
-                                    </div>
+
+
 
                                 </div>
                             </div>
@@ -88,6 +83,9 @@
                                 <button type="submit" class="btn btn-lg btn-primary">Simpan</button>
                             </div>
                         </form>
+
+                        <form action="/upload-target" class="dropzone"></form>
+
                     </div>
                 </div>
             </div>
@@ -101,6 +99,6 @@
 @endsection
 
 @section('script')
-    <script src="asset('public/assets/js/etc/dropzone.js')"></script>
-    <script>$("div#myId").dropzone({ url: "/file/post" });</script>
+    <script src="{{asset('assets/js/etc/dropzone.min.js')}}"></script>
+    <script src="{{asset('assets/js/etc/dropzone-amd-module.min.js')}}"></script>
 @endsection
