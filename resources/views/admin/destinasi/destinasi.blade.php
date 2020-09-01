@@ -1,4 +1,5 @@
-<?php $__env->startSection('content'); ?>
+@extends('admin.base')
+@section('content')
 
     <!-- Header -->
     <div class="header bg-primary pb-6">
@@ -6,18 +7,29 @@
             <div class="header-body">
                 <div class="row align-items-center py-4">
                     <div class="col-lg-4 col-4">
-                        <h6 class="h2 text-white d-inline-block mb-0">Data Artikel</h6>
-                        
-                        
-                        
-                        
-                        
-                        
+                        <h6 class="h2 text-white d-inline-block mb-0">Data Destinasi</h6>
+                        {{--                        <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">--}}
+                        {{--                            <ol class="breadcrumb breadcrumb-links breadcrumb-dark">--}}
+                        {{--                                <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>--}}
+                        {{--                                <li class="breadcrumb-item"><a href="#">Data Destinasi</a></li>--}}
+                        {{--                            </ol>--}}
+                        {{--                        </nav>--}}
                     </div>
 
                     <div class="col-lg-8 col-8 text-right">
-                        <a href="/admin/tambahartikel" class="btn btn-md btn-neutral">Tambah</a>
                     </div>
+
+                    <div class="col-5 mt-5">
+                        <div class="form-group ">
+                            <label style="color: white" for="namaPenginapan">Nama Destinasi</label>
+                            <div class="d-flex justify-content-center">
+                            <input type="text" id="namaPenginapan" name="namaPenginapan"
+                                   class="form-control flex-grow-1 mr-2">
+                            <a href="/admin/tambahdestinasi" class="btn btn-md btn-neutral">Tambah</a>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -29,7 +41,7 @@
                 <div class="card">
                     <!-- Card header -->
                     <div class="card-header border-0">
-                        <h3 class="mb-0">Tabel Artikel</h3>
+                        <h3 class="mb-0">Tabel Destinasi</h3>
                     </div>
                     <!-- Light table -->
                     <div class="table-responsive">
@@ -37,9 +49,7 @@
                             <thead class="thead-light">
                             <tr>
                                 <th scope="col" class="sort" data-sort="name">#</th>
-                                <th scope="col" class="sort" data-sort="budget">Judul</th>
-                                <th scope="col" class="sort" data-sort="status">Konten</th>
-                                <th scope="col" class="sort" data-sort="status">Gambar</th>
+                                <th scope="col" class="sort" data-sort="budget">Nama Destinasi</th>
                                 <th scope="col" class="sort" data-sort="status">Action</th>
                             </tr>
                             </thead>
@@ -52,14 +62,6 @@
 
                                 <td class="budget">
                                     <p>Sini Vie Villa</p>
-                                </td>
-
-                                <td class="budget" style="max-width: 300px;">
-                                    <p style="overflow: hidden">Sini Vie Villa adalah akomodasi dengan fasilitas baik dan kualitas pelayanan memuaskan menurut sebagian besar tamu. Nikmati pelayanan mewah dan pengalaman tak terlupakan ala Sini Vie Villa selama Anda menginap di sini. Tamu ekstra akan dikenakan biaya tambahan IDR 121,000/ orang untuk sarapan.</p>
-                                </td>
-
-                                <td class="budget">
-
                                 </td>
 
                                 <td>
@@ -100,11 +102,9 @@
         </div>
     </div>
 
-<?php $__env->stopSection(); ?>
+@endsection
 
-<?php $__env->startSection('script'); ?>
+@section('script')
 
 
-<?php $__env->stopSection(); ?>
-
-<?php echo $__env->make('admin.base', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\Project\website\sukmatrip\resources\views/admin/artikel/artikel.blade.php ENDPATH**/ ?>
+@endsection

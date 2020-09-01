@@ -69,7 +69,7 @@
                                 </td>
 
                                 <td>
-                                    <a href="" class="btn btn-sm btn-primary">Detail</a>
+                                    <a href="/admin/editpenginapan" class="btn btn-sm btn-primary">Edit</a>
                                 </td>
                             </tr>
                             </tbody>

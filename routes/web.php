@@ -35,12 +35,20 @@ Route::get('/admin/tambahpenginapan', function () {
     return view('admin.penginapan.tambahpenginapan');
 });
 
+Route::get('/admin/editpenginapan', function () {
+    return view('admin.penginapan.editpenginapan');
+});
+
 Route::get('/admin/tour', function () {
     return view('admin.tour.tour');
 });
 
 Route::get('/admin/tambahtour', function () {
     return view('admin.tour.tambahtour');
+});
+
+Route::get('/admin/edittour', function () {
+    return view('admin.tour.edittour');
 });
 
 Route::get('/admin/gallery', function () {
@@ -57,4 +65,16 @@ Route::get('/admin/artikel', function () {
 
 Route::get('/admin/tambahartikel', function () {
     return view('admin.artikel.tambahartikel');
+});
+
+Route::get('/admin/destinasi', function () {
+    return view('admin.destinasi.destinasi');
+});
+
+Route::get('/admin/paket', function () {
+    return view('admin.paket.paket');
+});
+
+Route::get('/admin/tambahpaket', function () {
+    return view('admin.paket.tambahpaket');
 });
