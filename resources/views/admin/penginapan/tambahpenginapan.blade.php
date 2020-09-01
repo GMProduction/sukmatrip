@@ -1,4 +1,7 @@
 @extends('admin.base')
+@section('morecss')
+    <link rel="stylesheet" href="{{asset('public/assets/css/etc/dropzone.css')}}" type="text/css">
+    @endsection
 @section('content')
 
     <!-- Header -->
@@ -68,11 +71,11 @@
 
                                     <div class="col-lg-12">
                                         <a>Foto</a>
-                                        <div class="custom-file">
-                                            <input type="file" class="custom-file-input" id="fotoPenginapan"
-                                                   name="fotoPenginapan" lang="en">
-                                            <label class="custom-file-label" for="gambar">Select file</label>
-                                        </div>
+                                        <form action="/file-upload" class="dropzone">
+                                            <div class="fallback">
+                                                <input name="file" type="file" multiple />
+                                            </div>
+                                        </form>
                                     </div>
 
                                 </div>
@@ -81,7 +84,7 @@
 
                             <hr class="my-4"/>
                             <!-- Description -->
-                            <div class="col-12 text-right">
+                            <div class="col-12 text-right"id="myId">
                                 <button type="submit" class="btn btn-lg btn-primary">Simpan</button>
                             </div>
                         </form>
@@ -98,6 +101,6 @@
 @endsection
 
 @section('script')
-
-
+    <script src="asset('public/assets/js/etc/dropzone.js')"></script>
+    <script>$("div#myId").dropzone({ url: "/file/post" });</script>
 @endsection

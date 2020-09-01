@@ -18,6 +18,7 @@
     <!-- Argon CSS -->
     <link rel="stylesheet" type="text/css" href="{{asset('assets/DataTables/datatables.min.css')}}"/>
     <link rel="stylesheet" href="{{asset('/assets/css/argon.css?v=1.2.0')}}" type="text/css">
+    @yield('morecss')
     <script src="https://unpkg.com/feather-icons"></script>
 </head>
 
