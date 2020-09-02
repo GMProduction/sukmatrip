@@ -78,3 +78,8 @@ Route::get('/admin/paket', function () {
 Route::get('/admin/tambahpaket', function () {
     return view('admin.paket.tambahpaket');
 });
+
+
+Route::get('dropzone', 'DropzoneController@dropzone');
+Route::post('dropzone/penginapan', 'DropzoneController@dropzonePenginapan')->name('dropzone.penginapan');
+Route::post('dropzone/tour', 'DropzoneController@dropzoneTour')->name('dropzone.tour');

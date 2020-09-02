@@ -1,7 +1,7 @@
 @extends('admin.base')
 @section('morecss')
     <link rel="stylesheet" href="{{asset('assets/css/etc/basic.min.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{asset('assets/css/etc/dropzone.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('assets/css/etc/dropzone.min.css')}}" type="text/css">
     @endsection
 @section('content')
 
@@ -39,7 +39,7 @@
                             <div class="pl-lg-4">
                                 <div class="row">
 
-                                    <div class="col-4">
+                                    <div class="col-6 col-md-6 col-sm-12">
                                         <div class="form-group">
                                             <label for="namaPenginapan">Nama Penginapan</label>
                                             <input type="text" id="namaPenginapan" name="namaPenginapan"
@@ -47,7 +47,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="form-group col-4">
+                                    <div class="form-group col-6 col-md-6 col-sm-12">
                                         <label for="bahanPenginapan">Tipe Penginapan</label>
                                         <select class="form-control" id="tipePenginapan" name="tipePenginapan">
                                             <option value="hotel">Hotel</option>
@@ -55,12 +55,19 @@
                                         </select>
                                     </div>
 
-                                    <div class="col-4">
+                                    <div class="col-6 col-md-6 col-sm-12">
                                         <div class="form-group">
                                             <label  for="tebal">Harga /malam</label>
                                             <input type="number" id="hargaPenginapan" name="hargaPenginapan"
                                                    class="form-control">
                                         </div>
+                                    </div>
+
+                                    <div class="form-group col-6 col-md-6 col-sm-12">
+                                        <label for="bahanPenginapan">Destinasi</label>
+                                        <select class="form-control" id="tipePenginapan" name="tipePenginapan">
+                                            <option value="villa">Ambil data dari tabel destinasi</option>
+                                        </select>
                                     </div>
 
                                     <div class="col-12">
@@ -89,7 +96,10 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <form action="/assets/upload/penginapan" class="dropzone"></form>
+                                        <form id="dropzonePenginapan" action="{{route('dropzone.penginapan')}}" class="dropzone" enctype="multipart/form-data">
+
+                                            @csrf
+                                        </form>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
@@ -110,5 +120,12 @@
 
 @section('script')
     <script src="{{asset('assets/js/etc/dropzone.min.js')}}"></script>
-    <script src="{{asset('assets/js/etc/dropzone-amd-module.min.js')}}"></script>
+{{--    <script src="{{asset('assets/js/etc/dropzone-amd-module.min.js')}}"></script>--}}
+
+    <script type="text/javascript">
+    Dropzone.options.dropzonePenginapan = {
+        acceptedFiles: ".png,.jpg,.gif,.bmp,.jpeg",
+        previewTemplate: previewTemplate,
+    }
+    </script>
 @endsection

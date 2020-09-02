@@ -83,7 +83,10 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <form action="/assets/upload/tour" class="dropzone"></form>
+                                        <form id="dropzoneTour" action="{{route('dropzone.tour')}}" class="dropzone" enctype="multipart/form-data">
+
+                                            @csrf
+                                        </form>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
@@ -106,5 +109,11 @@
 
 @section('script')
     <script src="{{asset('assets/js/etc/dropzone.min.js')}}"></script>
-    <script src="{{asset('assets/js/etc/dropzone-amd-module.min.js')}}"></script>
+
+    <script type="text/javascript">
+        Dropzone.options.dropzoneTour = {
+            acceptedFiles: ".png,.jpg,.gif,.bmp,.jpeg",
+            previewTemplate: previewTemplate,
+        }
+    </script>
 @endsection

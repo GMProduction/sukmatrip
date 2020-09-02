@@ -26168,9 +26168,9 @@ table.dataTable tbody > tr.selected
 .dropzone
 {
     position: relative;
-
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    /*flex-direction: row;*/
 }
 
 .dz-message

@@ -25,7 +25,7 @@
                             <div class="d-flex justify-content-center">
                             <input type="text" id="namaPenginapan" name="namaPenginapan"
                                    class="form-control flex-grow-1 mr-2">
-                            <a href="/admin/tambahdestinasi" class="btn btn-md btn-neutral">Tambah</a>
+                            <a href="#" class="btn btn-md btn-neutral">Tambah</a>
                             </div>
                         </div>
                     </div>
@@ -61,7 +61,7 @@
                                 </td>
 
                                 <td class="budget">
-                                    <p>Sini Vie Villa</p>
+                                    <p>Bali</p>
                                 </td>
 
                                 <td>

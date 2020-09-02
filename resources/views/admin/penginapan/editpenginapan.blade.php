@@ -39,7 +39,7 @@
                             <div class="pl-lg-4">
                                 <div class="row">
 
-                                    <div class="col-4">
+                                    <div class="col-6 col-md-6 col-sm-12">
                                         <div class="form-group">
                                             <label for="namaPenginapan">Nama Penginapan</label>
                                             <input type="text" id="namaPenginapan" name="namaPenginapan"
@@ -47,20 +47,27 @@
                                         </div>
                                     </div>
 
-                                    <div class="form-group col-4">
-                                        <label for="bahanPenginapan">Tipe Penginapan</label>
+                                    <div class="form-group col-6 col-md-6 col-sm-12">
+                                        <label for="tipePenginapan">Tipe Penginapan</label>
                                         <select class="form-control" id="tipePenginapan" name="tipePenginapan">
                                             <option value="hotel">Hotel</option>
                                             <option value="villa">Villa</option>
                                         </select>
                                     </div>
 
-                                    <div class="col-4">
+                                    <div class="col-6 col-md-6 col-sm-12">
                                         <div class="form-group">
-                                            <label  for="tebal">Harga /malam</label>
+                                            <label  for="hargaPenginapan">Harga /malam</label>
                                             <input type="number" id="hargaPenginapan" name="hargaPenginapan"
                                                    class="form-control">
                                         </div>
+                                    </div>
+
+                                    <div class="form-group col-6 col-md-6 col-sm-12">
+                                        <label for="destinasi">Destinasi</label>
+                                        <select class="form-control" id="destinasi" name="destinasi">
+                                            <option value="villa">Ambil data dari tabel destinasi</option>
+                                        </select>
                                     </div>
 
                                     <div class="col-12">
@@ -89,7 +96,10 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <form action="/assets/upload/penginapan" class="dropzone"></form>
+                                        <form id="dropzonePenginapan" action="{{route('dropzone.penginapan')}}" class="dropzone" enctype="multipart/form-data">
+
+                                            @csrf
+                                        </form>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
@@ -129,5 +139,11 @@
 
 @section('script')
     <script src="{{asset('assets/js/etc/dropzone.min.js')}}"></script>
-    <script src="{{asset('assets/js/etc/dropzone-amd-module.min.js')}}"></script>
+
+    <script type="text/javascript">
+        Dropzone.options.dropzonePenginapan = {
+            acceptedFiles: ".png,.jpg,.gif,.bmp,.jpeg",
+            previewTemplate: previewTemplate,
+        }
+    </script>
 @endsection
