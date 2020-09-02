@@ -69,31 +69,41 @@
                                             <textarea class="form-control" id="deskripsiPenginapan" rows="3"></textarea>
                                         </div>
                                     </div>
-
-
-
-
                                 </div>
                             </div>
 
-
-                            <hr class="my-4"/>
                             <!-- Description -->
                             <div class="col-12 text-right"id="myId">
+                                <button type="button" class="btn btn-lg btn-danger" data-toggle="modal" data-target=".bd-example-modal-lg">Unggah Foto</button>
                                 <button type="submit" class="btn btn-lg btn-primary">Simpan</button>
                             </div>
                         </form>
 
-                        <form action="/upload-target" class="dropzone"></form>
+                        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLongTitle">Upload Foto</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form action="/assets/upload/penginapan" class="dropzone"></form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                                        <button type="button" class="btn btn-primary">Simpan</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
-
-
 
 
 @endsection
