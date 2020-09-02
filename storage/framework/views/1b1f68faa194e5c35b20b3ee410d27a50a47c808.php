@@ -1,3 +1,6 @@
+<?php $__env->startSection('morecss'); ?>
+    <link rel="stylesheet" href="<?php echo e(asset('public/assets/css/etc/dropzone.css')); ?>" type="text/css">
+    <?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
 
     <!-- Header -->
@@ -53,7 +56,7 @@
                                     <div class="col-4">
                                         <div class="form-group">
                                             <label  for="tebal">Harga /malam</label>
-                                            <input type="number" id="harga" name="harga"
+                                            <input type="number" id="hargaPenginapan" name="hargaPenginapan"
                                                    class="form-control">
                                         </div>
                                     </div>
@@ -61,17 +64,17 @@
                                     <div class="col-12">
                                         <div class="form-group">
                                             <label for="exampleFormControlTextarea1">Deskripsi</label>
-                                            <textarea class="form-control" id="deskripsi" rows="3"></textarea>
+                                            <textarea class="form-control" id="deskripsiPenginapan" rows="3"></textarea>
                                         </div>
                                     </div>
 
                                     <div class="col-lg-12">
                                         <a>Foto</a>
-                                        <div class="custom-file">
-                                            <input type="file" class="custom-file-input" id="gambar"
-                                                   name="gambar" lang="en">
-                                            <label class="custom-file-label" for="gambar">Select file</label>
-                                        </div>
+                                        <form action="/file-upload" class="dropzone">
+                                            <div class="fallback">
+                                                <input name="file" type="file" multiple />
+                                            </div>
+                                        </form>
                                     </div>
 
                                 </div>
@@ -80,7 +83,7 @@
 
                             <hr class="my-4"/>
                             <!-- Description -->
-                            <div class="col-12 text-right">
+                            <div class="col-12 text-right"id="myId">
                                 <button type="submit" class="btn btn-lg btn-primary">Simpan</button>
                             </div>
                         </form>
@@ -97,8 +100,8 @@
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('script'); ?>
-
-
+    <script src="asset('public/assets/js/etc/dropzone.js')"></script>
+    <script>$("div#myId").dropzone({ url: "/file/post" });</script>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('admin.base', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\Project\website\sukmatrip\resources\views/admin/penginapan/tambahgallery.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('admin.base', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\Project\website\sukmatrip\resources\views/admin/penginapan/tambahpenginapan.blade.php ENDPATH**/ ?>
