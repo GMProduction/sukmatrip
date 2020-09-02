@@ -1,0 +1,264 @@
+:root {
+    --primaryColor: #1DA1F2;
+    --primaryColorLight: #E1F5FE;
+    --accentColor: #FF6F00;
+
+    --shadowColor1: #00000033;
+    --dimensiKecil: 5px;
+    --dimensiSedang: 10px;
+    --dimensiBesar: 20px;
+}
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+/*ETC*/
+
+hr {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/*LINE*/
+
+.vl {
+    border-left: 2px solid white;
+    height: 100%;
+}
+
+/*COLORS*/
+.b-primary {
+    background-color: var(--primaryColor);
+}
+
+.b-accent {
+    background-color: var(--accentColor);
+}
+
+.bor-accent {
+    border-color: var(--accentColor);
+}
+
+.bor-accent {
+    color: var(--accentColor);
+}
+
+/*BORDER*/
+.rounded-lg2 {
+    border-radius: 15px;
+}
+
+.r-bottom {
+    border-bottom-left-radius: 250px 50px;
+    border-bottom-right-radius: 250px 50px;
+}
+
+
+/*SHADOW*/
+.shadow-med {
+    box-shadow: 1px 2px 10px var(--shadowColor1);
+}
+
+/*ALIGN*/
+.centertodiv {
+    display: block;
+    margin: auto auto;
+}
+
+/*FONTSIZE*/
+.f04 {
+    font-size: .4rem;
+}
+
+.f06 {
+    font-size: .6rem;
+}
+
+.f08 {
+    font-size: .8rem;
+}
+
+.f10 {
+    font-size: 1rem;
+}
+
+.f12 {
+    font-size: 1.2rem;
+}
+
+.f14 {
+    font-size: 1.4rem;
+}
+
+.f16 {
+    font-size: 1.6rem;
+}
+
+.f18 {
+    font-size: 1.8rem;
+}
+
+.f20 {
+    font-size: 2rem;
+}
+
+.f22 {
+    font-size: 2.2rem;
+}
+
+
+.f24 {
+    font-size: 2.4rem;
+}
+
+
+.f26 {
+    font-size: 2.6rem;
+}
+
+/*CARD*/
+
+
+/*COMPONENT*/
+
+/*BUTTON*/
+
+.bt-primary {
+    background-color: var(--primaryColor);
+    color: white;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    text-align: center;
+    padding: 0.6em 0.6em;
+    box-shadow: 0 1px 5px var(--shadowColor1);
+}
+
+.bt-outline-primary {
+    border: 1px solid var(--primaryColor);
+    color: var(--primaryColor);
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    text-align: center;
+    padding: 13px 0;
+    box-shadow: 0 1px 5px var(--shadowColor1);
+}
+
+.bt-accent {
+    background-color: var(--accentColor);
+    color: white;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    text-align: center;
+    padding: 13px 0;
+    box-shadow: 0 1px 5px var(--shadowColor1);
+}
+
+.bt-outline-accent {
+    border-color: var(--accentColor);
+    color: var(--accentColor);
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    text-align: center;
+    padding: 13px 0;
+    box-shadow: 0 1px 5px var(--shadowColor1);
+}
+
+.bt-accent-custom {
+    background-color: var(--accentColor);
+    color: white;
+    border-radius: 50px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.bt-mini {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bt-mini .imagebutton {
+    position: relative;
+    border-radius: 50% / 10%;
+    color: white;
+    text-align: center;
+    text-indent: .1em;
+    background-color: var(--primaryColor);
+    height: 60px;
+    width: 60px;
+    box-shadow: 0 1px 5px var(--shadowColor1);
+}
+
+.bt-mini .imagebutton:before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    bottom: 10%;
+    right: -5%;
+    left: -5%;
+    background: inherit;
+    border-radius: 5% / 50%;
+    /*height: 75px;*/
+    /*width: 75px;*/
+}
+
+.bt-mini .label {
+    font-size: 0.7rem;
+    margin-top: 8px;
+    text-align: center;
+}
+
+/*TEXT*/
+.title-section {
+    text-align: center;
+    padding: 30px 30px 10px 30px;
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+/*SLIDER*/
+
+.slick-slide {
+    transform: scale(0.92);
+    opacity: 0.9;
+    transition: all ease 0.5s;
+}
+
+.slick-slide.slick-current {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/*ELEMENT*/
+.gambar-depan{
+    /*height: 100%;*/
+    width: 100px;
+}
+
+.gambar-depan img{
+    object-fit: cover;
+    overflow: hidden;
+    /*width: 100vw;*/
+}
+
+/*.gambar-depan img:after{*/
+/*    background-color: #222;*/
+/*}*/
+
+/*RESPONSIVE*/
+@media only screen and (max-width: 360px) {
+    .gen-card-fitur-terbaru .title{
+        font-size: 1rem;
+    }
+
+    .logo-gplay{
+        height: 2em;
+    }
+}

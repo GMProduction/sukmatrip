@@ -8,7 +8,8 @@
     <meta name="author" content="Genossys">
     <title>Sukmatrip - Honeymoon & Trip</title>
 
-    <link rel="stylesheet" href="{{asset('assets/vendor/bootstrap/css/bootstrap.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('assets/vendor/bootstrap/dist/css/bootstrap.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('assets/css/sukmatripuser.css')}}" type="text/css">
     <!-- Favicon -->
 {{--    <link rel="icon" href="../assets/img/brand/favicon.png" type="image/png">--}}
 <!-- Fonts -->
@@ -21,30 +22,25 @@
 <!-- Main content -->
 <div class="main-content" id="panel">
     <!-- As a link -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white" style="border-bottom: 3px solid #dddddd">
-        <a class="navbar-brand text-xl text-primary" href="#" style=" font-weight: bold">Sistem Informasi Permohonan Jual Beli</a>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-transparent" style="height: 4em">
+        <div class="container">
+        <a class="navbar-brand text-xl text-primary" href="#" style=" font-weight: bold"><img style="height: 2em" src="{{asset('assets/img/common/logo.png')}}"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ml-auto">
-                <a class="nav-item nav-link text-sm ml-3 active" href="/">Beranda <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link text-sm ml-3" href="/kontak">Kontak Kami</a>
-
-                @auth()
-                    <a class="nav-item nav-link text-sm text-warning ml-0" style="font-weight: bold" href="/cart">Keranjang</a>
-                    <a class="nav-item nav-link text-sm ml-7 btn btn-outline-warning" style="font-weight: bold" href="/user">Dashboard</a>
-                    <a class="nav-item nav-link text-sm text-warning ml-0" href="/logout">Logout</a>
-                @endauth
-                @guest()
-                    <a class="nav-item nav-link text-sm ml-5" style="font-weight: bold" href="/login">Login</a>
-                @endguest
+                <a class="nav-item nav-link text-sm ml-3 active" href="/">HOME<span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link text-sm ml-3" href="/gallery">GALLERY</a>
+                <a class="nav-item nav-link text-sm ml-3" href="/contact">CONTACT</a>
+                <a class="nav-item nav-link text-sm ml-3" href="/article">ARTICLE</a>
             </div>
+        </div>
         </div>
     </nav>
 
 
-    <div class="content-wrapper">
+    <div class="content-wrapper" >
         @yield('content')
     </div>
 
