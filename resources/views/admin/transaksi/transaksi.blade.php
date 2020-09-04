@@ -7,27 +7,13 @@
             <div class="header-body">
                 <div class="row align-items-center py-4">
                     <div class="col-lg-4 col-4">
-                        <h6 class="h2 text-white d-inline-block mb-0">Data Destinasi</h6>
+                        <h6 class="h2 text-white d-inline-block mb-0">Data Transaksi</h6>
                         {{--                        <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">--}}
                         {{--                            <ol class="breadcrumb breadcrumb-links breadcrumb-dark">--}}
                         {{--                                <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>--}}
-                        {{--                                <li class="breadcrumb-item"><a href="#">Data Destinasi</a></li>--}}
+                        {{--                                <li class="breadcrumb-item"><a href="#">Data Transaksi</a></li>--}}
                         {{--                            </ol>--}}
                         {{--                        </nav>--}}
-                    </div>
-
-                    <div class="col-lg-8 col-8 text-right">
-                    </div>
-
-                    <div class="col-5 mt-5">
-                        <div class="form-group ">
-                            <label style="color: white" for="namaPenginapan">Nama Destinasi</label>
-                            <div class="d-flex justify-content-center">
-                            <input type="text" id="namaPenginapan" name="namaPenginapan"
-                                   class="form-control flex-grow-1 mr-2">
-                            <a href="/admin/tambahdestinasi" class="btn btn-md btn-neutral">Tambah</a>
-                            </div>
-                        </div>
                     </div>
 
                 </div>
@@ -41,7 +27,7 @@
                 <div class="card">
                     <!-- Card header -->
                     <div class="card-header border-0">
-                        <h3 class="mb-0">Tabel Destinasi</h3>
+                        <h3 class="mb-0">Tabel Transaksi</h3>
                     </div>
                     <!-- Light table -->
                     <div class="table-responsive">
@@ -49,7 +35,12 @@
                             <thead class="thead-light">
                             <tr>
                                 <th scope="col" class="sort" data-sort="name">#</th>
-                                <th scope="col" class="sort" data-sort="budget">Nama Destinasi</th>
+                                <th scope="col" class="sort" data-sort="budget">Nama</th>
+                                <th scope="col" class="sort" data-sort="status">Np.Telp</th>
+                                <th scope="col" class="sort" data-sort="status">Pesanan</th>
+                                <th scope="col" class="sort" data-sort="status">Tanggal Berangkat</th>
+                                <th scope="col" class="sort" data-sort="status">Durasi</th>
+                                <th scope="col" class="sort" data-sort="status">Totas Harga</th>
                                 <th scope="col" class="sort" data-sort="status">Action</th>
                             </tr>
                             </thead>
@@ -61,11 +52,31 @@
                                 </td>
 
                                 <td class="budget">
-                                    <p>Sini Vie Villa</p>
+                                    <p>Pradana Mahendra</p>
+                                </td>
+
+                                <td class="budget" style="max-width: 300px;">
+                                    <p>081138592058</p>
+                                </td>
+
+                                <td class="budget" style="max-width: 300px;">
+                                    <p>Penginapan</p>
+                                </td>
+
+                                <td class="budget" style="max-width: 300px;">
+                                    <p>31 Febuari 2021</p>
+                                </td>
+
+                                <td class="budget" style="max-width: 300px;">
+                                    <p>2 Hari 1 Malam</p>
+                                </td>
+
+                                <td class="budget" style="max-width: 300px;">
+                                    <p>Rp 1.987.600</p>
                                 </td>
 
                                 <td>
-                                    <a><button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Edit</button></a>
+                                    <a href="/admin/detailtransaksi" class="btn btn-sm btn-success">Hubungi</a>
                                 </td>
                             </tr>
                             </tbody>
@@ -96,32 +107,6 @@
                                 </li>
                             </ul>
                         </nav>
-
-                        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-lg">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLongTitle">Edit Nama Destinasi</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="form-group ">
-                                            <label for="namaPenginapan">Nama Destinasi</label>
-                                            <div class="d-flex justify-content-center">
-                                                <input type="text" id="namaPenginapan" name="namaPenginapan"
-                                                       class="form-control flex-grow-1 mr-2">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                                        <button type="button" class="btn btn-primary">Simpan</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

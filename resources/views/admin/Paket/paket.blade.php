@@ -70,7 +70,7 @@
 
                                 <td>
                                     <a href="/admin/editpaket" class="btn btn-sm btn-primary">Edit</a>
-                                    <a href="/admin/editpaket" class="btn btn-sm btn-success">Detail</a>
+                                    <a href="/admin/detailpaket" class="btn btn-sm btn-success">Detail</a>
                                 </td>
                             </tr>
                             </tbody>

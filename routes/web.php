@@ -59,12 +59,24 @@ Route::get('/admin/tambahgallery', function () {
     return view('admin.gallery.tambahgallery');
 });
 
+Route::get('/admin/editgallery', function () {
+    return view('admin.gallery.editgallery');
+});
+
 Route::get('/admin/artikel', function () {
     return view('admin.artikel.artikel');
 });
 
 Route::get('/admin/tambahartikel', function () {
     return view('admin.artikel.tambahartikel');
+});
+
+Route::get('/admin/editartikel', function () {
+    return view('admin.artikel.editartikel');
+});
+
+Route::get('/admin/detailartikel', function () {
+    return view('admin.artikel.detailartikel');
 });
 
 Route::get('/admin/destinasi', function () {
@@ -77,4 +89,16 @@ Route::get('/admin/paket', function () {
 
 Route::get('/admin/tambahpaket', function () {
     return view('admin.paket.tambahpaket');
+});
+
+Route::get('/admin/editpaket', function () {
+    return view('admin.paket.editpaket');
+});
+
+Route::get('/admin/detailpaket', function () {
+    return view('admin.paket.detailpaket');
+});
+
+Route::get('/admin/transaksi', function () {
+    return view('admin.transaksi.transaksi');
 });
