@@ -1,7 +1,7 @@
 :root {
     --primaryColor: #1DA1F2;
     --primaryColorLight: #E1F5FE;
-    --accentColor: #FF6F00;
+    --accentColor: #FDD100;
 
     --shadowColor1: #00000033;
     --dimensiKecil: 5px;
@@ -237,20 +237,54 @@ hr {
 }
 
 /*ELEMENT*/
+.navbar.fixed-top.scrolled {
+    background-color: rgba(255,255,255,0.7) !important;
+    transition: background-color 200ms linear;
+}
+
+.sukmatrip{
+    z-index: 3; letter-spacing: .5rem; border-bottom: 1px solid var(--accentColor); padding-bottom: 1rem; color: white
+}
 .gambar-depan{
-    /*height: 100%;*/
-    width: 100px;
+    width: 100%; position: relative; height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.gambar-depan img{
-    object-fit: cover;
-    overflow: hidden;
-    /*width: 100vw;*/
+.gradien-putih{
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient(0deg,  rgba(0,0,0,.5), rgba(0,0,0,.4), rgba(0,0,0,.3),rgba(0,0,0,.3),rgba(0,0,0,.3), #eee);
 }
 
-/*.gambar-depan img:after{*/
-/*    background-color: #222;*/
-/*}*/
+
+/*BOOTSTRAP OVERIDE*/
+.sukmatrip-form-control {
+    display: block;
+    width: 100%;
+    /* height: calc(1.5em + .75rem + 2px); */
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    background-clip: padding-box;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    color: white; background-color: rgba(0,0,0,0.3); border: 0.1em solid white; padding: 1em; margin-bottom: 1em;
+}
+
+.dropdown-item{
+    color: black;
+    background-color: white;
+    padding: .5em .5em;
+}
 
 /*RESPONSIVE*/
 @media only screen and (max-width: 360px) {

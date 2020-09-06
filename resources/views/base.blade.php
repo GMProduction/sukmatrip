@@ -30,10 +30,10 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ml-auto">
-                <a class="nav-item nav-link text-sm ml-3 active" href="/">HOME<span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link text-sm ml-3" href="/gallery">GALLERY</a>
-                <a class="nav-item nav-link text-sm ml-3" href="/contact">CONTACT</a>
-                <a class="nav-item nav-link text-sm ml-3" href="/article">ARTICLE</a>
+                <a class="nav-item nav-link text-sm ml-5 active" href="/">HOME<span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link text-sm ml-5 active" href="/gallery">GALLERY</a>
+                <a class="nav-item nav-link text-sm ml-5 active " href="/contact">CONTACT</a>
+                <a class="nav-item nav-link text-sm ml-5 active" href="/article">ARTICLE</a>
             </div>
         </div>
         </div>
@@ -90,6 +90,7 @@
 <!-- Core -->
 <script src="{{asset('assets/vendor/jquery/dist/jquery.min.js')}}"></script>
 <script src="{{asset('assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{asset('assets/js/page/global.js')}}"></script>
 <script>
     feather.replace()
 </script>
