@@ -65,7 +65,7 @@
                                 </td>
 
                                 <td>
-                                    <a href="" class="btn btn-sm btn-primary">Edit</a>
+                                    <a><button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Edit</button></a>
                                 </td>
                             </tr>
                             </tbody>
@@ -96,6 +96,32 @@
                                 </li>
                             </ul>
                         </nav>
+
+                        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLongTitle">Edit Nama Destinasi</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="form-group ">
+                                            <label for="namaPenginapan">Nama Destinasi</label>
+                                            <div class="d-flex justify-content-center">
+                                                <input type="text" id="namaPenginapan" name="namaPenginapan"
+                                                       class="form-control flex-grow-1 mr-2">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                                        <button type="button" class="btn btn-primary">Simpan</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
