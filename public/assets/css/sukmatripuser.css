@@ -11,6 +11,7 @@
 
 body {
     font-family: 'Josefin Sans', sans-serif;
+    background-color: white;
 }
 
 /*ETC*/
@@ -36,6 +37,14 @@ hr {
 
 .b-accent {
     background-color: var(--accentColor);
+}
+
+.t-primary {
+    color: var(--primaryColor);
+}
+
+.t-accent {
+    color: var(--accentColor);
 }
 
 .bor-accent {
@@ -237,22 +246,81 @@ hr {
 }
 
 /*ELEMENT*/
-.navbar.fixed-top.scrolled {
-    background-color: rgba(255,255,255,0.7) !important;
-    transition: background-color 200ms linear;
+
+.gen-card-produk {
+    cursor: pointer;
+    height: 20em;
+    display: block;
+    position: relative;
+    margin-bottom: 2em;
 }
 
-.sukmatrip{
-    z-index: 3; letter-spacing: .5rem; border-bottom: 1px solid var(--accentColor); padding-bottom: 1rem; color: white
-}
-.gambar-depan{
-    width: 100%; position: relative; height: 100vh;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.gen-card-produk img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: 1;
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
 }
 
-.gradien-putih{
+.gen-card-produk .content{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1em;
+    z-index: 3;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.gen-card-produk p, .gen-card-produk hr{
+    z-index: 3;
+    margin-bottom: 0;
+}
+
+.gen-card-article{
+    display: block;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.gen-card-article img{
+    height: 8em;
+    width: 100%;
+    object-fit: cover;
+}
+
+.gen-card-article .judul{
+    color: black;
+    font-size: 1.4rem;
+    margin-bottom: 0;
+    text-align: left;
+}
+
+.gen-card-article .sumber{
+    color: var(--accentColor);
+    font-size: 1rem;
+    text-align: left;
+}
+
+
+
+.gen-card-icon{
+    height: 3em;
+    width: 3em;
+    background-color: white;
+    padding: 0.5em;
+    border-radius: 15px;
+}
+
+.cover-black-bottom {
     position: absolute;
     display: block;
     top: 0;
@@ -262,10 +330,73 @@ hr {
     height: 100%;
     right: 0;
     bottom: 0;
-    background-image: linear-gradient(0deg,  rgba(0,0,0,.5), rgba(0,0,0,.4), rgba(0,0,0,.3),rgba(0,0,0,.3),rgba(0,0,0,.3), #eee);
+    background-image: linear-gradient(0deg,   rgba(0, 0, 0, .7), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, .2), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
 }
 
+.cover-black-all {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.7);
+}
 
+.front *{
+    z-index: 3;
+}
+
+.navbar.fixed-top.scrolled {
+    background-color: rgba(255, 255, 255, 1) !important;
+    transition: background-color 200ms linear;
+}
+
+.sukmatrip {
+    z-index: 3;
+    letter-spacing: .5rem;
+    border-bottom: 1px solid var(--accentColor);
+    padding-bottom: 1rem;
+    color: white
+}
+
+.gambar-depan {
+    width: 100%;
+    position: relative;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.gradien-putih {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, .5), rgba(0, 0, 0, .4), rgba(0, 0, 0, .3), rgba(0, 0, 0, .3), rgba(0, 0, 0, .3), #eee);
+}
+
+.image-as-bg{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: 1;
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
 /*BOOTSTRAP OVERIDE*/
 .sukmatrip-form-control {
     display: block;
@@ -276,11 +407,15 @@ hr {
     line-height: 1.5;
     background-clip: padding-box;
     border-radius: .25rem;
-    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-    color: white; background-color: rgba(0,0,0,0.3); border: 0.1em solid white; padding: 1em; margin-bottom: 1em;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 0.1em solid white;
+    padding: 1em;
+    margin-bottom: 1em;
 }
 
-.dropdown-item{
+.dropdown-item {
     color: black;
     background-color: white;
     padding: .5em .5em;
@@ -288,11 +423,17 @@ hr {
 
 /*RESPONSIVE*/
 @media only screen and (max-width: 360px) {
-    .gen-card-fitur-terbaru .title{
+    .gen-card-fitur-terbaru .title {
         font-size: 1rem;
     }
 
-    .logo-gplay{
+    .logo-gplay {
         height: 2em;
+    }
+}
+
+@media only screen and (min-width: 987px) {
+    .text-tengah{
+        margin: 0 15em;
     }
 }
