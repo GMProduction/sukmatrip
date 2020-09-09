@@ -10,6 +10,7 @@
 
     <link rel="stylesheet" href="{{asset('assets/vendor/bootstrap/dist/css/bootstrap.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('assets/css/sukmatripuser.css')}}" type="text/css">
+    @yield('moreCss')
     <!-- Favicon -->
 {{--    <link rel="icon" href="../assets/img/brand/favicon.png" type="image/png">--}}
 <!-- Fonts -->
