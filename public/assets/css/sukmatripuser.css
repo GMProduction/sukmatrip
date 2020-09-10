@@ -314,8 +314,6 @@ hr {
     text-align: left;
 }
 
-
-
 .gen-card-icon{
     height: 3em;
     width: 3em;
@@ -415,6 +413,24 @@ hr {
     right: 0;
     bottom: 0;
 }
+
+/*SLICK OVERRIDE*/
+.slider-for{
+
+}
+
+.slider-for a {
+    display: block;
+    width: 100%;
+}
+.slider-for img{
+    width: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    height: 25em;
+}
+
+
 /*BOOTSTRAP OVERIDE*/
 .sukmatrip-form-control {
     display: block;
