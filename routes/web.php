@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('beranda');
 });
 
+Route::get('/pencarian', function () {
+    return view('pencarian');
+});
+
 Route::get('/detail', function () {
     return view('detail');
 });
@@ -94,7 +98,6 @@ Route::get('/admin/paket', function () {
 Route::get('/admin/tambahpaket', function () {
     return view('admin.paket.tambahpaket');
 });
-
 
 Route::get('dropzone', 'DropzoneController@dropzone');
 Route::post('dropzone/penginapan', 'DropzoneController@dropzonePenginapan')->name('dropzone.penginapan');

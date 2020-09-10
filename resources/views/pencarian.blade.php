@@ -52,6 +52,7 @@
         <div class="text-center mb-5" style="margin-top: 7rem">
             <a class="sukmatrip" style="color: black">SUKMATRIP</a>
             <hr class="mb-2" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">
+
         </div>
         <p class="text-center f26">It's Time to <a class="t-accent">Travel</a></p>
         <p style="font-weight: 300; color: #636363;" class="text-center f14 container">Take a look at the most exclusive & most visited locations in the world
@@ -71,85 +72,47 @@
                     <img src="{{asset('assets/img/foto/sukmatrip1.png')}}">
                     <div class="cover-black-bottom"></div>
                     <div class="content">
-                        <p class="t-accent f08">PAKET SINI VIE VILLA</p>
+                        <p class="text-white f12">SINI VIE VILLA</p>
                         <hr style="width: 3em; border-color: white;" class="mb-2">
-                        <p class="text-white f18">Rp. 1.987.600</p>
-                        <p style="font-weight: 300; margin-top: -0.6em" class="text-white f10">3 Day 2 Night</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-12">
+                <a class="gen-card-produk">
+                    <img src="{{asset('assets/img/foto/sukmatrip1.png')}}">
+                    <div class="cover-black-bottom"></div>
+                    <div class="content">
+                        <p class="text-white f12">SINI VIE VILLA</p>
+                        <hr style="width: 3em; border-color: white;" class="mb-2">
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-12">
+                <a class="gen-card-produk">
+                    <img src="{{asset('assets/img/foto/sukmatrip1.png')}}">
+                    <div class="cover-black-bottom"></div>
+                    <div class="content">
+                        <p class="text-white f12">SINI VIE VILLA</p>
+                        <hr style="width: 3em; border-color: white;" class="mb-2">
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-12">
+                <a class="gen-card-produk">
+                    <img src="{{asset('assets/img/foto/sukmatrip1.png')}}">
+                    <div class="cover-black-bottom"></div>
+                    <div class="content">
+                        <p class="text-white f12">SINI VIE VILLA</p>
+                        <hr style="width: 3em; border-color: white;" class="mb-2">
                     </div>
                 </a>
             </div>
         </div>
 
-    </section>
-
-    <section class="mt-5 container-fluid" style="height: 35em; position:relative;">
-       <img class="image-as-bg" src="{{asset('assets/img/foto/sukmatrip2.jpg')}}">
-        <div class="cover-black-all"></div>
-        <div class="d-flex justify-content-center align-items-center h-100 flex-column front">
-            <p class="sukmatrip mb-0">SUKMATRIP</p>
-            <hr class="mb-2" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">
-            <p class="text-center text-white f36 mt-2">About <a class="t-accent">us</a></p>
-            <p style="font-weight: 300" class="text-white text-center f14 container">Passionate about travel
-                and sharing the world's wonders on the leisure travel side. We provide corporate travelers hitouch services to
-                facilitate their business travel needs. Named each year as one of the <a class="t-accent">"Best Places To Work"</a> in New York.</p>
+        <div class="text-center mt-4 mb-5">
+            <a style="color: var(--primaryColor)" class="bt-outline-primary f10">LOAD MORE</a>
         </div>
     </section>
-
-    <section class="container mt-5 text-center">
-        <div style="margin-top: 7em;" class="text-center mb-5">
-            <a class="sukmatrip" style="color: black">ARTICLE</a>
-            <hr class="mb-2" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">
-
-        </div>
-        <p class="text-center f26 mb-5">Lastest from the <a class="t-accent">Article</a></p>
-
-        <div class="row">
-            <div class="col-sm-12 col-md-3">
-                <a class="gen-card-article">
-                    <img src="{{asset('assets/img/foto/konten2.jpg')}}">
-                    <p class="judul mt-2">INI TEXT</p>
-                    <p style="margin-top: -0.5em" class="sumber">Sumbernya</p>
-                </a>
-            </div>
-            <div class="col-sm-12 col-md-3">
-                <a class="gen-card-article">
-                    <img src="{{asset('assets/img/foto/konten2.jpg')}}">
-                    <p class="judul mt-2">INI TEXT</p>
-                    <p style="margin-top: -0.5em" class="sumber">Sumbernya</p>
-                </a>
-            </div>
-            <div class="col-sm-12 col-md-3">
-                <a class="gen-card-article">
-                    <img src="{{asset('assets/img/foto/konten2.jpg')}}">
-                    <p class="judul mt-2">INI TEXT</p>
-                    <p style="margin-top: -0.5em" class="sumber">Sumbernya</p>
-                </a>
-            </div>
-            <div class="col-sm-12 col-md-3">
-                <a class="gen-card-article">
-                    <img src="{{asset('assets/img/foto/konten2.jpg')}}">
-                    <p class="judul mt-2">INI TEXT</p>
-                    <p style="margin-top: -0.5em" class="sumber">Sumbernya</p>
-                </a>
-            </div>
-        </div>
-
-    </section>
-    <hr style="border-color: var(--accentColor); margin-top: 7em;" class="container">
-
-    <section class="container mt-5 text-center">
-        <div class="text-center mb-4" style="margin-top: 7rem">
-            <a class="sukmatrip" style="color: black">TESTIMONIALS</a>
-            <hr class="mb-2" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">
-        </div>
-        <p class="text-center f26 mb-3">Our client <a class="t-accent">says:</a></p>
-        <div class="ulasan mt-0 " style="display: flex; flex-direction: column; align-items: center">
-            <img src="{{asset('assets/img/foto/user1.jpg')}}" style="border-radius: 50%; width: 7em; height: 7em">
-            <p style="color: #636363; font-weight: 300" class="mt-3 f14">Extremelly flexible and easy to use. Code is clean and all files well organized. Great job guys.</p>
-            <p style="color: black;" class="f12">JOHN E. PERRY.</p>
-        </div>
-    </section>
-
 
 
 @endsection
