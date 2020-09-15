@@ -46,6 +46,8 @@
     <section class="container-fluid">
         <div class="text-center mt-4">
             <p style="font-weight: 500" class="text-center f22">PAKET SINI VIE VILLA</p>
+
+
             <div class="d-flex justify-content-center align-items-center"
                  style="margin-top: -1em; color: var(--primaryColor)">
                 <i data-feather="map-pin" class="mr-2"></i>
@@ -64,52 +66,84 @@
 
         <div class="row">
             <div class="col-md-3 col-sm-12">
-                <a class="gen-card-produk">
-                    <img src="{{asset('assets/img/foto/sukmatrip1.png')}}">
-                    <div class="cover-black-bottom"></div>
-                    <div class="content">
-                        <p class="t-accent f08">PAKET SINI VIE VILLA</p>
-                        <hr style="width: 3em; border-color: white;" class="mb-2">
-                        <p class="text-white f18">Rp. 1.987.600</p>
-                        <p style="font-weight: 300; margin-top: -0.6em" class="text-white f10">3 Day 2 Night</p>
+                <input class="checkbox-gambar" type="checkbox" name="tools" id="1"
+                       value=":00"
+                       onclick="changeDateTime()"/>
+                <label class="w-100" for="1">
+                    <div class="gen-card-produk">
+                        <img src="{{asset('assets/img/foto/sukmatrip1.png')}}">
+                        <div class="cover-black-bottom"></div>
+                        <div class="content">
+                            {{--                            <p class="t-accent f08">PAKET SINI VIE VILLA</p>--}}
+                            {{--                            <hr style="width: 3em; border-color: white;" class="mb-2">--}}
+                            <p class="text-white f18">Tanjung Benoa</p>
+                            {{--                            <p style="font-weight: 300; margin-top: -0.6em" class="text-white f10">3 Day 2 Night</p>--}}
+                        </div>
                     </div>
-                </a>
+                    <i data-feather="check-square" class="chec"></i>
+
+                </label>
+
             </div>
             <div class="col-md-3 col-sm-12">
-                <a class="gen-card-produk">
-                    <img src="{{asset('assets/img/foto/sukmatrip1.png')}}">
-                    <div class="cover-black-bottom"></div>
-                    <div class="content">
-                        <p class="t-accent f08">PAKET SINI VIE VILLA</p>
-                        <hr style="width: 3em; border-color: white;" class="mb-2">
-                        <p class="text-white f18">Rp. 1.987.600</p>
-                        <p style="font-weight: 300; margin-top: -0.6em" class="text-white f10">3 Day 2 Night</p>
+                <input class="checkbox-gambar" type="checkbox" name="tools" id="2"
+                       value=":00"
+                       onclick="changeDateTime()"/>
+                <label class="w-100" for="2">
+                    <div class="gen-card-produk">
+                        <img src="{{asset('assets/img/foto/sukmatrip1.png')}}">
+                        <div class="cover-black-bottom"></div>
+                        <div class="content">
+                            {{--                            <p class="t-accent f08">PAKET SINI VIE VILLA</p>--}}
+                            {{--                            <hr style="width: 3em; border-color: white;" class="mb-2">--}}
+                            <p class="text-white f18">Tanjung Benoa</p>
+                            {{--                            <p style="font-weight: 300; margin-top: -0.6em" class="text-white f10">3 Day 2 Night</p>--}}
+                        </div>
                     </div>
-                </a>
+                    <i data-feather="check-square" class="chec"></i>
+
+                </label>
+
             </div>
             <div class="col-md-3 col-sm-12">
-                <a class="gen-card-produk">
-                    <img src="{{asset('assets/img/foto/sukmatrip1.png')}}">
-                    <div class="cover-black-bottom"></div>
-                    <div class="content">
-                        <p class="t-accent f08">PAKET SINI VIE VILLA</p>
-                        <hr style="width: 3em; border-color: white;" class="mb-2">
-                        <p class="text-white f18">Rp. 1.987.600</p>
-                        <p style="font-weight: 300; margin-top: -0.6em" class="text-white f10">3 Day 2 Night</p>
+                <input class="checkbox-gambar" type="checkbox" name="tools" id="3"
+                       value=":00"
+                       onclick="changeDateTime()"/>
+                <label class="w-100" for="3">
+                    <div class="gen-card-produk">
+                        <img src="{{asset('assets/img/foto/sukmatrip1.png')}}">
+                        <div class="cover-black-bottom"></div>
+                        <div class="content">
+                            {{--                            <p class="t-accent f08">PAKET SINI VIE VILLA</p>--}}
+                            {{--                            <hr style="width: 3em; border-color: white;" class="mb-2">--}}
+                            <p class="text-white f18">Tanjung Benoa</p>
+                            {{--                            <p style="font-weight: 300; margin-top: -0.6em" class="text-white f10">3 Day 2 Night</p>--}}
+                        </div>
                     </div>
-                </a>
+                    <i data-feather="check-square" class="chec"></i>
+
+                </label>
+
             </div>
             <div class="col-md-3 col-sm-12">
-                <a class="gen-card-produk">
-                    <img src="{{asset('assets/img/foto/sukmatrip1.png')}}">
-                    <div class="cover-black-bottom"></div>
-                    <div class="content">
-                        <p class="t-accent f08">PAKET SINI VIE VILLA</p>
-                        <hr style="width: 3em; border-color: white;" class="mb-2">
-                        <p class="text-white f18">Rp. 1.987.600</p>
-                        <p style="font-weight: 300; margin-top: -0.6em" class="text-white f10">3 Day 2 Night</p>
+                <input class="checkbox-gambar" type="checkbox" name="tools" id="4"
+                       value=":00"
+                       onclick="changeDateTime()"/>
+                <label class="w-100" for="4">
+                    <div class="gen-card-produk">
+                        <img src="{{asset('assets/img/foto/sukmatrip1.png')}}">
+                        <div class="cover-black-bottom"></div>
+                        <div class="content">
+                            {{--                            <p class="t-accent f08">PAKET SINI VIE VILLA</p>--}}
+                            {{--                            <hr style="width: 3em; border-color: white;" class="mb-2">--}}
+                            <p class="text-white f18">Tanjung Benoa</p>
+                            {{--                            <p style="font-weight: 300; margin-top: -0.6em" class="text-white f10">3 Day 2 Night</p>--}}
+                        </div>
                     </div>
-                </a>
+                    <i data-feather="check-square" class="chec"></i>
+
+                </label>
+
             </div>
         </div>
     </section>
@@ -139,13 +173,15 @@
                             <label for="jumlahOrang">Jumlah Orang</label>
                             <div class="d-flex align-items-stretch mb-3 ">
                                 <input type="number" class="form-control form-data-input mr-2" id="jumlahOrang"
-                                       aria-describedby="jumlahOrangHelp" placeholder="Jumlah Orang*"
+                                       aria-describedby="jumlahOrangHelp" placeholder="Jumlah Orang*" value="1"
                                        style="border-radius: 0px;">
                                 <div class="d-flex flex-row">
                                     <a style="color: white; background: var(--primaryColor); padding: 1em"
+                                       id="buttonMinus"
                                        class="bt-primary f08 mr-2"><i data-feather="minus-circle"></i></a>
 
                                     <a style="color: white; background: var(--primaryColor); padding: 1em"
+                                       id="buttonPlus"
                                        class="bt-primary f08 "><i data-feather="plus-circle"></i></a>
 
 
@@ -283,6 +319,32 @@
             dots: false,
             centerMode: false,
             focusOnSelect: true
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            // $('#jumlahOrang').val(1);
+            // alert("su");
+        });
+
+        $("#buttonPlus").click(function () {
+            if($('#jumlahOrang').val() < 10){
+                var a = parseInt($('#jumlahOrang').val());
+                a = isNaN(a) ? 0 : a;
+                a++;
+                $('#jumlahOrang').val(a);
+
+            }
+        });
+
+        $("#buttonMinus").click(function () {
+            if($('#jumlahOrang').val() > 1){
+                var a = parseInt($('#jumlahOrang').val());
+                a = isNaN(a) ? 0 : a;
+                a--;
+                $('#jumlahOrang').val(a);
+            }
         });
     </script>
 @endsection
