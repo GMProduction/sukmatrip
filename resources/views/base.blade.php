@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" href="{{asset('assets/css/etc/font-awesome.min.css')}}" type="text/css">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -8,17 +7,17 @@
     <meta name="author" content="Genossys">
     <title>Sukmatrip - Honeymoon & Trip</title>
 
-    <link rel="stylesheet" href="{{asset('assets/vendor/bootstrap/dist/css/bootstrap.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('assets/css/bootstrap/bootstrap.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('assets/css/sukmatripuser.css')}}" type="text/css">
-    @yield('moreCss')
+    <link rel="stylesheet" href="{{asset('assets/vendor/font-awesome-4.7.0/css/font-awesome.min.css')}}" type="text/css">
+
+@yield('moreCss')
     <!-- Favicon -->
 {{--    <link rel="icon" href="../assets/img/brand/favicon.png" type="image/png">--}}
 <!-- Fonts -->
     <link
         href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
         rel="stylesheet">
-    <!-- Icons -->
-    <script src="https://unpkg.com/feather-icons"></script>
 </head>
 
 <body>
@@ -32,10 +31,10 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ml-auto">
-                <a style="color: #4A4A4A; font-weight: 500;" class="nav-item nav-link text-sm ml-5 active f08" href="/">HOME<span class="sr-only">(current)</span></a>
-                <a style="color: #4A4A4A; font-weight: 500;" class="nav-item nav-link text-sm ml-5 active f08" href="/gallery">GALLERY</a>
-                <a style="color: #4A4A4A; font-weight: 500;" class="nav-item nav-link text-sm ml-5 active f08" href="/contact">CONTACT</a>
-                <a style="color: #4A4A4A; font-weight: 500;" class="nav-item nav-link text-sm ml-5 active f08" href="/article">ARTICLE</a>
+                <a  class="text-sm ml-5  f08 navitem" href="/">HOME<span class="sr-only">(current)</span></a>
+                <a  class=" text-sm ml-5  f08 navitem" href="/gallery">GALLERY</a>
+                <a class=" text-sm ml-5  f08 navitem" href="/contact">CONTACT</a>
+                <a  class=" text-sm ml-5  f08 navitem" href="/article">ARTICLE</a>
             </div>
         </div>
     </div>
@@ -53,23 +52,25 @@
         <a class="sukmatrip mt-4" style="color: white">STAY CONNECTED</a>
         <hr class="mb-2" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">
         <div class="d-flex mt-4">
-            <i class="gen-card-icon mr-2 ml-2 fa fa-user-circle-o text-dark"></i>
-            <i class="gen-card-icon mr-2 ml-2 fa fa-facebook-f text-dark"></i>
+            <a class="d-block"> <i class="fa fa-facebook-square fa-lg facebookbutton"></i></a>
+            <a class="d-block"> <i class="fa fa-instagram  fa-lg instagrambutton"></i></a>
         </div>
         <div class="d-flex mt-5">
-            <a style="color: white" class="mr-3 ml-3 f08">HOME</a>
-            <a style="color: white" class="mr-3 ml-3 f08">CONTACT</a>
-            <a style="color: white" class="mr-3 ml-3 f08">ARTICLE</a>
-            <a style="color: white" class="mr-3 ml-3 f08">GALLERY</a>
+            <a style="color: white" href="#" class="mr-3 ml-3 f08">HOME</a>
+            <a style="color: white" href="#" class="mr-3 ml-3 f08">CONTACT</a>
+            <a style="color: white" href="#" class="mr-3 ml-3 f08">ARTICLE</a>
+            <a style="color: white" href="#" class="mr-3 ml-3 f08">GALLERY</a>
         </div>
-        <p style="color: #C8C8C8; font-weight: 300" class="mt-4 f08">2019 - All rights reserved to ©Sukmatrip</p>
+        <p style="color: #C8C8C8; font-weight: 300" class="mt-4 f08">2020 - All rights reserved to ©Sukmatrip</p>
     </div>
 </footer>
 <!-- Argon Scripts -->
 <!-- Core -->
 <script src="{{asset('assets/vendor/jquery/dist/jquery.min.js')}}"></script>
+<script src="{{asset('assets/js/etc/feather.min.js')}}"></script>
 <script src="{{asset('assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
 <script src="{{asset('assets/js/page/global.js')}}"></script>
+<script src="https://unpkg.com/feather-icons"></script>
 <script>
     feather.replace()
 </script>

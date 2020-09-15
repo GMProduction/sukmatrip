@@ -1,4 +1,10 @@
 @extends('base')
+
+@section('moreCss')
+    <link rel="stylesheet" href="{{asset('assets/vendor/slick/slick.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('assets/vendor/slick/slick-theme.css')}}" type="text/css">
+@endsection
+
 @section('content')
 
     {{--    BIG IMAGE--}}
@@ -16,9 +22,9 @@
                         <div class="col-lg-4 col-md-12">
                             <label for="destinasi" class="text-white">Destination</label>
                             <select class="sukmatrip-form-control" id="destinasi" name="destinasi">
-                                <option class="dropdown-item" value="hotel">All Destination</option>
-                                <option class="dropdown-item" value="hotel">Bali</option>
-                                <option class="dropdown-item" value="villa">Lombok</option>
+                                <option class="sukmatrip-dropdown-item" value="hotel">All Destination</option>
+                                <option class="sukmatrip-dropdown-item" value="hotel">Bali</option>
+                                <option class="sukmatrip-dropdown-item" value="villa">Lombok</option>
                             </select>
                         </div>
 
@@ -41,7 +47,16 @@
                             </select>
                         </div>
                     </div>
-
+                    <div class="row mt-5">
+                        <div class="offset-lg-4 col-lg-4 col-md-12">
+                            <a class="d-block text-center" href="/pencarian#search">
+                                <div class="bt-search">
+                                    <i data-feather="search" class="mr-2" style="width: 1.3rem; height: 1.3rem"></i>
+                                    <p class="mb-0">Search</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -54,7 +69,8 @@
             <hr class="mb-2" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">
         </div>
         <p class="text-center f26">It's Time to <a class="t-accent">Travel</a></p>
-        <p style="font-weight: 300; color: #636363;" class="text-center f14 container">Take a look at the most exclusive & most visited locations in the world
+        <p style="font-weight: 300; color: #636363;" class="text-center f14 container">Take a look at the most exclusive
+            & most visited locations in the world
             - hand-picked just for you. Start traveling the world today!</p>
 
     </section>
@@ -74,7 +90,10 @@
                         <p class="t-accent f08">PAKET SINI VIE VILLA</p>
                         <hr style="width: 3em; border-color: white;" class="mb-2">
                         <p class="text-white f18">Rp. 1.987.600</p>
-                        <p style="font-weight: 300; margin-top: -0.6em" class="text-white f10">3 Day 2 Night</p>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <i data-feather="clock" class="icons"></i>
+                            <p style="font-weight: 300;" class="text-white f10 mb-0">3 Day 2 Night</p>
+                        </div>
                     </div>
                 </a>
             </div>
@@ -83,15 +102,17 @@
     </section>
 
     <section class="mt-5 container-fluid" style="height: 35em; position:relative;">
-       <img class="image-as-bg" src="{{asset('assets/img/foto/sukmatrip2.jpg')}}">
+        <img class="image-as-bg" src="{{asset('assets/img/foto/sukmatrip2.jpg')}}">
         <div class="cover-black-all"></div>
         <div class="d-flex justify-content-center align-items-center h-100 flex-column front">
             <p class="sukmatrip mb-0">SUKMATRIP</p>
             <hr class="mb-2" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">
             <p class="text-center text-white f36 mt-2">About <a class="t-accent">us</a></p>
             <p style="font-weight: 300" class="text-white text-center f14 container">Passionate about travel
-                and sharing the world's wonders on the leisure travel side. We provide corporate travelers hitouch services to
-                facilitate their business travel needs. Named each year as one of the <a class="t-accent">"Best Places To Work"</a> in New York.</p>
+                and sharing the world's wonders on the leisure travel side. We provide corporate travelers hitouch
+                services to
+                facilitate their business travel needs. Named each year as one of the <a class="t-accent">"Best Places
+                    To Work"</a> in New York.</p>
         </div>
     </section>
 
@@ -143,10 +164,31 @@
             <hr class="mb-2" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">
         </div>
         <p class="text-center f26 mb-3">Our client <a class="t-accent">says:</a></p>
-        <div class="ulasan mt-0 " style="display: flex; flex-direction: column; align-items: center">
-            <img src="{{asset('assets/img/foto/user1.jpg')}}" style="border-radius: 50%; width: 7em; height: 7em">
-            <p style="color: #636363; font-weight: 300" class="mt-3 f14">Extremelly flexible and easy to use. Code is clean and all files well organized. Great job guys.</p>
-            <p style="color: black;" class="f12">JOHN E. PERRY.</p>
+
+        <div class="slick-fade">
+            <div class="ulasan mt-0 d-flex flex-column align-items-center justify-content-center">
+                <img src="{{asset('assets/img/foto/user1.jpg')}}" style="border-radius: 50%; width: 7em; height: 7em">
+                <p style="color: #636363; font-weight: 300" class="mt-3 f14">Extremelly flexible and easy to use. Code
+                    is
+                    clean and all files well organized. Great job guys.</p>
+                <p style="color: black;" class="f12">JOHN E. PERRY.</p>
+            </div>
+
+            <div class="ulasan mt-0 d-flex flex-column align-items-center justify-content-center">
+                <img src="{{asset('assets/img/foto/user1.jpg')}}" style="border-radius: 50%; width: 7em; height: 7em">
+                <p style="color: #636363; font-weight: 300" class="mt-3 f14">Extremelly flexible and easy to use. Code
+                    is
+                    clean and all files well organized. Great job guys.</p>
+                <p style="color: black;" class="f12">JOHN E. PERRY.</p>
+            </div>
+
+            <div class="ulasan mt-0 d-flex flex-column align-items-center justify-content-center">
+                <img src="{{asset('assets/img/foto/user1.jpg')}}" style="border-radius: 50%; width: 7em; height: 7em">
+                <p style="color: #636363; font-weight: 300" class="mt-3 f14">Extremelly flexible and easy to use. Code
+                    is
+                    clean and all files well organized. Great job guys.</p>
+                <p style="color: black;" class="f12">JOHN E. PERRY.</p>
+            </div>
         </div>
     </section>
 
@@ -156,5 +198,15 @@
 
 @section('script')
 
+    <script src="{{asset('assets/vendor/slick/slick.js')}}"></script>
 
+    <script>
+        $('.slick-fade').slick({
+            dots: true,
+            infinite: true,
+            speed: 500,
+            fade: true,
+            cssEase: 'linear'
+        });
+    </script>
 @endsection
