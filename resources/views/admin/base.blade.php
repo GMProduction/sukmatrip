@@ -38,56 +38,56 @@
                 <!-- Nav items -->
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" href="/admin/">
+                        <a class="nav-link" id="dashboard" href="/admin/">
                             <i class="ni ni-tv-2"></i>
                             <span class="nav-link-text" style="margin-left: 10px">Dashboard</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="/admin/destinasi">
+                        <a class="nav-link " id="destinasi" href="/admin/destinasi">
                             <i class="ni ni-pin-3"></i>
                             <span class="nav-link-text" style="margin-left: 10px">Destinasi</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="/admin/penginapan">
+                        <a class="nav-link" id="penginapan" href="/admin/penginapan">
                             <i class="ni ni-building"></i>
                             <span class="nav-link-text" style="margin-left: 10px">Penginapan</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="/admin/tour">
+                        <a class="nav-link" id="tour" href="/admin/tour">
                             <i class="ni ni-world"></i>
                             <span class="nav-link-text" style="margin-left: 10px">Tour</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="/admin/paket">
+                        <a class="nav-link" id="paket" href="/admin/paket">
                             <i class="ni ni-box-2"></i>
                             <span class="nav-link-text" style="margin-left: 10px">Paket</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="/admin/gallery">
+                        <a class="nav-link" id="gallery" href="/admin/gallery">
                             <i class="ni ni-image"></i>
                             <span class="nav-link-text" style="margin-left: 10px">Gallery</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="/admin/artikel">
+                        <a class="nav-link" id="artikel" href="/admin/artikel">
                             <i class="ni ni-align-left-2"></i>
                             <span class="nav-link-text" style="margin-left: 10px">Artikel</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="/admin/transaksi">
+                        <a class="nav-link" id="transaksi" href="/admin/transaksi">
                             <i class="ni ni-chart-bar-32"></i>
                             <span class="nav-link-text" style="margin-left: 10px">Transaksi</span>
                         </a>
@@ -202,6 +202,7 @@
 <script src="{{asset('assets/vendor/chart.js/dist/Chart.extension.js')}}"></script>
 <!-- Argon JS -->
 <script src="{{asset('assets/js/argon.js?v=1.2.0')}}"></script>
+<script src="{{asset('assets/js/componen.js')}}"></script>
 {{--<script type="text/javascript" src="{{asset('DataTables/datatables.min.js')}}"></script>--}}
 <script>
     feather.replace()

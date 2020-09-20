@@ -1,6 +1,5 @@
 @extends('admin.base')
 @section('content')
-
     <!-- Header -->
     <div class="header bg-primary pb-6">
         <div class="container-fluid">
