@@ -49,10 +49,10 @@
                     </div>
                     <div class="row mt-5">
                         <div class="offset-lg-4 col-lg-4 col-md-12">
-                            <a class="d-block text-center" href="/pencarian#search">
+                            <a class="d-block text-center" href="/pencarian#search" style="text-decoration: none; color: black">
                                 <div class="bt-search">
                                     <i data-feather="search" class="mr-2" style="width: 1.3rem; height: 1.3rem"></i>
-                                    <p class="mb-0">Search</p>
+                                    <p class="mb-0">Search Tour</p>
                                 </div>
                             </a>
                         </div>
@@ -91,7 +91,113 @@
                         <hr style="width: 3em; border-color: white;" class="mb-2">
                         <p class="text-white f18">Rp. 1.987.600</p>
                         <div class="d-flex align-items-center justify-content-center">
-                            <i data-feather="clock" class="icons"></i>
+                            <i data-feather="clock" class="icons mr-2"></i>
+                            <p style="font-weight: 300;" class="text-white f10 mb-0">3 Day 2 Night</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-12">
+                <a class="gen-card-produk">
+                    <img src="{{asset('assets/img/foto/sukmatrip1.png')}}">
+                    <div class="cover-black-bottom"></div>
+                    <div class="content">
+                        <p class="t-accent f08">PAKET SINI VIE VILLA</p>
+                        <hr style="width: 3em; border-color: white;" class="mb-2">
+                        <p class="text-white f18">Rp. 1.987.600</p>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <i data-feather="clock" class="icons mr-2"></i>
+                            <p style="font-weight: 300;" class="text-white f10 mb-0">3 Day 2 Night</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-12">
+                <a class="gen-card-produk">
+                    <img src="{{asset('assets/img/foto/sukmatrip1.png')}}">
+                    <div class="cover-black-bottom"></div>
+                    <div class="content">
+                        <p class="t-accent f08">PAKET SINI VIE VILLA</p>
+                        <hr style="width: 3em; border-color: white;" class="mb-2">
+                        <p class="text-white f18">Rp. 1.987.600</p>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <i data-feather="clock" class="icons mr-2"></i>
+                            <p style="font-weight: 300;" class="text-white f10 mb-0">3 Day 2 Night</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-12">
+                <a class="gen-card-produk">
+                    <img src="{{asset('assets/img/foto/sukmatrip1.png')}}">
+                    <div class="cover-black-bottom"></div>
+                    <div class="content">
+                        <p class="t-accent f08">PAKET SINI VIE VILLA</p>
+                        <hr style="width: 3em; border-color: white;" class="mb-2">
+                        <p class="text-white f18">Rp. 1.987.600</p>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <i data-feather="clock" class="icons mr-2"></i>
+                            <p style="font-weight: 300;" class="text-white f10 mb-0">3 Day 2 Night</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-3 col-sm-12">
+                <a class="gen-card-produk">
+                    <img src="{{asset('assets/img/foto/sukmatrip1.png')}}">
+                    <div class="cover-black-bottom"></div>
+                    <div class="content">
+                        <p class="t-accent f08">PAKET SINI VIE VILLA</p>
+                        <hr style="width: 3em; border-color: white;" class="mb-2">
+                        <p class="text-white f18">Rp. 1.987.600</p>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <i data-feather="clock" class="icons mr-2"></i>
+                            <p style="font-weight: 300;" class="text-white f10 mb-0">3 Day 2 Night</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-12">
+                <a class="gen-card-produk">
+                    <img src="{{asset('assets/img/foto/sukmatrip1.png')}}">
+                    <div class="cover-black-bottom"></div>
+                    <div class="content">
+                        <p class="t-accent f08">PAKET SINI VIE VILLA</p>
+                        <hr style="width: 3em; border-color: white;" class="mb-2">
+                        <p class="text-white f18">Rp. 1.987.600</p>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <i data-feather="clock" class="icons mr-2"></i>
+                            <p style="font-weight: 300;" class="text-white f10 mb-0">3 Day 2 Night</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-12">
+                <a class="gen-card-produk">
+                    <img src="{{asset('assets/img/foto/sukmatrip1.png')}}">
+                    <div class="cover-black-bottom"></div>
+                    <div class="content">
+                        <p class="t-accent f08">PAKET SINI VIE VILLA</p>
+                        <hr style="width: 3em; border-color: white;" class="mb-2">
+                        <p class="text-white f18">Rp. 1.987.600</p>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <i data-feather="clock" class="icons mr-2"></i>
+                            <p style="font-weight: 300;" class="text-white f10 mb-0">3 Day 2 Night</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-12">
+                <a class="gen-card-produk">
+                    <img src="{{asset('assets/img/foto/sukmatrip1.png')}}">
+                    <div class="cover-black-bottom"></div>
+                    <div class="content">
+                        <p class="t-accent f08">PAKET SINI VIE VILLA</p>
+                        <hr style="width: 3em; border-color: white;" class="mb-2">
+                        <p class="text-white f18">Rp. 1.987.600</p>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <i data-feather="clock" class="icons mr-2"></i>
                             <p style="font-weight: 300;" class="text-white f10 mb-0">3 Day 2 Night</p>
                         </div>
                     </div>

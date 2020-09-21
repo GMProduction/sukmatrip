@@ -149,7 +149,7 @@
     </section>
 
     <section class="mt-5 container-fluid d-flex justify-content-center align-items-center flex-column"
-             style="height: 50em; position:relative;">
+             style="height: 60em; position:relative;">
         <img class="image-as-bg" src="{{asset('assets/img/foto/sukmatrip4.jpg')}}">
         <div class="cover-black-all"></div>
         <div class="d-flex justify-content-center align-items-center cover-white flex-column front">
@@ -159,11 +159,19 @@
                 <hr class="mb-5" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">
                 <div class="row">
 
+                    <div class="offset-3 col-6">
+                        <div class="form-group">
+                            <label for="nama">Nama</label>
+                            <input type="text" class="form-control form-data-input" id="nama"
+                                   aria-describedby="namaHelp" placeholder="Nama*">
+                        </div>
+                    </div>
+
                     <div class="offset-md-3 col-md-6 offset-sm-2 col-sm-8 offset-xs-2 col-xs-8 ">
                         <div class="form-group">
                             <label for="tanggalCheckIn">Tanggal Check In</label>
                             <input type="text" class="form-control form-data-input datepicker" id="tanggalCheckIn"
-                                   aria-describedby="tanggalHelp" placeholder="Tanggal CheckIn*">
+                                   aria-describedby="tanggalHelp" placeholder="Tanggal Check In*">
                         </div>
                     </div>
 
@@ -174,7 +182,7 @@
                             <div class="d-flex align-items-stretch mb-3 ">
                                 <input type="number" class="form-control form-data-input mr-2" id="jumlahOrang"
                                        aria-describedby="jumlahOrangHelp" placeholder="Jumlah Orang*" value="1"
-                                       style="border-radius: 0px;">
+                                       style="border-radius: 5px;">
                                 <div class="d-flex flex-row">
                                     <a style="color: white; background: var(--primaryColor); padding: 1em"
                                        id="buttonMinus"
@@ -183,20 +191,10 @@
                                     <a style="color: white; background: var(--primaryColor); padding: 1em"
                                        id="buttonPlus"
                                        class="bt-primary f08 "><i data-feather="plus-circle"></i></a>
-
-
                                 </div>
                             </div>
 
 
-                        </div>
-                    </div>
-
-                    <div class="offset-3 col-6">
-                        <div class="form-group">
-                            <label for="nama">Nama</label>
-                            <input type="text" class="form-control form-data-input" id="nama"
-                                   aria-describedby="namaHelp" placeholder="Nama*">
                         </div>
                     </div>
 
@@ -210,10 +208,9 @@
                 </div>
 
 
-                <div class="text-center mt-4 mb-5">
-                    <a style="color: white; background: #4A4A4A; letter-spacing: .5rem;" data-toggle="modal"
-                       data-target="#modalKonfirmasi" class="bt-primary f08">BOOK
-                        NOW</a>
+                <div class="text-center mt-5 mb-5">
+                    <a style="color: white;" data-toggle="modal"
+                       data-target="#modalKonfirmasi" class="bt-booknow f08">BOOK NOW</a>
                 </div>
             </div>
         </div>

@@ -46,7 +46,7 @@
                             <a class="d-block text-center">
                                 <div class="bt-search">
                                     <i data-feather="search" class="mr-2" style="width: 1.3rem; height: 1.3rem"></i>
-                                    <p class="mb-0">Search</p>
+                                    <p class="mb-0">Search Tour</p>
                                 </div>
                             </a>
                         </div>

@@ -33,8 +33,8 @@
             <div class="navbar-nav ml-auto">
                 <a  class="text-sm ml-5  f08 navitem" href="/">HOME<span class="sr-only">(current)</span></a>
                 <a  class=" text-sm ml-5  f08 navitem" href="/gallery">GALLERY</a>
-                <a class=" text-sm ml-5  f08 navitem" href="/contact">CONTACT</a>
                 <a  class=" text-sm ml-5  f08 navitem" href="/article">ARTICLE</a>
+                <a class=" text-sm ml-5  f08 navitem" href="/contact">CONTACT</a>
             </div>
         </div>
     </div>

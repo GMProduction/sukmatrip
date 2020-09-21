@@ -25,6 +25,18 @@ Route::get('/detail', function () {
     return view('detail');
 });
 
+Route::get('/gallery', function () {
+    return view('gallery');
+});
+
+Route::get('/contact', function () {
+    return view('contact');
+});
+
+Route::get('/article', function () {
+    return view('article');
+});
+
 //LOGIN
 Route::get('/login', function () {
     return view('login.login');
