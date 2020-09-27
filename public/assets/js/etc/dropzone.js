@@ -479,7 +479,7 @@ function (_Emitter) {
         /**
          * The text that is displayed if an upload was manually canceled
          */
-        dictUploadCanceled: "Upload canceled.",
+        dictUploadCanceled: "upload canceled.",
 
         /**
          * If `addRemoveLinks` is true, the text to be used for confirmation when cancelling upload.
@@ -1514,7 +1514,7 @@ function (_Emitter) {
         fieldsString += "<p>".concat(this.options.dictFallbackText, "</p>");
       }
 
-      fieldsString += "<input type=\"file\" name=\"".concat(this._getParamName(0), "\" ").concat(this.options.uploadMultiple ? 'multiple="multiple"' : undefined, " /><input type=\"submit\" value=\"Upload!\"></div>");
+      fieldsString += "<input type=\"file\" name=\"".concat(this._getParamName(0), "\" ").concat(this.options.uploadMultiple ? 'multiple="multiple"' : undefined, " /><input type=\"submit\" value=\"upload!\"></div>");
       var fields = Dropzone.createElement(fieldsString);
 
       if (this.element.tagName !== "FORM") {
@@ -2110,7 +2110,7 @@ function (_Emitter) {
 
       fileReader.readAsDataURL(file);
     } // `mockFile` needs to have these attributes:
-    // 
+    //
     //     { name: 'name', size: 12345, imageUrl: '' }
     //
     // `callback` will be invoked when the image has been downloaded and displayed.

@@ -201,7 +201,7 @@
 <script src="<?php echo e(asset('assets/vendor/chart.js/dist/Chart.extension.js')); ?>"></script>
 <!-- Argon JS -->
 <script src="<?php echo e(asset('assets/js/argon.js?v=1.2.0')); ?>"></script>
-<script type="text/javascript" src="<?php echo e(asset('DataTables/datatables.min.js')); ?>"></script>
+
 <script>
     feather.replace()
 </script>

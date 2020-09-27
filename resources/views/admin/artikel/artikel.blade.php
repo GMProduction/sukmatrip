@@ -64,7 +64,8 @@
                                 </td>
 
                                 <td>
-                                    <a href="" class="btn btn-sm btn-primary">Detail</a>
+                                    <a href="/admin/editartikel" class="btn btn-sm btn-primary">Edit</a>
+                                    <a href="/admin/detailartikel" class="btn btn-sm btn-success">Detail</a>
                                 </td>
                             </tr>
                             </tbody>

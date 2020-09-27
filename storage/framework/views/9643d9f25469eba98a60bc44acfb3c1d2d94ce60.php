@@ -1,3 +1,7 @@
+<?php $__env->startSection('morecss'); ?>
+    <link rel="stylesheet" href="<?php echo e(asset('assets/css/etc/basic.min.css')); ?>" type="text/css">
+    <link rel="stylesheet" href="<?php echo e(asset('assets/css/etc/dropzone.css')); ?>" type="text/css">
+<?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
 
     <!-- Header -->
@@ -44,7 +48,7 @@
 
                                     <div class="col-6">
                                         <div class="form-group">
-                                            <label  for="tebal">Harga /hati</label>
+                                            <label  for="tebal">Harga /hari</label>
                                             <input type="number" id="hargaTour" name="hargaTour"
                                                    class="form-control">
                                         </div>
@@ -57,30 +61,41 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-lg-12">
-                                        <a>Foto</a>
-                                        <div class="custom-file">
-                                            <input type="file" class="custom-file-input" id="fotoTour"
-                                                   name="fotoTour" lang="en">
-                                            <label class="custom-file-label" for="gambar">Select file</label>
-                                        </div>
-                                    </div>
-
                                 </div>
                             </div>
-
 
                             <hr class="my-4"/>
                             <!-- Description -->
                             <div class="col-12 text-right">
+                                <button type="button" class="btn btn-lg btn-danger" data-toggle="modal" data-target=".bd-example-modal-lg">Unggah Foto</button>
                                 <button type="submit" class="btn btn-lg btn-primary">Simpan</button>
                             </div>
                         </form>
+
+                        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLongTitle">Upload Foto</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form action="/assets/upload/tour" class="dropzone"></form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                                        <button type="button" class="btn btn-primary">Simpan</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
 
 
@@ -89,8 +104,8 @@
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('script'); ?>
-
-
+    <script src="<?php echo e(asset('assets/js/etc/dropzone.min.js')); ?>"></script>
+    <script src="<?php echo e(asset('assets/js/etc/dropzone-amd-module.min.js')); ?>"></script>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('admin.base', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\Project\website\sukmatrip\resources\views/admin/tour/tambahgallery.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('admin.base', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\Project\website\sukmatrip\resources\views/admin/tour/tambahpaket.blade.php ENDPATH**/ ?>

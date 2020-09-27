@@ -460,7 +460,7 @@ var Dropzone = function (_Emitter) {
         /**
          * The text that is displayed if an upload was manually canceled
          */
-        dictUploadCanceled: "Upload canceled.",
+        dictUploadCanceled: "upload canceled.",
 
         /**
          * If `addRemoveLinks` is true, the text to be used for confirmation when cancelling upload.
@@ -1459,7 +1459,7 @@ var Dropzone = function (_Emitter) {
       if (this.options.dictFallbackText) {
         fieldsString += "<p>" + this.options.dictFallbackText + "</p>";
       }
-      fieldsString += "<input type=\"file\" name=\"" + this._getParamName(0) + "\" " + (this.options.uploadMultiple ? 'multiple="multiple"' : undefined) + " /><input type=\"submit\" value=\"Upload!\"></div>";
+      fieldsString += "<input type=\"file\" name=\"" + this._getParamName(0) + "\" " + (this.options.uploadMultiple ? 'multiple="multiple"' : undefined) + " /><input type=\"submit\" value=\"upload!\"></div>";
 
       var fields = Dropzone.createElement(fieldsString);
       if (this.element.tagName !== "FORM") {

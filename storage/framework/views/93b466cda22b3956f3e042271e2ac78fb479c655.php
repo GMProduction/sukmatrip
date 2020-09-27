@@ -7,12 +7,12 @@
                 <div class="row align-items-center py-4">
                     <div class="col-lg-4 col-4">
                         <h6 class="h2 text-white d-inline-block mb-0">Data Tour</h6>
-
-
-
-
-
-
+                        
+                        
+                        
+                        
+                        
+                        
                     </div>
 
                     <div class="col-lg-8 col-8 text-right">
@@ -68,7 +68,7 @@
                                 </td>
 
                                 <td>
-                                    <a href="" class="btn btn-sm btn-primary">Detail</a>
+                                    <a href="/admin/edittour" class="btn btn-sm btn-primary">Edit</a>
                                 </td>
                             </tr>
                             </tbody>
@@ -112,4 +112,4 @@
 
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('admin.base', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\Project\website\sukmatrip\resources\views/admin/tour/gallery.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('admin.base', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\Project\website\sukmatrip\resources\views/admin/tour/tour.blade.php ENDPATH**/ ?>

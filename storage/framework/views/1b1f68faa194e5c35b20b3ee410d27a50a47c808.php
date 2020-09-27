@@ -1,5 +1,6 @@
 <?php $__env->startSection('morecss'); ?>
-    <link rel="stylesheet" href="<?php echo e(asset('public/assets/css/etc/dropzone.css')); ?>" type="text/css">
+    <link rel="stylesheet" href="<?php echo e(asset('assets/css/etc/basic.min.css')); ?>" type="text/css">
+    <link rel="stylesheet" href="<?php echo e(asset('assets/css/etc/dropzone.css')); ?>" type="text/css">
     <?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
 
@@ -67,41 +68,48 @@
                                             <textarea class="form-control" id="deskripsiPenginapan" rows="3"></textarea>
                                         </div>
                                     </div>
-
-                                    <div class="col-lg-12">
-                                        <a>Foto</a>
-                                        <form action="/file-upload" class="dropzone">
-                                            <div class="fallback">
-                                                <input name="file" type="file" multiple />
-                                            </div>
-                                        </form>
-                                    </div>
-
                                 </div>
                             </div>
 
-
-                            <hr class="my-4"/>
                             <!-- Description -->
                             <div class="col-12 text-right"id="myId">
+                                <button type="button" class="btn btn-lg btn-danger" data-toggle="modal" data-target=".bd-example-modal-lg">Unggah Foto</button>
                                 <button type="submit" class="btn btn-lg btn-primary">Simpan</button>
                             </div>
                         </form>
+
+                        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLongTitle">Upload Foto</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form action="/assets/upload/penginapan" class="dropzone"></form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                                        <button type="button" class="btn btn-primary">Simpan</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
-
-
 
 
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('script'); ?>
-    <script src="asset('public/assets/js/etc/dropzone.js')"></script>
-    <script>$("div#myId").dropzone({ url: "/file/post" });</script>
+    <script src="<?php echo e(asset('assets/js/etc/dropzone.min.js')); ?>"></script>
+    <script src="<?php echo e(asset('assets/js/etc/dropzone-amd-module.min.js')); ?>"></script>
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('admin.base', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\Project\website\sukmatrip\resources\views/admin/penginapan/tambahpenginapan.blade.php ENDPATH**/ ?>

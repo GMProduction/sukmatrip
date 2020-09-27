@@ -13,11 +13,17 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
     <!-- Icons -->
     <link rel="stylesheet" href="{{asset('assets/vendor/nucleo/css/nucleo.css')}}" type="text/css">
+
     <link rel="stylesheet" href="{{asset('assets/vendor/@fortawesome/fontawesome-free/css/all.min.css')}}" type="text/css">
     <!-- Page plugins -->
     <!-- Argon CSS -->
     <link rel="stylesheet" type="text/css" href="{{asset('assets/DataTables/datatables.min.css')}}"/>
+    <link rel="stylesheet" href="{{asset('/assets/vendor/bootstrap/dist/css/bootstrap.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('/assets/DataTables/datatables.css')}}">
+
     <link rel="stylesheet" href="{{asset('/assets/css/argon.css?v=1.2.0')}}" type="text/css">
+    <script src="{{asset('assets/js/swal.min.js')}}"></script>
+
     @yield('morecss')
     <script src="https://unpkg.com/feather-icons"></script>
 </head>
@@ -37,56 +43,56 @@
                 <!-- Nav items -->
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" href="/admin/">
+                        <a class="nav-link" id="dashboard" href="/admin/">
                             <i class="ni ni-tv-2"></i>
                             <span class="nav-link-text" style="margin-left: 10px">Dashboard</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="/admin/destinasi">
+                        <a class="nav-link " id="destinasi" href="/admin/destinasi">
                             <i class="ni ni-pin-3"></i>
                             <span class="nav-link-text" style="margin-left: 10px">Destinasi</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="/admin/penginapan">
+                        <a class="nav-link" id="penginapan" href="/admin/penginapan">
                             <i class="ni ni-building"></i>
                             <span class="nav-link-text" style="margin-left: 10px">Penginapan</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="/admin/tour">
+                        <a class="nav-link" id="tour" href="/admin/tour">
                             <i class="ni ni-world"></i>
                             <span class="nav-link-text" style="margin-left: 10px">Tour</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="/admin/paket">
+                        <a class="nav-link" id="paket" href="/admin/paket">
                             <i class="ni ni-box-2"></i>
                             <span class="nav-link-text" style="margin-left: 10px">Paket</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="/admin/gallery">
+                        <a class="nav-link" id="gallery" href="/admin/gallery">
                             <i class="ni ni-image"></i>
                             <span class="nav-link-text" style="margin-left: 10px">Gallery</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="/admin/artikel">
+                        <a class="nav-link" id="artikel" href="/admin/artikel">
                             <i class="ni ni-align-left-2"></i>
                             <span class="nav-link-text" style="margin-left: 10px">Artikel</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="/admin/transaksi">
+                        <a class="nav-link" id="transaksi" href="/admin/transaksi">
                             <i class="ni ni-chart-bar-32"></i>
                             <span class="nav-link-text" style="margin-left: 10px">Transaksi</span>
                         </a>
@@ -192,7 +198,10 @@
 <!-- Argon Scripts -->
 <!-- Core -->
 <script src="{{asset('assets/vendor/jquery/dist/jquery.min.js')}}"></script>
+
 <script src="{{asset('assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{asset('assets/DataTables/datatables.min.js')}}"></script>
+
 <script src="{{asset('assets/vendor/js-cookie/js.cookie.js')}}"></script>
 <script src="{{asset('assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js')}}"></script>
 <script src="{{asset('assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js')}}"></script>
@@ -201,6 +210,7 @@
 <script src="{{asset('assets/vendor/chart.js/dist/Chart.extension.js')}}"></script>
 <!-- Argon JS -->
 <script src="{{asset('assets/js/argon.js?v=1.2.0')}}"></script>
+<script src="{{asset('assets/js/componen.js')}}"></script>
 {{--<script type="text/javascript" src="{{asset('DataTables/datatables.min.js')}}"></script>--}}
 <script>
     feather.replace()
@@ -208,5 +218,19 @@
 @yield('script')
 
 </body>
-
+<script>
+    jQuery.fn.dataTableExt.oApi.fnPagingInfo = function (oSettings) {
+        return {
+            "iStart": oSettings._iDisplayStart,
+            "iEnd": oSettings.fnDisplayEnd(),
+            "iLength": oSettings._iDisplayLength,
+            "iTotal": oSettings.fnRecordsTotal(),
+            "iFilteredTotal": oSettings.fnRecordsDisplay(),
+            "iPage": oSettings._iDisplayLength === -1 ?
+                0 : Math.ceil(oSettings._iDisplayStart / oSettings._iDisplayLength),
+            "iTotalPages": oSettings._iDisplayLength === -1 ?
+                0 : Math.ceil(oSettings.fnRecordsDisplay() / oSettings._iDisplayLength)
+        };
+    };
+</script>
 </html>
