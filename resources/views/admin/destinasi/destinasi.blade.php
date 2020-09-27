@@ -1,5 +1,15 @@
 @extends('admin.base')
 @section('content')
+    @if(\Illuminate\Support\Facades\Session::has('success'))
+        <script>
+            Swal.fire({
+                title: 'Success',
+                text: 'Berhasil Menyimpan Data',
+                icon: 'success',
+                confirmButtonText: 'Ok'
+            })
+        </script>
+    @endif
     <!-- Header -->
     <div class="header bg-primary pb-6">
         <div class="container-fluid">
@@ -19,14 +29,17 @@
                     </div>
 
                     <div class="col-5 mt-5">
-                        <div class="form-group ">
-                            <label style="color: white" for="namaPenginapan">Nama Destinasi</label>
-                            <div class="d-flex justify-content-center">
-                            <input type="text" id="namaPenginapan" name="namaPenginapan"
-                                   class="form-control flex-grow-1 mr-2">
-                            <a href="#" class="btn btn-md btn-neutral">Tambah</a>
+                        <form id="formAdd" method="post" onsubmit="return addData()">
+                            @csrf
+                            <div class="form-group ">
+                                <label style="color: white" for="namaDestinasi">Nama Destinasi</label>
+                                <div class="d-flex justify-content-center">
+                                    <input type="text" id="namaDestinasi" required name="namaDestinasi"
+                                           class="form-control flex-grow-1 mr-2">
+                                    <button href="#" class="btn btn-md btn-neutral">Tambah</button>
+                                </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
 
                 </div>
@@ -43,86 +56,40 @@
                         <h3 class="mb-0">Tabel Destinasi</h3>
                     </div>
                     <!-- Light table -->
-                    <div class="table-responsive">
-                        <table class="table align-items-center table-flush">
-                            <thead class="thead-light">
-                            <tr>
-                                <th scope="col" class="sort" data-sort="name">#</th>
-                                <th scope="col" class="sort" data-sort="budget">Nama Destinasi</th>
-                                <th scope="col" class="sort" data-sort="status">Action</th>
-                            </tr>
-                            </thead>
-                            <tbody class="list">
-                            <tr>
-
-                                <td class="budget">
-                                    1
-                                </td>
-
-                                <td class="budget">
-                                    <p>Bali</p>
-                                </td>
-
-                                <td>
-                                    <a><button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Edit</button></a>
-                                </td>
-                            </tr>
-                            </tbody>
+                    <div class="table-responsive p-2">
+                        <table id="tabel" class="table align-items-center table-flush">
                         </table>
                     </div>
                     <!-- Card footer -->
-                    <div class="card-footer py-4">
-                        <nav aria-label="...">
-                            <ul class="pagination justify-content-end mb-0">
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="#" tabindex="-1">
-                                        <i class="fas fa-angle-left"></i>
-                                        <span class="sr-only">Previous</span>
-                                    </a>
-                                </li>
-                                <li class="page-item active">
-                                    <a class="page-link" href="#">1</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">
-                                        <i class="fas fa-angle-right"></i>
-                                        <span class="sr-only">Next</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
 
-                        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-lg">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLongTitle">Edit Nama Destinasi</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="form-group ">
-                                            <label for="namaPenginapan">Nama Destinasi</label>
-                                            <div class="d-flex justify-content-center">
-                                                <input type="text" id="namaPenginapan" name="namaPenginapan"
-                                                       class="form-control flex-grow-1 mr-2">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                                        <button type="button" class="btn btn-primary">Simpan</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <form id="formEdit" class="" method="post" onsubmit="return editData()">
+                    @csrf
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Edit Destinasi</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <input name="id" id="id" hidden>
+                        <input name="action" value="edit" hidden>
+                        <label style="" for="namaDestinasi">Nama Destinasi</label>
+                        <input type="text" id="namaDestinasi" required name="namaDestinasi"
+                               class="form-control flex-grow-1 mr-2">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Simpan</button>
+                    </div>
+                </form>
+
             </div>
         </div>
     </div>
@@ -130,6 +97,122 @@
 @endsection
 
 @section('script')
+    <script>
+        $(function () {
+            var table = $('#tabel').DataTable({
+                processing: true,
+                serverSide: true,
+                ajax: '/admin/destinasi/datatable',
+                "fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+                    // debugger;
+                    var numStart = this.fnPagingInfo().iStart;
+                    var index = numStart + iDisplayIndexFull + 1;
+                    // var index = iDisplayIndexFull + 1;
+                    $("td:first", nRow).html(index);
+                    return nRow;
+                },
+                columnDefs: [
+                    {"title": "#", "searchable": false, "orderable": false, "targets": 0,},
+                    {"title": "Nama", 'targets': 1, 'searchable': true, 'orderable': true},
+                    {"title": "Action", 'targets': 2, 'searchable': false, 'orderable': false},
 
+                ],
+                columns: [
+                    {
+                        "className": 'details-control',
+                        "orderable": false,
+                        "data": null,
+                        "defaultContent": ''
+                    },
+                    {data: 'nama', name: 'nama'},
+                    {
+                        "target": 2,
+                        "data": 'id',
+                        "width": '100',
+                        "render": function (data, type, row, meta) {
+                            return '<a href="#!" class="btn btn-sm btn-primary btn-sm" data-id="' + data + '" id="editData">Edit</a>' +
+                                '<a href="#!" class="btn btn-sm btn-danger btn-sm" data-id="' + data + '" id="deleteData">Delete</a>'
+                        }
+                    },
+                ]
+            });
+
+
+            $('#tabel tbody').on('click', 'a#editData', function () {
+                var data = table.row($(this).parents('tr')).data();
+                $('#modal #namaDestinasi').val(data['nama']);
+                $('#modal #id').val($(this).data('id'));
+                $('#modal').modal();
+            });
+
+            $('#tabel tbody').on('click', 'a#deleteData', function () {
+                var data = table.row($(this).parents('tr')).data();
+                var nama = data['nama'];
+                Swal.fire({
+                    title: 'Apa anda yakin untuk menghapus Destinasi ' + nama + ' ?',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Ya',
+                    cancelButtonText: 'Tidak'
+                }).then(async (result) => {
+                    if (result.value) {
+                        let data = {
+                            '_token': '{{csrf_token()}}',
+                        };
+                        let get = await $.post('/admin/destinasi/delete/' + $(this).data('id'), data);
+                        if (get['status'] == 200) {
+                            table.ajax.reload();
+                            Swal.fire({
+                                title: 'Success',
+                                text: 'Berhasil Menghapus Data Destinasi ' + nama,
+                                icon: 'success',
+                                confirmButtonText: 'Ok'
+                            })
+                        }
+                    }
+                })
+            });
+        });
+
+        function addData() {
+            Swal.fire({
+                title: 'Info',
+                text: "Apa anda yakin memasukkan data destinasi " + $('#namaDestinasi').val() + ' ?',
+                icon: 'info',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Tambah'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    document.getElementById('formAdd').submit();
+                }
+
+            });
+            return false;
+        }
+
+        function editData() {
+            Swal.fire({
+                title: 'Info',
+                text: "Apa anda yakin merubah data destinasi menjadi " + $('#modal #namaDestinasi').val() + ' ?',
+                icon: 'info',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Edit'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    document.getElementById('formEdit').submit();
+                }
+
+            });
+            return false;
+        }
+
+
+    </script>
 
 @endsection

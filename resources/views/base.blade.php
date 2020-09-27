@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap/bootstrap.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('assets/css/sukmatripuser.css')}}" type="text/css">
+
     <link rel="stylesheet" href="{{asset('assets/vendor/font-awesome-4.7.0/css/font-awesome.min.css')}}" type="text/css">
 
 @yield('moreCss')
@@ -67,6 +68,7 @@
 <!-- Argon Scripts -->
 <!-- Core -->
 <script src="{{asset('assets/vendor/jquery/dist/jquery.min.js')}}"></script>
+
 <script src="{{asset('assets/js/etc/feather.min.js')}}"></script>
 <script src="{{asset('assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
 <script src="{{asset('assets/js/page/global.js')}}"></script>

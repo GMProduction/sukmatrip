@@ -13,12 +13,17 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
     <!-- Icons -->
     <link rel="stylesheet" href="{{asset('assets/vendor/nucleo/css/nucleo.css')}}" type="text/css">
+
     <link rel="stylesheet" href="{{asset('assets/vendor/@fortawesome/fontawesome-free/css/all.min.css')}}" type="text/css">
     <!-- Page plugins -->
     <!-- Argon CSS -->
     <link rel="stylesheet" type="text/css" href="{{asset('assets/DataTables/datatables.min.css')}}"/>
     <link rel="stylesheet" href="{{asset('/assets/vendor/bootstrap/dist/css/bootstrap.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('/assets/DataTables/datatables.css')}}">
+
     <link rel="stylesheet" href="{{asset('/assets/css/argon.css?v=1.2.0')}}" type="text/css">
+    <script src="{{asset('assets/js/swal.min.js')}}"></script>
+
     @yield('morecss')
     <script src="https://unpkg.com/feather-icons"></script>
 </head>
@@ -193,7 +198,10 @@
 <!-- Argon Scripts -->
 <!-- Core -->
 <script src="{{asset('assets/vendor/jquery/dist/jquery.min.js')}}"></script>
+
 <script src="{{asset('assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{asset('assets/DataTables/datatables.min.js')}}"></script>
+
 <script src="{{asset('assets/vendor/js-cookie/js.cookie.js')}}"></script>
 <script src="{{asset('assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js')}}"></script>
 <script src="{{asset('assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js')}}"></script>
@@ -210,5 +218,19 @@
 @yield('script')
 
 </body>
-
+<script>
+    jQuery.fn.dataTableExt.oApi.fnPagingInfo = function (oSettings) {
+        return {
+            "iStart": oSettings._iDisplayStart,
+            "iEnd": oSettings.fnDisplayEnd(),
+            "iLength": oSettings._iDisplayLength,
+            "iTotal": oSettings.fnRecordsTotal(),
+            "iFilteredTotal": oSettings.fnRecordsDisplay(),
+            "iPage": oSettings._iDisplayLength === -1 ?
+                0 : Math.ceil(oSettings._iDisplayStart / oSettings._iDisplayLength),
+            "iTotalPages": oSettings._iDisplayLength === -1 ?
+                0 : Math.ceil(oSettings.fnRecordsDisplay() / oSettings._iDisplayLength)
+        };
+    };
+</script>
 </html>

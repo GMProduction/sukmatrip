@@ -29,27 +29,27 @@ Route::get('/detail', function () {
 Route::get('/login', function () {
     return view('login.login');
 });
+Route::post('/post-login', 'Auth\AuthController@login');
+
 
 //ADMIN
 Route::get('/admin', function () {
     return view('admin.dashboard');
 });
 
-Route::get('/admin/penginapan', function () {
-    return view('admin.penginapan.penginapan');
-});
 
-Route::get('/admin/tambahpenginapan', function () {
-    return view('admin.penginapan.tambahpenginapan');
-});
+Route::get('/admin/tambahpenginapan','PenginapanController@pageAdd');
+Route::post('/admin/tambahpenginapan','PenginapanController@pageAdd');
 
-Route::get('/admin/editpenginapan', function () {
-    return view('admin.penginapan.editpenginapan');
-});
+Route::get('/admin/penginapan/datatable', 'PenginapanController@datatable');
+Route::get('/admin/penginapan', 'PenginapanController@index');
+Route::post('/admin/penginapan', 'PenginapanController@index');
+Route::get('/admin/penginapan/edit/{id}', 'PenginapanController@edit');
+Route::post('/admin/penginapan/edit/{id}', 'PenginapanController@edit');
+Route::post('/admin/penginapan/delete/{id}', 'PenginapanController@delete');
 
-Route::get('/admin/tour', function () {
-    return view('admin.tour.tour');
-});
+Route::get('/admin/tour/datatable', 'TourController@datatable');
+Route::get('/admin/tour', 'TourController@index');
 
 Route::get('/admin/tambahtour', function () {
     return view('admin.tour.tambahtour');
@@ -87,9 +87,10 @@ Route::get('/admin/detailartikel', function () {
     return view('admin.artikel.detailartikel');
 });
 
-Route::get('/admin/destinasi', function () {
-    return view('admin.destinasi.destinasi');
-});
+Route::get('/admin/destinasi', 'DestinasiController@index');
+Route::post('/admin/destinasi', 'DestinasiController@index');
+Route::post('/admin/destinasi/delete/{id}', 'DestinasiController@delete');
+Route::get('/admin/destinasi/datatable', 'DestinasiController@datatable');
 
 Route::get('/admin/paket', function () {
     return view('admin.paket.paket');
@@ -113,3 +114,6 @@ Route::get('/admin/detailpaket', function () {
 Route::get('/admin/transaksi', function () {
     return view('admin.transaksi.transaksi');
 });
+
+
+Route::get('/logout', 'Auth\AuthController@logout');

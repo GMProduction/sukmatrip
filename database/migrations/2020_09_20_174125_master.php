@@ -19,6 +19,8 @@ class Master extends Migration
             function (Blueprint $table) {
                 $table->id();
                 $table->text('nama');
+                $table->timestamps();
+
             }
         );
 
@@ -32,6 +34,7 @@ class Master extends Migration
                 $table->bigInteger('id_destinasi')->unsigned();
                 $table->longText('deskripsi')->nullable(true);
                 $table->foreign('id_destinasi')->references('id')->on('destinasis');
+                $table->timestamps();
 
             }
         );
@@ -45,6 +48,7 @@ class Master extends Migration
                 $table->longText('deskripsi')->nullable(true);
                 $table->bigInteger('id_destinasi')->unsigned();
                 $table->foreign('id_destinasi')->references('id')->on('destinasis');
+                $table->timestamps();
 
             }
         );
@@ -59,6 +63,10 @@ class Master extends Migration
                 $table->longText('deskripsi')->nullable(true);
                 $table->bigInteger('id_tour')->unsigned();
                 $table->foreign('id_tour')->references('id')->on('tours');
+                $table->bigInteger('id_penginapan')->nullable(true)->unsigned();
+                $table->foreign('id_penginapan')->references('id')->on('penginapans');
+                $table->timestamps();
+
             }
         );
 
@@ -68,6 +76,8 @@ class Master extends Migration
                 $table->id();
                 $table->text('judul');
                 $table->longText('konten')->nullable(true);
+                $table->timestamps();
+
             }
         );
 
@@ -88,6 +98,8 @@ class Master extends Migration
         Schema::create('gallerys', function (Blueprint $table) {
             $table->id();
             $table->text('judul');
+            $table->timestamps();
+
         });
 
         Schema::create('images', function (Blueprint $table) {
@@ -96,6 +108,8 @@ class Master extends Migration
            $table->enum('tipe', ['penginapan', 'tour', 'paket', 'article'])->default('penginapan');
            $table->longText('url');
            $table->foreign('id_galery')->references('id')->on('gallerys');
+            $table->timestamps();
+
         });
 
         Schema::create('penginapan_to_images', function (Blueprint $table) {
@@ -105,6 +119,8 @@ class Master extends Migration
             $table->longText('url')->nullable(true);
             $table->foreign('id_penginapan')->references('id')->on('penginapans');
             $table->foreign('id_image')->references('id')->on('images');
+            $table->timestamps();
+
         });
 
         Schema::create('tour_to_images', function (Blueprint $table) {
@@ -114,6 +130,8 @@ class Master extends Migration
             $table->longText('url')->nullable(true);
             $table->foreign('id_tour')->references('id')->on('tours');
             $table->foreign('id_image')->references('id')->on('images');
+            $table->timestamps();
+
         });
 
         Schema::create('paket_to_images', function (Blueprint $table) {
@@ -123,6 +141,8 @@ class Master extends Migration
             $table->longText('url')->nullable(true);
             $table->foreign('id_paket')->references('id')->on('pakets');
             $table->foreign('id_image')->references('id')->on('images');
+            $table->timestamps();
+
         });
 
         Schema::create('article_to_images', function (Blueprint $table) {
@@ -132,6 +152,8 @@ class Master extends Migration
             $table->longText('url')->nullable(true);
             $table->foreign('id_article')->references('id')->on('articles');
             $table->foreign('id_image')->references('id')->on('images');
+            $table->timestamps();
+
         });
 
     }

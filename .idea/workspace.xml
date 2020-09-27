@@ -127,6 +127,7 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
       <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
       <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/vendor/yajra/laravel-datatables-oracle" />
     </include_path>
   </component>
   <component name="ProjectId" id="1hAdsoBgfthT38PGIEIq7OrvRa4" />
@@ -138,13 +139,20 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/assets/js" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\web\sukmatrip\app" />
       <recent name="C:\web\sukmatrip\public\assets\js" />
+      <recent name="C:\web\sukmatrip\app\Http\Controllers" />
+      <recent name="C:\web\sukmatrip\app" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner scope="XML" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -169,11 +177,26 @@
       <option name="presentableId" value="Default" />
       <updated>1599458039993</updated>
       <workItem from="1599458042034" duration="731000" />
-      <workItem from="1600621898402" duration="10001000" />
+      <workItem from="1600621898402" duration="10225000" />
+      <workItem from="1601095901620" duration="25166000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="627" y="227" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1601120449623">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="627" y="227" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050/1920.305.1360.738@0.0.1920.1050" timestamp="1601120449623" />
+    <state x="713" y="328" key="NewPhpClassDialog" timestamp="1601140673705">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="713" y="328" key="NewPhpClassDialog/0.0.1920.1050/1920.305.1360.738@0.0.1920.1050" timestamp="1601140673705" />
+    <state x="514" y="184" width="875" height="663" key="recent.locations.popup" timestamp="1601096449255">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="514" y="184" width="875" height="663" key="recent.locations.popup/0.0.1920.1050/1920.305.1360.738@0.0.1920.1050" timestamp="1601096449255" />
   </component>
 </project>
