@@ -2,8 +2,18 @@
 @section('morecss')
     <link rel="stylesheet" href="{{asset('assets/css/etc/basic.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('assets/css/etc/dropzone.css')}}" type="text/css">
-    @endsection
+@endsection
 @section('content')
+    @if(\Illuminate\Support\Facades\Session::has('success'))
+        <script>
+            Swal.fire({
+                title: 'Success',
+                text: 'Berhasil Merubah Data',
+                icon: 'success',
+                confirmButtonText: 'Ok'
+            })
+        </script>
+    @endif
 
     <!-- Header -->
     <div class="header bg-primary pb-6">
@@ -33,12 +43,12 @@
                 <div class="card">
 
                     <div class="card-body">
-                        <form action="/admin/penginapan/store" method="POST">
+                        <form method="POST">
                             @csrf
                             <h6 class="heading-small text-muted mb-4">Data</h6>
                             <div class="pl-lg-4">
                                 <div class="row">
-
+                                    <input name="id" value="{{$penginapan->id}}" hidden>
                                     <div class="col-6 col-md-6 col-sm-12">
                                         <div class="form-group">
                                             <label for="namaPenginapan">Nama Penginapan</label>
@@ -57,7 +67,7 @@
 
                                     <div class="col-6 col-md-6 col-sm-12">
                                         <div class="form-group">
-                                            <label  for="hargaPenginapan">Harga /malam</label>
+                                            <label for="hargaPenginapan">Harga /malam</label>
                                             <input type="number" id="hargaPenginapan" name="hargaPenginapan" value="{{$penginapan->harga}}"
                                                    class="form-control">
                                         </div>
@@ -76,14 +86,14 @@
                                     <div class="col-12">
                                         <div class="form-group">
                                             <label for="exampleFormControlTextarea1">Deskripsi</label>
-                                            <textarea class="form-control" id="deskripsiPenginapan" rows="3">{{$penginapan->deskripsi}}</textarea>
+                                            <textarea class="form-control" id="deskripsiPenginapan" name="deskripsiPenginapan" rows="3">{{$penginapan->deskripsi}}</textarea>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
                             <!-- Description -->
-                            <div class="col-12 text-right"id="myId">
+                            <div class="col-12 text-right" id="myId">
                                 <button type="button" class="btn btn-lg btn-danger" data-toggle="modal" data-target=".bd-example-modal-lg">Unggah Foto</button>
                                 <button type="submit" class="btn btn-lg btn-primary">Simpan</button>
                             </div>
@@ -149,7 +159,6 @@
             previewTemplate: previewTemplate,
         };
         $(document).ready(function () {
-
 
         })
     </script>

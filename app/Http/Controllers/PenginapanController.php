@@ -54,9 +54,21 @@ class PenginapanController extends CustomController
     /**
      * @param $id
      *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
      */
     public function edit($id){
+        if($this->request->isMethod('POST')){
+            $data = [
+                'nama' => $this->postField('namaPenginapan'),
+                'tipe' => $this->postField('tipePenginapan'),
+                'harga' => $this->postField('hargaPenginapan'),
+                'id_destinasi' => $this->postField('destinasi'),
+                'deskripsi' => $this->postField('deskripsiPenginapan'),
+            ] ;
+            $this->update(Penginapan::class, $data);
+            return redirect()->back()->with(['success' => 'success']);
+
+        }
         $data['penginapan'] = Penginapan::with(['destinasi'])->where('id',$id)->first();
         $data['destinasi'] = Destinasi::all();
 //        return $this->jsonResponse($data);
