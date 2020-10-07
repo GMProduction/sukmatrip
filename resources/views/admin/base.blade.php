@@ -20,7 +20,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets/DataTables/datatables.min.css')}}"/>
     <link rel="stylesheet" href="{{asset('/assets/vendor/bootstrap/dist/css/bootstrap.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('/assets/DataTables/datatables.css')}}">
-
+    <link rel="stylesheet" href="{{asset('/assets/vendor/dropify/css/dropify.css')}}">
     <link rel="stylesheet" href="{{asset('/assets/css/argon.css?v=1.2.0')}}" type="text/css">
     <script src="{{asset('assets/js/swal.min.js')}}"></script>
 
@@ -107,7 +107,7 @@
                 <!-- Navigation -->
                 <ul class="navbar-nav mb-md-3">
                     <li class="nav-item">
-                        <a class="nav-link" href="#" target="/logout">
+                        <a class="nav-link" href="/logout" target="">
                             <i class="text-red " data-feather="log-out"></i>
                             <span class="nav-link-text text-red" style="margin-left: 10px">keluar</span>
                         </a>
@@ -210,6 +210,9 @@
 <script src="{{asset('assets/vendor/chart.js/dist/Chart.extension.js')}}"></script>
 <!-- Argon JS -->
 <script src="{{asset('assets/js/argon.js?v=1.2.0')}}"></script>
+<script src="{{asset('/assets/vendor/dropify/js/dropify.js')}}"></script>
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/browser-image-compression@latest/dist/browser-image-compression.js"></script>
 <script src="{{asset('assets/js/componen.js')}}"></script>
 {{--<script type="text/javascript" src="{{asset('DataTables/datatables.min.js')}}"></script>--}}
 <script>

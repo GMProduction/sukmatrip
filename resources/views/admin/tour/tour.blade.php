@@ -17,7 +17,7 @@
                     </div>
 
                     <div class="col-lg-8 col-8 text-right">
-                        <a href="/admin/tambahtour" class="btn btn-md btn-neutral">Tambah</a>
+                        <a href="/admin/tour/add" class="btn btn-md btn-neutral">Tambah</a>
                     </div>
                 </div>
             </div>
@@ -36,7 +36,6 @@
                     <div class="table-responsive">
                         <table id="tabel" class="table align-items-center table-flush">
 
-                            </tbody>
                         </table>
                     </div>
                     <!-- Card footer -->

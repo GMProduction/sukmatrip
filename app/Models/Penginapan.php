@@ -24,6 +24,6 @@ class Penginapan extends Model
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function getImage(){
-        return $this->hasMany(Penginapan_to_image::class, 'id');
+        return $this->hasMany(Penginapan_to_image::class, 'id_penginapan');
     }
 }

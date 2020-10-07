@@ -101,6 +101,13 @@ class CustomController extends Controller
         return Storage::disk($disk)->put($targetName, File::get($file));
     }
 
+    public function uploadImageWatermark($targetName = ''){
+        $watermark = public_path('assets/img/brand/white.png');
+        $image_water = \Intervention\Image\Facades\Image::make($this->request->file('image'));
+        $image_water->insert($watermark, 'bottom-left', 5, 5);
+        $image_water->save(public_path('/uploads/images/'.$targetName));
+    }
+
     public function uuidGenerator()
     {
         return Uuid::uuid1()->toString();

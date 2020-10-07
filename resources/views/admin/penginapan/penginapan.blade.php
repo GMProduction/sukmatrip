@@ -17,7 +17,7 @@
                     </div>
 
                     <div class="col-lg-8 col-8 text-right">
-                        <a href="/admin/tambahpenginapan" class="btn btn-md btn-neutral">Tambah</a>
+                        <a href="/admin/penginapan/add" class="btn btn-md btn-neutral">Tambah</a>
                     </div>
                 </div>
             </div>

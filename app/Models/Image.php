@@ -19,34 +19,34 @@ class Image extends Model
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function gallery(){
-        return $this->belongsTo(Gallery::class, 'id_gallery');
+        return $this->belongsTo(Gallery::class, 'id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function penginapan(){
-        return $this->hasMany(Penginapan_to_image::class,'id');
+        return $this->hasMany(Penginapan_to_image::class,'id_image');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function tour(){
-        return $this->hasMany(Tour_to_image::class,'id');
+        return $this->hasMany(Tour_to_image::class,'id_image');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function paket(){
-        return $this->hasMany(Paket_to_image::class,'id');
+        return $this->hasMany(Paket_to_image::class,'id_image');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function article(){
-        return $this->hasMany(Article_to_image::class,'id');
+        return $this->hasMany(Article_to_image::class,'id_image');
     }
 }

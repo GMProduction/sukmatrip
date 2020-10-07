@@ -14,6 +14,6 @@ class Penginapan_to_image extends Model
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function image(){
-        return $this->belongsTo(Image::class,'id_image');
+        return $this->belongsTo(Image::class,'id');
     }
 }

@@ -12,6 +12,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/admin/get-penginapan', 'DashboardController@getPenginapan');
+Route::get('/admin/get-tour', 'DashboardController@getTour');
+Route::get('/admin/get-paket', 'DashboardController@getPaket');
 
 Route::get('/', function () {
     return view('beranda');
@@ -33,13 +36,14 @@ Route::post('/post-login', 'Auth\AuthController@login');
 
 
 //ADMIN
-Route::get('/admin', function () {
-    return view('admin.dashboard');
+Route::group(['middleware' => 'IfNotLogin' ], function (){
+    Route::get('/admin', 'DashboardController@index');
+
 });
 
 
-Route::get('/admin/tambahpenginapan','PenginapanController@pageAdd');
-Route::post('/admin/tambahpenginapan','PenginapanController@pageAdd');
+Route::get('/admin/penginapan/add','PenginapanController@pageAdd');
+Route::post('/admin/penginapan/add','PenginapanController@pageAdd');
 
 Route::get('/admin/penginapan/datatable', 'PenginapanController@datatable');
 Route::get('/admin/penginapan', 'PenginapanController@index');
@@ -50,42 +54,25 @@ Route::post('/admin/penginapan/delete/{id}', 'PenginapanController@delete');
 
 Route::get('/admin/tour/datatable', 'TourController@datatable');
 Route::get('/admin/tour', 'TourController@index');
+Route::get('/admin/tour/add', 'TourController@pageAdd');
+Route::post('/admin/tour/add', 'TourController@pageAdd');
+Route::get('/admin/tour/edit/{id}', 'TourController@pageEdit');
+Route::post('/admin/tour/edit/{id}', 'TourController@pageEdit');
 
-Route::get('/admin/tambahtour', function () {
-    return view('admin.tour.tambahtour');
-});
+Route::get('/admin/gallery/datatable', 'GalleryController@datatable');
+Route::get('/admin/gallery', 'GalleryController@index');
+Route::get('/admin/gallery/add', 'GalleryController@pageAdd');
+Route::post('/admin/gallery/add', 'GalleryController@pageAdd');
+Route::get('/admin/gallery/edit/{id}', 'GalleryController@pageedit');
+Route::post('/admin/gallery/edit/{id}', 'GalleryController@pageedit');
 
-Route::get('/admin/edittour', function () {
-    return view('admin.tour.edittour');
-});
-
-Route::get('/admin/gallery', function () {
-    return view('admin.gallery.gallery');
-});
-
-Route::get('/admin/tambahgallery', function () {
-    return view('admin.gallery.tambahgallery');
-});
-
-Route::get('/admin/editgallery', function () {
-    return view('admin.gallery.editgallery');
-});
-
-Route::get('/admin/artikel', function () {
-    return view('admin.artikel.artikel');
-});
-
-Route::get('/admin/tambahartikel', function () {
-    return view('admin.artikel.tambahartikel');
-});
-
-Route::get('/admin/editartikel', function () {
-    return view('admin.artikel.editartikel');
-});
-
-Route::get('/admin/detailartikel', function () {
-    return view('admin.artikel.detailartikel');
-});
+Route::get('/admin/artikel/datatable', 'ArticleController@datatable');
+Route::get('/admin/artikel', 'ArticleController@index');
+Route::get('/admin/artikel/add', 'ArticleController@pageAdd');
+Route::post('/admin/artikel/add', 'ArticleController@pageAdd');
+Route::get('/admin/artikel/edit/{id}', 'ArticleController@pageEdit');
+Route::post('/admin/artikel/edit/{id}', 'ArticleController@pageEdit');
+Route::get('/admin/artikel/detail/{id}', 'ArticleController@pageEdit');
 
 Route::get('/admin/destinasi', 'DestinasiController@index');
 Route::post('/admin/destinasi', 'DestinasiController@index');
