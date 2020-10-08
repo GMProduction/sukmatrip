@@ -16,9 +16,7 @@ Route::get('/admin/get-penginapan', 'DashboardController@getPenginapan');
 Route::get('/admin/get-tour', 'DashboardController@getTour');
 Route::get('/admin/get-paket', 'DashboardController@getPaket');
 
-Route::get('/', function () {
-    return view('beranda');
-});
+Route::get('/', 'Main\MainController@index');
 
 Route::get('/pencarian', function () {
     return view('pencarian');
