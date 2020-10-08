@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('beranda');
-});
+Route::get('/', 'Main\MainController@index');
 
 Route::get('/pencarian', function () {
     return view('pencarian');
