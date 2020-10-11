@@ -22,28 +22,28 @@
                         <div class="col-lg-4 col-md-12">
                             <label for="destinasi" class="text-white">Destination</label>
                             <select class="sukmatrip-form-control" id="destinasi" name="destinasi">
-                                <option class="sukmatrip-dropdown-item" value="hotel">All Destination</option>
-                                <option class="sukmatrip-dropdown-item" value="hotel">Bali</option>
-                                <option class="sukmatrip-dropdown-item" value="villa">Lombok</option>
+                                <option class="sukmatrip-dropdown-item" value="">All Destination</option>
+                                @foreach($destinations as $v)
+                                    <option class="sukmatrip-dropdown-item" value="{{ $v->id }}">{{ $v->nama }}</option>
+                                @endforeach
                             </select>
                         </div>
 
                         <div class="col-lg-4 col-md-12">
                             <label for="tipePenginapan" class="text-white">Category</label>
                             <select class="sukmatrip-form-control" id="tipePenginapan" name="tipePenginapan">
-                                <option class="dropdown-item" value="hotel">All Category</option>
-                                <option class="dropdown-item" value="hotel">Hotel</option>
-                                <option class="dropdown-item" value="villa">Villa</option>
+                                <option class="dropdown-item" value="">All Category</option>
+                                <option class="dropdown-item" value="Hotel">Hotel</option>
+                                <option class="dropdown-item" value="Villa">Villa</option>
                             </select>
                         </div>
 
                         <div class="col-lg-4 col-md-12">
                             <label for="durasi" class="text-white">Duration</label>
                             <select class="sukmatrip-form-control" id="durasi" name="durasi">
-                                <option class="dropdown-item" value="hotel">All Duration</option>
-                                <option class="dropdown-item" value="villa">3 Days 2 Nights</option>
-                                <option class="dropdown-item" value="villa">4 Days 3 Nights</option>
-                                <option class="dropdown-item" value="villa">5 Days 4 Nights</option>
+                                @foreach($durations as $duration)
+                                    <option class="dropdown-item" value="{{ $duration->id }}">{{ $duration->name }}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>

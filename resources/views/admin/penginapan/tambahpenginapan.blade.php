@@ -2,9 +2,18 @@
 @section('morecss')
     <link rel="stylesheet" href="{{asset('assets/css/etc/basic.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('assets/css/etc/dropzone.min.css')}}" type="text/css">
-    @endsection
+@endsection
 @section('content')
-
+    @if(\Illuminate\Support\Facades\Session::has('success'))
+        <script>
+            Swal.fire({
+                title: 'Success',
+                text: 'Berhasil Menyimpan Data',
+                icon: 'success',
+                confirmButtonText: 'Ok'
+            })
+        </script>
+    @endif
     <!-- Header -->
     <div class="header bg-primary pb-6">
         <div class="container-fluid">
@@ -15,7 +24,7 @@
                         <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                 <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                                <li class="breadcrumb-item"><a href="/mitra/penginapan">Data Penginapan</a></li>
+                                <li class="breadcrumb-item"><a href="/admin/penginapan">Data Penginapan</a></li>
                                 <li class="breadcrumb-item"><a href="#">Tambah Data</a></li>
                             </ol>
                         </nav>
@@ -33,7 +42,7 @@
                 <div class="card">
 
                     <div class="card-body">
-                        <form action="/mitra/penginapan/store" method="POST">
+                        <form action="" method="POST">
                             @csrf
                             <h6 class="heading-small text-muted mb-4">Data</h6>
                             <div class="pl-lg-4">
@@ -57,7 +66,7 @@
 
                                     <div class="col-6 col-md-6 col-sm-12">
                                         <div class="form-group">
-                                            <label  for="tebal">Harga /malam</label>
+                                            <label for="tebal">Harga /malam</label>
                                             <input type="number" id="hargaPenginapan" name="hargaPenginapan"
                                                    class="form-control">
                                         </div>
@@ -65,22 +74,25 @@
 
                                     <div class="form-group col-6 col-md-6 col-sm-12">
                                         <label for="bahanPenginapan">Destinasi</label>
-                                        <select class="form-control" id="tipePenginapan" name="tipePenginapan">
-                                            <option value="villa">Ambil data dari tabel destinasi</option>
+                                        <select class="form-control" id="destinasi" name="destinasi">
+                                            <option value="">Pilih Destinasi</option>
+                                            @foreach($destinasi as $p)
+                                                <option value="{{ $p->id }}">{{ $p->nama }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
 
                                     <div class="col-12">
                                         <div class="form-group">
                                             <label for="exampleFormControlTextarea1">Deskripsi</label>
-                                            <textarea class="form-control" id="deskripsiPenginapan" rows="3"></textarea>
+                                            <textarea class="form-control" name="deskripsiPenginapan" id="deskripsiPenginapan" rows="3"></textarea>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
                             <!-- Description -->
-                            <div class="col-12 text-right"id="myId">
+                            <div class="col-12 text-right" id="myId">
                                 <button type="button" class="btn btn-lg btn-danger" data-toggle="modal" data-target=".bd-example-modal-lg">Unggah Foto</button>
                                 <button type="submit" class="btn btn-lg btn-primary">Simpan</button>
                             </div>
@@ -120,12 +132,12 @@
 
 @section('script')
     <script src="{{asset('assets/js/etc/dropzone.min.js')}}"></script>
-{{--    <script src="{{asset('assets/js/etc/dropzone-amd-module.min.js')}}"></script>--}}
+    {{--    <script src="{{asset('assets/js/etc/dropzone-amd-module.min.js')}}"></script>--}}
 
     <script type="text/javascript">
-    Dropzone.options.dropzonePenginapan = {
-        acceptedFiles: ".png,.jpg,.gif,.bmp,.jpeg",
-        previewTemplate: previewTemplate,
-    }
+        Dropzone.options.dropzonePenginapan = {
+            acceptedFiles: ".png,.jpg,.gif,.bmp,.jpeg",
+            previewTemplate: previewTemplate,
+        }
     </script>
 @endsection

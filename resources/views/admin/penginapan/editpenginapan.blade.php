@@ -15,7 +15,7 @@
                         <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                 <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                                <li class="breadcrumb-item"><a href="/mitra/penginapan">Data Penginapan</a></li>
+                                <li class="breadcrumb-item"><a href="/admin/penginapan">Data Penginapan</a></li>
                                 <li class="breadcrumb-item"><a href="#">Edit Data</a></li>
                             </ol>
                         </nav>
@@ -33,7 +33,7 @@
                 <div class="card">
 
                     <div class="card-body">
-                        <form action="/mitra/penginapan/store" method="POST">
+                        <form action="/admin/penginapan/store" method="POST">
                             @csrf
                             <h6 class="heading-small text-muted mb-4">Data</h6>
                             <div class="pl-lg-4">
@@ -42,7 +42,7 @@
                                     <div class="col-6 col-md-6 col-sm-12">
                                         <div class="form-group">
                                             <label for="namaPenginapan">Nama Penginapan</label>
-                                            <input type="text" id="namaPenginapan" name="namaPenginapan"
+                                            <input type="text" id="namaPenginapan" name="namaPenginapan" value="{{$penginapan->nama}}"
                                                    class="form-control">
                                         </div>
                                     </div>
@@ -50,15 +50,15 @@
                                     <div class="form-group col-6 col-md-6 col-sm-12">
                                         <label for="tipePenginapan">Tipe Penginapan</label>
                                         <select class="form-control" id="tipePenginapan" name="tipePenginapan">
-                                            <option value="hotel">Hotel</option>
-                                            <option value="villa">Villa</option>
+                                            <option value="Hotel" {{$penginapan->tipe == 'Hotel' ? 'selected' : ''}}>Hotel</option>
+                                            <option value="Vila" {{$penginapan->tipe == 'Vila' ? 'selected' : ''}}>Vila</option>
                                         </select>
                                     </div>
 
                                     <div class="col-6 col-md-6 col-sm-12">
                                         <div class="form-group">
                                             <label  for="hargaPenginapan">Harga /malam</label>
-                                            <input type="number" id="hargaPenginapan" name="hargaPenginapan"
+                                            <input type="number" id="hargaPenginapan" name="hargaPenginapan" value="{{$penginapan->harga}}"
                                                    class="form-control">
                                         </div>
                                     </div>
@@ -66,14 +66,17 @@
                                     <div class="form-group col-6 col-md-6 col-sm-12">
                                         <label for="destinasi">Destinasi</label>
                                         <select class="form-control" id="destinasi" name="destinasi">
-                                            <option value="villa">Ambil data dari tabel destinasi</option>
+                                            <option value="">Pilih Destinasi</option>
+                                            @foreach($destinasi as $p)
+                                                <option value="{{ $p->id }}" {{$p->id == $penginapan->destinasi->id ? 'selected' : ''}} >{{ $p->nama }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
 
                                     <div class="col-12">
                                         <div class="form-group">
                                             <label for="exampleFormControlTextarea1">Deskripsi</label>
-                                            <textarea class="form-control" id="deskripsiPenginapan" rows="3"></textarea>
+                                            <textarea class="form-control" id="deskripsiPenginapan" rows="3">{{$penginapan->deskripsi}}</textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -144,6 +147,10 @@
         Dropzone.options.dropzonePenginapan = {
             acceptedFiles: ".png,.jpg,.gif,.bmp,.jpeg",
             previewTemplate: previewTemplate,
-        }
+        };
+        $(document).ready(function () {
+
+
+        })
     </script>
 @endsection
