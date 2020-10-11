@@ -34,7 +34,7 @@ class GalleryController extends CustomController
     }
 
     /**
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
      */
     public function pageAdd(){
         if ($this->request->isMethod('POST')){
@@ -54,7 +54,7 @@ class GalleryController extends CustomController
             return view('admin.gallery.tambahgallery');
 
         }
-        return view('admin.gallery.tambahgallery');
+        return redirect()->back()->with(['success' => 'success']);
     }
 
     /**

@@ -88,7 +88,9 @@
                 {data: 'nama', name: 'nama'},
                 {data: 'destinasi.nama', name: 'destinasi.nama'},
                 {data: 'tipe', name: 'tipe'},
-                {data: 'harga', name: 'harga'},
+                {data: 'harga', name: 'harga', 'render' : function (data) {
+                        return 'Rp. '+data.toLocaleString()
+                    }},
                 {data: 'deskripsi', name: 'deskripsi'},
                 {
                     "target": 2,

@@ -26,4 +26,11 @@ class Penginapan extends Model
     public function getImage(){
         return $this->hasMany(Penginapan_to_image::class, 'id_penginapan');
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function duration(){
+        return $this->belongsTo(Duration::class, 'id');
+    }
 }

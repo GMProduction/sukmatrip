@@ -4,7 +4,16 @@
     <link rel="stylesheet" href="{{asset('assets/css/etc/dropzone.css')}}" type="text/css">
 @endsection
 @section('content')
-
+    @if(\Illuminate\Support\Facades\Session::has('failed'))
+        <script>
+            Swal.fire({
+                title: 'Success',
+                text: 'Berhasil Edit data ',
+                icon: 'success',
+                confirmButtonText: 'Ok'
+            })
+        </script>
+    @endif
     <!-- Header -->
     <div class="header bg-primary pb-6">
         <div class="container-fluid">
@@ -15,7 +24,7 @@
                         <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                 <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                                <li class="breadcrumb-item"><a href="/mitra/tour">Data Tour</a></li>
+                                <li class="breadcrumb-item"><a href="/admin/tour">Data Tour</a></li>
                                 <li class="breadcrumb-item"><a href="#">Tambah Data</a></li>
                             </ol>
                         </nav>
@@ -33,7 +42,7 @@
                 <div class="card">
 
                     <div class="card-body">
-                        <form action="/mitra/tour/store" method="POST">
+                        <form id="formgallery" method="POST" enctype="multipart/form-data">
                             @csrf
                             <h6 class="heading-small text-muted mb-4">Data</h6>
                             <div class="pl-lg-4">
@@ -42,23 +51,41 @@
                                     <div class="col-6">
                                         <div class="form-group">
                                             <label for="namaTour">Nama Tour</label>
-                                            <input type="text" id="namaTour" name="namaTour"
+                                            <input type="text" id="namaTour" required name="namaTour"
                                                    class="form-control">
                                         </div>
                                     </div>
-
-                                    <div class="col-6">
+                                    <div class="form-group col-md-3 col-sm-12">
+                                        <label for="bahanPenginapan">Destinasi</label>
+                                        <select class="form-control" id="destinasi" required name="destinasi">
+                                            <option value="">Pilih Destinasi</option>
+                                            @foreach($destinasi as $p)
+                                                <option value="{{ $p->id }}">{{ $p->nama }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3 col-sm-12">
                                         <div class="form-group">
                                             <label  for="tebal">Harga /hari</label>
-                                            <input type="number" id="hargaTour" name="hargaTour"
-                                                   class="form-control">
+                                            <input type="text" id="hargaTour" required name="hargaTour"
+                                                   class="form-control price">
                                         </div>
                                     </div>
 
                                     <div class="col-12">
                                         <div class="form-group">
                                             <label for="exampleFormControlTextarea1">Deskripsi</label>
-                                            <textarea class="form-control" id="deskripsiTour" rows="3"></textarea>
+                                            <textarea class="form-control" id="deskripsiTour" required name="deskripsiTour" rows="3"></textarea>
+                                         </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <a>Foto</a>
+                                        <div class="">
+                                            <input type="file"  onchange="" id="image" class="image" data-min-height="10"
+                                                   data-height="150"
+                                                   accept="image/jpeg, image/jpg, image/png"
+                                                   data-allowed-file-extensions="jpg jpeg png"
+                                            />
                                         </div>
                                     </div>
 
@@ -68,7 +95,6 @@
                             <hr class="my-4"/>
                             <!-- Description -->
                             <div class="col-12 text-right">
-                                <button type="button" class="btn btn-lg btn-danger" data-toggle="modal" data-target=".bd-example-modal-lg">Unggah Foto</button>
                                 <button type="submit" class="btn btn-lg btn-primary">Simpan</button>
                             </div>
                         </form>
@@ -111,9 +137,74 @@
     <script src="{{asset('assets/js/etc/dropzone.min.js')}}"></script>
 
     <script type="text/javascript">
-        Dropzone.options.dropzoneTour = {
-            acceptedFiles: ".png,.jpg,.gif,.bmp,.jpeg",
-            previewTemplate: previewTemplate,
-        }
+        // Dropzone.options.dropzoneTour = {
+        //     acceptedFiles: ".png,.jpg,.gif,.bmp,.jpeg",
+        //     previewTemplate: previewTemplate,
+        // }
+
+        $(document).ready(function () {
+            currencyClass('price');
+            var fr = $('#formgallery');
+            fr.submit(async function (e) {
+                e.preventDefault(e);
+                var formData = new FormData(this);
+
+                Swal.fire({
+                    title: 'Apakah data yang anda masukkan sudah benar ?',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Ya',
+                    cancelButtonText: 'Tidak'
+                }).then(async (result) => {
+                    if (result.value) {
+                        if($('#image').val()) {
+                            let icon = await handleImageUpload($('#image'));
+
+                            formData.append('image', icon, icon.name);
+                        }
+                        console.log(formData);
+
+                        $.ajax({
+                            type: "POST",
+                            success: function (data) {
+                                if (data['status'] === 200){
+                                    Swal.fire({
+                                        title: 'Success',
+                                        text: 'Berhasil menambah data',
+                                        icon: 'success',
+                                        confirmButtonText: 'Ok'
+                                    }).then((result) => {
+                                        window.location = '/admin/tour';
+                                    })
+                                }
+                            },
+                            error: function (error) {
+                                console.log("LOG ERROR", error);
+                                // handle error
+                            },
+                            async: true,
+                            data: formData,
+                            cache: false,
+                            contentType: false,
+                            processData: false,
+                            timeout: 60000
+                        })
+                    }
+                });
+
+            });
+
+            $('.image').dropify({
+                defaultFile: '',
+                messages: {
+                    'default': 'Masukkan Foto Gallery',
+                    'replace': 'Drag and drop or click to replace',
+                    'remove': 'Remove',
+                    'error': 'Ooops, something wrong happended.'
+                }
+            });
+        })
     </script>
 @endsection

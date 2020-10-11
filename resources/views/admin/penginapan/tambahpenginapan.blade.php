@@ -59,16 +59,16 @@
                                     <div class="form-group col-6 col-md-6 col-sm-12">
                                         <label for="bahanPenginapan">Tipe Penginapan</label>
                                         <select class="form-control" id="tipePenginapan" name="tipePenginapan">
-                                            <option value="hotel">Hotel</option>
-                                            <option value="villa">Villa</option>
+                                            <option value="Hotel">Hotel</option>
+                                            <option value="Vila">Villa</option>
                                         </select>
                                     </div>
 
                                     <div class="col-6 col-md-6 col-sm-12">
                                         <div class="form-group">
                                             <label for="tebal">Harga /malam</label>
-                                            <input type="number" id="hargaPenginapan" name="hargaPenginapan"
-                                                   class="form-control">
+                                            <input type="text" id="hargaPenginapan" name="hargaPenginapan"
+                                                   class="form-control price">
                                         </div>
                                     </div>
 
@@ -108,14 +108,17 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <form id="dropzonePenginapan" action="{{route('dropzone.penginapan')}}" class="dropzone" enctype="multipart/form-data">
-
+                                        <form id="dropzonePenginapan" method="post" action="/admin/penginapan/add" class="dropzone" enctype="multipart/form-data">
                                             @csrf
+                                            <div class="fallback">
+                                                <input name="file" type="file" multiple />
+                                            </div>
                                         </form>
                                     </div>
                                     <div class="modal-footer">
+                                        <button type="submit" class="btn btn-primary" onclick="document.getElementById('dropzonePenginapan').submit()">Simpan</button>
+
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                                        <button type="button" class="btn btn-primary">Simpan</button>
                                     </div>
                                 </div>
                             </div>
@@ -135,6 +138,7 @@
     {{--    <script src="{{asset('assets/js/etc/dropzone-amd-module.min.js')}}"></script>--}}
 
     <script type="text/javascript">
+        currencyClass('price');
         Dropzone.options.dropzonePenginapan = {
             acceptedFiles: ".png,.jpg,.gif,.bmp,.jpeg",
             previewTemplate: previewTemplate,

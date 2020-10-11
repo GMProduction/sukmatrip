@@ -54,3 +54,15 @@ async function handleImageUpload(event)  {
     return data;
 
 }
+
+function currencyClass(field) {
+    $('.'+field).on({
+        keyup: function () {
+            formatCurrency($(this));
+        },
+        blur: function () {
+            formatCurrency($(this), "blur");
+        }
+    });
+
+}

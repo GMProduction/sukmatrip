@@ -17,7 +17,7 @@
                     </div>
 
                     <div class="col-lg-8 col-8 text-right">
-                        <a href="/admin/tambahpaket" class="btn btn-md btn-neutral">Tambah</a>
+                        <a href="/admin/paket/add" class="btn btn-md btn-neutral">Tambah</a>
                     </div>
                 </div>
             </div>
@@ -34,74 +34,12 @@
                     </div>
                     <!-- Light table -->
                     <div class="table-responsive">
-                        <table class="table align-items-center table-flush">
-                            <thead class="thead-light">
-                            <tr>
-                                <th scope="col" class="sort" data-sort="name">#</th>
-                                <th scope="col" class="sort" data-sort="budget">Nama Paket</th>
-                                <th scope="col" class="sort" data-sort="budget">Harga</th>
-                                <th scope="col" class="sort" data-sort="status">Durasi</th>
-                                <th scope="col" class="sort" data-sort="status">Foto</th>
-                                <th scope="col" class="sort" data-sort="status">Action</th>
-                            </tr>
-                            </thead>
-                            <tbody class="list">
-                            <tr>
+                        <table id="tabel" class="table align-items-center table-flush">
 
-                                <td class="budget">
-                                    1
-                                </td>
-
-                                <td class="budget">
-                                    <p>Paket Sini Vie Villa</p>
-                                </td>
-
-                                <td class="budget">
-                                    <p>Rp 1.987.600</p>
-                                </td>
-
-                                <td class="budget">
-                                    <p>2 hari / 1 malam</p>
-                                </td>
-
-                                <td class="budget">
-
-                                </td>
-
-                                <td>
-                                    <a href="/admin/editpaket" class="btn btn-sm btn-primary">Edit</a>
-                                    <a href="/admin/detailpaket" class="btn btn-sm btn-success">Detail</a>
-                                </td>
-                            </tr>
-                            </tbody>
                         </table>
                     </div>
                     <!-- Card footer -->
-                    <div class="card-footer py-4">
-                        <nav aria-label="...">
-                            <ul class="pagination justify-content-end mb-0">
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="#" tabindex="-1">
-                                        <i class="fas fa-angle-left"></i>
-                                        <span class="sr-only">Previous</span>
-                                    </a>
-                                </li>
-                                <li class="page-item active">
-                                    <a class="page-link" href="#">1</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">
-                                        <i class="fas fa-angle-right"></i>
-                                        <span class="sr-only">Next</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -110,6 +48,101 @@
 @endsection
 
 @section('script')
+    <script>
+        $(function () {
+            var table = $('#tabel').DataTable({
+                processing: true,
+                serverSide: true,
+                ajax: '/admin/paket/datatable',
+                "fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+                    // debugger;
+                    var numStart = this.fnPagingInfo().iStart;
+                    var index = numStart + iDisplayIndexFull + 1;
+                    // var index = iDisplayIndexFull + 1;
+                    $("td:first", nRow).html(index);
+                    return nRow;
+                },
+                columnDefs: [
+                    {"title": "#", "searchable": false, "orderable": false, "targets": 0,},
+                    {"title": "Nama Paket", 'targets': 1, 'searchable': true, 'orderable': true},
+                    {"title": "Penginapan", 'targets': 2, 'searchable': true, 'orderable': true},
+                    {"title": "Harga / hari", 'targets': 3, 'searchable': true, 'orderable': true},
+                    {"title": "Durasi", 'targets': 4, 'searchable': true, 'orderable': true},
+                    {"title": "Foto", 'targets': 5, 'searchable': true, 'orderable': true},
+                    {"title": "Action", 'targets': 6, 'searchable': false, 'orderable': false},
 
+                ],
+                columns: [
+                    {
+                        "className": 'details-control',
+                        "orderable": false,
+                        "data": null,
+                        "defaultContent": ''
+                    },
+                    {data: 'nama', name: 'nama'},
+                    {data: 'destinasi.nama', name: 'nama'},
+
+                    {
+                        data: 'harga','name': 'harga', 'render': function (data) {
+                            return 'Rp. '+data.toLocaleString()
+                        }
+                    },
+                    {data: 'deskripsi', name: 'deskripsi'},
+                    {
+                        "name": 'image',
+                        "data": 'image',
+                        "width": '100',
+                        "render": function (data, type, row, meta) {
+                            return '<img src="' + data + '" height="70"  />'
+                        }
+                    },
+                    {
+                        "data": 'id',
+                        "width": '100',
+                        "render": function (data, type, row, meta) {
+                            return '<a href="#!" class="btn btn-sm btn-primary btn-sm" data-id="' + data + '" id="editData">Edit</a>' +
+                                '<a href="#!" class="btn btn-sm btn-danger btn-sm" data-id="' + data + '" id="deleteData">Delete</a>'
+                        }
+                    },
+                ]
+            });
+
+            $('#tabel tbody').on('click', 'a#editData', function () {
+                var id = $(this).data('id');
+                var url = '/admin/tour/edit/' + id;
+                $(this).attr('href', url);
+            });
+
+            $('#tabel tbody').on('click', 'a#deleteData', function () {
+                var data = table.row($(this).parents('tr')).data();
+                var nama = data['nama'];
+                Swal.fire({
+                    title: 'Apa anda yakin untuk menghapus data tour ' + nama + ' ?',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Ya',
+                    cancelButtonText: 'Tidak'
+                }).then(async (result) => {
+                    if (result.value) {
+                        let data = {
+                            '_token': '{{csrf_token()}}',
+                        };
+                        let get = await $.post('/admin/tour/delete/' + $(this).data('id'), data);
+                        if (get['status'] == 200) {
+                            table.ajax.reload();
+                            Swal.fire({
+                                title: 'Success',
+                                text: 'Berhasil Menghapus Data tour ' + nama,
+                                icon: 'success',
+                                confirmButtonText: 'Ok'
+                            })
+                        }
+                    }
+                })
+            });
+        });
+    </script>
 
 @endsection

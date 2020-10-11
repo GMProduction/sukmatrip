@@ -213,6 +213,7 @@
 <script src="{{asset('/assets/vendor/dropify/js/dropify.js')}}"></script>
 <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/browser-image-compression@latest/dist/browser-image-compression.js"></script>
+<script src="{{asset('/assets/js/currency.js')}}"></script>
 <script src="{{asset('assets/js/componen.js')}}"></script>
 {{--<script type="text/javascript" src="{{asset('DataTables/datatables.min.js')}}"></script>--}}
 <script>

@@ -35,10 +35,11 @@ class PenginapanController extends CustomController
      */
     public function pageAdd(){
         if($this->request->isMethod('POST')){
+//            dump($this->request);die();
             $data = [
                'nama' => $this->postField('namaPenginapan'),
                'tipe' => $this->postField('tipePenginapan'),
-               'harga' => $this->postField('hargaPenginapan'),
+               'harga' => str_replace(',','',$this->postField('hargaPenginapan')),
                'id_destinasi' => $this->postField('destinasi'),
                'deskripsi' => $this->postField('deskripsiPenginapan'),
             ] ;

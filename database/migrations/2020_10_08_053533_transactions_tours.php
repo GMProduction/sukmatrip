@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 class TransactionsTours extends Migration
@@ -20,6 +21,8 @@ class TransactionsTours extends Migration
             $table->foreign('transaction_id')->references('id')->on('transactions');
             $table->foreign('tour_id')->references('id')->on('tours');
         });
+
+
     }
 
     /**

@@ -11,8 +11,8 @@ use Illuminate\Database\Eloquent\Model;
 class Duration extends Model
 {
     //
-    public function hotels()
+    public function penginapan()
     {
-    return $this->hasMany(Hotel::class, 'duration_id', 'id');
+    return $this->hasMany(Penginapan::class, 'duration_id', 'id');
     }
 }
