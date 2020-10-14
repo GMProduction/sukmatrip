@@ -570,7 +570,8 @@ hr {
     height: 1.5em;
     left: 2em;
     top: 1em;
-    color: transparent;
+    color: var(--accentColor)
+
 }
 
 .checkbox-gambar:not(:checked) + label .chec {
@@ -595,7 +596,7 @@ hr {
     height: 1.5em;
     left: 2em;
     top: 1em;
-    color: var(--accentColor)
+    color: transparent;
 }
 
 .checkbox-gambar:not(:checked) + label:hover {

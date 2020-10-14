@@ -22,7 +22,7 @@
                         <div class="col-lg-4 col-md-12">
                             <label for="destinasi" class="text-white">Destination</label>
                             <select class="sukmatrip-form-control" id="destinasi" name="destinasi">
-                                <option class="sukmatrip-dropdown-item" value="">All Destination</option>
+                                <option class="sukmatrip-dropdown-item" value="all">All Destination</option>
                                 @foreach($destinations as $v)
                                     <option class="sukmatrip-dropdown-item" value="{{ $v->id }}">{{ $v->nama }}</option>
                                 @endforeach
@@ -32,9 +32,9 @@
                         <div class="col-lg-4 col-md-12">
                             <label for="tipePenginapan" class="text-white">Category</label>
                             <select class="sukmatrip-form-control" id="tipePenginapan" name="tipePenginapan">
-                                <option class="dropdown-item" value="">All Category</option>
+                                <option class="dropdown-item" value="all">All Category</option>
                                 <option class="dropdown-item" value="Hotel">Hotel</option>
-                                <option class="dropdown-item" value="Villa">Villa</option>
+                                <option class="dropdown-item" value="Vila">Villa</option>
                             </select>
                         </div>
 
@@ -42,14 +42,15 @@
                             <label for="durasi" class="text-white">Duration</label>
                             <select class="sukmatrip-form-control" id="durasi" name="durasi">
                                 @foreach($durations as $duration)
-                                    <option class="dropdown-item" value="{{ $duration->id }}">{{ $duration->name }}</option>
+                                    <option class="dropdown-item"
+                                            value="{{ $duration->id }}">{{ $duration->name }}</option>
                                 @endforeach
                             </select>
                         </div>
                     </div>
                     <div class="row mt-5">
                         <div class="offset-lg-4 col-lg-4 col-md-12">
-                            <a class="d-block text-center" href="/pencarian#search">
+                            <a id="btn-search" class="d-block text-center" href="#">
                                 <div class="bt-search">
                                     <i data-feather="search" class="mr-2" style="width: 1.3rem; height: 1.3rem"></i>
                                     <p class="mb-0">Search</p>
@@ -82,21 +83,24 @@
         </div>
 
         <div class="row">
-            <div class="col-md-3 col-sm-12">
-                <a class="gen-card-produk">
-                    <img src="{{asset('assets/img/foto/sukmatrip1.png')}}">
-                    <div class="cover-black-bottom"></div>
-                    <div class="content">
-                        <p class="t-accent f08">PAKET SINI VIE VILLA</p>
-                        <hr style="width: 3em; border-color: white;" class="mb-2">
-                        <p class="text-white f18">Rp. 1.987.600</p>
-                        <div class="d-flex align-items-center justify-content-center">
-                            <i data-feather="clock" class="icons"></i>
-                            <p style="font-weight: 300;" class="text-white f10 mb-0">3 Day 2 Night</p>
+            @foreach($pakets as $paket)
+                <div class="col-md-3 col-sm-12">
+                    <a class="gen-card-produk">
+                        <img src="{{asset('assets/img/foto/sukmatrip1.png')}}">
+                        <div class="cover-black-bottom"></div>
+                        <div class="content">
+                            <p class="t-accent f08">{{ $paket->nama }}</p>
+                            <hr style="width: 3em; border-color: white;" class="mb-2">
+                            <p class="text-white f18">Rp. {{ number_format($paket->harga, 0, ',', '.') }}</p>
+                            <div class="d-flex align-items-center justify-content-center">
+                                <i data-feather="clock" class="icons"></i>
+                                <p style="font-weight: 300;"
+                                   class="text-white f10 mb-0">{{ $paket->penginapan->duration->name }}</p>
+                            </div>
                         </div>
-                    </div>
-                </a>
-            </div>
+                    </a>
+                </div>
+            @endforeach
         </div>
 
     </section>
@@ -208,5 +212,15 @@
             fade: true,
             cssEase: 'linear'
         });
+
+        $(document).ready(function () {
+            $('#btn-search').on('click', function (e) {
+                e.preventDefault();
+                let destionationId = $('#destinasi').val();
+                let type = $('#tipePenginapan').val();
+                let durationId = $('#durasi').val();
+                window.location.href = '/pencarian?destination=' + destionationId + '&type=' + type + '&duration=' + durationId;
+            });
+        })
     </script>
 @endsection
