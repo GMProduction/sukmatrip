@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c408fee2-992d-4e57-a9c7-51e5c76a2dd8" name="Default Changelist" comment="">
+    <list default="true" id="c408fee2-992d-4e57-a9c7-51e5c76a2dd8" name="Default Changelist" comment="env online">
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -199,7 +200,8 @@
       <workItem from="1600621471005" duration="653000" />
       <workItem from="1602439152810" duration="1096000" />
       <workItem from="1602521657182" duration="2491000" />
-      <workItem from="1602612468281" duration="1225000" />
+      <workItem from="1602612468281" duration="2633000" />
+      <workItem from="1602698535715" duration="665000" />
     </task>
     <task id="LOCAL-00001" summary="push">
       <created>1598895826535</created>
@@ -278,7 +280,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602614043871</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="env online">
+      <created>1602614254918</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1602614254918</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -291,17 +300,18 @@
     <MESSAGE value="landing page 90% tampilane" />
     <MESSAGE value="detail oke" />
     <MESSAGE value="ignore idea" />
-    <option name="LAST_COMMIT_MESSAGE" value="ignore idea" />
+    <MESSAGE value="env online" />
+    <option name="LAST_COMMIT_MESSAGE" value="env online" />
   </component>
   <component name="WindowStateProjectService">
     <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599411882516">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1599411882516" />
-    <state x="306" y="0" key="CommitChangelistDialog2" timestamp="1602614042630">
+    <state x="306" y="0" key="CommitChangelistDialog2" timestamp="1602699411236">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="306" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1602614042630" />
+    <state x="306" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1602699411236" />
     <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1598813283126">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -314,10 +324,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1602439459463" />
-    <state x="359" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1602612640908">
+    <state x="359" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1602699265599">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="359" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1602612640908" />
+    <state x="359" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1602699265599" />
     <state x="339" y="162" key="run.anything.popup" timestamp="1600104212485">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
