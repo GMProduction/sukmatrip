@@ -64,7 +64,8 @@
 
         </div>
         <p class="text-center f26">It's Time to <a class="t-accent">Travel</a></p>
-        <p style="font-weight: 300; color: #636363;" class="text-center f14 container" id="search">Take a look at the most exclusive & most visited locations in the world
+        <p style="font-weight: 300; color: #636363;" class="text-center f14 container" id="search">Take a look at the
+            most exclusive & most visited locations in the world
             - hand-picked just for you. Start traveling the world today!</p>
 
     </section>
@@ -75,58 +76,74 @@
             <hr class="mb-2" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">
         </div>
 
-        <div class="row">
+        <div class="row" id="panel-product">
+            @foreach($products as $v)
             <div class="col-md-3 col-sm-12">
-                <a class="gen-card-produk">
+                <a class="gen-card-produk" href="/detail/{{ $v->id }}">
                     <img src="{{asset('assets/img/foto/sukmatrip1.png')}}">
                     <div class="cover-black-bottom"></div>
                     <div class="content">
-                        <p class="text-white f12">SINI VIE VILLA</p>
+                        <p class="text-white f12">{{ $v->nama }}</p>
                         <hr style="width: 3em; border-color: white;" class="mb-2">
                     </div>
                 </a>
             </div>
-            <div class="col-md-3 col-sm-12">
-                <a class="gen-card-produk">
-                    <img src="{{asset('assets/img/foto/sukmatrip1.png')}}">
-                    <div class="cover-black-bottom"></div>
-                    <div class="content">
-                        <p class="text-white f12">SINI VIE VILLA</p>
-                        <hr style="width: 3em; border-color: white;" class="mb-2">
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-12">
-                <a class="gen-card-produk">
-                    <img src="{{asset('assets/img/foto/sukmatrip1.png')}}">
-                    <div class="cover-black-bottom"></div>
-                    <div class="content">
-                        <p class="text-white f12">SINI VIE VILLA</p>
-                        <hr style="width: 3em; border-color: white;" class="mb-2">
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-12">
-                <a class="gen-card-produk">
-                    <img src="{{asset('assets/img/foto/sukmatrip1.png')}}">
-                    <div class="cover-black-bottom"></div>
-                    <div class="content">
-                        <p class="text-white f12">SINI VIE VILLA</p>
-                        <hr style="width: 3em; border-color: white;" class="mb-2">
-                    </div>
-                </a>
-            </div>
+            @endforeach
         </div>
 
-        <div class="text-center mt-4 mb-5">
-            <a  class="bt-outline-primary f10" href="#">LOAD MORE</a>
-        </div>
+{{--        <div class="text-center mt-4 mb-5">--}}
+{{--            <a class="bt-outline-primary f10" href="#">LOAD MORE</a>--}}
+{{--        </div>--}}
     </section>
 
 
 @endsection
 
 @section('script')
+    <script>
+        async function getProducts(destination, type, duration) {
+            let el = $('#panel-product');
+            let param = {destination, type, duration};
+            el.empty();
+            el.append('<div class="spinner-border text-info" role="status">\n' +
+                '  <span class="sr-only">Loading...</span>\n' +
+                '</div>')
+            let response = await $.get('/ajax-search-products', param);
+            if (response['status'] === 200) {
+                el.empty();
+                $.each(response['payload'], function (k, v) {
+                    let {nama, id} = v;
+                    let content = '<div class="col-md-3 col-sm-12 panel-target" >' +
+                        '<a class="gen-card-produk" data-id="' + id + '">' +
+                        '<img src="assets/img/foto/sukmatrip1.png">' +
+                        '<div class="cover-black-bottom"></div>' +
+                        '<div class="content">' +
+                        '<p class="text-white f12">' + nama + '</p>' +
+                        '<hr style="width: 3em; border-color: white;" class="mb-2">' +
+                        '</div>' +
+                        '</a>' +
+                        '</div>';
+                    el.append(
+                        content
+                    )
+                })
+                $('.gen-card-produk').on('click', function () {
+                    let id = this.dataset.id;
+                    window.location.href = '/detail/' + id;
+                })
 
+            } else {
+                alert('Failed To Load Products!')
+            }
+            console.log(response);
+        }
+
+        $(document).ready(function () {
+            {{--let destination = '{{ request()->get('destination') }}';--}}
+            {{--let type = '{{ request()->get('type') }}';--}}
+            {{--let duration = '{{ request()->get('duration') }}';--}}
+            {{--getProducts(destination, type, duration);--}}
+        });
+    </script>
 
 @endsection

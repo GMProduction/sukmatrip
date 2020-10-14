@@ -18,13 +18,11 @@ Route::get('/admin/get-paket', 'DashboardController@getPaket');
 
 Route::get('/', 'Main\MainController@index');
 
-Route::get('/pencarian', function () {
-    return view('pencarian');
-});
+Route::get('/pencarian', 'Main\MainController@search');
+Route::get('/ajax-search-products', 'Main\MainController@ajaxSearch');
 
-Route::get('/detail', function () {
-    return view('detail');
-});
+Route::get('/detail/{id}', 'Main\MainController@detail');
+Route::post('/transaction-submit', 'Main\TransactionController@saveTransaction');
 
 //LOGIN
 Route::get('/login', function () {

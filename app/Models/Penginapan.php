@@ -33,4 +33,12 @@ class Penginapan extends Model
     public function duration(){
         return $this->belongsTo(Duration::class, 'duration_id');
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function duration()
+    {
+        return $this->belongsTo(Duration::class, 'duration_id');
+    }
 }
