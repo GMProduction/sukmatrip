@@ -17,7 +17,7 @@
                     </div>
 
                     <div class="col-lg-8 col-8 text-right">
-                        <a href="/admin/paket/add" class="btn btn-md btn-neutral">Tambah</a>
+                        <a href="/admin/durasi/add" class="btn btn-md btn-neutral">Tambah</a>
                     </div>
                 </div>
             </div>
@@ -30,7 +30,7 @@
                 <div class="card">
                     <!-- Card header -->
                     <div class="card-header border-0">
-                        <h3 class="mb-0">Tabel Paket</h3>
+                        <h3 class="mb-0">Tabel Durasi</h3>
                     </div>
                     <!-- Light table -->
                     <div class="table-responsive">
@@ -53,7 +53,7 @@
             var table = $('#tabel').DataTable({
                 processing: true,
                 serverSide: true,
-                ajax: '/admin/paket/datatable',
+                ajax: '/admin/durasi/datatable',
                 "fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
                     // debugger;
                     var numStart = this.fnPagingInfo().iStart;
@@ -64,13 +64,10 @@
                 },
                 columnDefs: [
                     {"title": "#", "searchable": false, "orderable": false, "targets": 0,},
-                    {"title": "Nama Paket", 'targets': 1, 'searchable': true, 'orderable': true},
-                    {"title": "Destinasi", 'targets': 2, 'searchable': true, 'orderable': true},
-                    {"title": "Penginapan", 'targets': 3, 'searchable': true, 'orderable': true},
-                    {"title": "Harga / hari", 'targets': 4, 'searchable': true, 'orderable': true},
-                    {"title": "Durasi", 'targets': 5, 'searchable': true, 'orderable': true},
-                    {"title": "Foto", 'targets': 6, 'searchable': true, 'orderable': true},
-                    {"title": "Action", 'targets': 7, 'searchable': false, 'orderable': false},
+                    {"title": "Nama", 'targets': 1, 'searchable': true, 'orderable': true},
+                    {"title": "Durasi ( Hari )", 'targets': 2, 'searchable': true, 'orderable': true},
+                    {"title": "Jumlah Trip", 'targets': 3, 'searchable': true, 'orderable': true},
+                    {"title": "Action", 'targets': 4, 'searchable': false, 'orderable': false},
 
                 ],
                 columns: [
@@ -80,24 +77,9 @@
                         "data": null,
                         "defaultContent": ''
                     },
-                    {data: 'nama', name: 'nama'},
-                    {data: 'penginapan.destinasi.nama', name: 'destinasi'},
-                    {data: 'penginapan.nama', name: 'nama'},
-
-                    {
-                        data: 'harga','name': 'harga', 'render': function (data) {
-                            return 'Rp. '+data.toLocaleString()
-                        }
-                    },
-                    {data: 'penginapan.duration.name', name: 'duration'},
-                    {
-                        "name": 'image',
-                        "data": 'get_image[0].image.url',
-                        "width": '100',
-                        "render": function (data, type, row, meta) {
-                            return '<img src="' + data + '" height="70"  />'
-                        }
-                    },
+                    {data: 'name', name: 'nama'},
+                    {data: 'duration', name: 'duration'},
+                    {data: 'qty_trip', name: 'qty_trip'},
                     {
                         "data": 'id',
                         "width": '100',
@@ -111,7 +93,7 @@
 
             $('#tabel tbody').on('click', 'a#editData', function () {
                 var id = $(this).data('id');
-                var url = '/admin/paket/edit/' + id;
+                var url = '/admin/durasi/edit/' + id;
                 $(this).attr('href', url);
             });
 
@@ -119,7 +101,7 @@
                 var data = table.row($(this).parents('tr')).data();
                 var nama = data['nama'];
                 Swal.fire({
-                    title: 'Apa anda yakin untuk menghapus data paket ' + nama + ' ?',
+                    title: 'Apa anda yakin untuk menghapus data tour ' + nama + ' ?',
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
@@ -131,12 +113,12 @@
                         let data = {
                             '_token': '{{csrf_token()}}',
                         };
-                        let get = await $.post('/admin/paket/delete/' + $(this).data('id'), data);
+                        let get = await $.post('/admin/durasi/delete/' + $(this).data('id'), data);
                         if (get['status'] == 200) {
                             table.ajax.reload();
                             Swal.fire({
                                 title: 'Success',
-                                text: 'Berhasil Menghapus Data paket ' + nama,
+                                text: 'Berhasil Menghapus Data durasi ' + nama,
                                 icon: 'success',
                                 confirmButtonText: 'Ok'
                             })

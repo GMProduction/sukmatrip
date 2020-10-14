@@ -84,16 +84,17 @@ class TourController extends CustomController
                 ];
 
                 if ($this->request->hasFile('image')) {
-                    $image = $this->generateImageName('screenshot');
-                    $data  = Arr::add($tour, 'images', $image);
+                    $image = $this->generateImageName('image');
+                    $tour  = Arr::add($tour, 'image', '/uploads/images/'.$image);
                     $this->uploadImageWatermark($image);
+                    unlink('../public'.$data['tour']->image);
                 }
                 $this->update(Tour::class, $tour);
 
 //                return redirect()->back()->with(['success' => 'success']);
                 return $this->jsonResponse('success', 200);
             }catch (\Exception $er) {
-                return $this->jsonResponse('error '.$er, 500);
+                return $this->jsonResponse('error '.$er->getMessage(), 500);
 
             }
 

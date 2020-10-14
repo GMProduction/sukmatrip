@@ -42,4 +42,11 @@ class Paket extends Model
     public function getImage(){
         return $this->hasMany(Paket_to_image::class, 'id_paket');
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function paketTour(){
+        return $this->hasMany(Pakets_tour::class, 'paket_id');
+    }
 }

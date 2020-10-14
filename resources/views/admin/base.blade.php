@@ -55,7 +55,12 @@
                             <span class="nav-link-text" style="margin-left: 10px">Destinasi</span>
                         </a>
                     </li>
-
+                    <li class="nav-item">
+                        <a class="nav-link " id="durasi" href="/admin/durasi">
+                            <i class="ni ni-pin-3"></i>
+                            <span class="nav-link-text" style="margin-left: 10px">Durasi</span>
+                        </a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" id="penginapan" href="/admin/penginapan">
                             <i class="ni ni-building"></i>
@@ -137,13 +142,13 @@
                                 <div class="row align-items-center">
                                     <div class="col-auto">
                                         <!-- Avatar -->
-                                        <img alt="Image placeholder" src="../assets/img/theme/team-1.jpg"
+                                        <img alt="Image placeholder" src="{{asset('/assets/img/theme/team-4.png')}}"
                                              class="avatar rounded-circle">
                                     </div>
                                     <div class="col ml--2">
                                         <div class="d-flex justify-content-between align-items-center">
                                             <div>
-                                                <h4 class="mb-0 text-sm">John Snow</h4>
+                                                <h4 class="mb-0 text-sm">{{auth()->user()->username}}</h4>
                                             </div>
                                         </div>
                                     </div>
@@ -158,10 +163,10 @@
                            aria-expanded="false">
                             <div class="media align-items-center">
                   <span class="avatar avatar-sm rounded-circle">
-                    <img alt="Image placeholder" src="../assets/img/theme/team-4.png">
+                    <img alt="Image placeholder" src="{{asset('/assets/img/theme/team-4.png')}}">
                   </span>
                                 <div class="media-body  ml-2  d-none d-lg-block">
-                                    <span class="mb-0 text-sm  font-weight-bold">John Snow</span>
+                                    <span class="mb-0 text-sm  font-weight-bold">{{auth()->user()->username}}</span>
                                 </div>
                             </div>
                         </a>

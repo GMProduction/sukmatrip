@@ -123,7 +123,7 @@
                         '_token': '{{csrf_token()}}',
                     };
                     let get = await $.post('/admin/gallery/delete/' + $(this).data('id'), data);
-                    if (get['status'] == 200) {
+                    if (get['status'] === 200) {
                         table.ajax.reload();
                         Swal.fire({
                             title: 'Success',

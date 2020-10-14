@@ -87,6 +87,7 @@
                             <hr class="my-4"/>
                             <!-- Description -->
                             <div class="col-12 text-right">
+                                <a href="/admin/tour" type="submit" class="btn btn-lg btn-danger">Cancel</a>
                                 <button type="submit" class="btn btn-lg btn-primary">Simpan</button>
                             </div>
                         </form>

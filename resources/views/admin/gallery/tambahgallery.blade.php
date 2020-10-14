@@ -1,6 +1,15 @@
 @extends('admin.base')
 @section('content')
-
+    @if(\Illuminate\Support\Facades\Session::has('failed'))
+        <script>
+            Swal.fire({
+                title: 'Success',
+                text: 'Berhasil Menambah data ',
+                icon: 'success',
+                confirmButtonText: 'Ok'
+            })
+        </script>
+    @endif
     <!-- Header -->
     <div class="header bg-primary pb-6">
         <div class="container-fluid">
@@ -61,6 +70,7 @@
                             <hr class="my-4"/>
                             <!-- Description -->
                             <div class="col-12 text-right">
+                                <a href="/admin/gallery" type="submit" class="btn btn-lg btn-danger">Cancel</a>
                                 <button type="submit" class="btn btn-lg btn-primary">Simpan</button>
                             </div>
                         </form>
@@ -105,7 +115,16 @@
                     $.ajax({
                         type: "POST",
                         success: function (data) {
-                            window.location.reload();
+                            if (data['status'] === 200){
+                                Swal.fire({
+                                    title: 'Success',
+                                    text: 'Berhasil menambah data',
+                                    icon: 'success',
+                                    confirmButtonText: 'Ok'
+                                }).then((result) => {
+                                    window.location = '/admin/gallery';
+                                })
+                            }
                         },
                         error: function (error) {
                             console.log("LOG ERROR", error);

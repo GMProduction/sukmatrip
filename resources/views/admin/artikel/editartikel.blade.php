@@ -53,6 +53,7 @@
 
                                     <div class="col-lg-12">
                                         <a>Gambar</a>
+                                        <input name="idImg" value="{{$artikel->getImage[0]->image->id}}" hidden>
                                         <div class="">
                                             <input type="file" onchange="" id="image" class="image" data-min-height="10"
                                                    data-height="150"
@@ -113,7 +114,16 @@
                         $.ajax({
                             type: "POST",
                             success: function (data) {
-                                // window.location.reload();
+                                if (data['status'] === 200){
+                                    Swal.fire({
+                                        title: 'Success',
+                                        text: 'Berhasil menambah data',
+                                        icon: 'success',
+                                        confirmButtonText: 'Ok'
+                                    }).then((result) => {
+                                        window.location = '/admin/artikel';
+                                    })
+                                }
                             },
                             error: function (error) {
                                 console.log("LOG ERROR", error);
