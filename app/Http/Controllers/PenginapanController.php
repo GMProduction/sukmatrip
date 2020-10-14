@@ -84,9 +84,11 @@ class PenginapanController extends CustomController
             return redirect()->back()->with(['success' => 'success']);
 
         }
-        $data['penginapan'] = Penginapan::with(['destinasi','getImage.image'])->where('id', $id)->first();
+        $data['penginapan'] = Penginapan::with(['destinasi','duration','getImage.image'])->where('id', $id)->first();
         $data['destinasi']  = Destinasi::all();
-//        return  $this->jsonResponse($data['penginapan']);
+        $data['durasi']    = Duration::all();
+
+//        return  $this->jsonResponse($data);
 
 //        return $this->jsonResponse($data);
         return view('admin.penginapan.editpenginapan')->with($data);

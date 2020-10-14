@@ -64,8 +64,16 @@
                                             <option value="Vila" {{$penginapan->tipe == 'Vila' ? 'selected' : ''}}>Vila</option>
                                         </select>
                                     </div>
-
-                                    <div class="col-6 col-md-6 col-sm-12">
+                                    <div class="form-group col-3 col-md-3 col-sm-12">
+                                        <label for="bahanPenginapan">Durasi</label>
+                                        <select class="form-control" id="durasi" name="durasi">
+                                            <option value="">Pilih Durasi</option>
+                                            @foreach($durasi as $p)
+                                                <option value="{{ $p->id }}" {{$p->id == $penginapan->duration->id ? 'selected' : ''}} >{{ $p->name }} ({{$p->qty_trip }} Tour)</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="col-3 col-md-3 col-sm-12">
                                         <div class="form-group">
                                             <label for="hargaPenginapan">Harga /malam</label>
                                             <input type="number" id="hargaPenginapan" name="hargaPenginapan" value="{{$penginapan->harga}}"
@@ -82,7 +90,12 @@
                                             @endforeach
                                         </select>
                                     </div>
-
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label for="exampleFormControlTextarea1">Lokasi</label>
+                                            <textarea class="form-control" name="lokasi" id="lokasi" rows="3"></textarea>
+                                        </div>
+                                    </div>
                                     <div class="col-12">
                                         <div class="form-group">
                                             <label for="exampleFormControlTextarea1">Deskripsi</label>
@@ -98,11 +111,11 @@
                                 <button type="submit" class="btn btn-lg btn-primary">Simpan</button>
                             </div>
                         </form>
-                        @foreach($penginapan->getImage as $img)
-                            {{dump($img->image->image)}}
-                        @endforeach
+{{--                        @foreach($penginapan->getImage as $img)--}}
+{{--                            {{dump($img->image->image)}}--}}
+{{--                        @endforeach--}}
 {{--                        {{$penginapan->getImage}}--}}
-                        <h6 class="heading-small text-muted mb-4">Masukkan Foto</h6>
+                        <h6 class="heading-small text-muted mb-4">Data Foto</h6>
                         <div class="pl-lg-4">
                             <form id="formImg" action="/admin/penginapan/addImg" method="post" class="dropzone mb-2" enctype="multipart/form-data" style="border-radius: 10px">
                                 @csrf

@@ -90,7 +90,12 @@
                                             @endforeach
                                         </select>
                                     </div>
-
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label for="exampleFormControlTextarea1">Lokasi</label>
+                                            <textarea class="form-control" name="lokasi" id="lokasi" rows="3"></textarea>
+                                        </div>
+                                    </div>
                                     <div class="col-12">
                                         <div class="form-group">
                                             <label for="exampleFormControlTextarea1">Deskripsi</label>
