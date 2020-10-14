@@ -88,6 +88,7 @@
                     url: '/admin/penginapan/addImg',
                     data: {name: name, idImg: idImg, request: 2, '_token': '{{csrf_token()}}',},
                     sucess: function (data) {
+                        console.log('success: ' + data);
                     }
                 });
                 var _ref;

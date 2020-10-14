@@ -193,9 +193,22 @@ class PaketController extends CustomController
     public function delete($id)
     {
         try {
+            $img = Paket_to_image::all()->where('id_paket','=',$id);
+
             DB::delete('delete from pakets_tours where paket_id = ?', [$id]);
 
             DB::delete('delete from paket_to_images where id_paket = ?', [$id]);
+
+            foreach ($img as $key => $i){
+                $url = Image::all()->where('id','=', $i->id_image)->first();
+                $data['image'][$key] = $url->url;
+                Image::destroy($i->id_image);
+            }
+
+            foreach ($data['image'] as $im){
+//                dump($im);
+                unlink('../public'.$im);
+            }
 
             Paket::destroy($id);
 
