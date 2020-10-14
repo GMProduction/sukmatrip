@@ -114,7 +114,9 @@ class PenginapanController extends CustomController
                 $idImg = $this->request->get('idImg');
                 DB::delete('delete from penginapan_to_images where id_image = ?', [$idImg]);
                 Image::destroy($idImg);
-                unlink('../public'.$img);
+                if (file_exists('../public'.$img)){
+                    unlink('../public'.$img);
+                }
                 $respon = 'Success';
             } else {
                 $image     = $this->generateImageName('file');
@@ -167,7 +169,10 @@ class PenginapanController extends CustomController
 
             foreach ($data['image'] as $im){
 //                dump($im);
-                unlink('../public'.$im);
+                if (file_exists('../public'.$im)){
+                    unlink('../public'.$im);
+                }
+
             }
 //            die();
 

@@ -95,7 +95,9 @@ class GalleryController extends CustomController
                         'url' => '/uploads/images/'.$image,
                     ];
                     $this->uploadImageWatermark($image);
-                    unlink('../public'.$img);
+                    if (file_exists('../public'.$img)) {
+                        unlink('../public'.$img);
+                    }
 
                     $this->updateOther(Image::class, $dataImage);
 

@@ -27,41 +27,44 @@ class ArticleController extends CustomController
      * @return mixed
      * @throws \Exception
      */
-    public function datatable(){
+    public function datatable()
+    {
         return DataTables::of(Article::with(['getImage.image']))->make(true);
     }
 
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function index(){
+    public function index()
+    {
         return view('admin.artikel.artikel');
     }
 
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\JsonResponse|\Illuminate\View\View
      */
-    public function pageAdd(){
-        if ($this->request->isMethod('POST')){
+    public function pageAdd()
+    {
+        if ($this->request->isMethod('POST')) {
             try {
-                $image = $this->generateImageName('image');
-                $data = [
-                    'judul' => $this->postField('judulArtikel'),
-                    'konten' => $this->postField('kontenArtikel')
+                $image      = $this->generateImageName('image');
+                $data       = [
+                    'judul'  => $this->postField('judulArtikel'),
+                    'konten' => $this->postField('kontenArtikel'),
                 ];
-                $dataImg = [
+                $dataImg    = [
                     'tipe' => 'article',
-                    'url' => '/uploads/images/'.$image
+                    'url'  => '/uploads/images/'.$image,
                 ];
-                $artikel = $this->insert(Article::class,$data);
-                $imageAr = $this->insert(Image::class, $dataImg);
+                $artikel    = $this->insert(Article::class, $data);
+                $imageAr    = $this->insert(Image::class, $dataImg);
                 $artikleImg = [
                     'id_article' => $artikel->id,
-                    'id_image' => $imageAr->id
+                    'id_image'   => $imageAr->id,
                 ];
                 $this->uploadImageWatermark($image);
 
-                $this->insert(Article_to_image::class,$artikleImg);
+                $this->insert(Article_to_image::class, $artikleImg);
 
                 return $this->jsonResponse('success', 200);
             } catch (\Exception $er) {
@@ -69,6 +72,7 @@ class ArticleController extends CustomController
 
             }
         }
+
         return view('admin.artikel.tambahartikel');
     }
 
@@ -77,31 +81,35 @@ class ArticleController extends CustomController
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\JsonResponse|\Illuminate\View\View
      */
-    public function pageEdit($id){
-        $data['artikel'] = Article::with(['getImage.image'])->where('id',$id)->firstOrFail();
+    public function pageEdit($id)
+    {
+        $data['artikel'] = Article::with(['getImage.image'])->where('id', $id)->firstOrFail();
 //        return $this->jsonResponse($data['artikel']);
-$imgAr = $data['artikel']->getImage;
+        $imgAr = $data['artikel']->getImage;
         if ($this->request->isMethod('POST')) {
             try {
                 $data = [
-                    'judul' => $this->postField('judulArtikel'),
-                    'konten' => $this->postField('kontenArtikel')
+                    'judul'  => $this->postField('judulArtikel'),
+                    'konten' => $this->postField('kontenArtikel'),
                 ];
-                $this->update(Article::class,$data);
+                $this->update(Article::class, $data);
 
-                if($this->request->hasFile('image')){
-                    $image = $this->generateImageName('image');
-                    $data  = Arr::add($data, 'images', $image);
+                if ($this->request->hasFile('image')) {
+                    $image   = $this->generateImageName('image');
+                    $data    = Arr::add($data, 'images', $image);
                     $dataImg = [
                         'id'  => $this->postField('idImg'),
-                        'url' => '/uploads/images/'.$image
+                        'url' => '/uploads/images/'.$image,
                     ];
                     $this->uploadImageWatermark($image);
-                    foreach ( $imgAr as $img){
-                        unlink('../public'.$img->image->url);
+                    foreach ($imgAr as $img) {
+                        if (file_exists('../public'.$img->image->url)) {
+                            unlink('../public'.$img->image->url);
+                        }
                     }
                     $this->updateOther(Image::class, $dataImg);
                 }
+
                 return $this->jsonResponse('success', 200);
 
             } catch (\Exception $er) {

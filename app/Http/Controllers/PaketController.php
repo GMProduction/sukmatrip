@@ -108,7 +108,8 @@ class PaketController extends CustomController
 
         $data['penginapan'] = Penginapan::all();
         $data['paket']      = Paket::with(['penginapan.destinasi', 'penginapan.duration', 'getImage.image', 'paketTour'])->where('id', $id)->first();
-    $img = $data['paket']->getImage[0]->image->url;
+        $img                = $data['paket']->getImage[0]->image->url;
+
         if ($this->request->isMethod('POST')) {
 
             try {
@@ -130,7 +131,10 @@ class PaketController extends CustomController
                     ];
 
                     $this->uploadImageWatermark($image);
-                    unlink('../public'.$img);
+
+                    if (file_exists('../public'.$img)) {
+                        unlink('../public'.$img);
+                    }
 
                     $this->updateOther(Image::class, $dataImage);
 
@@ -193,19 +197,19 @@ class PaketController extends CustomController
     public function delete($id)
     {
         try {
-            $img = Paket_to_image::all()->where('id_paket','=',$id);
+            $img = Paket_to_image::all()->where('id_paket', '=', $id);
 
             DB::delete('delete from pakets_tours where paket_id = ?', [$id]);
 
             DB::delete('delete from paket_to_images where id_paket = ?', [$id]);
 
-            foreach ($img as $key => $i){
-                $url = Image::all()->where('id','=', $i->id_image)->first();
+            foreach ($img as $key => $i) {
+                $url                 = Image::all()->where('id', '=', $i->id_image)->first();
                 $data['image'][$key] = $url->url;
                 Image::destroy($i->id_image);
             }
 
-            foreach ($data['image'] as $im){
+            foreach ($data['image'] as $im) {
 //                dump($im);
                 unlink('../public'.$im);
             }
