@@ -14,6 +14,6 @@ class Gallery extends Model
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function image(){
-        return $this->hasMany(Image::class,'id');
+        return $this->hasMany(Image::class,'id_galery');
     }
 }

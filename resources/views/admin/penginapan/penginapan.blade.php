@@ -17,7 +17,7 @@
                     </div>
 
                     <div class="col-lg-8 col-8 text-right">
-                        <a href="/admin/tambahpenginapan" class="btn btn-md btn-neutral">Tambah</a>
+                        <a href="/admin/penginapan/add" class="btn btn-md btn-neutral">Tambah</a>
                     </div>
                 </div>
             </div>
@@ -74,8 +74,9 @@
                 {"title": "Nama Destinasi", 'targets': 2, 'searchable': true, 'orderable': true},
                 {"title": "Tipe", 'targets': 3, 'searchable': true, 'orderable': true},
                 {"title": "Harga / malam", 'targets': 4, 'searchable': true, 'orderable': true},
-                {"title": "Deskripsi", 'targets': 5, 'searchable': true, 'orderable': true},
-                {"title": "Action", 'targets': 6, 'searchable': false, 'orderable': false},
+                {"title": "Durasi", 'targets': 5, 'searchable': true, 'orderable': true},
+                {"title": "Jumlah Trip / Tour", 'targets': 6, 'searchable': true, 'orderable': true},
+                {"title": "Action", 'targets': 7, 'searchable': false, 'orderable': false},
 
             ],
             columns: [
@@ -86,10 +87,13 @@
                     "defaultContent": ''
                 },
                 {data: 'nama', name: 'nama'},
-                {data: 'destinasi.nama', name: 'destinasi.nama'},
+                {data: 'destinasi.nama', name: 'destinasi'},
                 {data: 'tipe', name: 'tipe'},
-                {data: 'harga', name: 'harga'},
-                {data: 'deskripsi', name: 'deskripsi'},
+                {data: 'harga', name: 'harga', 'render' : function (data) {
+                        return 'Rp. '+data.toLocaleString()
+                    }},
+                {data: 'duration.name', name: 'deskripsi'},
+                {data: 'duration.qty_trip', name: 'qty_trip'},
                 {
                     "target": 2,
                     "data": 'id',

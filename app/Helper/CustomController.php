@@ -54,6 +54,16 @@ class CustomController extends Controller
         return $model->save() ? $model : false;
     }
 
+    public function updateOther($class = null, $data = [])
+    {
+        $id = $data['id'];
+        $model = $class::find($id);
+        foreach ($data as $key => $d) {
+            $model[$key] = $data[$key];
+        }
+        return $model->save() ? $model : false;
+    }
+
     public function customUpdate($model = null, $data = [])
     {
         foreach ($data as $key => $d) {
@@ -99,6 +109,13 @@ class CustomController extends Controller
     {
         $file = $this->request->file($field);
         return Storage::disk($disk)->put($targetName, File::get($file));
+    }
+
+    public function uploadImageWatermark($targetName = '', $file = 'image'){
+        $watermark = public_path('assets/img/common/logo.png');
+        $image_water = \Intervention\Image\Facades\Image::make($this->request->file($file));
+        $image_water->insert($watermark, 'bottom-left', 5, 5);
+        $image_water->save(public_path('uploads/images/'.$targetName));
     }
 
     public function uuidGenerator()

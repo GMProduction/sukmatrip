@@ -17,7 +17,7 @@
                     </div>
 
                     <div class="col-lg-8 col-8 text-right">
-                        <a href="/admin/tambahtour" class="btn btn-md btn-neutral">Tambah</a>
+                        <a href="/admin/tour/add" class="btn btn-md btn-neutral">Tambah</a>
                     </div>
                 </div>
             </div>
@@ -36,7 +36,6 @@
                     <div class="table-responsive">
                         <table id="tabel" class="table align-items-center table-flush">
 
-                            </tbody>
                         </table>
                     </div>
                     <!-- Card footer -->
@@ -49,98 +48,101 @@
 @endsection
 
 @section('script')
-<script>
-    $(function () {
-        var table = $('#tabel').DataTable({
-            processing: true,
-            serverSide: true,
-            ajax: '/admin/tour/datatable',
-            "fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
-                // debugger;
-                var numStart = this.fnPagingInfo().iStart;
-                var index = numStart + iDisplayIndexFull + 1;
-                // var index = iDisplayIndexFull + 1;
-                $("td:first", nRow).html(index);
-                return nRow;
-            },
-            columnDefs: [
-                {"title": "#", "searchable": false, "orderable": false, "targets": 0,},
-                {"title": "Nama Tour", 'targets': 1, 'searchable': true, 'orderable': true},
-                {"title": "Harga / hari", 'targets': 2, 'searchable': true, 'orderable': true},
-                {"title": "Deskripsi", 'targets': 3, 'searchable': true, 'orderable': true},
-                {"title": "Foto", 'targets': 4, 'searchable': true, 'orderable': true},
-                {"title": "Action", 'targets': 5, 'searchable': false, 'orderable': false},
-
-            ],
-            columns: [
-                {
-                    "className": 'details-control',
-                    "orderable": false,
-                    "data": null,
-                    "defaultContent": ''
+    <script>
+        $(function () {
+            var table = $('#tabel').DataTable({
+                processing: true,
+                serverSide: true,
+                ajax: '/admin/tour/datatable',
+                "fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+                    // debugger;
+                    var numStart = this.fnPagingInfo().iStart;
+                    var index = numStart + iDisplayIndexFull + 1;
+                    // var index = iDisplayIndexFull + 1;
+                    $("td:first", nRow).html(index);
+                    return nRow;
                 },
-                {data: 'nama', name: 'nama'},
-                {data: 'harga', name: 'harga'},
-                {data: 'deskripsi', name: 'deskripsi'},
-                {
-                    "target": 2,
-                    "name":'image',
-                    "data": 'get_image[0].image.url',
-                    "width": '100',
-                    "render": function (data, type, row, meta) {
-                        return '<img src="{{asset('assets/img/tour')}}/'+data+'" height="70"  />'
+                columnDefs: [
+                    {"title": "#", "searchable": false, "orderable": false, "targets": 0,},
+                    {"title": "Nama Tour", 'targets': 1, 'searchable': true, 'orderable': true},
+                    {"title": "Destinasi", 'targets': 2, 'searchable': true, 'orderable': true},
+                    {"title": "Harga / hari", 'targets': 3, 'searchable': true, 'orderable': true},
+                    {"title": "Deskripsi", 'targets': 4, 'searchable': true, 'orderable': true},
+                    {"title": "Foto", 'targets': 5, 'searchable': true, 'orderable': true},
+                    {"title": "Action", 'targets': 6, 'searchable': false, 'orderable': false},
+
+                ],
+                columns: [
+                    {
+                        "className": 'details-control',
+                        "orderable": false,
+                        "data": null,
+                        "defaultContent": ''
+                    },
+                    {data: 'nama', name: 'nama'},
+                    {data: 'destinasi.nama', name: 'nama'},
+
+                    {
+                        data: 'harga','name': 'harga', 'render': function (data) {
+                            return 'Rp. '+data.toLocaleString()
+                        }
+                    },
+                    {data: 'deskripsi', name: 'deskripsi'},
+                    {
+                        "name": 'image',
+                        "data": 'image',
+                        "width": '100',
+                        "render": function (data, type, row, meta) {
+                            return '<img src="' + data + '" height="70"  />'
+                        }
+                    },
+                    {
+                        "data": 'id',
+                        "width": '100',
+                        "render": function (data, type, row, meta) {
+                            return '<a href="#!" class="btn btn-sm btn-primary btn-sm" data-id="' + data + '" id="editData">Edit</a>' +
+                                '<a href="#!" class="btn btn-sm btn-danger btn-sm" data-id="' + data + '" id="deleteData">Delete</a>'
+                        }
+                    },
+                ]
+            });
+
+            $('#tabel tbody').on('click', 'a#editData', function () {
+                var id = $(this).data('id');
+                var url = '/admin/tour/edit/' + id;
+                $(this).attr('href', url);
+            });
+
+            $('#tabel tbody').on('click', 'a#deleteData', function () {
+                var data = table.row($(this).parents('tr')).data();
+                var nama = data['nama'];
+                Swal.fire({
+                    title: 'Apa anda yakin untuk menghapus data tour ' + nama + ' ?',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Ya',
+                    cancelButtonText: 'Tidak'
+                }).then(async (result) => {
+                    if (result.value) {
+                        let data = {
+                            '_token': '{{csrf_token()}}',
+                        };
+                        let get = await $.post('/admin/tour/delete/' + $(this).data('id'), data);
+                        if (get['status'] == 200) {
+                            table.ajax.reload();
+                            Swal.fire({
+                                title: 'Success',
+                                text: 'Berhasil Menghapus Data tour ' + nama,
+                                icon: 'success',
+                                confirmButtonText: 'Ok'
+                            })
+                        }
                     }
-                },
-                {
-                    "target": 2,
-                    "data": 'id',
-                    "width": '100',
-                    "render": function (data, type, row, meta) {
-                        return '<a href="#!" class="btn btn-sm btn-primary btn-sm" data-id="' + data + '" id="editData">Edit</a>' +
-                            '<a href="#!" class="btn btn-sm btn-danger btn-sm" data-id="' + data + '" id="deleteData">Delete</a>'
-                    }
-                },
-            ]
+                })
+            });
         });
-
-
-
-        $('#tabel tbody').on('click', 'a#editData', function () {
-            var id = $(this).data('id');
-            var url = '/admin/tour/edit/'+id;
-            $(this).attr('href', url);
-        });
-
-        $('#tabel tbody').on('click', 'a#deleteData', function () {
-            var data = table.row($(this).parents('tr')).data();
-            var nama = data['nama'];
-            Swal.fire({
-                title: 'Apa anda yakin untuk menghapus data tour ' + nama + ' ?',
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Ya',
-                cancelButtonText: 'Tidak'
-            }).then(async (result) => {
-                if (result.value) {
-                    let data = {
-                        '_token': '{{csrf_token()}}',
-                    };
-                    let get = await $.post('/admin/tour/delete/' + $(this).data('id'), data);
-                    if (get['status'] == 200) {
-                        table.ajax.reload();
-                        Swal.fire({
-                            title: 'Success',
-                            text: 'Berhasil Menghapus Data tour ' + nama,
-                            icon: 'success',
-                            confirmButtonText: 'Ok'
-                        })
-                    }
-                }
-            })
-        });
-    });
-</script>
+    </script>
 
 @endsection

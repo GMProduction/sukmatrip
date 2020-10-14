@@ -45,15 +45,13 @@
     {{--    OUR PACKAGE--}}
     <section class="container-fluid">
         <div class="text-center mt-4">
-            <p style="font-weight: 500" class="text-center f22">PAKET SINI VIE VILLA</p>
-
-
+            <p style="font-weight: 500" class="text-center f22">{{ $product->nama }}</p>
             <div class="d-flex justify-content-center align-items-center"
                  style="margin-top: -1em; color: var(--primaryColor)">
                 <i data-feather="map-pin" class="mr-2"></i>
-                <p class="mb-0 mr-4">Seminyak Bali</p>
+                <p class="mb-0 mr-4">{{ $product->lokasi }}, {{ $product->destinasi->nama }}</p>
                 <i data-feather="clock" class="mr-2"></i>
-                <p class="mb-0">3 Days 2 Nights</p>
+                <p class="mb-0">{{ $product->duration->name }}</p>
             </div>
             <hr class="mb-2" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">
         </div>
@@ -61,90 +59,28 @@
 
     <section class="container">
         <div class="text-center mt-5 mb-5">
-            <p class="text-center f26">Pilih 1 tour di bawah <a class="t-accent">ini:</a></p>
+            <p class="text-center f26">Pilih {{ $product->duration->qty_trip }} tour di bawah <a
+                    class="t-accent">ini:</a></p>
         </div>
 
         <div class="row">
-            <div class="col-md-3 col-sm-12">
-                <input class="checkbox-gambar" type="checkbox" name="tools" id="1"
-                       value=":00"
-                       onclick="changeDateTime()"/>
-                <label class="w-100" for="1">
-                    <div class="gen-card-produk">
-                        <img src="{{asset('assets/img/foto/sukmatrip1.png')}}">
-                        <div class="cover-black-bottom"></div>
-                        <div class="content">
-                            {{--                            <p class="t-accent f08">PAKET SINI VIE VILLA</p>--}}
-                            {{--                            <hr style="width: 3em; border-color: white;" class="mb-2">--}}
-                            <p class="text-white f18">Tanjung Benoa</p>
-                            {{--                            <p style="font-weight: 300; margin-top: -0.6em" class="text-white f10">3 Day 2 Night</p>--}}
+            @foreach($tours as $v)
+                <div class="col-md-3 col-sm-12">
+                    <input form="form-submit" class="checkbox-gambar" type="checkbox" name="tour[]" id="opt-{{ $v->id }}"
+                           value="{{ $v->id }}"
+                    />
+                    <label class="w-100" for="opt-{{ $v->id }}">
+                        <div class="gen-card-produk">
+                            <img src="{{asset('assets/img/foto/sukmatrip1.png')}}">
+                            <div class="cover-black-bottom"></div>
+                            <div class="content">
+                                <p class="text-white f18">{{ $v->nama }}</p>
+                            </div>
                         </div>
-                    </div>
-                    <i data-feather="check-square" class="chec"></i>
-
-                </label>
-
-            </div>
-            <div class="col-md-3 col-sm-12">
-                <input class="checkbox-gambar" type="checkbox" name="tools" id="2"
-                       value=":00"
-                       onclick="changeDateTime()"/>
-                <label class="w-100" for="2">
-                    <div class="gen-card-produk">
-                        <img src="{{asset('assets/img/foto/sukmatrip1.png')}}">
-                        <div class="cover-black-bottom"></div>
-                        <div class="content">
-                            {{--                            <p class="t-accent f08">PAKET SINI VIE VILLA</p>--}}
-                            {{--                            <hr style="width: 3em; border-color: white;" class="mb-2">--}}
-                            <p class="text-white f18">Tanjung Benoa</p>
-                            {{--                            <p style="font-weight: 300; margin-top: -0.6em" class="text-white f10">3 Day 2 Night</p>--}}
-                        </div>
-                    </div>
-                    <i data-feather="check-square" class="chec"></i>
-
-                </label>
-
-            </div>
-            <div class="col-md-3 col-sm-12">
-                <input class="checkbox-gambar" type="checkbox" name="tools" id="3"
-                       value=":00"
-                       onclick="changeDateTime()"/>
-                <label class="w-100" for="3">
-                    <div class="gen-card-produk">
-                        <img src="{{asset('assets/img/foto/sukmatrip1.png')}}">
-                        <div class="cover-black-bottom"></div>
-                        <div class="content">
-                            {{--                            <p class="t-accent f08">PAKET SINI VIE VILLA</p>--}}
-                            {{--                            <hr style="width: 3em; border-color: white;" class="mb-2">--}}
-                            <p class="text-white f18">Tanjung Benoa</p>
-                            {{--                            <p style="font-weight: 300; margin-top: -0.6em" class="text-white f10">3 Day 2 Night</p>--}}
-                        </div>
-                    </div>
-                    <i data-feather="check-square" class="chec"></i>
-
-                </label>
-
-            </div>
-            <div class="col-md-3 col-sm-12">
-                <input class="checkbox-gambar" type="checkbox" name="tools" id="4"
-                       value=":00"
-                       onclick="changeDateTime()"/>
-                <label class="w-100" for="4">
-                    <div class="gen-card-produk">
-                        <img src="{{asset('assets/img/foto/sukmatrip1.png')}}">
-                        <div class="cover-black-bottom"></div>
-                        <div class="content">
-                            {{--                            <p class="t-accent f08">PAKET SINI VIE VILLA</p>--}}
-                            {{--                            <hr style="width: 3em; border-color: white;" class="mb-2">--}}
-                            <p class="text-white f18">Tanjung Benoa</p>
-                            {{--                            <p style="font-weight: 300; margin-top: -0.6em" class="text-white f10">3 Day 2 Night</p>--}}
-                        </div>
-                    </div>
-                    <i data-feather="check-square" class="chec"></i>
-
-                </label>
-
-            </div>
+                        <i data-feather="check-square" class="chec"></i>
+                    </label>
+                </div>
+            @endforeach
         </div>
     </section>
 
@@ -157,57 +93,57 @@
                  style="width: 100%; padding: 5em 0">
                 <p class="sukmatrip mb-0" style="color: black">FORM DATA</p>
                 <hr class="mb-5" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">
-                <div class="row">
-
-                    <div class="offset-md-3 col-md-6 offset-sm-2 col-sm-8 offset-xs-2 col-xs-8 ">
-                        <div class="form-group">
-                            <label for="tanggalCheckIn">Tanggal Check In</label>
-                            <input type="text" class="form-control form-data-input datepicker" id="tanggalCheckIn"
-                                   aria-describedby="tanggalHelp" placeholder="Tanggal CheckIn*">
+                <form id="form-submit" method="post">
+                    <div class="row">
+                        @csrf
+                        <input type="hidden" name="id" value="{{ $product->id }}">
+                        <div class="offset-md-3 col-md-6 offset-sm-2 col-sm-8 offset-xs-2 col-xs-8 ">
+                            <div class="form-group">
+                                <label for="tanggalCheckIn">Tanggal Check In</label>
+                                <input type="text" class="form-control form-data-input datepicker" id="tanggalCheckIn"
+                                       aria-describedby="tanggalHelp" placeholder="Tanggal CheckIn*" name="check_in" required>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="offset-3 col-6">
+                        <div class="offset-3 col-6">
+                            <div class="form-group mb-0 mr-2 flex-grow-1">
+                                <label for="jumlahOrang">Jumlah Orang</label>
+                                <div class="d-flex align-items-stretch mb-3 ">
+                                    <input type="number" class="form-control form-data-input mr-2" id="jumlahOrang"
+                                           aria-describedby="jumlahOrangHelp" placeholder="Jumlah Orang*" value="1"
+                                           name="qty"
+                                           style="border-radius: 0px;">
+                                    <div class="d-flex flex-row">
+                                        <a style="color: white; background: var(--primaryColor); padding: 1em"
+                                           id="buttonMinus"
+                                           class="bt-primary f08 mr-2"><i data-feather="minus-circle"></i></a>
 
-                        <div class="form-group mb-0 mr-2 flex-grow-1">
-                            <label for="jumlahOrang">Jumlah Orang</label>
-                            <div class="d-flex align-items-stretch mb-3 ">
-                                <input type="number" class="form-control form-data-input mr-2" id="jumlahOrang"
-                                       aria-describedby="jumlahOrangHelp" placeholder="Jumlah Orang*" value="1"
-                                       style="border-radius: 0px;">
-                                <div class="d-flex flex-row">
-                                    <a style="color: white; background: var(--primaryColor); padding: 1em"
-                                       id="buttonMinus"
-                                       class="bt-primary f08 mr-2"><i data-feather="minus-circle"></i></a>
-
-                                    <a style="color: white; background: var(--primaryColor); padding: 1em"
-                                       id="buttonPlus"
-                                       class="bt-primary f08 "><i data-feather="plus-circle"></i></a>
-
-
+                                        <a style="color: white; background: var(--primaryColor); padding: 1em"
+                                           id="buttonPlus"
+                                           class="bt-primary f08 "><i data-feather="plus-circle"></i></a>
+                                    </div>
                                 </div>
                             </div>
+                        </div>
 
+                        <div class="offset-3 col-6">
+                            <div class="form-group">
+                                <label for="nama">Nama Pemesan</label>
+                                <input type="text" class="form-control form-data-input" id="nama"
+                                       aria-describedby="namaHelp" placeholder="Nama*" name="pemesan" required>
+                            </div>
+                        </div>
 
+                        <div class="offset-3 col-6">
+                            <div class="form-group">
+                                <label for="totalHarga">Harga Penginapan @</label>
+                                <input type="text" readonly class="form-control form-data-input" id="totalHarga"
+                                       aria-describedby="emailHelp" placeholder="Total Harga*" name="harga"
+                                       value="{{ $product->harga }}">
+                            </div>
                         </div>
                     </div>
-
-                    <div class="offset-3 col-6">
-                        <div class="form-group">
-                            <label for="nama">Nama</label>
-                            <input type="text" class="form-control form-data-input" id="nama"
-                                   aria-describedby="namaHelp" placeholder="Nama*">
-                        </div>
-                    </div>
-
-                    <div class="offset-3 col-6">
-                        <div class="form-group">
-                            <label for="totalHarga">Total Harga</label>
-                            <input type="text" readonly class="form-control form-data-input" id="totalHarga"
-                                   aria-describedby="emailHelp" placeholder="Total Harga*">
-                        </div>
-                    </div>
-                </div>
+                </form>
 
 
                 <div class="text-center mt-4 mb-5">
@@ -268,7 +204,7 @@
                     </div>
                     <div class="modal-footer">
                         <a type="button" class="btn btn-secondary" href="#" data-dismiss="modal">Batal</a>
-                        <a type="button" class="btn btn-primary" href="https://wa.me/62838652740">Pesan</a>
+                        <a type="button" id="btn-order" class="btn btn-primary" href="https://wa.me/62838652740">Pesan</a>
                     </div>
                 </div>
             </div>
@@ -324,12 +260,54 @@
 
     <script>
         $(document).ready(function () {
+            let tourAvailable = '{{ $product->duration->qty_trip }}';
+            $('.checkbox-gambar').on('click', function (e) {
+                let tourEl = document.getElementsByName('tour[]');
+                let tour = [];
+                tourEl.forEach(el => {
+                    if (el.checked) {
+                        tour.push(el.value);
+                    }
+                });
+                if (tour.length > parseInt(tourAvailable)) {
+                    alert('Maksimal Jumlah Tour Yang Di pilih = ' + tourAvailable);
+                    e.preventDefault();
+                    e.stopPropagation();
+                }
+            });
             // $('#jumlahOrang').val(1);
             // alert("su");
+            $('#form-submit').submit(function (e) {
+                e.preventDefault();
+                $.ajax({
+                    url: '/transaction-submit',
+                    data: $(this).serialize(),
+                    type: 'post',
+                    success: function (data) {
+                        if(data['status'] === 200){
+                            alert('Pesanan Anda Sudah Kami Terima. Mohon Konfirmasi Ke Admin!')
+                            window.location.href = 'https://wa.me/62838652740';
+                        }else{
+                            alert(data['payload']);
+                        }
+                    },
+                    error: function (data) {
+                        alert('Maaf Terjadi Kesalahan Sistem, Periksa Kelengkapan Form Data.\n Jika Masih Mengalami Kendala Silahkan Menghubungi Admin Kami!');
+                    }
+                })
+            });
+
+
+
+            $('#btn-order').on('click', function (e) {
+                e.preventDefault();
+                $('#form-submit').submit();
+            })
         });
 
+
         $("#buttonPlus").click(function () {
-            if($('#jumlahOrang').val() < 10){
+            if ($('#jumlahOrang').val() < 10) {
                 var a = parseInt($('#jumlahOrang').val());
                 a = isNaN(a) ? 0 : a;
                 a++;
@@ -339,12 +317,14 @@
         });
 
         $("#buttonMinus").click(function () {
-            if($('#jumlahOrang').val() > 1){
+            if ($('#jumlahOrang').val() > 1) {
                 var a = parseInt($('#jumlahOrang').val());
                 a = isNaN(a) ? 0 : a;
                 a--;
                 $('#jumlahOrang').val(a);
             }
         });
+
+
     </script>
 @endsection

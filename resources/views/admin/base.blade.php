@@ -20,7 +20,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets/DataTables/datatables.min.css')}}"/>
     <link rel="stylesheet" href="{{asset('/assets/vendor/bootstrap/dist/css/bootstrap.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('/assets/DataTables/datatables.css')}}">
-
+    <link rel="stylesheet" href="{{asset('/assets/vendor/dropify/css/dropify.css')}}">
     <link rel="stylesheet" href="{{asset('/assets/css/argon.css?v=1.2.0')}}" type="text/css">
     <script src="{{asset('assets/js/swal.min.js')}}"></script>
 
@@ -55,7 +55,12 @@
                             <span class="nav-link-text" style="margin-left: 10px">Destinasi</span>
                         </a>
                     </li>
-
+                    <li class="nav-item">
+                        <a class="nav-link " id="durasi" href="/admin/durasi">
+                            <i class="ni ni-pin-3"></i>
+                            <span class="nav-link-text" style="margin-left: 10px">Durasi</span>
+                        </a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" id="penginapan" href="/admin/penginapan">
                             <i class="ni ni-building"></i>
@@ -107,7 +112,7 @@
                 <!-- Navigation -->
                 <ul class="navbar-nav mb-md-3">
                     <li class="nav-item">
-                        <a class="nav-link" href="#" target="/logout">
+                        <a class="nav-link" href="/logout" target="">
                             <i class="text-red " data-feather="log-out"></i>
                             <span class="nav-link-text text-red" style="margin-left: 10px">keluar</span>
                         </a>
@@ -137,13 +142,13 @@
                                 <div class="row align-items-center">
                                     <div class="col-auto">
                                         <!-- Avatar -->
-                                        <img alt="Image placeholder" src="../assets/img/theme/team-1.jpg"
+                                        <img alt="Image placeholder" src="{{asset('/assets/img/theme/team-4.png')}}"
                                              class="avatar rounded-circle">
                                     </div>
                                     <div class="col ml--2">
                                         <div class="d-flex justify-content-between align-items-center">
                                             <div>
-                                                <h4 class="mb-0 text-sm">John Snow</h4>
+                                                <h4 class="mb-0 text-sm">{{auth()->user()->username}}</h4>
                                             </div>
                                         </div>
                                     </div>
@@ -158,10 +163,10 @@
                            aria-expanded="false">
                             <div class="media align-items-center">
                   <span class="avatar avatar-sm rounded-circle">
-                    <img alt="Image placeholder" src="../assets/img/theme/team-4.png">
+                    <img alt="Image placeholder" src="{{asset('/assets/img/theme/team-4.png')}}">
                   </span>
                                 <div class="media-body  ml-2  d-none d-lg-block">
-                                    <span class="mb-0 text-sm  font-weight-bold">John Snow</span>
+                                    <span class="mb-0 text-sm  font-weight-bold">{{auth()->user()->username}}</span>
                                 </div>
                             </div>
                         </a>
@@ -210,6 +215,10 @@
 <script src="{{asset('assets/vendor/chart.js/dist/Chart.extension.js')}}"></script>
 <!-- Argon JS -->
 <script src="{{asset('assets/js/argon.js?v=1.2.0')}}"></script>
+<script src="{{asset('/assets/vendor/dropify/js/dropify.js')}}"></script>
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/browser-image-compression@latest/dist/browser-image-compression.js"></script>
+<script src="{{asset('/assets/js/currency.js')}}"></script>
 <script src="{{asset('assets/js/componen.js')}}"></script>
 {{--<script type="text/javascript" src="{{asset('DataTables/datatables.min.js')}}"></script>--}}
 <script>

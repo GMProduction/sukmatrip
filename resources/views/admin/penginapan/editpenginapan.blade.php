@@ -2,8 +2,18 @@
 @section('morecss')
     <link rel="stylesheet" href="{{asset('assets/css/etc/basic.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('assets/css/etc/dropzone.css')}}" type="text/css">
-    @endsection
+@endsection
 @section('content')
+    @if(\Illuminate\Support\Facades\Session::has('success'))
+        <script>
+            Swal.fire({
+                title: 'Success',
+                text: 'Berhasil Merubah Data',
+                icon: 'success',
+                confirmButtonText: 'Ok'
+            })
+        </script>
+    @endif
 
     <!-- Header -->
     <div class="header bg-primary pb-6">
@@ -33,12 +43,12 @@
                 <div class="card">
 
                     <div class="card-body">
-                        <form action="/admin/penginapan/store" method="POST">
+                        <form method="POST">
                             @csrf
                             <h6 class="heading-small text-muted mb-4">Data</h6>
                             <div class="pl-lg-4">
                                 <div class="row">
-
+                                    <input name="id" value="{{$penginapan->id}}" hidden>
                                     <div class="col-6 col-md-6 col-sm-12">
                                         <div class="form-group">
                                             <label for="namaPenginapan">Nama Penginapan</label>
@@ -54,10 +64,18 @@
                                             <option value="Vila" {{$penginapan->tipe == 'Vila' ? 'selected' : ''}}>Vila</option>
                                         </select>
                                     </div>
-
-                                    <div class="col-6 col-md-6 col-sm-12">
+                                    <div class="form-group col-3 col-md-3 col-sm-12">
+                                        <label for="bahanPenginapan">Durasi</label>
+                                        <select class="form-control" id="durasi" name="durasi">
+                                            <option value="">Pilih Durasi</option>
+                                            @foreach($durasi as $p)
+                                                <option value="{{ $p->id }}" {{$p->id == $penginapan->duration->id ? 'selected' : ''}} >{{ $p->name }} ({{$p->qty_trip }} Tour)</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="col-3 col-md-3 col-sm-12">
                                         <div class="form-group">
-                                            <label  for="hargaPenginapan">Harga /malam</label>
+                                            <label for="hargaPenginapan">Harga /malam</label>
                                             <input type="number" id="hargaPenginapan" name="hargaPenginapan" value="{{$penginapan->harga}}"
                                                    class="form-control">
                                         </div>
@@ -72,44 +90,40 @@
                                             @endforeach
                                         </select>
                                     </div>
-
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label for="exampleFormControlTextarea1">Lokasi</label>
+                                            <textarea class="form-control" name="lokasi" id="lokasi" rows="3"></textarea>
+                                        </div>
+                                    </div>
                                     <div class="col-12">
                                         <div class="form-group">
                                             <label for="exampleFormControlTextarea1">Deskripsi</label>
-                                            <textarea class="form-control" id="deskripsiPenginapan" rows="3">{{$penginapan->deskripsi}}</textarea>
+                                            <textarea class="form-control" id="deskripsiPenginapan" name="deskripsiPenginapan" rows="3">{{$penginapan->deskripsi}}</textarea>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
                             <!-- Description -->
-                            <div class="col-12 text-right"id="myId">
-                                <button type="button" class="btn btn-lg btn-danger" data-toggle="modal" data-target=".bd-example-modal-lg">Unggah Foto</button>
+                            <div class="col-12 text-right" id="myId">
+                                <a href="/admin/penginapan" type="submit" class="btn btn-lg btn-danger">Cancel</a>
                                 <button type="submit" class="btn btn-lg btn-primary">Simpan</button>
                             </div>
                         </form>
-
-                        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-lg">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLongTitle">Upload Foto</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form id="dropzonePenginapan" action="{{route('dropzone.penginapan')}}" class="dropzone" enctype="multipart/form-data">
-
-                                            @csrf
-                                        </form>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                                        <button type="button" class="btn btn-primary">Simpan</button>
-                                    </div>
+{{--                        @foreach($penginapan->getImage as $img)--}}
+{{--                            {{dump($img->image->image)}}--}}
+{{--                        @endforeach--}}
+{{--                        {{$penginapan->getImage}}--}}
+                        <h6 class="heading-small text-muted mb-4">Data Foto</h6>
+                        <div class="pl-lg-4">
+                            <form id="formImg" action="/admin/penginapan/addImg" method="post" class="dropzone mb-2" enctype="multipart/form-data" style="border-radius: 10px">
+                                @csrf
+                                <div class="fallback">
+                                    <input name="image" type="file" multiple/>
                                 </div>
-                            </div>
+                            </form>
+
                         </div>
 
                     </div>
@@ -118,25 +132,6 @@
         </div>
     </div>
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-xl-12 order-xl-1">
-                <div class="card">
-
-                    <div class="card-body">
-                        <form action="/mitra/penginapan/store" method="POST">
-                            @csrf
-                            <h6 class="heading-small text-muted mb-4">Foto</h6>
-                            <div class="pl-lg-4">
-
-                            </div>
-                        </form>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
 @endsection
 
@@ -149,7 +144,6 @@
             previewTemplate: previewTemplate,
         };
         $(document).ready(function () {
-
 
         })
     </script>
