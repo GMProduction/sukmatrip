@@ -103,12 +103,8 @@ Route::group(['middleware' => 'IfNotLogin' ], function (){
         return view('admin.paket.editpaket');
     });
 
-
-
-    Route::get('/admin/transaksi', function () {
-        return view('admin.transaksi.transaksi');
-    });
-
+    Route::get('/admin/transaksi/datatable', 'TransaksiController@datatable');
+    Route::get('/admin/transaksi', 'TransaksiController@index');
 
     Route::get('/logout', 'Auth\AuthController@logout');
 
