@@ -9,6 +9,7 @@ use App\Models\Image;
 use App\Models\Tour;
 use FontLib\Table\Type\post;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\DB;
 use Yajra\DataTables\DataTables;
 
 /**
@@ -26,75 +27,115 @@ class ArticleController extends CustomController
      * @return mixed
      * @throws \Exception
      */
-    public function datatable(){
+    public function datatable()
+    {
         return DataTables::of(Article::with(['getImage.image']))->make(true);
     }
 
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function index(){
+    public function index()
+    {
         return view('admin.artikel.artikel');
     }
 
     /**
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\JsonResponse|\Illuminate\View\View
      */
-    public function pageAdd(){
-        if ($this->request->isMethod('POST')){
-            $image = $this->generateImageName('image');
+    public function pageAdd()
+    {
+        if ($this->request->isMethod('POST')) {
+            try {
+                $image      = $this->generateImageName('image');
+                $data       = [
+                    'judul'  => $this->postField('judulArtikel'),
+                    'konten' => $this->postField('kontenArtikel'),
+                ];
+                $dataImg    = [
+                    'tipe' => 'article',
+                    'url'  => '/uploads/images/'.$image,
+                ];
+                $artikel    = $this->insert(Article::class, $data);
+                $imageAr    = $this->insert(Image::class, $dataImg);
+                $artikleImg = [
+                    'id_article' => $artikel->id,
+                    'id_image'   => $imageAr->id,
+                ];
+                $this->uploadImageWatermark($image);
 
-            $data = [
-                'judul' => $this->postField('judulArtikel'),
-                'konten' => $this->postField('kontenArtikel')
-            ];
-            $dataImg = [
-                'tipe' => 'article',
-                'url' => '/uploads/images/'.$image
-            ];
-            $artikel = $this->insert(Article::class,$data);
-            $imageAr = $this->insert(Image::class, $dataImg);
-            $artikleImg = [
-                'id_article' => $artikel->id,
-                'id_image' => $imageAr->id
-            ];
-            $this->uploadImageWatermark($image);
+                $this->insert(Article_to_image::class, $artikleImg);
 
-            $this->insert(Article_to_image::class,$artikleImg);
-            return view('admin.artikel.tambahartikel');
+                return $this->jsonResponse('success', 200);
+            } catch (\Exception $er) {
+                return $this->jsonResponse('error '.$er->getMessage(), 500);
+
+            }
         }
+
         return view('admin.artikel.tambahartikel');
     }
 
     /**
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @param $id
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\JsonResponse|\Illuminate\View\View
      */
-    public function pageEdit($id){
-        $data['artikel'] = Article::with(['getImage.image'])->where('id',$id)->firstOrFail();
+    public function pageEdit($id)
+    {
+        $data['artikel'] = Article::with(['getImage.image'])->where('id', $id)->firstOrFail();
 //        return $this->jsonResponse($data['artikel']);
-
+        $imgAr = $data['artikel']->getImage;
         if ($this->request->isMethod('POST')) {
-            $data = [
-                'judul' => $this->postField('judulArtikel'),
-                'konten' => $this->postField('kontenArtikel')
-            ];
-            $this->insert(Article::class,$data);
-
-            if($this->request->hasFile('image')){
-                $image = $this->generateImageName('image');
-                $data  = Arr::add($data, 'images', $image);
-                $dataImg = [
-                    'url' => '/uploads/images/'.$image
+            try {
+                $data = [
+                    'judul'  => $this->postField('judulArtikel'),
+                    'konten' => $this->postField('kontenArtikel'),
                 ];
-                $this->uploadImageWatermark($image);
-                foreach ($data['artikel']->getImage as $img){
-                    unlink($img->image->url);
+                $this->update(Article::class, $data);
+
+                if ($this->request->hasFile('image')) {
+                    $image   = $this->generateImageName('image');
+                    $data    = Arr::add($data, 'images', $image);
+                    $dataImg = [
+                        'id'  => $this->postField('idImg'),
+                        'url' => '/uploads/images/'.$image,
+                    ];
+                    $this->uploadImageWatermark($image);
+                    foreach ($imgAr as $img) {
+                        if (file_exists('../public'.$img->image->url)) {
+                            unlink('../public'.$img->image->url);
+                        }
+                    }
+                    $this->updateOther(Image::class, $dataImg);
                 }
-                $this->insert(Image::class, $dataImg);
+
+                return $this->jsonResponse('success', 200);
+
+            } catch (\Exception $er) {
+                return $this->jsonResponse('error '.$er->getMessage(), 500);
+
             }
-            return view('admin.artikel.editartikel')->with($data);
         }
 
         return view('admin.artikel.editartikel')->with($data);
+    }
+
+    /**
+     * @param $id
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function delete($id)
+    {
+        try {
+            DB::delete('delete from article_to_images where id_article = ?', [$id]);
+            Article::destroy($id);
+
+            return $this->jsonResponse('success', 200);
+        } catch (\Exception $er) {
+            return $this->jsonResponse('error '.$er->getMessage(), 500);
+
+        }
     }
 }

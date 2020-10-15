@@ -18,13 +18,11 @@ Route::get('/admin/get-paket', 'DashboardController@getPaket');
 
 Route::get('/', 'Main\MainController@index');
 
-Route::get('/pencarian', function () {
-    return view('pencarian');
-});
+Route::get('/pencarian', 'Main\MainController@search');
+Route::get('/ajax-search-products', 'Main\MainController@ajaxSearch');
 
-Route::get('/detail', function () {
-    return view('detail');
-});
+Route::get('/detail/{id}', 'Main\MainController@detail');
+Route::post('/transaction-submit', 'Main\TransactionController@saveTransaction');
 
 //LOGIN
 Route::get('/login', function () {
@@ -39,7 +37,8 @@ Route::group(['middleware' => 'IfNotLogin' ], function (){
 
     Route::get('/admin/penginapan/add','PenginapanController@pageAdd');
     Route::post('/admin/penginapan/add','PenginapanController@pageAdd');
-
+    Route::get('/admin/penginapan/addImg','PenginapanController@uploadImg')->name('uploadimg');
+    Route::post('/admin/penginapan/addImg','PenginapanController@uploadImg')->name('uploadimg');
     Route::get('/admin/penginapan/datatable', 'PenginapanController@datatable');
     Route::get('/admin/penginapan', 'PenginapanController@index');
     Route::post('/admin/penginapan', 'PenginapanController@index');
@@ -61,6 +60,17 @@ Route::group(['middleware' => 'IfNotLogin' ], function (){
     Route::post('/admin/gallery/add', 'GalleryController@pageAdd');
     Route::get('/admin/gallery/edit/{id}', 'GalleryController@pageedit');
     Route::post('/admin/gallery/edit/{id}', 'GalleryController@pageedit');
+    Route::post('/admin/gallery/delete/{id}', 'GalleryController@delete');
+
+
+    Route::get('/admin/durasi/datatable', 'DurasiController@datatable');
+    Route::get('/admin/durasi', 'DurasiController@index');
+    Route::get('/admin/durasi/add', 'DurasiController@pageAdd');
+    Route::post('/admin/durasi/add', 'DurasiController@pageAdd');
+    Route::get('/admin/durasi/edit/{id}', 'DurasiController@pageedit');
+    Route::post('/admin/durasi/edit/{id}', 'DurasiController@pageedit');
+    Route::post('/admin/durasi/delete/{id}', 'DurasiController@delete');
+
 
     Route::get('/admin/artikel/datatable', 'ArticleController@datatable');
     Route::get('/admin/artikel', 'ArticleController@index');
@@ -69,6 +79,8 @@ Route::group(['middleware' => 'IfNotLogin' ], function (){
     Route::get('/admin/artikel/edit/{id}', 'ArticleController@pageEdit');
     Route::post('/admin/artikel/edit/{id}', 'ArticleController@pageEdit');
     Route::get('/admin/artikel/detail/{id}', 'ArticleController@pageEdit');
+    Route::post('/admin/artikel/delete/{id}', 'ArticleController@delete');
+
 
     Route::get('/admin/destinasi', 'DestinasiController@index');
     Route::post('/admin/destinasi', 'DestinasiController@index');

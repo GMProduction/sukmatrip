@@ -73,7 +73,8 @@ class TourController extends CustomController
     {
         $data['tour']      = Tour::with(['destinasi'])->where('id', $id)->first();
         $data['destinasi'] = Destinasi::all();
-
+$img = $data['tour']->image;
+//        dump();die();
         if($this->request->isMethod('POST')){
             try {
                 $tour = [
@@ -84,16 +85,19 @@ class TourController extends CustomController
                 ];
 
                 if ($this->request->hasFile('image')) {
-                    $image = $this->generateImageName('screenshot');
-                    $data  = Arr::add($tour, 'images', $image);
+                    $image = $this->generateImageName('image');
+                    $tour  = Arr::add($tour, 'image', '/uploads/images/'.$image);
                     $this->uploadImageWatermark($image);
+                    if (file_exists('../public'.$img)){
+                        unlink('../public'.$img);
+                    }
                 }
                 $this->update(Tour::class, $tour);
 
 //                return redirect()->back()->with(['success' => 'success']);
                 return $this->jsonResponse('success', 200);
             }catch (\Exception $er) {
-                return $this->jsonResponse('error '.$er, 500);
+                return $this->jsonResponse('error '.$er->getMessage(), 500);
 
             }
 

@@ -112,7 +112,16 @@
                     $.ajax({
                         type: "POST",
                         success: function (data) {
-                            window.location.reload();
+                            if (data['status'] === 200){
+                                Swal.fire({
+                                    title: 'Success',
+                                    text: 'Berhasil menambah data',
+                                    icon: 'success',
+                                    confirmButtonText: 'Ok'
+                                }).then((result) => {
+                                    window.location = '/admin/artikel';
+                                })
+                            }
                         },
                         error: function (error) {
                             console.log("LOG ERROR", error);
