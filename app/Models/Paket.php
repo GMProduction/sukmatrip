@@ -42,4 +42,8 @@ class Paket extends Model
     public function getImage(){
         return $this->hasMany(Paket_to_image::class, 'id');
     }
+
+    public function paketTour(){
+        return $this->belongsToMany(Tour::class, 'pakets_tours');
+    }
 }

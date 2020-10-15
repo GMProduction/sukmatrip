@@ -30,7 +30,7 @@ class MainController extends CustomController
     {
         $destinations = Destinasi::all();
         $durations = Duration::all();
-        $pakets = Paket::with(['penginapan.duration'])->take(4)->get();
+        $pakets = Paket::with(['penginapan.duration', 'getImage'])->take(4)->get();
 //        return $pakets->toArray();
         return view('beranda')->with(['destinations' => $destinations, 'durations' => $durations, 'pakets' => $pakets]);
     }
@@ -67,5 +67,11 @@ class MainController extends CustomController
         $destinasiId = $product->destinasi->id;
         $tour = Tour::with(['destinasi'])->where('id_destinasi', $destinasiId)->get();
         return view('detail')->with(['product' => $product, 'tours' => $tour]);
+    }
+
+    public function detailPaket($id)
+    {
+        $product = Paket::with(['penginapan.duration', 'penginapan.destinasi', 'paketTour'])->findOrFail($id);
+        return view('detailPaket')->with(['product' => $product]);
     }
 }

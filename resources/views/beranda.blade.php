@@ -86,7 +86,7 @@
             @foreach($pakets as $paket)
                 <div class="col-md-3 col-sm-12">
                     <a class="gen-card-produk">
-                        <img src="{{asset('assets/img/foto/sukmatrip1.png')}}">
+                        <img src="{{ $paket-> }}">
                         <div class="cover-black-bottom"></div>
                         <div class="content">
                             <p class="t-accent f08">{{ $paket->nama }}</p>

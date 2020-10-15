@@ -19,7 +19,9 @@ Route::get('/pencarian', 'Main\MainController@search');
 Route::get('/ajax-search-products', 'Main\MainController@ajaxSearch');
 
 Route::get('/detail/{id}', 'Main\MainController@detail');
+Route::get('/detail-paket/{id}', 'Main\MainController@detailPaket');
 Route::post('/transaction-submit', 'Main\TransactionController@saveTransaction');
+Route::post('/transaction-package-submit', 'Main\TransactionController@savePackageTransaction');
 
 //LOGIN
 Route::get('/login', function () {
