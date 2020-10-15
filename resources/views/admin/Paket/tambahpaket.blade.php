@@ -74,7 +74,7 @@
                                     <div class="col-12">
                                         <div class="form-group">
                                             <label for="exampleFormControlTextarea1">Deskripsi</label>
-                                            <textarea class="form-control" id="deskripsiPaket" rows="3"></textarea>
+                                            <textarea class="form-control" id="deskripsiPaket" name="deskripsiPaket" rows="3"></textarea>
                                         </div>
                                     </div>
 
@@ -92,6 +92,7 @@
                                             <label for="namaPenginapan">Pilih Penginapan</label>
                                             <div class="d-flex justify-content-center">
                                                 <select class="form-control" id="penginapanSelect" name="penginapan" onchange="setTour(this)">
+                                                    <option value="">Pilih Penginapan</option>
                                                     @foreach($penginapan as $p)
                                                         <option value="{{ $p->id }}">{{ $p->nama }}</option>
                                                     @endforeach
