@@ -50,7 +50,7 @@
                             <div class="pl-lg-4">
                                 <div class="row">
                                     <input name="id" value="{{$durasi->id}}" hidden>
-                                    <div class="col-4">
+                                    <div class="col-4 col-md-6 col-sm-12">
                                         <div class="form-group">
                                             <label for="namaPaket">Nama Durasi</label>
                                             <input type="text" id="namaDurasi" required name="namaDurasi" placeholder="3 Hari 2 Malam" value="{{$durasi->name}}"
@@ -58,7 +58,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-4">
+                                    <div class="col-4 col-md-6 col-sm-12">
                                         <div class="form-group">
                                             <label  for="tebal">Durasi (Hari)</label>
                                             <input type="number" id="durasi" name="durasi" required placeholder="3" value="{{$durasi->duration}}"
@@ -66,7 +66,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-4">
+                                    <div class="col-4 col-md-6 col-sm-12">
                                         <div class="form-group">
                                             <label  for="tebal">Jumlah Trip / Tour</label>
                                             <input type="number" id="qty_trip" name="qty_trip" required placeholder="3"  value="{{$durasi->qty_trip}}"

@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c408fee2-992d-4e57-a9c7-51e5c76a2dd8" name="Default Changelist" comment="env online">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/durasi/editdurasi.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/durasi/editdurasi.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/durasi/tambahdurasi.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/durasi/tambahdurasi.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,6 +143,8 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
       <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
       <path value="$PROJECT_DIR$/vendor/yajra/laravel-datatables-oracle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-client-contracts" />
+      <path value="$PROJECT_DIR$/vendor/intervention/image" />
     </include_path>
   </component>
   <component name="ProjectId" id="1geGgbzH4cEzbfiG3kxL1yX1tBK" />
@@ -201,7 +203,8 @@
       <workItem from="1602439152810" duration="1096000" />
       <workItem from="1602521657182" duration="2491000" />
       <workItem from="1602612468281" duration="2633000" />
-      <workItem from="1602698535715" duration="665000" />
+      <workItem from="1602698535715" duration="3326000" />
+      <workItem from="1602869965690" duration="4291000" />
     </task>
     <task id="LOCAL-00001" summary="push">
       <created>1598895826535</created>
@@ -287,7 +290,35 @@
       <option name="project" value="LOCAL" />
       <updated>1602614254918</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="env online">
+      <created>1602699423425</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1602699423425</updated>
+    </task>
+    <task id="LOCAL-00014" summary="env online">
+      <created>1602699676002</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1602699676002</updated>
+    </task>
+    <task id="LOCAL-00015" summary="fix error">
+      <created>1602871921420</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1602871921420</updated>
+    </task>
+    <task id="LOCAL-00016" summary="env online">
+      <created>1602871952340</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1602871952340</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -300,6 +331,7 @@
     <MESSAGE value="landing page 90% tampilane" />
     <MESSAGE value="detail oke" />
     <MESSAGE value="ignore idea" />
+    <MESSAGE value="fix error" />
     <MESSAGE value="env online" />
     <option name="LAST_COMMIT_MESSAGE" value="env online" />
   </component>
@@ -308,10 +340,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1599411882516" />
-    <state x="306" y="0" key="CommitChangelistDialog2" timestamp="1602699411236">
+    <state x="306" y="0" key="CommitChangelistDialog2" timestamp="1602871951220">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="306" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1602699411236" />
+    <state x="306" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1602871951220" />
     <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1598813283126">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -320,14 +352,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="6" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1599495949453" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1602439459463">
+    <state width="498" height="446" key="SwitcherDM" timestamp="1602875603182">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1602439459463" />
-    <state x="359" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1602699265599">
+    <state width="498" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1602875603182" />
+    <state x="359" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1602869967289">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="359" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1602699265599" />
+    <state x="359" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1602869967289" />
     <state x="339" y="162" key="run.anything.popup" timestamp="1600104212485">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
