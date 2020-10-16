@@ -16,3 +16,4 @@ yarn-error.log
 /public/uploads/
 /composer.lock
 /bootstrap/
+/.idea/workspace.xml
