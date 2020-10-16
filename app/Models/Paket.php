@@ -6,7 +6,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Paket
+ * Class paket
  * @package App\Models
  */
 class Paket extends Model

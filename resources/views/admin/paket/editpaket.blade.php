@@ -188,7 +188,7 @@
             $('.image').dropify({
                 defaultFile: '',
                 messages: {
-                    'default': 'Masukkan Foto Paket',
+                    'default': 'Masukkan Foto paket',
                     'replace': 'Drag and drop or click to replace',
                     'remove': 'Remove',
                     'error': 'Ooops, something wrong happended.'

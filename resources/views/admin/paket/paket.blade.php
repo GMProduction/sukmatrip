@@ -11,7 +11,7 @@
                         {{--                        <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">--}}
                         {{--                            <ol class="breadcrumb breadcrumb-links breadcrumb-dark">--}}
                         {{--                                <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>--}}
-                        {{--                                <li class="breadcrumb-item"><a href="#">Data Paket</a></li>--}}
+                        {{--                                <li class="breadcrumb-item"><a href="#">Data paket</a></li>--}}
                         {{--                            </ol>--}}
                         {{--                        </nav>--}}
                     </div>
@@ -64,7 +64,7 @@
                 },
                 columnDefs: [
                     {"title": "#", "searchable": false, "orderable": false, "targets": 0,},
-                    {"title": "Nama Paket", 'targets': 1, 'searchable': true, 'orderable': true},
+                    {"title": "Nama paket", 'targets': 1, 'searchable': true, 'orderable': true},
                     {"title": "Destinasi", 'targets': 2, 'searchable': true, 'orderable': true},
                     {"title": "Penginapan", 'targets': 3, 'searchable': true, 'orderable': true},
                     {"title": "Harga / hari", 'targets': 4, 'searchable': true, 'orderable': true},

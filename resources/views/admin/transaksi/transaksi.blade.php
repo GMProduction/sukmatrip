@@ -64,7 +64,7 @@
                     {"title": "Nama Pemesan", 'targets': 1, 'searchable': true, 'orderable': true},
                     {"title": "No. Telp", 'targets': 2, 'searchable': true, 'orderable': true},
                     {"title": "Penginapan", 'targets': 3, 'searchable': true, 'orderable': true},
-                    {"title": "Paket", 'targets': 4, 'searchable': true, 'orderable': true},
+                    {"title": "paket", 'targets': 4, 'searchable': true, 'orderable': true},
                     {"title": "Tour", 'targets': 5, 'searchable': true, 'orderable': true},
                     {"title": "Tanggal Berangkat", 'targets': 6, 'searchable': true, 'orderable': true},
                     {"title": "Durasi", 'targets': 7, 'searchable': true, 'orderable': true},
