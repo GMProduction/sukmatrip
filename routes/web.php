@@ -102,7 +102,7 @@ Route::group(['middleware' => 'IfNotLogin' ], function (){
     Route::post('dropzone/penginapan', 'DropzoneController@dropzonePenginapan')->name('dropzone.penginapan');
     Route::post('dropzone/tour', 'DropzoneController@dropzoneTour')->name('dropzone.tour');
     Route::get('/admin/editpaket', function () {
-        return view('admin.paket.editpaket');
+        return view('admin.Paket.editpaket');
     });
 
     Route::get('/admin/transaksi/datatable', 'TransaksiController@datatable');
