@@ -87,7 +87,7 @@
                         "defaultContent": ''
                     },
                     {data: 'nama', name: 'nama'},
-                    {data: 'destinasi.nama', name: 'destinasi'},
+                    {data: 'destinasi.nama', name: 'destinasi.nama'},
                     {data: 'tipe', name: 'tipe'},
                     {
                         data: 'harga', name: 'harga', 'render': function (data) {
@@ -95,7 +95,7 @@
                         }
                     },
                     {data: 'duration.name', name: 'deskripsi'},
-                    {data: 'duration.qty_trip', name: 'qty_trip'},
+                    {data: 'duration.qty_trip', name: 'duration.qty_trip'},
                     {
                         "target": 2,
                         "data": 'id',

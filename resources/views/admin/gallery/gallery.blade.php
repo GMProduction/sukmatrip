@@ -65,7 +65,7 @@
             columnDefs: [
                 {"title": "#", "searchable": false, "orderable": false, "targets": 0,},
                 {"title": "Nama Gallery", 'targets': 1, 'searchable': true, 'orderable': true},
-                {"title": "Foto", 'targets': 2, 'searchable': true, 'orderable': true},
+                {"title": "Foto", 'targets': 2, 'searchable': false, 'orderable': true},
                 {"title": "Action", 'targets': 3, 'searchable': false, 'orderable': false},
 
             ],

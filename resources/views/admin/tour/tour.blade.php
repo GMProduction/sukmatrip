@@ -68,7 +68,7 @@
                     {"title": "Destinasi", 'targets': 2, 'searchable': true, 'orderable': true},
                     {"title": "Harga / hari", 'targets': 3, 'searchable': true, 'orderable': true},
                     {"title": "Deskripsi", 'targets': 4, 'searchable': true, 'orderable': true},
-                    {"title": "Foto", 'targets': 5, 'searchable': true, 'orderable': true},
+                    {"title": "Foto", 'targets': 5, 'searchable': false, 'orderable': true},
                     {"title": "Action", 'targets': 6, 'searchable': false, 'orderable': false},
 
                 ],

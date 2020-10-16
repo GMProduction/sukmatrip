@@ -66,7 +66,7 @@
                 {"title": "#", "searchable": false, "orderable": false, "targets": 0,},
                 {"title": "Judul", 'targets': 1, 'searchable': true, 'orderable': true},
                 {"title": "Konten",'targets': 2, 'searchable': true, 'orderable': true},
-                {"title": "Gambar", 'targets': 3, 'searchable': true, 'orderable': true},
+                {"title": "Gambar", 'targets': 3, 'searchable': false, 'orderable': true},
                 {"title": "Action", 'targets': 4, 'searchable': false, 'orderable': false},
 
             ],
@@ -77,7 +77,7 @@
                     "data": null,
                     "defaultContent": ''
                 },
-                {data: 'judul', name: 'nama'},
+                {data: 'judul', name: 'judul'},
                 {data: 'konten', name: 'konten'},
                 {
                     "target": 2,

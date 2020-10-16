@@ -69,7 +69,7 @@
                     {"title": "Penginapan", 'targets': 3, 'searchable': true, 'orderable': true},
                     {"title": "Harga / hari", 'targets': 4, 'searchable': true, 'orderable': true},
                     {"title": "Durasi", 'targets': 5, 'searchable': true, 'orderable': true},
-                    {"title": "Foto", 'targets': 6, 'searchable': true, 'orderable': true},
+                    {"title": "Foto", 'targets': 6, 'searchable': false, 'orderable': true},
                     {"title": "Action", 'targets': 7, 'searchable': false, 'orderable': false},
 
                 ],
@@ -81,7 +81,7 @@
                         "defaultContent": ''
                     },
                     {data: 'nama', name: 'nama'},
-                    {data: 'penginapan.destinasi.nama', name: 'destinasi'},
+                    {data: 'penginapan.destinasi.nama', name: 'penginapan.destinasi.nama'},
                     {data: 'penginapan.nama', name: 'nama'},
 
                     {
@@ -89,9 +89,9 @@
                             return 'Rp. '+data.toLocaleString()
                         }
                     },
-                    {data: 'penginapan.duration.name', name: 'duration'},
+                    {data: 'penginapan.duration.name', name: 'penginapan.duration.name'},
                     {
-                        "name": 'image',
+                        "name": 'nama',
                         "data": 'get_image[0].image.url',
                         "width": '100',
                         "render": function (data, type, row, meta) {

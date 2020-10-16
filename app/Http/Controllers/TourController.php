@@ -55,7 +55,7 @@ class TourController extends CustomController
                 return $this->jsonResponse('success', 200);
 
             }catch (\Exception $er){
-                return $this->jsonResponse('error '.$er, 500);
+                return $this->jsonResponse('error '.$er->getMessage(), 500);
 
             }
 
