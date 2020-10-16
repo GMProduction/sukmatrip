@@ -50,4 +50,38 @@ class TransactionController extends CustomController
             return $this->jsonResponse('failed ' . $e, 500);
         }
     }
+
+    /**
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function savePackageTransaction()
+    {
+        DB::beginTransaction();
+        try {
+            $tempCheckIn = explode('/', $this->postField('check_in'));
+            $checkIn = $tempCheckIn[2] . '-' . $tempCheckIn[1] . '-' . $tempCheckIn[0];
+            $data = [
+                'pemesan' => $this->postField('pemesan'),
+                'qty' => $this->postField('qty'),
+                'phone' => '0',
+                'deskripsi' => '',
+                'type' => 'paket',
+                'id_paket' => $this->postField('id'),
+                'check_in' => Carbon::parse($checkIn)->format('Y-m-d'),
+                'harga' => $this->postField('harga'),
+            ];
+            $tour = $this->postField('tour') ?? [];
+            if(count($tour) <= 0){
+                return $this->jsonResponse('Anda Belum Memilih Tour!', 202);
+            }
+            /** @var Transaction $transaction */
+            $transaction = $this->insert(Transaction::class, $data);
+            $transaction->tour()->attach($tour);
+            DB::commit();
+            return $this->jsonResponse($tour, 200);
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return $this->jsonResponse('failed ' . $e, 500);
+        }
+    }
 }

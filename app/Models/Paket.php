@@ -49,4 +49,8 @@ class Paket extends Model
     public function paketTour(){
         return $this->hasMany(Pakets_tour::class, 'paket_id');
     }
+
+    public function paketTour(){
+        return $this->belongsToMany(Tour::class, 'pakets_tours');
+    }
 }
