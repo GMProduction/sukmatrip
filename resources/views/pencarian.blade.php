@@ -63,16 +63,14 @@
             <hr class="mb-2" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">
 
         </div>
-        <p class="text-center f26">It's Time to <a class="t-accent">Travel</a></p>
-        <p style="font-weight: 300; color: #636363;" class="text-center f14 container" id="search">Take a look at the
-            most exclusive & most visited locations in the world
-            - hand-picked just for you. Start traveling the world today!</p>
+        <p class="text-center f26">PILIHAN HOTEL DAN VILLA <a class="t-accent">KAMI</a></p>
+        <p style="font-weight: 300; color: #636363;" class="text-center f14 container" id="search">Kami memiliki berbagai pilihan Hotal dan Villa!</p>
 
     </section>
 
     <section class="container" id="ourProperty">
         <div class="text-center mt-5 mb-5">
-            <a class="sukmatrip" style="color: black">OUR HOTEL</a>
+            <a class="sukmatrip" style="color: black">Hotel dan Villa kami</a>
             <hr class="mb-2" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">
         </div>
 

@@ -110,7 +110,7 @@
             <p class="sukmatrip mb-0">SUKMATRIP</p>
             <hr class="mb-2" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">
             <p class="text-center text-white f36 mt-2">Motto <a class="t-accent">Skumatrip</a></p>
-            <p style="font-weight: 300" class="text-white text-center f14 container">Kebahagiaan Kalian adalah <a class="t-accent">"Kesuksesan Kami"</a></p>
+            <p style="font-weight: 300" class="text-white text-center f14 container">Enjoy, Travel <a class="t-accent">Relax</a></p>
         </div>
     </section>
 

@@ -57,7 +57,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link " id="durasi" href="/admin/durasi">
-                            <i class="ni ni-pin-3"></i>
+                            <i class="ni ni-watch-time"></i>
                             <span class="nav-link-text" style="margin-left: 10px">Durasi</span>
                         </a>
                     </li>

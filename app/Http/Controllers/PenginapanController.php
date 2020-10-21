@@ -54,7 +54,7 @@ class PenginapanController extends CustomController
             ];
             $penginapan = $this->insert(Penginapan::class, $data);
 
-            return view('admin.penginapan.addimage')->with(['id' => $penginapan->id]);
+            return view('admin.penginapan.addImage')->with(['id' => $penginapan->id]);
 
         }
         $data['durasi']    = Duration::all();
