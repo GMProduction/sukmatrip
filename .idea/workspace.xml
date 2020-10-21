@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c408fee2-992d-4e57-a9c7-51e5c76a2dd8" name="Default Changelist" comment="env online">
+    <list default="true" id="c408fee2-992d-4e57-a9c7-51e5c76a2dd8" name="Default Changelist" comment="git push">
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/paket/detailpaket.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/durasi/editdurasi.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/durasi/editdurasi.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/durasi/tambahdurasi.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/durasi/tambahdurasi.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/beranda.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/beranda.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,7 +205,8 @@
       <workItem from="1602521657182" duration="2491000" />
       <workItem from="1602612468281" duration="2633000" />
       <workItem from="1602698535715" duration="3326000" />
-      <workItem from="1602869965690" duration="4291000" />
+      <workItem from="1602869965690" duration="5611000" />
+      <workItem from="1603300940564" duration="4005000" />
     </task>
     <task id="LOCAL-00001" summary="push">
       <created>1598895826535</created>
@@ -318,7 +320,28 @@
       <option name="project" value="LOCAL" />
       <updated>1602871952340</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="git push">
+      <created>1602875825076</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1602875825076</updated>
+    </task>
+    <task id="LOCAL-00018" summary="revisi huruf gede cilik">
+      <created>1602876412707</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1602876412707</updated>
+    </task>
+    <task id="LOCAL-00019" summary="revisi kapital huruf">
+      <created>1602876532795</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1602876532795</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -333,17 +356,20 @@
     <MESSAGE value="ignore idea" />
     <MESSAGE value="fix error" />
     <MESSAGE value="env online" />
-    <option name="LAST_COMMIT_MESSAGE" value="env online" />
+    <MESSAGE value="git push" />
+    <MESSAGE value="revisi huruf gede cilik" />
+    <MESSAGE value="revisi kapital huruf" />
+    <option name="LAST_COMMIT_MESSAGE" value="revisi kapital huruf" />
   </component>
   <component name="WindowStateProjectService">
     <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599411882516">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1599411882516" />
-    <state x="306" y="0" key="CommitChangelistDialog2" timestamp="1602871951220">
+    <state x="306" y="0" key="CommitChangelistDialog2" timestamp="1603305483736">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="306" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1602871951220" />
+    <state x="306" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1603305483736" />
     <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1598813283126">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -352,14 +378,18 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="6" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1599495949453" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1602875603182">
+    <state width="498" height="446" key="SwitcherDM" timestamp="1603304201226">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1602875603182" />
-    <state x="359" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1602869967289">
+    <state width="498" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1603304201226" />
+    <state x="359" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1603301001849">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="359" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1602869967289" />
+    <state x="359" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1603301001849" />
+    <state x="369" y="80" width="627" height="568" key="find.popup" timestamp="1603305468260">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="369" y="80" width="627" height="568" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1603305468260" />
     <state x="339" y="162" key="run.anything.popup" timestamp="1600104212485">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
