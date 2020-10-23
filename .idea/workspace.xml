@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c408fee2-992d-4e57-a9c7-51e5c76a2dd8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/base.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/base.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/article.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/article.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/beranda.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/beranda.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/contact.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/contact.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/gallery.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/gallery.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -217,7 +224,9 @@
       <workItem from="1602698535715" duration="3326000" />
       <workItem from="1602869965690" duration="5611000" />
       <workItem from="1603300940564" duration="6731000" />
-      <workItem from="1603466996353" duration="9518000" />
+      <workItem from="1603466996353" duration="9983000" />
+      <workItem from="1603477926465" duration="25000" />
+      <workItem from="1603477983812" duration="1246000" />
     </task>
     <task id="LOCAL-00001" summary="push">
       <created>1598895826535</created>
@@ -499,7 +508,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603476733830</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="sosmed">
+      <created>1603477318659</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1603477318659</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -518,7 +534,8 @@
     <MESSAGE value="revisi kapital huruf" />
     <MESSAGE value="git push" />
     <MESSAGE value="wa button" />
-    <option name="LAST_COMMIT_MESSAGE" value="wa button" />
+    <MESSAGE value="sosmed" />
+    <option name="LAST_COMMIT_MESSAGE" value="sosmed" />
   </component>
   <component name="WindowStateProjectService">
     <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599411882516">
@@ -541,14 +558,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="6" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1599495949453" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1603477146855">
+    <state width="498" height="446" key="SwitcherDM" timestamp="1603479030881">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1603477146855" />
-    <state x="359" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1603467667578">
+    <state width="498" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1603479030881" />
+    <state x="359" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1603477983087">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="359" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1603467667578" />
+    <state x="359" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1603477983087" />
     <state x="490" y="276" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603472560270">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

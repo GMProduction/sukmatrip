@@ -21,24 +21,23 @@
 
         <div class="slick-fade">
             <div class="ulasan mt-0 d-flex flex-column align-items-center justify-content-center">
-                <img src="{{asset('assets/img/foto/user1.jpg')}}" style="border-radius: 50%; width: 7em; height: 7em">
-                <p style="color: #636363; font-weight: 300" class="mt-3 f14">Jl. Sawunggaling Sel. No.28, Padangsari, Kec. Banyumanik, Kota Semarang,
+                <img src="{{asset('assets/img/common/logo.png')}}" style=" width: 9em">
+                <p style="color: #636363; font-weight: 300" class="mt-5 f14">Jl. Sawunggaling Sel. No.28, Padangsari, Kec. Banyumanik, Kota Semarang,
                     Jawa Tengah 50267</p>
             </div>
         </div>
         <div class="row ">
             <div class="col-4">
                 <p style="color: var(--primaryColor);" class="f18 mb-0">Instagram</p>
-                <p style="color: black;" class="f12 mb-0">@sukmatrip_</p>
+                <a style="color: black;" class="f12 mb-0" href="https://www.instagram.com/sukmatrip_/">@sukmatrip_</a>
             </div>
             <div class="col-4">
                 <p style="color: var(--primaryColor);" class="f18 mb-0">Phone numbers</p>
-                <p style="color: black;" class="f12 mb-0">+62 83865442740</p>
-                <p style="color: black;" class="f12 mb-0">+62 83865442740</p>
+                <a style="color: black;" href="tel:6283865442740" class="f12 mb-0">+62 83865442740</a>
             </div>
             <div class="col-4">
                 <p style="color: var(--primaryColor);" class="f18 mb-0">Facebook</p>
-                <p style="color: black;" class="f12 mb-0">SUKMATRIP</p>
+                <a style="color: black;" class="f12 mb-0" href="https://www.facebook.com/pages/category/Product-Service/SUKMATRIP-794165044301310/">SUKMATRIP</a>
             </div>
         </div>
     </section>
@@ -50,11 +49,7 @@
             <p class="sukmatrip mb-0">SUKMATRIP</p>
             <hr class="mb-2" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">
             <p class="text-center text-white f36 mt-2">About <a class="t-accent">us</a></p>
-            <p style="font-weight: 300" class="text-white text-center f14 container">Passionate about travel
-                and sharing the world's wonders on the leisure travel side. We provide corporate travelers hitouch
-                services to
-                facilitate their business travel needs. Named each year as one of the <a class="t-accent">"Best Places
-                    To Work"</a> in New York.</p>
+            <p style="font-weight: 300" class="text-white text-center f14 container">Kami adalah agen travel <a class="t-accent">"Profesional"</a> .</p>
         </div>
     </section>
 
@@ -65,10 +60,10 @@
             <a class="sukmatrip" style="color: black">SUKMATRIP</a>
             <hr class="mb-2" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">
         </div>
-        <p class="text-center f26">Terms and <a class="t-accent">Conditions</a></p>
-        <p style="font-weight: 300; color: #636363;" class="text-center f14 container">Take a look at the most exclusive
-            & most visited locations in the world - hand-picked just for you.
-            Start traveling the world today!</p>
+        <p class="text-center f26">Enjoy, Travel, <a class="t-accent">Relax</a></p>
+{{--        <p style="font-weight: 300; color: #636363;" class="text-center f14 container">Take a look at the most exclusive--}}
+{{--            & most visited locations in the world - hand-picked just for you.--}}
+{{--            Start traveling the world today!</p>--}}
 
     </section>
 

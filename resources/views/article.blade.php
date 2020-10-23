@@ -32,31 +32,10 @@
                 <a class="gen-card-article-page">
                     <img src="{{asset('assets/img/foto/konten2.jpg')}}">
                     <p class="judul mt-2">JELAJAHI PULAU BALI</p>
-                    <p class="sumber">Sumbernya</p>
-                </a>
-            </div>
-            <div class="col-sm-12 col-md-6">
-                <a class="gen-card-article-page">
-                    <img src="{{asset('assets/img/foto/konten2.jpg')}}">
-                    <p class="judul mt-2">JELAJAHI PULAU BALI</p>
-                    <p class="sumber">Sumbernya</p>
+                    <p class="sumber">Artikel Dari</p>
                 </a>
             </div>
 
-            <div class="col-sm-12 col-md-6">
-                <a class="gen-card-article-page">
-                    <img src="{{asset('assets/img/foto/konten2.jpg')}}">
-                    <p class="judul mt-2">JELAJAHI PULAU BALI</p>
-                    <p class="sumber">Sumbernya</p>
-                </a>
-            </div>
-            <div class="col-sm-12 col-md-6">
-                <a class="gen-card-article-page">
-                    <img src="{{asset('assets/img/foto/konten2.jpg')}}">
-                    <p class="judul mt-2">JELAJAHI PULAU BALI</p>
-                    <p class="sumber">Sumbernya</p>
-                </a>
-            </div>
         </div>
 
     </section>
@@ -68,10 +47,10 @@
             <a class="sukmatrip" style="color: black">SUKMATRIP</a>
             <hr class="mb-2" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">
         </div>
-        <p class="text-center f26">Terms and <a class="t-accent">Conditions</a></p>
-        <p style="font-weight: 300; color: #636363;" class="text-center f14 container">Take a look at the most exclusive
-            & most visited locations in the world - hand-picked just for you.
-            Start traveling the world today!</p>
+        <p class="text-center f26">Enjoy, Travel, <a class="t-accent">Relax</a></p>
+{{--        <p style="font-weight: 300; color: #636363;" class="text-center f14 container">Take a look at the most exclusive--}}
+{{--            & most visited locations in the world - hand-picked just for you.--}}
+{{--            Start traveling the world today!</p>--}}
 
     </section>
 

@@ -76,7 +76,7 @@
 
     <section class="container">
         <div class="text-center mt-5 mb-5">
-            <a class="sukmatrip" style="color: black">PAKET HNEYMOON KAMI</a>
+            <a class="sukmatrip" style="color: black">PAKET HONEYMOON KAMI</a>
             <hr class="mb-2" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">
         </div>
 
