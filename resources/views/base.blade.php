@@ -59,8 +59,8 @@
         <a class="sukmatrip mt-4" style="color: white">STAY CONNECTED</a>
         <hr class="mb-2" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">
         <div class="d-flex mt-4">
-            <a class="d-block"> <i class="fa fa-facebook-square fa-lg facebookbutton"></i></a>
-            <a class="d-block"> <i class="fa fa-instagram  fa-lg instagrambutton"></i></a>
+            <a class="d-block" href="https://www.facebook.com/pages/category/Product-Service/SUKMATRIP-794165044301310/"> <i class="fa fa-facebook-square fa-lg facebookbutton"></i></a>
+            <a class="d-block" href="https://www.instagram.com/sukmatrip_/"> <i class="fa fa-instagram  fa-lg instagrambutton"></i></a>
         </div>
         <div class="d-flex mt-5">
             <a style="color: white" href="#" class="mr-3 ml-3 f08">HOME</a>
