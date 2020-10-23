@@ -1,3 +1,4 @@
+
 <?php $__env->startSection('morecss'); ?>
     <link rel="stylesheet" href="<?php echo e(asset('assets/css/etc/basic.min.css')); ?>" type="text/css">
     <link rel="stylesheet" href="<?php echo e(asset('assets/css/etc/dropzone.css')); ?>" type="text/css">
@@ -82,7 +83,10 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <form action="/assets/upload/tour" class="dropzone"></form>
+                                        <form id="dropzoneTour" action="<?php echo e(route('dropzone.tour')); ?>" class="dropzone" enctype="multipart/form-data">
+
+                                            <?php echo csrf_field(); ?>
+                                        </form>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
@@ -105,7 +109,13 @@
 
 <?php $__env->startSection('script'); ?>
     <script src="<?php echo e(asset('assets/js/etc/dropzone.min.js')); ?>"></script>
-    <script src="<?php echo e(asset('assets/js/etc/dropzone-amd-module.min.js')); ?>"></script>
+
+    <script type="text/javascript">
+        Dropzone.options.dropzoneTour = {
+            acceptedFiles: ".png,.jpg,.gif,.bmp,.jpeg",
+            previewTemplate: previewTemplate,
+        }
+    </script>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('admin.base', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\Project\website\sukmatrip\resources\views/admin/tour/tambahpaket.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('admin.base', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\Project\website\sukmatrip\resources\views/admin/tour/tambahtour.blade.php ENDPATH**/ ?>

@@ -135,23 +135,24 @@ hr {
 .navitem {
     color: #4A4A4A;
     font-weight: 500;
-    transition: all 300ms ease-in-out;
+    transition: all 200ms ease-in-out;
 }
 
 .navitem:hover {
     color: var(--accentColor);
+    text-decoration: none;
 }
 
 
 .facebookbutton {
-    border-radius: 10px;
+    border-radius: 6px;
     padding: 0.7em;
     margin-right: 1em;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: white;
-    color: black;
+    color: #014373;
     cursor: pointer;
     transition: all 300ms ease-in-out;
 }
@@ -162,14 +163,14 @@ hr {
 }
 
 .instagrambutton {
-    border-radius: 10px;
+    border-radius: 6px;
     padding: 0.7em;
     margin-right: 1em;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: white;
-    color: black;
+    color: #014373;
     cursor: pointer;
     transition: all 300ms ease-in-out;
 }
@@ -204,20 +205,42 @@ hr {
     padding: 2.1em 4.1em;
 }
 
+.bt-booknow {
+    color: white;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    padding: 2.1em 4.1em;
+    background: #4A4A4A;
+    letter-spacing: .5rem;
+    transition: all 500ms;
+}
+
+.bt-booknow:hover {
+    background-color: var(--primaryColor);
+    text-decoration: 0;
+}
+
 .bt-search {
     background-color: white;
-    border-radius: 10px;
+    border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1em;
+    padding: 0.9em;
     cursor: pointer;
     transition: all 500ms;
+    font-weight: 500;
+    font-size: 1.2em;
 }
 
 .bt-search:hover {
     background-color: var(--accentColor);
+    color: white;
+    text-decoration: 0;
 }
+
 
 .bt-outline-primary {
     border: 3px solid var(--primaryColor);
@@ -240,6 +263,7 @@ hr {
     cursor: pointer;
     text-align: center;
     padding: 1em 4em;
+    text-decoration: none;
     /*box-shadow: 0 1px 5px var(--shadowColor1);*/
 }
 
@@ -379,6 +403,7 @@ hr {
     margin-bottom: 0;
 }
 
+/*ARTICLE HOME*/
 .gen-card-article {
     display: block;
     flex-direction: column;
@@ -399,6 +424,32 @@ hr {
 }
 
 .gen-card-article .sumber {
+    color: var(--accentColor);
+    font-size: 1rem;
+    text-align: left;
+}
+
+/*ARTICLE PAGE*/
+.gen-card-article-page {
+    display: block;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.gen-card-article-page img {
+    height: 20em;
+    width: 100%;
+    object-fit: cover;
+}
+
+.gen-card-article-page .judul {
+    color: black;
+    font-size: 1.4rem;
+    margin-bottom: 0;
+    text-align: left;
+}
+
+.gen-card-article-page .sumber {
     color: var(--accentColor);
     font-size: 1rem;
     text-align: left;
