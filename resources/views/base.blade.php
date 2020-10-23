@@ -41,6 +41,12 @@
     </div>
 </nav>
 
+<div class="sideFixDiv d-flex flex-column align-items-center justify-content-center">
+    <a href="https://api.whatsapp.com/send?phone=6283865442740&text=Hallo%21%20Sukmatrip" ><img src="{{asset('assets/img/icons/common/wa.png')}}" style="width: 2.5em"></a>
+    <div style="height: 0.5em"></div>
+    <a href="tel:6283865442740" ><img src="{{asset('assets/img/icons/common/call1.png')}}" style="width: 2.5em"></a>
+</div>
+
 <div class="content-wrapper">
     @yield('content')
 </div>

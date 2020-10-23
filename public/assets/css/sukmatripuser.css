@@ -181,6 +181,17 @@ hr {
 
 /*COMPONENT*/
 
+.sideFixDiv{
+    position: fixed;
+    top: 45%;
+    background-color: #fff5;
+    left: 0;
+    height: 7em;
+    width: 4em;
+    z-index: 100;
+    border-radius: 0 15px 15px 0;
+}
+
 /*BUTTON*/
 
 .bt-primary {
