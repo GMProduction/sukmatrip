@@ -122,7 +122,8 @@ class PenginapanController extends CustomController
                 $image     = $this->generateImageName('file');
                 $dataImage = [
                     'tipe' => 'penginapan',
-                    'url'  => '/uploads/images/'.$image,
+                    'url'  => '../public_html/uploads/images/'.$image,
+//                    'url'  => '/uploads/images/'.$image,
                 ];
 
 //            $this->uploadImage('file',$image,'images');
