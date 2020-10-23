@@ -123,7 +123,7 @@ class PenginapanController extends CustomController
                 $dataImage = [
                     'tipe' => 'penginapan',
 //                    'url'  => '/assets/img/'.$image,
-                    'url'  => '/home/u3974397/public_html/uploads/images/'.$image,
+                    'url'  => '/uploads/images/'.$image,
 //                    'url'  => '../public_html/uploads/images/'.$image,
                 ];
 
