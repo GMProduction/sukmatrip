@@ -205,7 +205,7 @@
       <workItem from="1602698535715" duration="3326000" />
       <workItem from="1602869965690" duration="5611000" />
       <workItem from="1603300940564" duration="6731000" />
-      <workItem from="1603466996353" duration="2727000" />
+      <workItem from="1603466996353" duration="2950000" />
     </task>
     <task id="LOCAL-00001" summary="push">
       <created>1598895826535</created>
@@ -375,7 +375,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603468970321</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="git push">
+      <created>1603469820237</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1603469820237</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -404,10 +411,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="345" y="20" width="690" height="687" key="#phpunit.xml/0.0.1366.728@0.0.1366.728" timestamp="1603305838502" />
-    <state x="306" y="0" key="CommitChangelistDialog2" timestamp="1603468968353">
+    <state x="306" y="0" key="CommitChangelistDialog2" timestamp="1603469818365">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="306" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1603468968353" />
+    <state x="306" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1603469818365" />
     <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1598813283126">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -428,10 +435,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="490" y="276" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1603305840594" />
-    <state x="369" y="80" width="627" height="568" key="find.popup" timestamp="1603307691701">
+    <state x="369" y="80" width="629" height="568" key="find.popup" timestamp="1603470091116">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="369" y="80" width="627" height="568" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1603307691701" />
+    <state x="369" y="80" width="629" height="568" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1603470091116" />
     <state x="339" y="162" key="run.anything.popup" timestamp="1600104212485">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
