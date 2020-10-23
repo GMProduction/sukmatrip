@@ -92,7 +92,7 @@ class PenginapanController extends CustomController
         $data['durasi']     = Duration::all();
         foreach ($data['penginapan']->getImage as $key => $img){
             $data['image'][$key] = $img->image->url;
-            $data['imageSize'][$key] = filesize('/public_html'.$img->image->url);
+            $data['imageSize'][$key] = filesize('../public_html'.$img->image->url);
         }
 //dump($data['image'][0]->url);die();
 //        return $this->jsonResponse($data);
