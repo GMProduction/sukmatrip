@@ -70,6 +70,7 @@
 
 @section('script')
     <script src="{{asset('assets/js/etc/dropzone.min.js')}}"></script>
+    <script src="{{asset('assets/js/compressor.js')}}"></script>
     {{--    <script src="{{asset('assets/js/etc/dropzone-amd-module.min.js')}}"></script>--}}
 
     <script type="text/javascript">
@@ -78,8 +79,22 @@
             // paramName: 'image',
             acceptedFiles: ".png,.jpg,.gif,.bmp,.jpeg",
             addRemoveLinks: true,
-            thumbnailWidth: 120,
-            thumbnailHeight: 120,
+            // thumbnailWidth: 120,
+            // thumbnailHeight: 120,
+            transformFile: function (file, done) {
+                // const imageCompressor = new ImageCompressor();
+                new Compressor(file, {
+                    quality: 0.6,
+                    success(result) {
+                        console.log(result);
+                        done(result)
+                    },
+                    error(err) {
+                        console.log(err.message);
+                    },
+                });
+
+            },
             removedfile: function (file) {
                 var name = JSON.parse(file.xhr.response)['payload']['image'];
                 var idImg = JSON.parse(file.xhr.response)['payload']['id'];
@@ -105,6 +120,13 @@
                 $('.dz-image img').attr('height', '120')
 
             },
+            accept: function (file, done) {
+                this.options.resizeWidth = 650;
+                this.options.resizeQuality = 0.75;
+                console.log(this.options);
+                done();
+                return;
+            }
 
         };
 
