@@ -9,14 +9,19 @@
 
     {{--    BIG IMAGE--}}
     <section>
-        <div class="gambar-depan" style="background-image: url({{asset('assets/img/foto/sukmatrip1.png')}})">
+        <div class="gambar-depan"  >
+
+            <div class="imagesContainer">
+            <img class="image-as-bg" src="{{asset('assets/img/foto/bg1.jpg')}}">
+            <img class="image-as-bg fadeInClass" src="{{asset('assets/img/foto/bg2.jpg')}}">
+            </div>
             <div class="gradien-putih"></div>
             <div class="transparent-hitam"></div>
 
             <div class="d-flex justify-content-center align-items-center h-100 flex-column">
                 <p class="sukmatrip mb-0">SUKMATRIP</p>
                 <hr class="mb-2" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">
-                <p class="title-home" >CARI TOUR IMPIAN KAMU</p>
+                <p class="title-home" >CARI DESTINASI IMPIAN ANDA</p>
                 <div class="container-fluid w-50" style="z-index: 3">
                     <div class="row mt-5 margin-title">
                         <div class="col-lg-4 col-md-12">
@@ -109,7 +114,7 @@
         <div class="d-flex justify-content-center align-items-center h-100 flex-column front">
             <p class="sukmatrip mb-0">SUKMATRIP</p>
             <hr class="mb-2" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">
-            <p class="text-center text-white f36 mt-2">Yuk Trip dengan <a class="t-accent">Skumatrip</a></p>
+            <p class="text-center text-white f36 mt-2">Yuk Trip dengan <a class="t-accent">Sukmatrip</a></p>
             <p style="font-weight: 300" class="text-white text-center f14 container">Enjoy, Travel, <a class="t-accent">Relax</a></p>
         </div>
     </section>

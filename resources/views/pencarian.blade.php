@@ -10,7 +10,7 @@
             <div class="d-flex justify-content-center align-items-center h-100 flex-column">
                 <p class="sukmatrip mb-0">SUKMATRIP</p>
                 <hr class="mb-2" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">
-                <p style="font-size: 4rem; color: white; z-index: 3">CARI TOUR IMPIAN ANDA</p>
+                <p style="font-size: 4rem; color: white; z-index: 3">CARI DESTINASI IMPIAN ANDA</p>
                 <div class="container-fluid w-50" style="z-index: 3">
                     <div class="row mt-5">
                         <div class="col-lg-4 col-md-12">

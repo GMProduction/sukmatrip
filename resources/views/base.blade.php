@@ -71,10 +71,11 @@
                     class="fa fa-instagram  fa-lg instagrambutton"></i></a>
         </div>
         <div class="d-flex mt-5">
-            <a style="color: white" href="#" class="mr-3 ml-3 f08">HOME</a>
-            <a style="color: white" href="#" class="mr-3 ml-3 f08">CONTACT</a>
-            <a style="color: white" href="#" class="mr-3 ml-3 f08">ARTICLE</a>
-            <a style="color: white" href="#" class="mr-3 ml-3 f08">GALLERY</a>
+            <a style="color: white" href="/" class="mr-3 ml-3 f08">HOME</a>
+            <a style="color: white" href="/gallery" class="mr-3 ml-3 f08">GALLERY</a>
+            <a style="color: white" href="/article" class="mr-3 ml-3 f08">ARTICLE</a>
+            <a style="color: white" href="/contact" class="mr-3 ml-3 f08">CONTACT</a>
+
         </div>
         <p style="color: #C8C8C8; font-weight: 300" class="mt-4 f08">2020 - All rights reserved to ©Sukmatrip</p>
     </div>

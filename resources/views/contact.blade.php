@@ -8,9 +8,8 @@
 @section('content')
 
     {{--    BIG MAP--}}
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.468876962558!2d110.43053231477376!3d-7.07150929489277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708eb6acb5b2b9%3A0xa272b7a0fef12bc6!2sJl.%20Sawunggaling%20Sel.%20No.28%2C%20Padangsari%2C%20Kec.%20Banyumanik%2C%20Kota%20Semarang%2C%20Jawa%20Tengah%2050267!5e0!3m2!1sen!2sid!4v1600676171837!5m2!1sen!2sid"frameborder="0"
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d988.8154676581357!2d110.7329121291782!3d-7.546395899659835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a14bdd2214c4f%3A0xc8d1a3719f9d6585!2sGriya%20Calista%2C%20Wirogunan!5e0!3m2!1sid!2sid!4v1604336790552!5m2!1sid!2sid"frameborder="0"
             style="height: 24em; width: 100%; position:relative; margin-top: 4em; border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-
     {{--    OUR PACKAGE--}}
     <section class="container  mt-5 text-center">
         <div class="text-center mb-4" style="margin-top: 7rem">
@@ -22,11 +21,12 @@
         <div class="slick-fade">
             <div class="ulasan mt-0 d-flex flex-column align-items-center justify-content-center">
                 <img src="{{asset('assets/img/common/logo.png')}}" style=" width: 9em">
-                <p style="color: #636363; font-weight: 300" class="mt-5 f14">Jl. Sawunggaling Sel. No.28, Padangsari, Kec. Banyumanik, Kota Semarang,
-                    Jawa Tengah 50267</p>
+                <p style="color: #636363; font-weight: 300" class="mt-5 f14">SUKMATRIP office</p>
+                   <p> GRIYA CALISTA B8
+                    kel Wirogunan, Kec. Kartasura, Kabupaten Sukoharjo, Jawa Tengah</p>
             </div>
         </div>
-        <div class="row ">
+        <div class="row mt-5">
             <div class="col-4">
                 <p style="color: var(--primaryColor);" class="f18 mb-0">Instagram</p>
                 <a style="color: black;" class="f12 mb-0" href="https://www.instagram.com/sukmatrip_/">@sukmatrip_</a>
