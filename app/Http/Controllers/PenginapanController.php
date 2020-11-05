@@ -49,7 +49,6 @@ class PenginapanController extends CustomController
                 'harga'        => str_replace(',', '', $this->postField('hargaPenginapan')),
                 'id_destinasi' => $this->postField('destinasi'),
                 'deskripsi'    => $this->postField('deskripsiPenginapan'),
-                'duration_id'  => $this->postField('durasi'),
                 'lokasi'       => $this->postField('lokasi'),
             ];
             $penginapan = $this->insert(Penginapan::class, $data);
@@ -57,7 +56,6 @@ class PenginapanController extends CustomController
             return view('admin.penginapan.addimage')->with(['id' => $penginapan->id]);
 
         }
-        $data['durasi']    = Duration::all();
         $data['destinasi'] = Destinasi::all();
 
         return view('admin.penginapan.tambahpenginapan')->with($data);

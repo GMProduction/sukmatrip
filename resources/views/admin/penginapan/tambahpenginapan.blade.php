@@ -64,16 +64,8 @@
                                             <option value="Vila">Villa</option>
                                         </select>
                                     </div>
-                                    <div class="form-group col-3 col-md-3 col-sm-12">
-                                        <label for="bahanPenginapan">Durasi</label>
-                                        <select class="form-control" id="durasi" name="durasi">
-                                            <option value="">Pilih Durasi</option>
-                                            @foreach($durasi as $p)
-                                                <option value="{{ $p->id }}">{{ $p->name }} ({{$p->qty_trip }} Tour)</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                    <div class="col-3 col-md-3 col-sm-12">
+
+                                    <div class="col-6 col-md-6 col-sm-12">
                                         <div class="form-group">
                                             <label for="tebal">Harga /malam</label>
                                             <input type="text" id="hargaPenginapan" name="hargaPenginapan"
