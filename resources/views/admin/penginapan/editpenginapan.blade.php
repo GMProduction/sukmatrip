@@ -64,16 +64,7 @@
                                             <option value="Vila" {{$penginapan->tipe == 'Vila' ? 'selected' : ''}}>Vila</option>
                                         </select>
                                     </div>
-                                    <div class="form-group col-3 col-md-3 col-sm-12">
-                                        <label for="bahanPenginapan">Durasi</label>
-                                        <select class="form-control" id="durasi" name="durasi">
-                                            <option value="">Pilih Durasi</option>
-                                            @foreach($durasi as $p)
-                                                <option value="{{ $p->id }}" {{$p->id == $penginapan->duration->id ? 'selected' : ''}} >{{ $p->name }} ({{$p->qty_trip }} Tour)</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                    <div class="col-3 col-md-3 col-sm-12">
+                                    <div class="col-6 col-md-6 col-sm-12">
                                         <div class="form-group">
                                             <label for="hargaPenginapan">Harga /malam</label>
                                             <input type="number" id="hargaPenginapan" name="hargaPenginapan" value="{{$penginapan->harga}}"
