@@ -13,6 +13,9 @@ yarn-error.log
 /.idea/
 .idea
 .idea/workspace.xml
+.idea/php.xml
+.idea/sukmatrip.iml
+.idea/workspace.xml
 /public/uploads/
 /composer.lock
 /bootstrap/
