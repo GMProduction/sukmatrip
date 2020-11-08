@@ -89,7 +89,7 @@
                             return 'Rp. '+data.toLocaleString()
                         }
                     },
-                    {data: 'penginapan.duration.name', name: 'penginapan.duration.name'},
+                    // {data: 'penginapan.duration.name', name: 'penginapan.duration.name'},
                     {
                         "name": 'nama',
                         "data": 'get_image[0].image.url',

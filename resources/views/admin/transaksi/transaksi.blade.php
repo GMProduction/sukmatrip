@@ -89,7 +89,7 @@
                             return data
                         }
                     },
-                    {data: 'penginapan.duration.name', name: 'penginapan.duration.name'},
+                    // {data: 'penginapan.duration.name', name: 'penginapan.duration.name'},
                     {
                         data: 'harga', 'name': 'harga', 'render': function (data) {
                             return 'Rp. ' + data.toLocaleString()
