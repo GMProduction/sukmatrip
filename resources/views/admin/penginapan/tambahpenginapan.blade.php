@@ -117,6 +117,11 @@
 @endsection
 
 @section('script')
+    <script>
+        $(document).ready(function() {
+            $('#deskripsiPenginapan').summernote();
+        });
+    </script>
     <script src="{{asset('assets/js/etc/dropzone.min.js')}}"></script>
     {{--    <script src="{{asset('assets/js/etc/dropzone-amd-module.min.js')}}"></script>--}}
 

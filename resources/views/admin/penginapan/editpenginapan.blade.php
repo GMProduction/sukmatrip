@@ -128,7 +128,11 @@
 
 @section('script')
     <script src="{{asset('assets/js/etc/dropzone.min.js')}}"></script>
-
+    <script>
+        $(document).ready(function() {
+            $('#deskripsiPenginapan').summernote();
+        });
+    </script>
     <script type="text/javascript">
         Dropzone.options.formImg = {
             // paramName: 'image',

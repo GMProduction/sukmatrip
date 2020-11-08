@@ -591,6 +591,12 @@ hr {
     bottom: 0;
 }
 
+.logoimg{
+    width: 7vw;
+    margin: 1rem;
+    object-fit: scale-down;
+}
+
 /* img tags */
 .imagesContainer {
 

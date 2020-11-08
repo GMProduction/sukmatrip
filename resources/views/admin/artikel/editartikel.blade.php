@@ -87,6 +87,11 @@
 
 @section('script')
     <script>
+        $(document).ready(function() {
+            $('#kontenArtikel').summernote();
+        });
+    </script>
+    <script>
         $(document).ready(function () {
 
             var fr = $('#formgallery');
