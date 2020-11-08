@@ -53,7 +53,7 @@ class PenginapanController extends CustomController
             ];
             $penginapan = $this->insert(Penginapan::class, $data);
 
-            return view('admin.penginapan.addimage')->with(['id' => $penginapan->id]);
+            return view('admin.penginapan.addImage')->with(['id' => $penginapan->id]);
 
         }
         $data['destinasi'] = Destinasi::all();
@@ -90,7 +90,7 @@ class PenginapanController extends CustomController
         $data['durasi']     = Duration::all();
         foreach ($data['penginapan']->getImage as $key => $img){
             $data['image'][$key] = $img->image->url;
-            $data['imageSize'][$key] = filesize('../public'.$img->image->url);
+            $data['imageSize'][$key] = filesize('../public_html'.$img->image->url);
         }
 //dump($data['image'][0]->url);die();
 //        return $this->jsonResponse($data);
@@ -120,7 +120,9 @@ class PenginapanController extends CustomController
                 $image     = $this->generateImageName('file');
                 $dataImage = [
                     'tipe' => 'penginapan',
+//                    'url'  => '/assets/img/'.$image,
                     'url'  => '/uploads/images/'.$image,
+//                    'url'  => '../public_html/uploads/images/'.$image,
                 ];
 
 //            $this->uploadImage('file',$image,'images');

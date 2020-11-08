@@ -67,9 +67,9 @@
                     {"title": "paket", 'targets': 4, 'searchable': true, 'orderable': true},
                     {"title": "Tour", 'targets': 5, 'searchable': true, 'orderable': true},
                     {"title": "Tanggal Berangkat", 'targets': 6, 'searchable': true, 'orderable': true},
-                    {"title": "Durasi", 'targets': 7, 'searchable': true, 'orderable': true},
-                    {"title": "Total Harga", 'targets': 8, 'searchable': true, 'orderable': true},
-                    {"title": "Action", 'targets': 9, 'searchable': false, 'orderable': false},
+                    // {"title": "Durasi", 'targets': 7, 'searchable': true, 'orderable': true},
+                    {"title": "Total Harga", 'targets': 7, 'searchable': true, 'orderable': true},
+                    {"title": "Action", 'targets': 8, 'searchable': false, 'orderable': false},
 
                 ],
                 columns: [
@@ -89,7 +89,7 @@
                             return data
                         }
                     },
-                    {data: 'penginapan.duration.name', name: 'penginapan.duration.name'},
+                    // {data: 'penginapan.duration.name', name: 'penginapan.duration.name'},
                     {
                         data: 'harga', 'name': 'harga', 'render': function (data) {
                             return 'Rp. ' + data.toLocaleString()

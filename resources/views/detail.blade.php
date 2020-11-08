@@ -86,7 +86,7 @@
     </section>
 
     <section class="mt-5 container-fluid d-flex justify-content-center align-items-center flex-column"
-             style="height: 50em; position:relative;">
+             style="height: 60em; position:relative;">
         <img class="image-as-bg" src="{{asset('assets/img/foto/sukmatrip4.jpg')}}">
         <div class="cover-black-all"></div>
         <div class="d-flex justify-content-center align-items-center cover-white flex-column front">
@@ -143,6 +143,13 @@
                                        aria-describedby="emailHelp" placeholder="Total Harga*" name="harga"
                                        value="{{ $product->harga }}">
                             </div>
+=======
+                    <div class="offset-3 col-6">
+                        <div class="form-group">
+                            <label for="totalHarga">Total Harga</label>
+                            <input type="text" readonly class="form-control form-data-input" id="totalHarga"
+                                   aria-describedby="emailHelp" placeholder="Total Harga*">
+>>>>>>> b86e91a6c781923d86d7f30c85934eabacb806cf
                         </div>
                     </div>
                 </form>

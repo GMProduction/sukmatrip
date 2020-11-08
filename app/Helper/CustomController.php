@@ -115,7 +115,7 @@ class CustomController extends Controller
         $watermark = public_path('assets/img/common/logo.png');
         $image_water = \Intervention\Image\Facades\Image::make($this->request->file($file));
         $image_water->insert($watermark, 'bottom-left', 5, 5);
-        $image_water->save(public_path('uploads/images/'.$targetName));
+        $image_water->save('/home/u3974397/public_html/uploads/images/'.$targetName);
     }
 
     public function uuidGenerator()

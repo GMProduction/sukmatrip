@@ -136,7 +136,11 @@
 
 @section('script')
     <script src="{{asset('assets/js/etc/dropzone.min.js')}}"></script>
-
+    <script>
+        $(document).ready(function() {
+            $('#deskripsiTour').summernote();
+        });
+    </script>
     <script type="text/javascript">
         // Dropzone.options.dropzoneTour = {
         //     acceptedFiles: ".png,.jpg,.gif,.bmp,.jpeg",

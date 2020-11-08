@@ -26,6 +26,18 @@ Route::get('/detail-paket/{id}', 'Main\MainController@detailPaket');
 Route::post('/transaction-submit', 'Main\TransactionController@saveTransaction');
 Route::post('/transaction-package-submit', 'Main\TransactionController@savePackageTransaction');
 
+Route::get('/gallery', function () {
+    return view('gallery');
+});
+
+Route::get('/contact', function () {
+    return view('contact');
+});
+
+Route::get('/article', function () {
+    return view('article');
+});
+
 //LOGIN
 Route::get('/login', function () {
     return view('login.login');

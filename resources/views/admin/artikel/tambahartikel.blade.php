@@ -84,6 +84,11 @@
 @endsection
 
 @section('script')
+    <script>
+        $(document).ready(function() {
+            $('#kontenArtikel').summernote();
+        });
+    </script>
 <script>
     $(document).ready(function () {
 

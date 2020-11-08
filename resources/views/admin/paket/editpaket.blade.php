@@ -129,6 +129,11 @@
     <script src="{{asset('assets/js/etc/dropzone-amd-module.min.js')}}"></script>
     <script src="{{asset('assets/js/etc/select2.min.js')}}"></script>
     <script>
+        $(document).ready(function() {
+            $('#deskripsiPaket').summernote();
+        });
+    </script>
+    <script>
         $(document).ready(function () {
             $('#penginapanSelect').select2();
             $('#tourSelect').select2();

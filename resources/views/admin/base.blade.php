@@ -24,6 +24,14 @@
     <link rel="stylesheet" href="{{asset('/assets/css/argon.css?v=1.2.0')}}" type="text/css">
     <script src="{{asset('assets/js/swal.min.js')}}"></script>
 
+
+    <script src="{{asset('assets/vendor/jquery/dist/jquery.min.js')}}"></script>
+
+    <script src="{{asset('assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
+
+    <link href="{{asset('assets/vendor/summernote/summernote.css')}}" rel="stylesheet">
+    <script src="{{asset('assets/vendor/summernote/summernote.js')}}"></script>
+
     @yield('morecss')
     <script src="https://unpkg.com/feather-icons"></script>
 </head>
@@ -57,7 +65,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link " id="durasi" href="/admin/durasi">
-                            <i class="ni ni-pin-3"></i>
+                            <i class="ni ni-watch-time"></i>
                             <span class="nav-link-text" style="margin-left: 10px">Durasi</span>
                         </a>
                     </li>
@@ -202,9 +210,7 @@
 </div>
 <!-- Argon Scripts -->
 <!-- Core -->
-<script src="{{asset('assets/vendor/jquery/dist/jquery.min.js')}}"></script>
 
-<script src="{{asset('assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
 <script src="{{asset('assets/DataTables/datatables.min.js')}}"></script>
 
 <script src="{{asset('assets/vendor/js-cookie/js.cookie.js')}}"></script>
