@@ -6,7 +6,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Paket
+ * Class paket
  * @package App\Models
  */
 class Paket extends Model
@@ -40,10 +40,17 @@ class Paket extends Model
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function getImage(){
-        return $this->hasMany(Paket_to_image::class, 'id');
+        return $this->hasMany(Paket_to_image::class, 'id_paket');
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function paketTour(){
-        return $this->belongsToMany(Tour::class, 'pakets_tours');
+        return $this->hasMany(Pakets_tour::class, 'paket_id');
     }
+
+//    public function paketTour(){
+//        return $this->belongsToMany(Tour::class, 'pakets_tours');
+//    }
 }

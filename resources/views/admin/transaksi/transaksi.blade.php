@@ -31,83 +31,12 @@
                     </div>
                     <!-- Light table -->
                     <div class="table-responsive">
-                        <table class="table align-items-center table-flush">
-                            <thead class="thead-light">
-                            <tr>
-                                <th scope="col" class="sort" data-sort="name">#</th>
-                                <th scope="col" class="sort" data-sort="budget">Nama</th>
-                                <th scope="col" class="sort" data-sort="status">Np.Telp</th>
-                                <th scope="col" class="sort" data-sort="status">Pesanan</th>
-                                <th scope="col" class="sort" data-sort="status">Tanggal Berangkat</th>
-                                <th scope="col" class="sort" data-sort="status">Durasi</th>
-                                <th scope="col" class="sort" data-sort="status">Totas Harga</th>
-                                <th scope="col" class="sort" data-sort="status">Action</th>
-                            </tr>
-                            </thead>
-                            <tbody class="list">
-                            <tr>
+                        <table id="tabel" class="table align-items-center table-flush">
 
-                                <td class="budget">
-                                    1
-                                </td>
-
-                                <td class="budget">
-                                    <p>Pradana Mahendra</p>
-                                </td>
-
-                                <td class="budget" style="max-width: 300px;">
-                                    <p>081138592058</p>
-                                </td>
-
-                                <td class="budget" style="max-width: 300px;">
-                                    <p>Penginapan</p>
-                                </td>
-
-                                <td class="budget" style="max-width: 300px;">
-                                    <p>31 Febuari 2021</p>
-                                </td>
-
-                                <td class="budget" style="max-width: 300px;">
-                                    <p>2 Hari 1 Malam</p>
-                                </td>
-
-                                <td class="budget" style="max-width: 300px;">
-                                    <p>Rp 1.987.600</p>
-                                </td>
-
-                                <td>
-                                    <a href="/admin/detailtransaksi" class="btn btn-sm btn-success">Hubungi</a>
-                                </td>
-                            </tr>
-                            </tbody>
                         </table>
                     </div>
                     <!-- Card footer -->
-                    <div class="card-footer py-4">
-                        <nav aria-label="...">
-                            <ul class="pagination justify-content-end mb-0">
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="#" tabindex="-1">
-                                        <i class="fas fa-angle-left"></i>
-                                        <span class="sr-only">Previous</span>
-                                    </a>
-                                </li>
-                                <li class="page-item active">
-                                    <a class="page-link" href="#">1</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">
-                                        <i class="fas fa-angle-right"></i>
-                                        <span class="sr-only">Next</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -116,6 +45,102 @@
 @endsection
 
 @section('script')
+    <script>
+        $(function () {
+            var table = $('#tabel').DataTable({
+                processing: true,
+                serverSide: true,
+                ajax: '/admin/transaksi/datatable',
+                "fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+                    // debugger;
+                    var numStart = this.fnPagingInfo().iStart;
+                    var index = numStart + iDisplayIndexFull + 1;
+                    // var index = iDisplayIndexFull + 1;
+                    $("td:first", nRow).html(index);
+                    return nRow;
+                },
+                columnDefs: [
+                    {"title": "#", "searchable": false, "orderable": false, "targets": 0,},
+                    {"title": "Nama Pemesan", 'targets': 1, 'searchable': true, 'orderable': true},
+                    {"title": "No. Telp", 'targets': 2, 'searchable': true, 'orderable': true},
+                    {"title": "Penginapan", 'targets': 3, 'searchable': true, 'orderable': true},
+                    {"title": "paket", 'targets': 4, 'searchable': true, 'orderable': true},
+                    {"title": "Tour", 'targets': 5, 'searchable': true, 'orderable': true},
+                    {"title": "Tanggal Berangkat", 'targets': 6, 'searchable': true, 'orderable': true},
+                    {"title": "Durasi", 'targets': 7, 'searchable': true, 'orderable': true},
+                    {"title": "Total Harga", 'targets': 8, 'searchable': true, 'orderable': true},
+                    {"title": "Action", 'targets': 9, 'searchable': false, 'orderable': false},
 
+                ],
+                columns: [
+                    {
+                        "className": 'details-control',
+                        "orderable": false,
+                        "data": null,
+                        "defaultContent": ''
+                    },
+                    {data: 'pemesan', name: 'pemesan'},
+                    {data: 'phone', name: 'phone'},
+                    {data: 'penginapan.nama', name: 'penginapan.nama'},
+                    {data: 'paket.nama', name: 'paket.nama'},
+                    {data: 'tour[, ].nama', name: 'tour.nama'},
+                    {
+                        data: 'check_in', 'name': 'check_in', 'render': function (data) {
+                            return data
+                        }
+                    },
+                    {data: 'penginapan.duration.name', name: 'penginapan.duration.name'},
+                    {
+                        data: 'harga', 'name': 'harga', 'render': function (data) {
+                            return 'Rp. ' + data.toLocaleString()
+                        }
+                    },
+                    {
+                        "data": 'phone',
+                        "width": '100',
+                        "render": function (data, type, row, meta) {
+                            return '<a href="https://wa.me/'+data+'" target="_blank" class="btn btn-sm btn-primary btn-sm" data-id="' + data + '" id="hubungi">Hubungi</a>'
+                        }
+                    },
+                ]
+            });
+
+            $('#tabel tbody').on('click', 'a#editData', function () {
+                var id = $(this).data('id');
+                var url = '/admin/tour/edit/' + id;
+                $(this).attr('href', url);
+            });
+
+            $('#tabel tbody').on('click', 'a#deleteData', function () {
+                var data = table.row($(this).parents('tr')).data();
+                var nama = data['nama'];
+                Swal.fire({
+                    title: 'Apa anda yakin untuk menghapus data tour ' + nama + ' ?',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Ya',
+                    cancelButtonText: 'Tidak'
+                }).then(async (result) => {
+                    if (result.value) {
+                        let data = {
+                            '_token': '{{csrf_token()}}',
+                        };
+                        let get = await $.post('/admin/tour/delete/' + $(this).data('id'), data);
+                        if (get['status'] === 200) {
+                            table.ajax.reload();
+                            Swal.fire({
+                                title: 'Success',
+                                text: 'Berhasil Menghapus Data tour ' + nama,
+                                icon: 'success',
+                                confirmButtonText: 'Ok'
+                            })
+                        }
+                    }
+                })
+            });
+        });
+    </script>
 
 @endsection

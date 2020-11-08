@@ -2,8 +2,18 @@
 @section('morecss')
     <link rel="stylesheet" href="{{asset('assets/css/etc/basic.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('assets/css/etc/dropzone.css')}}" type="text/css">
-    @endsection
+@endsection
 @section('content')
+    @if(\Illuminate\Support\Facades\Session::has('success'))
+        <script>
+            Swal.fire({
+                title: 'Success',
+                text: 'Berhasil Merubah Data',
+                icon: 'success',
+                confirmButtonText: 'Ok'
+            })
+        </script>
+    @endif
 
     <!-- Header -->
     <div class="header bg-primary pb-6">
@@ -33,12 +43,12 @@
                 <div class="card">
 
                     <div class="card-body">
-                        <form action="/admin/penginapan/store" method="POST">
+                        <form method="POST" id="formData">
                             @csrf
                             <h6 class="heading-small text-muted mb-4">Data</h6>
                             <div class="pl-lg-4">
                                 <div class="row">
-
+                                    <input name="id" value="{{$penginapan->id}}" hidden>
                                     <div class="col-6 col-md-6 col-sm-12">
                                         <div class="form-group">
                                             <label for="namaPenginapan">Nama Penginapan</label>
@@ -54,10 +64,9 @@
                                             <option value="Vila" {{$penginapan->tipe == 'Vila' ? 'selected' : ''}}>Vila</option>
                                         </select>
                                     </div>
-
                                     <div class="col-6 col-md-6 col-sm-12">
                                         <div class="form-group">
-                                            <label  for="hargaPenginapan">Harga /malam</label>
+                                            <label for="hargaPenginapan">Harga /malam</label>
                                             <input type="number" id="hargaPenginapan" name="hargaPenginapan" value="{{$penginapan->harga}}"
                                                    class="form-control">
                                         </div>
@@ -72,71 +81,48 @@
                                             @endforeach
                                         </select>
                                     </div>
-
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label for="exampleFormControlTextarea1">Lokasi</label>
+                                            <textarea class="form-control" name="lokasi" id="lokasi" rows="3">{{$penginapan->lokasi}}</textarea>
+                                        </div>
+                                    </div>
                                     <div class="col-12">
                                         <div class="form-group">
                                             <label for="exampleFormControlTextarea1">Deskripsi</label>
-                                            <textarea class="form-control" id="deskripsiPenginapan" rows="3">{{$penginapan->deskripsi}}</textarea>
+                                            <textarea class="form-control" id="deskripsiPenginapan" name="deskripsiPenginapan" rows="3">{{$penginapan->deskripsi}}</textarea>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
                             <!-- Description -->
-                            <div class="col-12 text-right"id="myId">
-                                <button type="button" class="btn btn-lg btn-danger" data-toggle="modal" data-target=".bd-example-modal-lg">Unggah Foto</button>
-                                <button type="submit" class="btn btn-lg btn-primary">Simpan</button>
-                            </div>
+
                         </form>
-
-                        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-lg">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLongTitle">Upload Foto</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form id="dropzonePenginapan" action="{{route('dropzone.penginapan')}}" class="dropzone" enctype="multipart/form-data">
-
-                                            @csrf
-                                        </form>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                                        <button type="button" class="btn btn-primary">Simpan</button>
-                                    </div>
+                        @foreach($penginapan->getImage as $img)
+                            <input value="{{json_encode($img->image->url)}}" hidden name="image[]">
+                        @endforeach
+{{--                        {{$penginapan->getImage}}--}}
+                        <h6 class="heading-small text-muted mb-4">Data Foto</h6>
+                        <div class="pl-lg-4">
+                            <form id="formImg" action="/admin/penginapan/addImg" method="post" class="dropzone mb-3" enctype="multipart/form-data" style="border-radius: 10px">
+                                @csrf
+                                <div class="fallback">
+                                    <input name="image" type="file"  multiple/>
                                 </div>
-                            </div>
+                            </form>
+
                         </div>
-
+                        <div class="col-12 text-right" id="myId">
+                            <a href="/admin/penginapan" type="submit" class="btn btn-lg btn-danger">Cancel</a>
+                            <button type="submit" onclick="cekData()" class="btn btn-lg btn-primary">Simpan</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-xl-12 order-xl-1">
-                <div class="card">
-
-                    <div class="card-body">
-                        <form action="/mitra/penginapan/store" method="POST">
-                            @csrf
-                            <h6 class="heading-small text-muted mb-4">Foto</h6>
-                            <div class="pl-lg-4">
-
-                            </div>
-                        </form>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
 @endsection
 
@@ -144,13 +130,88 @@
     <script src="{{asset('assets/js/etc/dropzone.min.js')}}"></script>
 
     <script type="text/javascript">
-        Dropzone.options.dropzonePenginapan = {
+        Dropzone.options.formImg = {
+            // paramName: 'image',
             acceptedFiles: ".png,.jpg,.gif,.bmp,.jpeg",
-            previewTemplate: previewTemplate,
+            addRemoveLinks: true,
+            thumbnailWidth: 120,
+            thumbnailHeight: 120,
+            removedfile: function (file) {
+                console.log(file);
+
+                var name = file.name;
+                var idImg = file.idImg;
+                console.log(file.idImg);
+                if(file.idImg === undefined){
+                    name = JSON.parse(file.xhr.response)['payload']['image'];
+                    idImg = JSON.parse(file.xhr.response)['payload']['id'];
+                }
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/admin/penginapan/addImg',
+                    data: {name: name, idImg: idImg, request: 2, '_token': '{{csrf_token()}}',},
+                    sucess: function (data) {
+                    }
+                });
+                var _ref;
+                return (_ref = file.previewElement) != null ? _ref.parentNode.removeChild(file.previewElement) : void 0;
+            },
+            sending: function (file, xhr, formData) {
+                // formData.append("filesize", file.size);
+                formData.append("idPenginapan", {{$penginapan->id}});
+            },
+            success: function (file, response) {
+                file.previewElement.querySelector("img").src = response['payload']['image'];
+                $('.dz-image img').attr('height', '120')
+
+            },
+
+            init: function() {
+                let myDropzone = this;
+                if($('[name="image[]"]').length > 0) {
+                    var existing_files = JSON.parse($('[name="image[]"]').val());
+                   @foreach($penginapan->getImage as $key => $img)
+                        var mockFile = {name: "{{$img->image->url}}", size: "{{$imageSize[$key]}}", idImg: "{{$img->image->id}}" };
+                        myDropzone.displayExistingFile(mockFile, "{{$img->image->url}}");
+                    @endforeach
+                }
+                $('.dz-image img').attr('height', '120')
+            }
         };
+
         $(document).ready(function () {
-
-
+            if($('[name="image"]').length > 0) {
+                console.log(JSON.parse($('[name="image[]"]').val()));
+            // if($('[name="image[]"]').length > 0) {
+                var existing_files = JSON.parse($('[name="image[]"]').val());
+                // var existing_files = $('[name="image[]"]').val();
+                $.each(existing_files, function(index) {
+                    // console.log(el);
+                    // dzClosure.emit("addedfile", el);
+                    // dzClosure.emit("thumbnail", el, App.baseUrl + '' + el.name);
+                    // dzClosure.emit("success", el);
+                    // dzClosure.emit("complete", el);
+                    // dzClosure.files.push(el);
+                });
+            }
         })
+
+        function cekData() {
+            Swal.fire({
+                title: 'Apakah data yang anda masukkan sudah benar ?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Ya',
+                cancelButtonText: 'Tidak'
+            }).then(async (result) => {
+                if (result.value) {
+                    document.getElementById('formData').submit();
+                }
+            });
+            return false;
+        }
     </script>
 @endsection

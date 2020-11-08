@@ -10,7 +10,7 @@
             <div class="d-flex justify-content-center align-items-center h-100 flex-column">
                 <p class="sukmatrip mb-0">SUKMATRIP</p>
                 <hr class="mb-2" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">
-                <p style="font-size: 4rem; color: white; z-index: 3">CARI TOUR IMPIAN ANDA</p>
+                <p style="font-size: 4rem; color: white; z-index: 3">CARI DESTINASI IMPIAN ANDA</p>
                 <div class="container-fluid w-50" style="z-index: 3">
                     <div class="row mt-5">
                         <div class="col-lg-4 col-md-12">
@@ -46,7 +46,7 @@
                             <a class="d-block text-center">
                                 <div class="bt-search">
                                     <i data-feather="search" class="mr-2" style="width: 1.3rem; height: 1.3rem"></i>
-                                    <p class="mb-0">Search</p>
+                                    <p class="mb-0">Search Tour</p>
                                 </div>
                             </a>
                         </div>
@@ -63,16 +63,14 @@
             <hr class="mb-2" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">
 
         </div>
-        <p class="text-center f26">It's Time to <a class="t-accent">Travel</a></p>
-        <p style="font-weight: 300; color: #636363;" class="text-center f14 container" id="search">Take a look at the
-            most exclusive & most visited locations in the world
-            - hand-picked just for you. Start traveling the world today!</p>
+        <p class="text-center f26">PILIHAN HOTEL DAN VILLA <a class="t-accent">KAMI</a></p>
+        <p style="font-weight: 300; color: #636363;" class="text-center f14 container" id="search">Kami memiliki berbagai pilihan Hotal dan Villa!</p>
 
     </section>
 
     <section class="container" id="ourProperty">
         <div class="text-center mt-5 mb-5">
-            <a class="sukmatrip" style="color: black">OUR HOTEL</a>
+            <a class="sukmatrip" style="color: black">Hotel dan Villa kami</a>
             <hr class="mb-2" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">
         </div>
 

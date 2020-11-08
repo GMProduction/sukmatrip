@@ -24,14 +24,15 @@ class Penginapan extends Model
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function getImage(){
-        return $this->hasMany(Penginapan_to_image::class, 'id');
+        return $this->hasMany(Penginapan_to_image::class, 'id_penginapan');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function duration()
-    {
+    public function duration(){
         return $this->belongsTo(Duration::class, 'duration_id');
     }
+
+
 }

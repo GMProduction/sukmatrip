@@ -17,7 +17,7 @@
                     </div>
 
                     <div class="col-lg-8 col-8 text-right">
-                        <a href="/admin/tambahartikel" class="btn btn-md btn-neutral">Tambah</a>
+                        <a href="/admin/artikel/add" class="btn btn-md btn-neutral">Tambah</a>
                     </div>
                 </div>
             </div>
@@ -34,69 +34,12 @@
                     </div>
                     <!-- Light table -->
                     <div class="table-responsive">
-                        <table class="table align-items-center table-flush">
-                            <thead class="thead-light">
-                            <tr>
-                                <th scope="col" class="sort" data-sort="name">#</th>
-                                <th scope="col" class="sort" data-sort="budget">Judul</th>
-                                <th scope="col" class="sort" data-sort="status">Konten</th>
-                                <th scope="col" class="sort" data-sort="status">Gambar</th>
-                                <th scope="col" class="sort" data-sort="status">Action</th>
-                            </tr>
-                            </thead>
-                            <tbody class="list">
-                            <tr>
+                        <table id="tabel" class="table align-items-center table-flush">
 
-                                <td class="budget">
-                                    1
-                                </td>
-
-                                <td class="budget">
-                                    <p>Sini Vie Villa</p>
-                                </td>
-
-                                <td class="budget" style="max-width: 300px;">
-                                    <p style="overflow: hidden">Sini Vie Villa adalah akomodasi dengan fasilitas baik dan kualitas pelayanan memuaskan menurut sebagian besar tamu. Nikmati pelayanan mewah dan pengalaman tak terlupakan ala Sini Vie Villa selama Anda menginap di sini. Tamu ekstra akan dikenakan biaya tambahan IDR 121,000/ orang untuk sarapan.</p>
-                                </td>
-
-                                <td class="budget">
-
-                                </td>
-
-                                <td>
-                                    <a href="/admin/editartikel" class="btn btn-sm btn-primary">Edit</a>
-                                    <a href="/admin/detailartikel" class="btn btn-sm btn-success">Detail</a>
-                                </td>
-                            </tr>
-                            </tbody>
                         </table>
                     </div>
                     <!-- Card footer -->
-                    <div class="card-footer py-4">
-                        <nav aria-label="...">
-                            <ul class="pagination justify-content-end mb-0">
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="#" tabindex="-1">
-                                        <i class="fas fa-angle-left"></i>
-                                        <span class="sr-only">Previous</span>
-                                    </a>
-                                </li>
-                                <li class="page-item active">
-                                    <a class="page-link" href="#">1</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">
-                                        <i class="fas fa-angle-right"></i>
-                                        <span class="sr-only">Next</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -105,6 +48,96 @@
 @endsection
 
 @section('script')
+<script>
+    $(function () {
+        var table = $('#tabel').DataTable({
+            processing: true,
+            serverSide: true,
+            ajax: '/admin/artikel/datatable',
+            "fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+                // debugger;
+                var numStart = this.fnPagingInfo().iStart;
+                var index = numStart + iDisplayIndexFull + 1;
+                // var index = iDisplayIndexFull + 1;
+                $("td:first", nRow).html(index);
+                return nRow;
+            },
+            columnDefs: [
+                {"title": "#", "searchable": false, "orderable": false, "targets": 0,},
+                {"title": "Judul", 'targets': 1, 'searchable': true, 'orderable': true},
+                {"title": "Konten",'targets': 2, 'searchable': true, 'orderable': true},
+                {"title": "Gambar", 'targets': 3, 'searchable': false, 'orderable': true},
+                {"title": "Action", 'targets': 4, 'searchable': false, 'orderable': false},
 
+            ],
+            columns: [
+                {
+                    "className": 'details-control',
+                    "orderable": false,
+                    "data": null,
+                    "defaultContent": ''
+                },
+                {data: 'judul', name: 'judul'},
+                {data: 'konten', name: 'konten'},
+                {
+                    "target": 2,
+                    "name":'url',
+                    "data": 'get_image[0].image.url',
+                    "width": '100',
+                    "render": function (data, type, row, meta) {
+                        return '<img src="'+data+'" height="70"  />'
+                    }
+                },
+                {
+                    "target": 2,
+                    "data": 'id',
+                    "width": '100',
+                    "render": function (data, type, row, meta) {
+                        return '<a href="#!" class="btn btn-sm btn-primary btn-sm" data-id="' + data + '" id="editData">Edit</a>' +
+                            '<a href="#!" class="btn btn-sm btn-danger btn-sm" data-id="' + data + '" id="deleteData">Delete</a>'
+                    }
+                },
+            ]
+        });
+
+
+
+        $('#tabel tbody').on('click', 'a#editData', function () {
+            var id = $(this).data('id');
+            var url = '/admin/artikel/edit/'+id;
+            $(this).attr('href', url);
+        });
+
+        $('#tabel tbody').on('click', 'a#deleteData', function () {
+            var data = table.row($(this).parents('tr')).data();
+            var nama = data['judul'];
+            Swal.fire({
+                title: 'Apa anda yakin untuk menghapus data artikel ' + nama + ' ?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Ya',
+                cancelButtonText: 'Tidak'
+            }).then(async (result) => {
+                if (result.value) {
+                    let data = {
+                        '_token': '{{csrf_token()}}',
+                    };
+                    let get = await $.post('/admin/artikel/delete/' + $(this).data('id'), data);
+                    if (get['status'] == 200) {
+                        table.ajax.reload();
+                        Swal.fire({
+                            title: 'Success',
+                            text: 'Berhasil Menghapus Data tour ' + nama,
+                            icon: 'success',
+                            confirmButtonText: 'Ok'
+                        })
+                    }
+                }
+            })
+        });
+    });
+</script>
 
 @endsection

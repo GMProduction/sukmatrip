@@ -17,6 +17,7 @@
     <!-- Page plugins -->
     <!-- Argon CSS -->
     <link rel="stylesheet" type="text/css" href="<?php echo e(asset('assets/DataTables/datatables.min.css')); ?>"/>
+    <link rel="stylesheet" href="<?php echo e(asset('/assets/vendor/bootstrap/dist/css/bootstrap.min.css')); ?>" type="text/css">
     <link rel="stylesheet" href="<?php echo e(asset('/assets/css/argon.css?v=1.2.0')); ?>" type="text/css">
     <?php echo $__env->yieldContent('morecss'); ?>
     <script src="https://unpkg.com/feather-icons"></script>
