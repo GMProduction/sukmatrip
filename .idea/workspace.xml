@@ -2,195 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e454924a-c32b-46ed-abf1-8beb1c49e20a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/assets/img/logo/a1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/logo/a10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/logo/a11.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/logo/a12.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/logo/a13.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/logo/a14.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/logo/a15.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/logo/a2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/logo/a3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/logo/a4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/logo/a5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/logo/a6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/logo/a7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/logo/a8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/logo/a9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/font/summernote.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/font/summernote.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/font/summernote.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/font/summernote.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-ar-AR.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-ar-AR.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-ar-AR.min.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-az-AZ.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-az-AZ.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-az-AZ.min.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-bg-BG.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-bg-BG.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-bg-BG.min.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-ca-ES.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-ca-ES.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-ca-ES.min.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-cs-CZ.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-cs-CZ.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-cs-CZ.min.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-da-DK.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-da-DK.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-da-DK.min.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-de-DE.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-de-DE.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-de-DE.min.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-el-GR.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-el-GR.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-el-GR.min.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-es-ES.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-es-ES.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-es-ES.min.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-es-EU.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-es-EU.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-es-EU.min.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-fa-IR.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-fa-IR.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-fa-IR.min.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-fi-FI.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-fi-FI.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-fi-FI.min.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-fr-FR.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-fr-FR.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-fr-FR.min.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-gl-ES.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-gl-ES.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-gl-ES.min.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-he-IL.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-he-IL.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-he-IL.min.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-hr-HR.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-hr-HR.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-hr-HR.min.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-hu-HU.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-hu-HU.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-hu-HU.min.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-id-ID.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-id-ID.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-id-ID.min.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-it-IT.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-it-IT.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-it-IT.min.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-ja-JP.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-ja-JP.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-ja-JP.min.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-ko-KR.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-ko-KR.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-ko-KR.min.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-lt-LT.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-lt-LT.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-lt-LT.min.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-lt-LV.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-lt-LV.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-lt-LV.min.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-mn-MN.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-mn-MN.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-mn-MN.min.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-nb-NO.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-nb-NO.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-nb-NO.min.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-nl-NL.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-nl-NL.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-nl-NL.min.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-pl-PL.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-pl-PL.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-pl-PL.min.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-pt-BR.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-pt-BR.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-pt-BR.min.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-pt-PT.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-pt-PT.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-pt-PT.min.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-ro-RO.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-ro-RO.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-ro-RO.min.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-ru-RU.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-ru-RU.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-ru-RU.min.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-sk-SK.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-sk-SK.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-sk-SK.min.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-sl-SI.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-sl-SI.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-sl-SI.min.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-sr-RS-Latin.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-sr-RS-Latin.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-sr-RS-Latin.min.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-sr-RS.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-sr-RS.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-sr-RS.min.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-sv-SE.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-sv-SE.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-sv-SE.min.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-ta-IN.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-ta-IN.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-ta-IN.min.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-th-TH.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-th-TH.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-th-TH.min.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-tr-TR.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-tr-TR.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-tr-TR.min.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-uk-UA.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-uk-UA.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-uk-UA.min.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-uz-UZ.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-uz-UZ.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-uz-UZ.min.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-vi-VN.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-vi-VN.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-vi-VN.min.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-zh-CN.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-zh-CN.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-zh-CN.min.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-zh-TW.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-zh-TW.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/lang/summernote-zh-TW.min.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/plugin/databasic/summernote-ext-databasic.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/plugin/databasic/summernote-ext-databasic.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/plugin/hello/summernote-ext-hello.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/plugin/specialchars/summernote-ext-specialchars.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/summernote-bs4.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/summernote-bs4.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/summernote-bs4.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/summernote-bs4.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/summernote-bs4.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/summernote-bs4.min.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/summernote-bs4.min.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/summernote-lite.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/summernote-lite.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/summernote-lite.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/summernote-lite.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/summernote-lite.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/summernote-lite.min.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/summernote-lite.min.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/summernote.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/summernote.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/summernote.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/summernote.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/summernote.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/summernote.min.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/vendor/summernote/summernote.min.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/sukmatripuser.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/sukmatripuser.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/artikel/editartikel.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/artikel/editartikel.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/artikel/tambahartikel.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/artikel/tambahartikel.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/base.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/base.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/paket/editpaket.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/paket/editpaket.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/paket/tambahpaket.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/paket/tambahpaket.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/penginapan/editpenginapan.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/penginapan/editpenginapan.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/penginapan/tambahpenginapan.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/penginapan/tambahpenginapan.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/tour/edittour.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/tour/edittour.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/tour/tambahtour.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/tour/tambahtour.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/gallery.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/gallery.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -410,7 +223,7 @@
       <workItem from="1603646413144" duration="3207000" />
       <workItem from="1604333669846" duration="727000" />
       <workItem from="1604335510796" duration="4050000" />
-      <workItem from="1604852907633" duration="6247000" />
+      <workItem from="1604852907633" duration="6627000" />
     </task>
     <task id="LOCAL-00001" summary="push">
       <created>1598895826535</created>
@@ -734,7 +547,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604339926748</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="revisi tampilan">
+      <created>1604860627553</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1604860627553</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -769,10 +589,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="345" y="20" width="690" height="687" key="#phpunit.xml/0.0.1366.728@0.0.1366.728" timestamp="1603305838502" />
-    <state x="306" y="0" key="CommitChangelistDialog2" timestamp="1604339925622">
+    <state x="306" y="0" key="CommitChangelistDialog2" timestamp="1604860621425">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="306" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1604339925622" />
+    <state x="306" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1604860621425" />
     <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1598813283126">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
