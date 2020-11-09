@@ -88,8 +88,8 @@ class PenginapanController extends CustomController
         $data['penginapan'] = Penginapan::with(['destinasi', 'duration', 'getImage.image'])->where('id', $id)->first();
         $data['destinasi']  = Destinasi::all();
         $data['durasi']     = Duration::all();
-        foreach ($data['penginapan']->getImage as $key => $img){
-            $data['image'][$key] = $img->image->url;
+        foreach ($data['penginapan']->getImage as $key => $img) {
+            $data['image'][$key]     = $img->image->url;
             $data['imageSize'][$key] = filesize('../public_html'.$img->image->url);
         }
 //dump($data['image'][0]->url);die();
@@ -98,8 +98,6 @@ class PenginapanController extends CustomController
 //        return $this->jsonResponse($data);
         return view('admin.penginapan.editpenginapan')->with($data);
     }
-
-
 
     /**
      * @return \Illuminate\Http\JsonResponse
@@ -112,7 +110,7 @@ class PenginapanController extends CustomController
                 $idImg = $this->request->get('idImg');
                 DB::delete('delete from penginapan_to_images where id_image = ?', [$idImg]);
                 Image::destroy($idImg);
-                if (file_exists('../public'.$img)){
+                if (file_exists('../public'.$img)) {
                     unlink('../public'.$img);
                 }
                 $respon = 'Success';
@@ -157,22 +155,24 @@ class PenginapanController extends CustomController
     {
 
         try {
-            $img = Penginapan_to_image::all()->where('id_penginapan','=',$id);
+            $img = Penginapan_to_image::all()->where('id_penginapan', '=', $id);
 
             DB::delete('delete from penginapan_to_images where id_penginapan = ?', [$id]);
 
-            foreach ($img as $key => $i){
-                $url = Image::all()->where('id','=', $i->id_image)->first();
+            foreach ($img as $key => $i) {
+                $url                 = Image::all()->where('id', '=', $i->id_image)->first();
                 $data['image'][$key] = $url->url;
                 Image::destroy($i->id_image);
             }
 
-            foreach ($data['image'] as $im){
+            if (isset($data['image'])) {
+                foreach ($data['image'] as $im) {
 //                dump($im);
-                if (file_exists('../public'.$im)){
-                    unlink('../public'.$im);
-                }
+                    if (file_exists('../public'.$im)) {
+                        unlink('../public'.$im);
+                    }
 
+                }
             }
 //            die();
 
