@@ -88,7 +88,7 @@
         <div class="row">
             @foreach($pakets as $paket)
                 <div class="col-md-3 col-sm-12">
-                    <a class="gen-card-produk">
+                    <a class="gen-card-produk" href="/detail-paket/{{$paket->id}}">
                         <img src="{{ $paket->getImage[0]->image->url }}">
                         <div class="cover-black-bottom"></div>
                         <div class="content">

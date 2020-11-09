@@ -44,7 +44,6 @@
 
         <div class="slider-for">
             @foreach($product->penginapan->getImage as $img)
-                <img src="">
                 <a target="_blank" href="{{$img->image->url}}"><img
                         src="{{$img->image->url}}"></a>
             @endforeach
@@ -140,12 +139,15 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <img src="{{asset('assets/img/foto/sukmatrip4.jpg')}}"
-                             style="height: 10em; width: 100%; object-fit: cover">
+                        @foreach($product->getImage as $v)
+                            <img src="{{ $v->image->url }}"
+                                 style="height: 10em; width: 100%; object-fit: cover">
+                        @endforeach
+
 
                         <div class="text-center">
-                            <p class="f12 bold text-primary mb-0 mt-2">Hotel Sri Wijaya</p>
-                            <p class="f12 bold t-accent">3 Days 2 Night</p>
+                            <p class="f12 bold t-accent  mb-0 mt-2">{{ $product->nama }}</p>
+                            <p class="f12 bold ">{{ $product->penginapan->duration->name }}</p>
                             <div style="width: 10em" class="ml-auto mr-auto">
                                 <hr>
                             </div>
@@ -156,7 +158,7 @@
 
                             <div class="text-center">
                                 <p class="f10 mb-0">Check In</p>
-                                <p class="f12 bold" id="str-chekcin">20 September 2020</p>
+                                <p class="f12 bold" id="str-chekcin"></p>
 
 
                                 <p class="f10 mb-0">Untuk</p>
@@ -167,10 +169,10 @@
 
                             <div class="text-center">
                                 <p class="f10 mb-0">Check Out</p>
-                                <p class="f12 bold" id="str-chekout">23 September 2020 </p>
+                                <p class="f12 bold" id="str-chekout"></p>
 
                                 <p class="f10 mb-0">Total Harga</p>
-                                <p class="f12 bold" id="str-total">Rp 5.000.000</p>
+                                <p class="f12 bold" id="str-total"></p>
                             </div>
                         </div>
 
@@ -178,8 +180,12 @@
                     </div>
                     <div class="modal-footer">
                         <a type="button" class="btn btn-secondary" href="#" data-dismiss="modal">Batal</a>
-                        <a type="button" id="btn-order" class="btn btn-primary"
-                           href="https://wa.me/62838652740">Pesan</a>
+                        <a type="button"
+{{--                           id="btn-order"--}}
+    onclick="order()"
+                           class="btn btn-primary"
+{{--                           href="https://wa.me/62838652740"--}}
+                        >Pesan</a>
                     </div>
                 </div>
             </div>
@@ -237,6 +243,12 @@
         var tgl = '', nama = '', qty = 0, harga = 0;
         var duration = '{{ $product->penginapan->duration->duration }}';
 
+        function order() {
+            var uri = "halo, saya "+nama+" tertarik untuk memesan "+'{{$product->nama}}'+" rencana berangkat tanggal "+tgl;
+            var res = encodeURI(uri);
+            window.location.href = 'https://wa.me/6283865442740?text='+res;
+        }
+
         function stringToDate(_date, _format, _delimiter) {
             var formatLowerCase = _format.toLowerCase();
             var formatItems = formatLowerCase.split(_delimiter);
@@ -280,31 +292,33 @@
                 }
             });
 
-            $('#form-submit').submit(function (e) {
-                e.preventDefault();
-                $.ajax({
-                    url: '/transaction-package-submit',
-                    data: $(this).serialize(),
-                    type: 'post',
-                    success: function (data) {
-                        if (data['status'] === 200) {
-                            alert('Pesanan Anda Sudah Kami Terima. Mohon Konfirmasi Ke Admin!')
-                            window.location.href = 'https://wa.me/62838652740';
-                        } else {
-                            alert(data['payload']);
-                        }
-                    },
-                    error: function (data) {
-                        alert('Maaf Terjadi Kesalahan Sistem, Periksa Kelengkapan Form Data.\n Jika Masih Mengalami Kendala Silahkan Menghubungi Admin Kami!');
-                    }
-                })
-            });
+            // $('#form-submit').submit(function (e) {
+            //     e.preventDefault();
+            //     $.ajax({
+            //         url: '/transaction-package-submit',
+            //         data: $(this).serialize(),
+            //         type: 'post',
+            //         success: function (data) {
+            //             if (data['status'] === 200) {
+            //                 alert('Pesanan Anda Sudah Kami Terima. Mohon Konfirmasi Ke Admin!')
+            //                 var uri = "halo kon sss";
+            //                 var res = encodeURI(uri);
+            //                 window.location.href = 'https://wa.me/62838652740?'+res;
+            //             } else {
+            //                 alert(data['payload']);
+            //             }
+            //         },
+            //         error: function (data) {
+            //             alert('Maaf Terjadi Kesalahan Sistem, Periksa Kelengkapan Form Data.\n Jika Masih Mengalami Kendala Silahkan Menghubungi Admin Kami!');
+            //         }
+            //     })
+            // });
 
 
-            $('#btn-order').on('click', function (e) {
-                e.preventDefault();
-                $('#form-submit').submit();
-            })
+            // $('#btn-order').on('click', function (e) {
+            //     e.preventDefault();
+            //     $('#form-submit').submit();
+            // });
 
             $('#modalKonfirmasi').on('show.bs.modal', function (e) {
                 let checkIn = stringToDate(tgl, 'dd/mm/yyyy', '/');
@@ -319,24 +333,24 @@
         });
 
 
-        $("#buttonPlus").click(function () {
-            if ($('#jumlahOrang').val() < 10) {
-                var a = parseInt($('#jumlahOrang').val());
-                a = isNaN(a) ? 0 : a;
-                a++;
-                $('#jumlahOrang').val(a);
-
-            }
-        });
-
-        $("#buttonMinus").click(function () {
-            if ($('#jumlahOrang').val() > 1) {
-                var a = parseInt($('#jumlahOrang').val());
-                a = isNaN(a) ? 0 : a;
-                a--;
-                $('#jumlahOrang').val(a);
-            }
-        });
+        // $("#buttonPlus").click(function () {
+        //     if ($('#jumlahOrang').val() < 10) {
+        //         var a = parseInt($('#jumlahOrang').val());
+        //         a = isNaN(a) ? 0 : a;
+        //         a++;
+        //         $('#jumlahOrang').val(a);
+        //
+        //     }
+        // });
+        //
+        // $("#buttonMinus").click(function () {
+        //     if ($('#jumlahOrang').val() > 1) {
+        //         var a = parseInt($('#jumlahOrang').val());
+        //         a = isNaN(a) ? 0 : a;
+        //         a--;
+        //         $('#jumlahOrang').val(a);
+        //     }
+        // });
 
 
     </script>
