@@ -11,45 +11,20 @@
 @section('content')
 
     <div style="height: 8em"></div>
-    <section class="container">
-        <div class="slider-nav mb-2">
-            <img src="{{asset('assets/img/foto/sukmatrip1.png')}}">
-            <img src="{{asset('assets/img/foto/sukmatrip1.png')}}">
-            <img src="{{asset('assets/img/foto/sukmatrip1.png')}}">
-            <img src="{{asset('assets/img/foto/sukmatrip1.png')}}">
-            <img src="{{asset('assets/img/foto/sukmatrip1.png')}}">
-            <img src="{{asset('assets/img/foto/sukmatrip1.png')}}">
-            <img src="{{asset('assets/img/foto/sukmatrip1.png')}}">
-
-        </div>
-
-        <div class="slider-for">
-            <a target="_blank" href="{{asset('assets/img/foto/sukmatrip1.png')}}"><img
-                    src="{{asset('assets/img/foto/sukmatrip1.png')}}"></a>
-            <a target="_blank" href="{{asset('assets/img/foto/sukmatrip1.png')}}"><img
-                    src="{{asset('assets/img/foto/sukmatrip1.png')}}"></a>
-            <a target="_blank" href="{{asset('assets/img/foto/sukmatrip1.png')}}"><img
-                    src="{{asset('assets/img/foto/sukmatrip1.png')}}"></a>
-            <a target="_blank" href="{{asset('assets/img/foto/sukmatrip1.png')}}"><img
-                    src="{{asset('assets/img/foto/sukmatrip1.png')}}"></a>
-            <a target="_blank" href="{{asset('assets/img/foto/sukmatrip1.png')}}"><img
-                    src="{{asset('assets/img/foto/sukmatrip1.png')}}"></a>
-            <a target="_blank" href="{{asset('assets/img/foto/sukmatrip1.png')}}"><img
-                    src="{{asset('assets/img/foto/sukmatrip1.png')}}"></a>
-            <a target="_blank" href="{{asset('assets/img/foto/sukmatrip1.png')}}"><img
-                    src="{{asset('assets/img/foto/sukmatrip1.png')}}"></a>
-
-        </div>
+    <section class="container w-100">
+        @foreach($product->getImage as $v)
+            <img src="{{ $v->image->url }}" style="object-fit: cover; width: 100%">
+        @endforeach
     </section>
 
     {{--    OUR PACKAGE--}}
     <section class="container-fluid">
         <div class="text-center mt-4">
-            <p style="font-weight: 500" class="text-center f22">{{ $product->nama }}</p>
+            <p style="font-weight: 500" class="text-center f22 mb-4">{{ $product->nama }}</p>
             <div class="d-flex justify-content-center align-items-center"
                  style="margin-top: -1em; color: var(--primaryColor)">
                 <i data-feather="map-pin" class="mr-2"></i>
-                <p class="mb-0 mr-4">{{ $product->penginapan->lokasi }}, {{ $product->penginapan->destinasi->nama }}</p>
+                <p class="mb-0 mr-4">{{ $product->penginapan->destinasi->nama}}</p>
                 <i data-feather="clock" class="mr-2"></i>
                 <p class="mb-0">{{ $product->penginapan->duration->name }}</p>
             </div>
@@ -57,29 +32,49 @@
         </div>
     </section>
 
-    <section class="container">
+    <section class="container mt-5 text-center">
+        {!!  $product->deskripsi !!}
+    </section>
 
-        <div class="row">
-            @foreach($product->paketTour as $v)
-                <div class="col-md-3 col-sm-12">
-                    <input form="form-submit" class="checkbox-gambar" type="checkbox" name="tour[]"
-                           id="opt-{{ $v->id }}"
-                           value="{{ $v->id }}"
-                           checked
-                    />
-                    <label class="w-100" for="opt-{{ $v->id }}">
-                        <div class="gen-card-produk">
-                            <img src="{{asset('assets/img/foto/sukmatrip1.png')}}">
-                            <div class="cover-black-bottom"></div>
-                            <div class="content">
-                                <p class="text-white f18">{{ $v->nama }}</p>
-                            </div>
-                        </div>
-                        <i data-feather="check-square" class="chec"></i>
-                    </label>
-                </div>
+
+    <section class="container mt-5">
+
+        <p style="font-weight: 500" class="text-center f22">{{ $product->penginapan->tipe }}</p>
+        <hr class="mb-4" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">
+
+        <div class="slider-for">
+            @foreach($product->penginapan->getImage as $img)
+                <img src="">
+                <a target="_blank" href="{{$img->image->url}}"><img
+                        src="{{$img->image->url}}"></a>
             @endforeach
         </div>
+
+        <div class="slider-nav mb-2">
+            @foreach($product->penginapan->getImage as $img)
+                <img src="{{$img->image->url}}">
+
+            @endforeach
+        </div>
+    </section>
+
+    <section class="container mt-5 text-center">
+{{--        {{$product->penginapan}}--}}
+        <div class="d-flex justify-content-center align-items-center mb-3"
+             style="margin-top: -1em; color: var(--primaryColor)">
+            <i data-feather="send" class="mr-2"></i>
+            <p class="mb-0 mr-4">{{ $product->penginapan->nama}}</p>
+            <i data-feather="map-pin" class="mr-2"></i>
+            <p class="mb-0">{{ $product->penginapan->lokasi }}</p>
+        </div>
+        <div class="mt-5 text-center">        {!!  $product->penginapan->deskripsi !!}
+        </div>
+    </section>
+
+    <section class="container " style="margin-top: 100px">
+    <p style="font-weight: 500" class="text-center f22">Tour</p>
+    <hr class="mb-4" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">
+{{--        {{$product}}--}}
     </section>
 
     <section class="mt-5 container-fluid d-flex justify-content-center align-items-center flex-column"
