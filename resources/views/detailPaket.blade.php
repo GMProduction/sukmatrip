@@ -58,7 +58,7 @@
     </section>
 
     <section class="container mt-5 text-center">
-{{--        {{$product->penginapan}}--}}
+        {{--        {{$product->penginapan}}--}}
         <div class="d-flex justify-content-center align-items-center mb-3"
              style="margin-top: -1em; color: var(--primaryColor)">
             <i data-feather="send" class="mr-2"></i>
@@ -71,11 +71,22 @@
     </section>
 
     <section class="container " style="margin-top: 100px">
-    <p style="font-weight: 500" class="text-center f22">Tour</p>
-    <hr class="mb-4" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">
-{{--        {{$product}}--}}
+        <p style="font-weight: 500" class="text-center f22">Tour</p>
+        <hr class="mb-4" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">
+        {{--        {{$product}}--}}
     </section>
 
+    <section class="container w-100">
+    @foreach($product->paketTour as $tour)
+        <img src="{{ $tour->tour->image }}" style="object-fit: cover; margin-top: 100px; width: 100%">
+            <div class="d-flex justify-content-center align-items-center mb-3"
+                 style="margin-top: -1em; color: var(--primaryColor)">
+                <i data-feather="send" class="mr-2"></i>
+                <p class="mb-0 mr-4">{{ $tour->tour->nama}}</p>
+            </div>
+        <p class="mt-5">{!! $tour->tour->deskripsi !!}</p>
+    @endforeach
+    </section>
     <section class="mt-5 container-fluid d-flex justify-content-center align-items-center flex-column"
              style="height: 50em; position:relative;">
         <img class="image-as-bg" src="{{asset('assets/img/foto/sukmatrip4.jpg')}}">
@@ -181,10 +192,10 @@
                     <div class="modal-footer">
                         <a type="button" class="btn btn-secondary" href="#" data-dismiss="modal">Batal</a>
                         <a type="button"
-{{--                           id="btn-order"--}}
-    onclick="order()"
+                           {{--                           id="btn-order"--}}
+                           onclick="order()"
                            class="btn btn-primary"
-{{--                           href="https://wa.me/62838652740"--}}
+                            {{--                           href="https://wa.me/62838652740"--}}
                         >Pesan</a>
                     </div>
                 </div>
@@ -244,9 +255,9 @@
         var duration = '{{ $product->penginapan->duration->duration }}';
 
         function order() {
-            var uri = "halo, saya "+nama+" tertarik untuk memesan "+'{{$product->nama}}'+" rencana berangkat tanggal "+tgl;
+            var uri = "halo, saya " + nama + " tertarik untuk memesan " + '{{$product->nama}}' + " rencana berangkat tanggal " + tgl;
             var res = encodeURI(uri);
-            window.location.href = 'https://wa.me/6283865442740?text='+res;
+            window.location.href = 'https://wa.me/6283865442740?text=' + res;
         }
 
         function stringToDate(_date, _format, _delimiter) {

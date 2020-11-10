@@ -74,7 +74,7 @@ class MainController extends CustomController
     {
         $product = Paket::with(['penginapan.duration', 'penginapan.destinasi','penginapan.getImage.image', 'paketTour', 'getImage.image', 'paketTour.tour'])->findOrFail($id);
 //        $product = Paket::with(['paketTour.tour'])->findOrFail($id);
-        return $this->jsonResponse($product);
+//        return $this->jsonResponse($product);
         return view('detailPaket')->with(['product' => $product]);
     }
 }
