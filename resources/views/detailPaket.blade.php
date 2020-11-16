@@ -90,7 +90,7 @@
                         @csrf
                         <input type="hidden" name="id" value="{{ $product->id }}">
                         <input type="hidden" id="jumlahOrang" name="qty" value="2">
-                        <div class="offset-md-3 col-md-6 offset-sm-2 col-sm-8 offset-xs-2 col-xs-8 ">
+                        <div class="offset-3 col-6">
                             <div class="form-group">
                                 <label for="tanggalCheckIn">Tanggal Check In</label>
                                 <input type="text" class="form-control form-data-input datepicker" id="tanggalCheckIn"
@@ -107,9 +107,9 @@
                             </div>
                         </div>
 
-                        <div class="offset-3 col-6">
+                        <div class="offset-3 col-6 d-none">
                             <div class="form-group">
-                                <label for="totalHarga">Harga Penginapan @</label>
+                                <label for="totalHarga">Harga Paket</label>
                                 <input type="text" readonly class="form-control form-data-input" id="totalHarga"
                                        aria-describedby="emailHelp" placeholder="Total Harga*" name="harga"
                                        value="{{ $product->harga }}">
@@ -171,8 +171,8 @@
                                 <p class="f10 mb-0">Check Out</p>
                                 <p class="f12 bold" id="str-chekout"></p>
 
-                                <p class="f10 mb-0">Total Harga</p>
-                                <p class="f12 bold" id="str-total"></p>
+                                <p class="f10 mb-0 d-none">Total Harga</p>
+                                <p class="f12 bold d-none" id="str-total"></p>
                             </div>
                         </div>
 
@@ -244,8 +244,9 @@
         var duration = '{{ $product->penginapan->duration->duration }}';
 
         function order() {
-            var uri = "halo, saya "+nama+" tertarik untuk memesan "+'{{$product->nama}}'+" rencana berangkat tanggal "+tgl;
+            var uri = "halo, saya "+nama+" tertarik untuk memesan "+'{{$product->nama}}'+" rencana berangkat tanggal "+tgl+" - "+"https://sukmatrip.com/detail-paket/"+'{{$product->id}}';
             var res = encodeURI(uri);
+            // window.location.href = 'https://wa.me/628975050520?text='+res;
             window.location.href = 'https://wa.me/6283865442740?text='+res;
         }
 
