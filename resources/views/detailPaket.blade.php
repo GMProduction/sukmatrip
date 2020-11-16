@@ -81,11 +81,11 @@
             @foreach($product->paketTour as $tour)
                 <div class="col-md-3 col-sm-12">
                     <img src="{{ $tour->tour->image }}" style="object-fit: cover; height: 300px; margin-top: 20px; width: 100%">
-                    <div class="d-flex justify-content-center align-items-center mb-3"
-                         style="margin-top: -1em; color: var(--primaryColor)">
+{{--                    <div class="d-flex justify-content-center align-items-center mb-3"--}}
+{{--                         style="margin-top: -1em; color: var(--primaryColor)">--}}
 {{--                        <i data-feather="send" class="mr-2"></i>--}}
-                        <p class="mb-0 mr-4">{{ $tour->tour->nama}}</p>
-                    </div>
+                        <p class="mb-2 mr-4 mt-3">{{ $tour->tour->nama}}</p>
+{{--                    </div>--}}
 {{--                    <p class="mt-5">{!! $tour->tour->deskripsi !!}</p>--}}
                 </div>
             @endforeach
