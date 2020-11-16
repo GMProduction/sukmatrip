@@ -77,15 +77,19 @@
     </section>
 
     <section class="container w-100">
-    @foreach($product->paketTour as $tour)
-        <img src="{{ $tour->tour->image }}" style="object-fit: cover; margin-top: 100px; width: 100%">
-            <div class="d-flex justify-content-center align-items-center mb-3"
-                 style="margin-top: -1em; color: var(--primaryColor)">
-                <i data-feather="send" class="mr-2"></i>
-                <p class="mb-0 mr-4">{{ $tour->tour->nama}}</p>
-            </div>
-        <p class="mt-5">{!! $tour->tour->deskripsi !!}</p>
-    @endforeach
+        <div class="row">
+            @foreach($product->paketTour as $tour)
+                <div class="col-md-3 col-sm-12">
+                    <img src="{{ $tour->tour->image }}" style="object-fit: cover; margin-top: 100px; width: 100%">
+                    <div class="d-flex justify-content-center align-items-center mb-3"
+                         style="margin-top: -1em; color: var(--primaryColor)">
+                        <i data-feather="send" class="mr-2"></i>
+                        <p class="mb-0 mr-4">{{ $tour->tour->nama}}</p>
+                    </div>
+{{--                    <p class="mt-5">{!! $tour->tour->deskripsi !!}</p>--}}
+                </div>
+            @endforeach
+        </div>
     </section>
     <section class="mt-5 container-fluid d-flex justify-content-center align-items-center flex-column"
              style="height: 50em; position:relative;">
@@ -255,10 +259,10 @@
         var duration = '{{ $product->penginapan->duration->duration }}';
 
         function order() {
-            var uri = "halo, saya "+nama+" tertarik untuk memesan "+'{{$product->nama}}'+" rencana berangkat tanggal "+tgl+" - "+"https://sukmatrip.com/detail-paket/"+'{{$product->id}}';
+            var uri = "halo, saya " + nama + " tertarik untuk memesan " + '{{$product->nama}}' + " rencana berangkat tanggal " + tgl + " - " + "https://sukmatrip.com/detail-paket/" + '{{$product->id}}';
             var res = encodeURI(uri);
             // window.location.href = 'https://wa.me/628975050520?text='+res;
-            window.location.href = 'https://wa.me/6283865442740?text='+res;
+            window.location.href = 'https://wa.me/6283865442740?text=' + res;
         }
 
         function stringToDate(_date, _format, _delimiter) {
