@@ -26,7 +26,7 @@
                 <i data-feather="map-pin" class="mr-2"></i>
                 <p class="mb-0 mr-4">{{ $product->penginapan->destinasi->nama}}</p>
 {{--                <i data-feather="clock" class="mr-2"></i>--}}
-                <p class="mb-0">{{ $product }}</p>
+{{--                <p class="mb-0">{{ $product }}</p>--}}
             </div>
             <hr class="mb-2" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">
         </div>
