@@ -25,16 +25,22 @@
         {{--        </div>--}}
 
         <div class="row">
-            <div class="col-md-3 col-sm-12">
-                <a class="gen-card-produk" href="{{asset('assets/img/foto/sukmatrip1.png')}}">
-                    <img src="{{asset('assets/img/foto/sukmatrip1.png')}}">
-                    <div class="cover-black-bottom"></div>
-                    <div class="content">
-                        <p class="text-white f12">SINI VIE VILLA</p>
-                        <hr style="width: 3em; border-color: white;" class="mb-2">
+            @foreach($gallery as $v)
+                @foreach($v->image as $img)
+                <img src="{{ $v->image->url }}" style="object-fit: cover; width: 100%">
+                    <div class="col-md-3 col-sm-12">
+                        <a class="gen-card-produk" href="{{ $img->url }}">
+                            <img src="{{ $img->url }}">
+                            <div class="cover-black-bottom"></div>
+                            <div class="content">
+                                <p class="text-white f12">{{$v->judul}}</p>
+                                <hr style="width: 3em; border-color: white;" class="mb-2">
+                            </div>
+                        </a>
                     </div>
-                </a>
-            </div>
+                @endforeach
+            @endforeach
+
 
         </div>
 
