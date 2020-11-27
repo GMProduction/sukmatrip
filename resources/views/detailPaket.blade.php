@@ -32,7 +32,7 @@
         </div>
     </section>
 
-    <section class="container mt-5 text-center">
+    <section class="container mt-5 ">
         {!!  $product->deskripsi !!}
     </section>
 
