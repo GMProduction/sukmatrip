@@ -162,7 +162,7 @@
 
                         <div class="text-center">
                             <p class="f12 bold t-accent  mb-0 mt-2">{{ $product->nama }}</p>
-                            <p class="f12 bold ">{{ $product->penginapan->duration->name }}</p>
+{{--                            <p class="f12 bold ">{{ $product->penginapan->duration->name }}</p>--}}
                             <div style="width: 10em" class="ml-auto mr-auto">
                                 <hr>
                             </div>
