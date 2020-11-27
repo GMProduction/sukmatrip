@@ -35,45 +35,4 @@ class GalleryController extends CustomController
         return view('gallery')->with(['gallery' => $gallery]);
     }
 
-    public function search()
-    {
-        $destinationId = $this->field('destination');
-        $type = $this->field('type');
-        $durationId = $this->field('duration');
-        $products = Penginapan::where('id_destinasi', $destinationId)->where('tipe', $type)->where('duration_id', $durationId)->get();
-        return view('pencarian')->with(['products' => $products]);
-    }
-
-    /**
-     * @return mixed
-     */
-    public function ajaxSearch()
-    {
-        try {
-            $destinationId = $this->field('destination');
-            $type = $this->field('type');
-            $durationId = $this->field('duration');
-            $products = Penginapan::where('id_destinasi', $destinationId)->where('tipe', $type)->where('duration_id', $durationId)->offset(0)->limit(4)->get();
-            return $this->jsonResponse($products);
-        } catch (\Exception $e) {
-            return $this->jsonResponse('Failed' . $e->getMessage(), 500);
-        }
-
-    }
-
-    public function detail($id)
-    {
-        $product = Penginapan::with(['duration', 'destinasi'])->findOrFail($id);
-        $destinasiId = $product->destinasi->id;
-        $tour = Tour::with(['destinasi'])->where('id_destinasi', $destinasiId)->get();
-        return view('detail')->with(['product' => $product, 'tours' => $tour]);
-    }
-
-    public function detailPaket($id)
-    {
-        $product = Paket::with(['penginapan.duration', 'penginapan.destinasi','penginapan.getImage.image', 'paketTour', 'getImage.image', 'paketTour.tour'])->findOrFail($id);
-//        $product = Paket::with(['paketTour.tour'])->findOrFail($id);
-//        return $this->jsonResponse($product);
-        return view('detailPaket')->with(['product' => $product]);
-    }
 }

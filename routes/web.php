@@ -26,7 +26,7 @@ Route::get('/detail-paket/{id}', 'Main\MainController@detailPaket');
 Route::post('/transaction-submit', 'Main\TransactionController@saveTransaction');
 Route::post('/transaction-package-submit', 'Main\TransactionController@savePackageTransaction');
 
-Route::post('/gallery', 'Main\GalleryController@index');
+Route::get('/gallery', 'Main\GalleryController@index');
 //Route::get('/gallery', function () {
 //    return view('gallery');
 //});
