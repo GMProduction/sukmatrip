@@ -18,30 +18,7 @@
         </div>
     </section>
 
-    {{--    OUR PACKAGE--}}
-    <section class="container-fluid">
-        <div class="text-center mb-5" style="margin-top: 7rem">
-            <a class="sukmatrip" style="color: black">SUKMATRIP</a>
-            <hr class="mb-2" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">
-            <div class="d-flex flex-wrap justify-content-center">
-                @for ($i = 1; $i < 16; $i++)
-                    @if($i == 14)
-                        <img src="{{asset('assets/img/logo/a'.$i.'.png')}}" class="logoimg"
-                             style="background-color: #ccc; border-radius: 30px"/>
-                    @else
-                        <img src="{{asset('assets/img/logo/a'.$i.'.png')}}" class="logoimg"/>
-                    @endif
-                @endfor
-            </div>
-        </div>
-        <p class="text-center f26">Gallery <a class="t-accent">Sukmatrip</a></p>
-        {{--        <p style="font-weight: 300; color: #636363;" class="text-center f14 container">Take a look at the most exclusive--}}
-        {{--            & most visited locations in the world--}}
-        {{--            - hand-picked just for you. Start traveling the world today!</p>--}}
-
-    </section>
-
-    <section class="container" id="ourProperty">
+    <section class="container mt-5" id="ourProperty">
         {{--        <div class="text-center mt-5 mb-5">--}}
         {{--            <a class="sukmatrip" style="color: black">OUR GALLERY</a>--}}
         {{--            <hr class="mb-2" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">--}}
@@ -66,6 +43,31 @@
         {{--        </div>--}}
     </section>
 
+
+    {{--    OUR PACKAGE--}}
+    <section class="container-fluid">
+        <div class="text-center mb-5" style="margin-top: 7rem">
+            <a class="sukmatrip" style="color: black">SUKMATRIP</a>
+            <hr class="mb-2" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">
+            <div class="d-flex flex-wrap justify-content-center">
+                @for ($i = 1; $i < 16; $i++)
+                    @if($i == 14)
+                        <img src="{{asset('assets/img/logo/a'.$i.'.png')}}" class="logoimg"
+                             style="background-color: #ccc; border-radius: 30px"/>
+                    @else
+                        <img src="{{asset('assets/img/logo/a'.$i.'.png')}}" class="logoimg"/>
+                    @endif
+                @endfor
+            </div>
+        </div>
+        <p class="text-center f26">Gallery <a class="t-accent">Sukmatrip</a></p>
+        {{--        <p style="font-weight: 300; color: #636363;" class="text-center f14 container">Take a look at the most exclusive--}}
+        {{--            & most visited locations in the world--}}
+        {{--            - hand-picked just for you. Start traveling the world today!</p>--}}
+
+    </section>
+
+
     <section class="container-fluid">
         <hr style="border-color: var(--accentColor); margin-top: 7em;" class="container">
 
@@ -74,7 +76,7 @@
             <hr class="mb-2" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">
 
         </div>
-        <p class="text-center f26">Enjoy, Travel, <a class="t-accent">Relax</a></p>
+        <p class="text-center f26">{{$gallery}} Enjoy, Travel, <a class="t-accent">Relax</a></p>
         {{--        <p style="font-weight: 300; color: #636363;" class="text-center f14 container">Take a look at the most exclusive--}}
         {{--            & most visited locations in the world - hand-picked just for you.--}}
         {{--            Start traveling the world today!</p>--}}

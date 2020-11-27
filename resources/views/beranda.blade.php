@@ -19,51 +19,51 @@
             <div class="transparent-hitam"></div>
 
             <div class="d-flex justify-content-center align-items-center h-100 flex-column">
-                <p class="sukmatrip mb-0">SUKMATRIP</p>
-                <hr class="mb-2" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">
-                <p class="title-home" >CARI DESTINASI IMPIAN ANDA</p>
-                <div class="container-fluid w-50" style="z-index: 3">
-                    <div class="row mt-5 margin-title">
-                        <div class="col-lg-4 col-md-12">
-                            <label for="destinasi" class="text-white">Destinasi</label>
-                            <select class="sukmatrip-form-control" id="destinasi" name="destinasi">
-                                <option class="sukmatrip-dropdown-item" value="all">Semua Destinasi</option>
-                                @foreach($destinations as $v)
-                                    <option class="sukmatrip-dropdown-item" value="{{ $v->id }}">{{ $v->nama }}</option>
-                                @endforeach
-                            </select>
-                        </div>
+{{--                <p class="sukmatrip mb-0">SUKMATRIP</p>--}}
+{{--                <hr class="mb-2" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">--}}
+{{--                <p class="title-home" >CARI DESTINASI IMPIAN ANDA</p>--}}
+{{--                <div class="container-fluid w-50" style="z-index: 3">--}}
+{{--                    <div class="row mt-5 margin-title">--}}
+{{--                        <div class="col-lg-4 col-md-12">--}}
+{{--                            <label for="destinasi" class="text-white">Destinasi</label>--}}
+{{--                            <select class="sukmatrip-form-control" id="destinasi" name="destinasi">--}}
+{{--                                <option class="sukmatrip-dropdown-item" value="all">Semua Destinasi</option>--}}
+{{--                                @foreach($destinations as $v)--}}
+{{--                                    <option class="sukmatrip-dropdown-item" value="{{ $v->id }}">{{ $v->nama }}</option>--}}
+{{--                                @endforeach--}}
+{{--                            </select>--}}
+{{--                        </div>--}}
 
-                        <div class="col-lg-4 col-md-12">
-                            <label for="tipePenginapan" class="text-white">Kategori</label>
-                            <select class="sukmatrip-form-control" id="tipePenginapan" name="tipePenginapan">
-                                <option class="dropdown-item" value="all">Semua Kategori</option>
-                                <option class="dropdown-item" value="Hotel">Hotel</option>
-                                <option class="dropdown-item" value="Vila">Villa</option>
-                            </select>
-                        </div>
+{{--                        <div class="col-lg-4 col-md-12">--}}
+{{--                            <label for="tipePenginapan" class="text-white">Kategori</label>--}}
+{{--                            <select class="sukmatrip-form-control" id="tipePenginapan" name="tipePenginapan">--}}
+{{--                                <option class="dropdown-item" value="all">Semua Kategori</option>--}}
+{{--                                <option class="dropdown-item" value="Hotel">Hotel</option>--}}
+{{--                                <option class="dropdown-item" value="Vila">Villa</option>--}}
+{{--                            </select>--}}
+{{--                        </div>--}}
 
-                        <div class="col-lg-4 col-md-12">
-                            <label for="durasi" class="text-white">Durasi</label>
-                            <select class="sukmatrip-form-control" id="durasi" name="durasi">
-                                @foreach($durations as $duration)
-                                    <option class="dropdown-item"
-                                            value="{{ $duration->id }}">{{ $duration->name }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row mt-5">
-                        <div class="offset-lg-4 col-lg-4 col-md-12">
-                            <a id="btn-search" class="d-block text-center" href="#">
-                                <div class="bt-search">
-                                    <i data-feather="search" class="mr-2" style="width: 1.3rem; height: 1.3rem"></i>
-                                    <p class="mb-0">Cari</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+{{--                        <div class="col-lg-4 col-md-12">--}}
+{{--                            <label for="durasi" class="text-white">Durasi</label>--}}
+{{--                            <select class="sukmatrip-form-control" id="durasi" name="durasi">--}}
+{{--                                @foreach($durations as $duration)--}}
+{{--                                    <option class="dropdown-item"--}}
+{{--                                            value="{{ $duration->id }}">{{ $duration->name }}</option>--}}
+{{--                                @endforeach--}}
+{{--                            </select>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <div class="row mt-5">--}}
+{{--                        <div class="offset-lg-4 col-lg-4 col-md-12">--}}
+{{--                            <a id="btn-search" class="d-block text-center" href="#">--}}
+{{--                                <div class="bt-search">--}}
+{{--                                    <i data-feather="search" class="mr-2" style="width: 1.3rem; height: 1.3rem"></i>--}}
+{{--                                    <p class="mb-0">Cari</p>--}}
+{{--                                </div>--}}
+{{--                            </a>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
             </div>
         </div>
     </section>
@@ -152,15 +152,15 @@
 
         <div class="slick-fade">
             <div class="ulasan mt-0 d-flex flex-column align-items-center justify-content-center">
-                <img src="{{asset('assets/img/foto/user1.jpg')}}" style="border-radius: 50%; width: 7em; height: 7em">
+                <img src="{{asset('assets/img/foto/1.png')}}" style="border-radius: 50%; width: 7em; height: 7em">
                 <p style="color: #636363; font-weight: 300" class="mt-3 f14">Sangat menyenanggkan sekali honeymoon bersama sukmatrip.</p>
-                <p style="color: black;" class="f12">Bagus Yanuar.</p>
+                <p style="color: black;" class="f12">.</p>
             </div>
 
             <div class="ulasan mt-0 d-flex flex-column align-items-center justify-content-center">
-                <img src="{{asset('assets/img/foto/user1.jpg')}}" style="border-radius: 50%; width: 7em; height: 7em">
-                <p style="color: #636363; font-weight: 300" class="mt-3 f14">Harga sangat terjangkau, terima kasih sukmatrip.</p>
-                <p style="color: black;" class="f12">Taufik Muhajir.</p>
+                <img src="{{asset('assets/img/foto/2.png')}}" style="border-radius: 50%; width: 7em; height: 7em">
+                <p style="color: #636363; font-weight: 300" class="mt-3 f14">Tidak bisa di lupakan honeymoon bersama sukmatrip, terima kasih sukmatrip.</p>
+                <p style="color: black;" class="f12">.</p>
             </div>
 
 
