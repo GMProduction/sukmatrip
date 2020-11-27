@@ -30,7 +30,7 @@
                 <img src="{{ $img->url }}" style="object-fit: cover; width: 100%">
                     <div class="col-md-3 col-sm-12">
                         <a class="gen-card-produk" href="{{ $img->url }}">
-                            <img src="{{ $img->url }}>
+                            <img src="{{ $img->url }}">
                             <div class="cover-black-bottom"></div>
                             <div class="content">
                                 <p class="text-white f12">{{$v->judul}}</p>
