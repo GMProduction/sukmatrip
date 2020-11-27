@@ -30,7 +30,7 @@ class MainController extends CustomController
     {
         $destinations = Destinasi::all();
         $durations = Duration::all();
-        $pakets = Paket::with(['penginapan.duration', 'getImage.image'])->take(4)->get();
+        $pakets = Paket::with(['duration', 'getImage.image'])->take(4)->get();
 //        return $this->jsonResponse($pakets);
 //        return $pakets->toArray();
         return view('beranda')->with(['destinations' => $destinations, 'durations' => $durations, 'pakets' => $pakets]);

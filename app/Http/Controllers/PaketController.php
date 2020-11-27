@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Helper\CustomController;
 use App\Models\Article_to_image;
+use App\Models\Duration;
 use App\Models\Gallery;
 use App\Models\Image;
 use App\Models\Paket;
@@ -29,7 +30,7 @@ class PaketController extends CustomController
      */
     public function datatable()
     {
-        return DataTables::of(Paket::with(['penginapan.destinasi', 'penginapan.duration', 'getImage.image']))->make(true);
+        return DataTables::of(Paket::with(['penginapan.destinasi', 'duration', 'getImage.image']))->make(true);
     }
 
     /**
@@ -54,6 +55,7 @@ class PaketController extends CustomController
                     'harga'         => str_replace(',', '', $this->postField('hargaPaket')),
                     'deskripsi'     => $this->postField('deskripsiPaket'),
                     'id_penginapan' => $this->postField('penginapan'),
+                    'duration_id' => $this->postField('duration')
                 ];
 
                 $penginapan = $this->insert(Paket::class, $data);
@@ -93,6 +95,7 @@ class PaketController extends CustomController
         }
 
         $data['penginapan'] = Penginapan::all();
+        $data['duration'] = Duration::all();
 
         return view('admin.paket.tambahpaket')->with($data);
 
@@ -106,6 +109,7 @@ class PaketController extends CustomController
     public function pageEdit($id)
     {
 
+        $data['duration'] = Duration::all();
 
         $data['penginapan'] = Penginapan::all();
         $data['paket']      = Paket::with(['penginapan.destinasi', 'penginapan.duration', 'getImage.image', 'paketTour'])->where('id', $id)->first();
@@ -204,17 +208,18 @@ class PaketController extends CustomController
 
             DB::delete('delete from paket_to_images where id_paket = ?', [$id]);
 
-            foreach ($img as $key => $i) {
-                $url                 = Image::all()->where('id', '=', $i->id_image)->first();
-                $data['image'][$key] = $url->url;
-                Image::destroy($i->id_image);
-            }
+            if(count($img) > 0) {
+                foreach ($img as $key => $i) {
+                    $url                 = Image::all()->where('id', '=', $i->id_image)->first();
+                    $data['image'][$key] = $url->url;
+                    Image::destroy($i->id_image);
+                }
 
-            foreach ($data['image'] as $im) {
+                foreach ($data['image'] as $im) {
 //                dump($im);
-                unlink('../public'.$im);
+                    unlink('../public'.$im);
+                }
             }
-
             Paket::destroy($id);
 
             return $this->jsonResponse('success', 200);

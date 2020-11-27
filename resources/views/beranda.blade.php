@@ -98,7 +98,7 @@
                             <div class="d-flex align-items-center justify-content-center">
                                 <i data-feather="clock" class="icons"></i>
                                 <p style="font-weight: 300;"
-                                   class="text-white f10 mb-0">{{ $paket->penginapan->duration->name }}</p>
+                                   class="text-white f10 mb-0">{{ $paket->duration->name ?? '' }}</p>
                             </div>
                         </div>
                     </a>
