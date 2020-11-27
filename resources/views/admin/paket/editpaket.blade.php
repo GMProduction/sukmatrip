@@ -61,7 +61,17 @@
                                                    class="form-control price">
                                         </div>
                                     </div>
-
+                                    <div class="col-4">
+                                        <div class="form-group">
+                                            <label for="tebal">Durasi</label>
+                                            <select class="form-control" id="duration" name="duration">
+                                                <option value="">Pilih Durasi</option>
+                                                @foreach($duration as $p)
+                                                    <option value="{{ $p->id }}" {{$p->id == $paket->duration->id ? 'selected' : ''}}>{{ $p->name }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
                                     <div class="col-12">
                                         <div class="form-group">
                                             <label for="exampleFormControlTextarea1">Deskripsi</label>

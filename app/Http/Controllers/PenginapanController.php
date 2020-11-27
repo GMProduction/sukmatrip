@@ -158,20 +158,21 @@ class PenginapanController extends CustomController
             $img = Penginapan_to_image::all()->where('id_penginapan', '=', $id);
 
             DB::delete('delete from penginapan_to_images where id_penginapan = ?', [$id]);
+            if (count($img) > 0) {
+                foreach ($img as $key => $i) {
+                    $url                 = Image::all()->where('id', '=', $i->id_image)->first();
+                    $data['image'][$key] = $url->url;
+                    Image::destroy($i->id_image);
+                }
 
-            foreach ($img as $key => $i) {
-                $url                 = Image::all()->where('id', '=', $i->id_image)->first();
-                $data['image'][$key] = $url->url;
-                Image::destroy($i->id_image);
-            }
-
-            if (isset($data['image'])) {
-                foreach ($data['image'] as $im) {
+                if (isset($data['image'])) {
+                    foreach ($data['image'] as $im) {
 //                dump($im);
-                    if (file_exists('../public'.$im)) {
-                        unlink('../public'.$im);
-                    }
+                        if (file_exists('../public'.$im)) {
+                            unlink('../public'.$im);
+                        }
 
+                    }
                 }
             }
 //            die();
