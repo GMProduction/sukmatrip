@@ -27,7 +27,6 @@
         <div class="row">
             @foreach($gallery as $v)
                 @foreach($v->image as $img)
-                <img src="{{ $img->url }}" style="object-fit: cover; width: 100%">
                     <div class="col-md-3 col-sm-12">
                         <a class="gen-card-produk" href="{{ $img->url }}">
                             <img src="{{ $img->url }}">
