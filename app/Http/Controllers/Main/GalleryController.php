@@ -29,7 +29,7 @@ class GalleryController extends CustomController
      */
     public function index()
     {
-        $gallery = Gallery::all();
+        $gallery = Gallery::with("getImage.image")->get();
 //        return $this->jsonResponse($pakets);
 //        return $pakets->toArray();
         return view('gallery')->with(['gallery' => $gallery]);

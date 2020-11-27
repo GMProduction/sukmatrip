@@ -16,4 +16,11 @@ class Gallery extends Model
     public function image(){
         return $this->hasMany(Image::class,'id_galery');
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function getImage(){
+        return $this->hasMany(Gallery_to_image::class, 'id');
+    }
 }
