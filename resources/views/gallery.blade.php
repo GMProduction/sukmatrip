@@ -32,7 +32,7 @@
                             <img src="{{ $img->url }}">
                             <div class="cover-black-bottom"></div>
                             <div class="content">
-                                <p class="text-white f12">{{$v->judul}}</p>
+{{--                                <p class="text-white f12">{{$v->judul}}</p>--}}
                                 <hr style="width: 3em; border-color: white;" class="mb-2">
                             </div>
                         </a>
@@ -81,7 +81,7 @@
             <hr class="mb-2" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">
 
         </div>
-        <p class="text-center f26">{{$gallery}} Enjoy, Travel, <a class="t-accent">Relax</a></p>
+        <p class="text-center f26">Enjoy, Travel, <a class="t-accent">Relax</a></p>
         {{--        <p style="font-weight: 300; color: #636363;" class="text-center f14 container">Take a look at the most exclusive--}}
         {{--            & most visited locations in the world - hand-picked just for you.--}}
         {{--            Start traveling the world today!</p>--}}
