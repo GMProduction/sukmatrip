@@ -112,9 +112,9 @@ class CustomController extends Controller
     }
 
     public function uploadImageWatermark($targetName = '', $file = 'image'){
-        $watermark = public_path('assets/img/common/logo.png');
+//        $watermark = public_path('assets/img/common/logo.png');
         $image_water = \Intervention\Image\Facades\Image::make($this->request->file($file));
-        $image_water->insert($watermark, 'bottom-left', 5, 5);
+//        $image_water->insert($watermark, 'bottom-left', 5, 5);
         $image_water->save('/home/u3974397/public_html/uploads/images/'.$targetName);
     }
 
