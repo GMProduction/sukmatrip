@@ -18,6 +18,37 @@
         </div>
     </section>
 
+    <section class="container mt-5" id="ourProperty">
+        {{--        <div class="text-center mt-5 mb-5">--}}
+        {{--            <a class="sukmatrip" style="color: black">OUR GALLERY</a>--}}
+        {{--            <hr class="mb-2" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">--}}
+        {{--        </div>--}}
+
+        <div class="row">
+            @foreach($gallery as $v)
+                @foreach($v->image as $img)
+                    <div class="col-md-3 col-sm-12">
+                        <a class="gen-card-produk" href="{{ $img->url }}">
+                            <img src="{{ $img->url }}">
+                            <div class="cover-black-bottom"></div>
+                            <div class="content">
+{{--                                <p class="text-white f12">{{$v->judul}}</p>--}}
+                                <hr style="width: 3em; border-color: white;" class="mb-2">
+                            </div>
+                        </a>
+                    </div>
+                @endforeach
+            @endforeach
+
+
+        </div>
+
+        {{--        <div class="text-center mt-4 mb-5">--}}
+        {{--            <a  class="bt-outline-primary f10" href="#">LOAD MORE</a>--}}
+        {{--        </div>--}}
+    </section>
+
+
     {{--    OUR PACKAGE--}}
     <section class="container-fluid">
         <div class="text-center mb-5" style="margin-top: 7rem">
@@ -41,30 +72,6 @@
 
     </section>
 
-    <section class="container" id="ourProperty">
-        {{--        <div class="text-center mt-5 mb-5">--}}
-        {{--            <a class="sukmatrip" style="color: black">OUR GALLERY</a>--}}
-        {{--            <hr class="mb-2" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">--}}
-        {{--        </div>--}}
-
-        <div class="row">
-            <div class="col-md-3 col-sm-12">
-                <a class="gen-card-produk" href="{{asset('assets/img/foto/sukmatrip1.png')}}">
-                    <img src="{{asset('assets/img/foto/sukmatrip1.png')}}">
-                    <div class="cover-black-bottom"></div>
-                    <div class="content">
-                        <p class="text-white f12">SINI VIE VILLA</p>
-                        <hr style="width: 3em; border-color: white;" class="mb-2">
-                    </div>
-                </a>
-            </div>
-
-        </div>
-
-        {{--        <div class="text-center mt-4 mb-5">--}}
-        {{--            <a  class="bt-outline-primary f10" href="#">LOAD MORE</a>--}}
-        {{--        </div>--}}
-    </section>
 
     <section class="container-fluid">
         <hr style="border-color: var(--accentColor); margin-top: 7em;" class="container">

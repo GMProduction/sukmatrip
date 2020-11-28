@@ -112,7 +112,7 @@
                                        aria-describedby="tanggalHelp" placeholder="Tanggal CheckIn*" name="check_in"
                                        required>
                             </div>
-                        </div>
+                        </div>a
 
                         <div class="offset-3 col-6">
                             <div class="form-group">
@@ -134,7 +134,7 @@
                 </form>
 
 
-                <div class="text-center mt-4 mb-5">
+                <div class="text-center mt-4 mb-a5">
                     <a id="btn-book" style="color: white; background: #4A4A4A; letter-spacing: .5rem;"
                        class="bt-primary f08">BOOK
                         NOW</a>
