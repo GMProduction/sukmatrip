@@ -9,61 +9,61 @@
 
     {{--    BIG IMAGE--}}
     <section>
-        <div class="gambar-depan"  >
+        <div class="gambar-depan">
 
             <div class="imagesContainer">
-            <img class="image-as-bg" src="{{asset('assets/img/foto/bg1.jpg')}}">
-            <img class="image-as-bg fadeInClass" src="{{asset('assets/img/foto/bg2.jpg')}}">
+                <img class="image-as-bg" src="{{asset('assets/img/foto/bg1.jpg')}}">
+                <img class="image-as-bg fadeInClass" src="{{asset('assets/img/foto/bg2.jpg')}}">
             </div>
             <div class="gradien-putih"></div>
             <div class="transparent-hitam"></div>
 
             <div class="d-flex justify-content-center align-items-center h-100 flex-column">
-{{--                <p class="sukmatrip mb-0">SUKMATRIP</p>--}}
-{{--                <hr class="mb-2" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">--}}
-{{--                <p class="title-home" >CARI DESTINASI IMPIAN ANDA</p>--}}
-{{--                <div class="container-fluid w-50" style="z-index: 3">--}}
-{{--                    <div class="row mt-5 margin-title">--}}
-{{--                        <div class="col-lg-4 col-md-12">--}}
-{{--                            <label for="destinasi" class="text-white">Destinasi</label>--}}
-{{--                            <select class="sukmatrip-form-control" id="destinasi" name="destinasi">--}}
-{{--                                <option class="sukmatrip-dropdown-item" value="all">Semua Destinasi</option>--}}
-{{--                                @foreach($destinations as $v)--}}
-{{--                                    <option class="sukmatrip-dropdown-item" value="{{ $v->id }}">{{ $v->nama }}</option>--}}
-{{--                                @endforeach--}}
-{{--                            </select>--}}
-{{--                        </div>--}}
+                {{--                <p class="sukmatrip mb-0">SUKMATRIP</p>--}}
+                {{--                <hr class="mb-2" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">--}}
+                {{--                <p class="title-home" >CARI DESTINASI IMPIAN ANDA</p>--}}
+                {{--                <div class="container-fluid w-50" style="z-index: 3">--}}
+                {{--                    <div class="row mt-5 margin-title">--}}
+                {{--                        <div class="col-lg-4 col-md-12">--}}
+                {{--                            <label for="destinasi" class="text-white">Destinasi</label>--}}
+                {{--                            <select class="sukmatrip-form-control" id="destinasi" name="destinasi">--}}
+                {{--                                <option class="sukmatrip-dropdown-item" value="all">Semua Destinasi</option>--}}
+                {{--                                @foreach($destinations as $v)--}}
+                {{--                                    <option class="sukmatrip-dropdown-item" value="{{ $v->id }}">{{ $v->nama }}</option>--}}
+                {{--                                @endforeach--}}
+                {{--                            </select>--}}
+                {{--                        </div>--}}
 
-{{--                        <div class="col-lg-4 col-md-12">--}}
-{{--                            <label for="tipePenginapan" class="text-white">Kategori</label>--}}
-{{--                            <select class="sukmatrip-form-control" id="tipePenginapan" name="tipePenginapan">--}}
-{{--                                <option class="dropdown-item" value="all">Semua Kategori</option>--}}
-{{--                                <option class="dropdown-item" value="Hotel">Hotel</option>--}}
-{{--                                <option class="dropdown-item" value="Vila">Villa</option>--}}
-{{--                            </select>--}}
-{{--                        </div>--}}
+                {{--                        <div class="col-lg-4 col-md-12">--}}
+                {{--                            <label for="tipePenginapan" class="text-white">Kategori</label>--}}
+                {{--                            <select class="sukmatrip-form-control" id="tipePenginapan" name="tipePenginapan">--}}
+                {{--                                <option class="dropdown-item" value="all">Semua Kategori</option>--}}
+                {{--                                <option class="dropdown-item" value="Hotel">Hotel</option>--}}
+                {{--                                <option class="dropdown-item" value="Vila">Villa</option>--}}
+                {{--                            </select>--}}
+                {{--                        </div>--}}
 
-{{--                        <div class="col-lg-4 col-md-12">--}}
-{{--                            <label for="durasi" class="text-white">Durasi</label>--}}
-{{--                            <select class="sukmatrip-form-control" id="durasi" name="durasi">--}}
-{{--                                @foreach($durations as $duration)--}}
-{{--                                    <option class="dropdown-item"--}}
-{{--                                            value="{{ $duration->id }}">{{ $duration->name }}</option>--}}
-{{--                                @endforeach--}}
-{{--                            </select>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <div class="row mt-5">--}}
-{{--                        <div class="offset-lg-4 col-lg-4 col-md-12">--}}
-{{--                            <a id="btn-search" class="d-block text-center" href="#">--}}
-{{--                                <div class="bt-search">--}}
-{{--                                    <i data-feather="search" class="mr-2" style="width: 1.3rem; height: 1.3rem"></i>--}}
-{{--                                    <p class="mb-0">Cari</p>--}}
-{{--                                </div>--}}
-{{--                            </a>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
+                {{--                        <div class="col-lg-4 col-md-12">--}}
+                {{--                            <label for="durasi" class="text-white">Durasi</label>--}}
+                {{--                            <select class="sukmatrip-form-control" id="durasi" name="durasi">--}}
+                {{--                                @foreach($durations as $duration)--}}
+                {{--                                    <option class="dropdown-item"--}}
+                {{--                                            value="{{ $duration->id }}">{{ $duration->name }}</option>--}}
+                {{--                                @endforeach--}}
+                {{--                            </select>--}}
+                {{--                        </div>--}}
+                {{--                    </div>--}}
+                {{--                    <div class="row mt-5">--}}
+                {{--                        <div class="offset-lg-4 col-lg-4 col-md-12">--}}
+                {{--                            <a id="btn-search" class="d-block text-center" href="#">--}}
+                {{--                                <div class="bt-search">--}}
+                {{--                                    <i data-feather="search" class="mr-2" style="width: 1.3rem; height: 1.3rem"></i>--}}
+                {{--                                    <p class="mb-0">Cari</p>--}}
+                {{--                                </div>--}}
+                {{--                            </a>--}}
+                {{--                        </div>--}}
+                {{--                    </div>--}}
+                {{--                </div>--}}
             </div>
         </div>
     </section>
@@ -75,7 +75,8 @@
             <hr class="mb-2" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">
         </div>
         <p class="text-center f26">Honeymoon Bareng <a class="t-accent">Sukmatrip</a></p>
-        <p style="font-weight: 300; color: #636363;" class="text-center f14 container">Sukmatrip mempunyai banyak pilihan paket honeymoon, atau kamu bisa pilih sendiri paket honeymoon, hotel dan trip sesuai seleramu!</p>
+        <p style="font-weight: 300; color: #636363;" class="text-center f14 container">Sukmatrip mempunyai banyak
+            pilihan paket honeymoon, atau kamu bisa pilih sendiri paket honeymoon, hotel dan trip sesuai seleramu!</p>
 
     </section>
 
@@ -117,7 +118,8 @@
             <p class="sukmatrip mb-0">SUKMATRIP</p>
             <hr class="mb-2" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">
             <p class="text-center text-white f36 mt-2">Yuk Trip dengan <a class="t-accent">Sukmatrip</a></p>
-            <p style="font-weight: 300" class="text-white text-center f14 container">Enjoy, Travel, <a class="t-accent">Relax</a></p>
+            <p style="font-weight: 300" class="text-white text-center f14 container">Enjoy, Travel, <a class="t-accent">Relax</a>
+            </p>
         </div>
     </section>
 
@@ -127,18 +129,22 @@
             <hr class="mb-2" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">
 
         </div>
-        <p class="text-center f26 mb-5">Artikel  <a class="t-accent">Terbaru</a></p>
+        <p class="text-center f26 mb-5">Artikel <a class="t-accent">Terbaru</a></p>
 
         <div class="row">
-{{--            <div class="col-sm-12 col-md-3">--}}
-{{--                <a class="gen-card-article">--}}
-{{--                    <img src="{{asset('assets/img/foto/konten2.jpg')}}">--}}
-{{--                    <p class="judul mt-2">INI TEXT</p>--}}
-{{--                    <p style="margin-top: -0.5em" class="sumber">Sumbernya</p>--}}
-{{--                </a>--}}
-{{--            </div>--}}
+            @foreach($articles as $a)
 
-            <p style="font-weight: 300" class="text-center f14 container">Belum ada artikel</p>
+                <div class="col-sm-12 col-md-4">
+                    <a class="gen-card-article-page d-block" href="/article/{{$a->id}}">
+                        @foreach($a->getImage as $img)
+                            <img src={{$img->image->url}}>
+                        @endforeach
+
+                        <p class="judul mt-2">{{$a->judul}}</p>
+                        {{--                        <p class="sumber">Artikel Dari</p>--}}
+                    </a>
+                </div>
+            @endforeach
 
         </div>
 
@@ -150,18 +156,20 @@
             <a class="sukmatrip" style="color: black">Testimoni</a>
             <hr class="mb-2" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">
         </div>
-        <p class="text-center f26 mb-3">Testimoni dari  <a class="t-accent">klien kami:</a></p>
+        <p class="text-center f26 mb-3">Testimoni dari <a class="t-accent">klien kami:</a></p>
 
         <div class="slick-fade">
             <div class="ulasan mt-0 d-flex flex-column align-items-center justify-content-center">
                 <img src="{{asset('assets/img/foto/1.png')}}" style="border-radius: 50%; width: 7em; height: 7em">
-                <p style="color: #636363; font-weight: 300" class="mt-3 f14">Sangat menyenanggkan sekali honeymoon bersama sukmatrip.</p>
+                <p style="color: #636363; font-weight: 300" class="mt-3 f14">Sangat menyenanggkan sekali honeymoon
+                    bersama sukmatrip.</p>
                 <p style="color: black;" class="f12">.</p>
             </div>
 
             <div class="ulasan mt-0 d-flex flex-column align-items-center justify-content-center">
                 <img src="{{asset('assets/img/foto/2.png')}}" style="border-radius: 50%; width: 7em; height: 7em">
-                <p style="color: #636363; font-weight: 300" class="mt-3 f14">Tidak bisa di lupakan honeymoon bersama sukmatrip, terima kasih sukmatrip.</p>
+                <p style="color: #636363; font-weight: 300" class="mt-3 f14">Tidak bisa di lupakan honeymoon bersama
+                    sukmatrip, terima kasih sukmatrip.</p>
                 <p style="color: black;" class="f12">.</p>
             </div>
 

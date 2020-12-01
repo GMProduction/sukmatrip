@@ -16,4 +16,5 @@ class Article_to_image extends Model
         return $this->belongsTo(Image::class,'id_image');
     }
 
+
 }
