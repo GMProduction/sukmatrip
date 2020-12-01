@@ -24,6 +24,9 @@
         {{--            <hr class="mb-2" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">--}}
         {{--        </div>--}}
 
+        <p class="text-center f26">Gallery <a class="t-accent">Sukmatrip</a></p>
+
+
         <div class="row">
             @foreach($gallery as $v)
                 @foreach($v->image as $img)
@@ -65,7 +68,6 @@
                 @endfor
             </div>
         </div>
-        <p class="text-center f26">Gallery <a class="t-accent">Sukmatrip</a></p>
         {{--        <p style="font-weight: 300; color: #636363;" class="text-center f14 container">Take a look at the most exclusive--}}
         {{--            & most visited locations in the world--}}
         {{--            - hand-picked just for you. Start traveling the world today!</p>--}}

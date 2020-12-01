@@ -112,7 +112,7 @@
                                        aria-describedby="tanggalHelp" placeholder="Tanggal CheckIn*" name="check_in"
                                        required>
                             </div>
-                        </div>a
+                        </div>
 
                         <div class="offset-3 col-6">
                             <div class="form-group">
