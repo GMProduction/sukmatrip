@@ -31,7 +31,7 @@
         <div class="row">
             @foreach($articles as $a)
 
-                <div class="col-sm-12 col-md-6">
+                <div class="col-sm-12 col-md-6 mb-5">
                     <a class="gen-card-article-page d-block" href="/article/{{$a->id}}">
                         @foreach($a->getImage as $img)
                             <img src={{$img->image->url}}>
