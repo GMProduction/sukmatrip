@@ -94,9 +94,9 @@
                         <div class="content">
                             <p class="t-accent f08 text-center">{{ $paket->nama }}</p>
                             <hr style="width: 3em; border-color: white;" class="mb-2">
-                            <p class="text-white f18">Rp. {{ number_format($paket->harga, 0, ',', '.') }}</p>
+                            <p class="text-white f18 mb-0">Rp. {{ number_format($paket->harga, 0, ',', '.') }}</p>
                             <p style="font-weight: 300;"
-                               class="text-white f10 mb-0">per Couple</p>
+                               class="text-white f10 mb-1">per couple</p>
                             <div class="d-flex align-items-center justify-content-center">
                                 <i data-feather="clock" class="icons"></i>
                                 <p style="font-weight: 300;"
