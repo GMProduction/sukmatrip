@@ -24,13 +24,13 @@
     <link rel="stylesheet" href="{{asset('/assets/css/argon.css?v=1.2.0')}}" type="text/css">
     <script src="{{asset('assets/js/swal.min.js')}}"></script>
 
-
     <script src="{{asset('assets/vendor/jquery/dist/jquery.min.js')}}"></script>
 
     <script src="{{asset('assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
 
     <link href="{{asset('assets/vendor/summernote/summernote.css')}}" rel="stylesheet">
     <script src="{{asset('assets/vendor/summernote/summernote.js')}}"></script>
+    <link rel="icon" href="{{asset("assets/img/common/logosukma.ico")}}" type="image/png">
 
     @yield('morecss')
     <script src="https://unpkg.com/feather-icons"></script>

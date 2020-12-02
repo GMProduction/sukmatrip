@@ -25,8 +25,8 @@
                  style="margin-top: -1em; color: var(--primaryColor)">
                 <i data-feather="map-pin" class="mr-2"></i>
                 <p class="mb-0 mr-4">{{ $product->penginapan->destinasi->nama}}</p>
-{{--                <i data-feather="clock" class="mr-2"></i>--}}
-{{--                <p class="mb-0">{{ $product }}</p>--}}
+                <i data-feather="clock" class="mr-2"></i>
+                <p class="mb-0">{{$product->duration->name}}</p>
             </div>
             <hr class="mb-2" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">
         </div>
@@ -186,8 +186,8 @@
                                 <p class="f10 mb-0">Check Out</p>
                                 <p class="f12 bold" id="str-chekout"></p>
 
-                                <p class="f10 mb-0 d-none">Total Harga</p>
-                                <p class="f12 bold d-none" id="str-total"></p>
+                                <p class="f10 mb-0">Total Harga</p>
+                                <p class="f12 bold" id="str-total"></p>
                             </div>
                         </div>
 
@@ -216,6 +216,7 @@
         <p style="font-weight: 300; color: #636363;" class="text-center f14 container">Take a look at the most exclusive
             & most visited locations in the world - hand-picked just for you.
             Start traveling the world today!</p>
+
 
     </section>
 
@@ -256,7 +257,7 @@
 
     <script>
         var tgl = '', nama = '', qty = 0, harga = 0;
-        var duration = '{{ $product->penginapan->duration }}';
+        var duration = ' {{$product->duration->duration}}';
 
         function order() {
             var uri = "halo, saya " + nama + " tertarik untuk memesan " + '{{$product->nama}}' + " rencana berangkat tanggal " + tgl + " - " + "https://sukmatrip.com/detail-paket/" + '{{$product->id}}';
