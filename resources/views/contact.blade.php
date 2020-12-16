@@ -21,28 +21,28 @@
         <div class="slick-fade">
             <div class="ulasan mt-0 d-flex flex-column align-items-center justify-content-center">
                 <img src="{{asset('assets/img/common/logo.png')}}" style=" width: 9em">
-                <p style="color: #636363; font-weight: 300" class="mt-5 f14">kantor SUKMATRIP</p>
+                <p style="color: #636363; font-weight: 300" class="mt-5 f14">Kantor SUKMATRIP</p>
                    <p> GRIYA CALISTA B8
                     kel Wirogunan, Kec. Kartasura, Kabupaten Sukoharjo, Jawa Tengah</p>
             </div>
         </div>
         <div class="row mt-5">
-            <div class="col-4">
+            <div class="col-lg-4 col-sm-12 marbot-in-small">
                 <p style="color: var(--primaryColor);" class="f18 mb-0">Instagram</p>
                 <a style="color: black;" class="f12 mb-0" href="https://www.instagram.com/sukmatrip_/">@sukmatrip_</a>
             </div>
-            <div class="col-4">
+            <div class="col-lg-4 col-sm-12 marbot-in-small">
                 <p style="color: var(--primaryColor);" class="f18 mb-0">Nomor Telepon</p>
                 <a style="color: black;" href="tel:6283865442740" class="f12 mb-0">+62 83865442740</a>
             </div>
-            <div class="col-4">
+            <div class="col-lg-4 col-sm-12 marbot-in-small">
                 <p style="color: var(--primaryColor);" class="f18 mb-0">Facebook</p>
                 <a style="color: black;" class="f12 mb-0" href="https://www.facebook.com/pages/category/Product-Service/SUKMATRIP-794165044301310/">SUKMATRIP</a>
             </div>
         </div>
     </section>
 
-    <section class="container-fluid" style="height: 35em ;margin-top: 7rem; position:relative;">
+    <section class="container-fluid height-tentangkami" style=" margin-top: 7rem; position:relative;">
         <img class="image-as-bg" src="{{asset('assets/img/foto/sukmatrip2.jpg')}}">
         <div class="cover-black-all"></div>
         <div class="d-flex justify-content-center align-items-center h-100 flex-column front">

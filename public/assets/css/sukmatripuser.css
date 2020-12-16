@@ -77,6 +77,10 @@ hr {
     margin: auto auto;
 }
 
+.height-tentangkami{
+    height: 40em;
+}
+
 /*FONTSIZE*/
 .f04 {
     font-size: .4rem !important;
@@ -786,6 +790,15 @@ hr {
         color: var(--primaryColor);
     }
 
+    .navitem {
+        color: #4A4A4A;
+        font-weight: 500;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        /*margin-top: .5rem;*/
+        transition: all 200ms ease-in-out;
+    }
+
     .navbar-toggler-icon {
         color: var(--primaryColor) !important;
     }
@@ -808,6 +821,67 @@ hr {
     }
     .logo-gplay {
         height: 2em;
+    }
+
+    .f04 {
+        font-size: .4rem !important;
+    }
+
+    .f06 {
+        font-size: .4rem !important;
+    }
+
+    .f08 {
+        font-size: .6rem !important;
+    }
+
+    .f10 {
+        font-size: .8rem !important;
+    }
+
+    .f12 {
+        font-size: 1rem !important;
+    }
+
+    .f14 {
+        font-size: 1rem !important;
+    }
+
+    .f16 {
+        font-size: 1.2rem !important;
+    }
+
+    .f18 {
+        font-size: 1.4rem !important;
+    }
+
+    .f20 {
+        font-size: 1.6rem !important;
+    }
+
+    .f22 {
+        font-size: 1.8rem !important;
+    }
+
+    .f24 {
+        font-size: 2.4rem !important;
+    }
+
+
+    .f26 {
+        font-size: 2.6rem !important;
+    }
+
+    .f36 {
+        font-size: 2.4rem !important;
+    }
+
+    .height-tentangkami{
+        height: 50em;
+    }
+
+    .marbot-in-small{
+        margin-bottom: 2rem;
     }
 }
 
