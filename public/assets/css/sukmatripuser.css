@@ -793,7 +793,7 @@ hr {
     .navitem {
         color: #4A4A4A;
         font-weight: 500;
-        font-size: 2rem;
+        font-size: 1rem !important;
         margin-bottom: 1rem;
         /*margin-top: .5rem;*/
         transition: all 200ms ease-in-out;
@@ -828,11 +828,11 @@ hr {
     }
 
     .f06 {
-        font-size: .4rem !important;
+        font-size: .4rem;
     }
 
     .f08 {
-        font-size: .6rem !important;
+        font-size: .6rem;
     }
 
     .f10 {
