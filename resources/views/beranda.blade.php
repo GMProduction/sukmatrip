@@ -104,9 +104,7 @@
 
                             </div>
                             <br>
-                            <div>
-                                <button class="btn-book">Pesan Sekarang</button>
-                            </div>
+                                <button class=" t-accent " style="z-index: 10000; background-color: rgba(201, 76, 76, 0.0); border: 1px solid #FDD100;">Pesan Sekarang</button>
 
 
                         </div>
