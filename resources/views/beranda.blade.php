@@ -1,74 +1,73 @@
 @extends('base')
 
 @section('moreCss')
-    <link rel="stylesheet" href="{{asset('assets/vendor/slick/slick.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{asset('assets/vendor/slick/slick-theme.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('assets/vendor/slick/slick.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('assets/vendor/slick/slick-theme.css') }}" type="text/css">
 @endsection
 
 @section('content')
-
-    {{--    BIG IMAGE--}}
+    {{-- BIG IMAGE --}}
     <section>
         <div class="gambar-depan">
 
             <div class="imagesContainer">
-                <img class="image-as-bg" src="{{asset('assets/img/foto/bg1.jpg')}}">
-                <img class="image-as-bg fadeInClass" src="{{asset('assets/img/foto/bg2.jpg')}}">
+                <img class="image-as-bg" src="{{ asset('assets/img/foto/bg1.jpg') }}">
+                <img class="image-as-bg fadeInClass" src="{{ asset('assets/img/foto/bg2.jpg') }}">
             </div>
             <div class="gradien-putih"></div>
             <div class="transparent-hitam"></div>
 
             <div class="d-flex justify-content-center align-items-center h-100 flex-column">
-                {{--                <p class="sukmatrip mb-0">SUKMATRIP</p>--}}
-                {{--                <hr class="mb-2" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">--}}
-                {{--                <p class="title-home" >CARI DESTINASI IMPIAN ANDA</p>--}}
-                {{--                <div class="container-fluid w-50" style="z-index: 3">--}}
-                {{--                    <div class="row mt-5 margin-title">--}}
-                {{--                        <div class="col-lg-4 col-md-12">--}}
-                {{--                            <label for="destinasi" class="text-white">Destinasi</label>--}}
-                {{--                            <select class="sukmatrip-form-control" id="destinasi" name="destinasi">--}}
-                {{--                                <option class="sukmatrip-dropdown-item" value="all">Semua Destinasi</option>--}}
-                {{--                                @foreach($destinations as $v)--}}
-                {{--                                    <option class="sukmatrip-dropdown-item" value="{{ $v->id }}">{{ $v->nama }}</option>--}}
-                {{--                                @endforeach--}}
-                {{--                            </select>--}}
-                {{--                        </div>--}}
+                {{-- <p class="sukmatrip mb-0">SUKMATRIP</p> --}}
+                {{-- <hr class="mb-2" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);"> --}}
+                {{-- <p class="title-home" >CARI DESTINASI IMPIAN ANDA</p> --}}
+                {{-- <div class="container-fluid w-50" style="z-index: 3"> --}}
+                {{-- <div class="row mt-5 margin-title"> --}}
+                {{-- <div class="col-lg-4 col-md-12"> --}}
+                {{-- <label for="destinasi" class="text-white">Destinasi</label> --}}
+                {{-- <select class="sukmatrip-form-control" id="destinasi" name="destinasi"> --}}
+                {{-- <option class="sukmatrip-dropdown-item" value="all">Semua Destinasi</option> --}}
+                {{-- @foreach ($destinations as $v) --}}
+                {{-- <option class="sukmatrip-dropdown-item" value="{{ $v->id }}">{{ $v->nama }}</option> --}}
+                {{-- @endforeach --}}
+                {{-- </select> --}}
+                {{-- </div> --}}
 
-                {{--                        <div class="col-lg-4 col-md-12">--}}
-                {{--                            <label for="tipePenginapan" class="text-white">Kategori</label>--}}
-                {{--                            <select class="sukmatrip-form-control" id="tipePenginapan" name="tipePenginapan">--}}
-                {{--                                <option class="dropdown-item" value="all">Semua Kategori</option>--}}
-                {{--                                <option class="dropdown-item" value="Hotel">Hotel</option>--}}
-                {{--                                <option class="dropdown-item" value="Vila">Villa</option>--}}
-                {{--                            </select>--}}
-                {{--                        </div>--}}
+                {{-- <div class="col-lg-4 col-md-12"> --}}
+                {{-- <label for="tipePenginapan" class="text-white">Kategori</label> --}}
+                {{-- <select class="sukmatrip-form-control" id="tipePenginapan" name="tipePenginapan"> --}}
+                {{-- <option class="dropdown-item" value="all">Semua Kategori</option> --}}
+                {{-- <option class="dropdown-item" value="Hotel">Hotel</option> --}}
+                {{-- <option class="dropdown-item" value="Vila">Villa</option> --}}
+                {{-- </select> --}}
+                {{-- </div> --}}
 
-                {{--                        <div class="col-lg-4 col-md-12">--}}
-                {{--                            <label for="durasi" class="text-white">Durasi</label>--}}
-                {{--                            <select class="sukmatrip-form-control" id="durasi" name="durasi">--}}
-                {{--                                @foreach($durations as $duration)--}}
-                {{--                                    <option class="dropdown-item"--}}
-                {{--                                            value="{{ $duration->id }}">{{ $duration->name }}</option>--}}
-                {{--                                @endforeach--}}
-                {{--                            </select>--}}
-                {{--                        </div>--}}
-                {{--                    </div>--}}
-                {{--                    <div class="row mt-5">--}}
-                {{--                        <div class="offset-lg-4 col-lg-4 col-md-12">--}}
-                {{--                            <a id="btn-search" class="d-block text-center" href="#">--}}
-                {{--                                <div class="bt-search">--}}
-                {{--                                    <i data-feather="search" class="mr-2" style="width: 1.3rem; height: 1.3rem"></i>--}}
-                {{--                                    <p class="mb-0">Cari</p>--}}
-                {{--                                </div>--}}
-                {{--                            </a>--}}
-                {{--                        </div>--}}
-                {{--                    </div>--}}
-                {{--                </div>--}}
+                {{-- <div class="col-lg-4 col-md-12"> --}}
+                {{-- <label for="durasi" class="text-white">Durasi</label> --}}
+                {{-- <select class="sukmatrip-form-control" id="durasi" name="durasi"> --}}
+                {{-- @foreach ($durations as $duration) --}}
+                {{-- <option class="dropdown-item" --}}
+                {{-- value="{{ $duration->id }}">{{ $duration->name }}</option> --}}
+                {{-- @endforeach --}}
+                {{-- </select> --}}
+                {{-- </div> --}}
+                {{-- </div> --}}
+                {{-- <div class="row mt-5"> --}}
+                {{-- <div class="offset-lg-4 col-lg-4 col-md-12"> --}}
+                {{-- <a id="btn-search" class="d-block text-center" href="#"> --}}
+                {{-- <div class="bt-search"> --}}
+                {{-- <i data-feather="search" class="mr-2" style="width: 1.3rem; height: 1.3rem"></i> --}}
+                {{-- <p class="mb-0">Cari</p> --}}
+                {{-- </div> --}}
+                {{-- </a> --}}
+                {{-- </div> --}}
+                {{-- </div> --}}
+                {{-- </div> --}}
             </div>
         </div>
     </section>
 
-    {{--    OUR PACKAGE--}}
+    {{-- OUR PACKAGE --}}
     <section class="container-fluid">
         <div class="text-center mb-5" style="margin-top: 7rem">
             <a class="sukmatrip" style="color: black">SUKMATRIP</a>
@@ -87,22 +86,29 @@
         </div>
 
         <div class="row">
-            @foreach($pakets as $paket)
+            @foreach ($pakets as $paket)
                 <div class="col-md-3 col-sm-12">
-                    <a class="gen-card-produk" href="/detail-paket/{{$paket->id}}">
+                    <a class="gen-card-produk" href="/detail-paket/{{ $paket->id }}">
                         <img src="{{ $paket->getImage[0]->image->url }}">
                         <div class="cover-black-bottom"></div>
                         <div class="content">
                             <p class="t-accent f08 text-center">{{ $paket->nama }}</p>
                             <hr style="width: 3em; border-color: white;" class="mb-2">
                             <p class="text-white f18 mb-0">Rp. {{ number_format($paket->harga, 0, ',', '.') }}</p>
-                            <p style="font-weight: 300;"
-                               class="text-white f10 mb-1">per couple</p>
+                            <p style="font-weight: 300;" class="text-white f10 mb-1">per couple</p>
                             <div class="d-flex align-items-center justify-content-center">
                                 <i data-feather="clock" class="icons"></i>
-                                <p style="font-weight: 300;"
-                                   class="text-white f10 mb-0">{{ $paket->duration->name ?? '' }}</p>
+                                <p style="font-weight: 300;" class="text-white f10 mb-0">
+                                    {{ $paket->duration->name ?? '' }}</p>
+
+
                             </div>
+                            <br>
+                            <div>
+                                <button class="btn-book">Pesan Sekarang</button>
+                            </div>
+
+
                         </div>
                     </a>
                 </div>
@@ -112,13 +118,14 @@
     </section>
 
     <section class="mt-5 container-fluid" style="height: 35em; position:relative;">
-        <img class="image-as-bg" src="{{asset('assets/img/foto/sukmatrip2.jpg')}}">
+        <img class="image-as-bg" src="{{ asset('assets/img/foto/sukmatrip2.jpg') }}">
         <div class="cover-black-all"></div>
         <div class="d-flex justify-content-center align-items-center h-100 flex-column front">
             <p class="sukmatrip mb-0">SUKMATRIP</p>
             <hr class="mb-2" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">
             <p class="text-center text-white f36 mt-2">Yuk Trip dengan <a class="t-accent">Sukmatrip</a></p>
-            <p style="font-weight: 300" class="text-white text-center f14 container">Enjoy, Travel, <a class="t-accent">Relax</a>
+            <p style="font-weight: 300" class="text-white text-center f14 container">Enjoy, Travel, <a
+                    class="t-accent">Relax</a>
             </p>
         </div>
     </section>
@@ -132,16 +139,15 @@
         <p class="text-center f26 mb-5">Artikel <a class="t-accent">Terbaru</a></p>
 
         <div class="row">
-            @foreach($articles as $a)
-
+            @foreach ($articles as $a)
                 <div class="col-sm-12 col-md-4">
-                    <a class="gen-card-article-page d-block" href="/article/{{$a->id}}">
-                        @foreach($a->getImage as $img)
-                            <img src={{$img->image->url}}>
+                    <a class="gen-card-article-page d-block" href="/article/{{ $a->id }}">
+                        @foreach ($a->getImage as $img)
+                            <img src={{ $img->image->url }}>
                         @endforeach
 
-                        <p class="judul mt-2">{{$a->judul}}</p>
-                        {{--                        <p class="sumber">Artikel Dari</p>--}}
+                        <p class="judul mt-2">{{ $a->judul }}</p>
+                        {{-- <p class="sumber">Artikel Dari</p> --}}
                     </a>
                 </div>
             @endforeach
@@ -160,14 +166,14 @@
 
         <div class="slick-fade">
             <div class="ulasan mt-0 d-flex flex-column align-items-center justify-content-center">
-                <img src="{{asset('assets/img/foto/1.png')}}" style="border-radius: 50%; width: 7em; height: 7em">
+                <img src="{{ asset('assets/img/foto/1.png') }}" style="border-radius: 50%; width: 7em; height: 7em">
                 <p style="color: #636363; font-weight: 300" class="mt-3 f14">Sangat menyenanggkan sekali honeymoon
                     bersama sukmatrip.</p>
                 <p style="color: black;" class="f12">.</p>
             </div>
 
             <div class="ulasan mt-0 d-flex flex-column align-items-center justify-content-center">
-                <img src="{{asset('assets/img/foto/2.png')}}" style="border-radius: 50%; width: 7em; height: 7em">
+                <img src="{{ asset('assets/img/foto/2.png') }}" style="border-radius: 50%; width: 7em; height: 7em">
                 <p style="color: #636363; font-weight: 300" class="mt-3 f14">Tidak bisa di lupakan honeymoon bersama
                     sukmatrip, terima kasih sukmatrip.</p>
                 <p style="color: black;" class="f12">.</p>
@@ -176,14 +182,10 @@
 
         </div>
     </section>
-
-
-
 @endsection
 
 @section('script')
-
-    <script src="{{asset('assets/vendor/slick/slick.js')}}"></script>
+    <script src="{{ asset('assets/vendor/slick/slick.js') }}"></script>
 
     <script>
         $('.slick-fade').slick({
@@ -194,13 +196,14 @@
             cssEase: 'linear'
         });
 
-        $(document).ready(function () {
-            $('#btn-search').on('click', function (e) {
+        $(document).ready(function() {
+            $('#btn-search').on('click', function(e) {
                 e.preventDefault();
                 let destionationId = $('#destinasi').val();
                 let type = $('#tipePenginapan').val();
                 let durationId = $('#durasi').val();
-                window.location.href = '/pencarian?destination=' + destionationId + '&type=' + type + '&duration=' + durationId;
+                window.location.href = '/pencarian?destination=' + destionationId + '&type=' + type +
+                    '&duration=' + durationId;
             });
         })
     </script>
