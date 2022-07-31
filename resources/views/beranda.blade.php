@@ -22,8 +22,8 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             text-shadow: white 1px 0 10px;
-            height: 60px;
-            width: 60px;
+            height: 75px;
+            width: 75px;
             border: solid 1px white;
             border-radius: 60px;
             display: flex;
@@ -60,7 +60,7 @@
         <div class="gambar-depan">
 
             <p class="w-100"
-                style="position: absolute; bottom: 150px; z-index: 100; text-align: center; font-size: 2rem; color: white">
+                style="position: absolute; bottom: 200px; z-index: 100; text-align: center; font-size: 235rem; color: white">
                 Cek PAKET HONEYMOON kami</p>
             <div class="w-100" style=" z-index: 100; position: absolute; bottom: 100px; text-align: center">
                 <a class="btnc ml-auto mr-auto" href="#paket-honeymoon"> <i data-feather="chevron-down" style="color: white" class="icons"></i></a>
