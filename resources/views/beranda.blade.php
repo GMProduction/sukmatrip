@@ -7,8 +7,64 @@
 
 @section('content')
     {{-- BIG IMAGE --}}
+
+    <style >
+        html { scroll-behavior: smooth; }
+    </style>
+
+
+    <style>
+        .btnc {
+            cursor: pointer;
+            position: relative;
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: white 1px 0 10px;
+            height: 60px;
+            width: 60px;
+            border: solid 1px white;
+            border-radius: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .btnc:before {
+            content: '';
+            position: absolute;
+            background: #fff4;
+            width: 0;
+            height: 0;
+            z-index: -1;
+            border-radius: 60px;
+            box-shadow: 0px 0px 24px 1px rgba(224, 199, 224, 0.2);
+            transition: all 300ms cubic-bezier(1.000, -0.195, 0.000, 1.330);
+            transition-timing-function: cubic-bezier(1.000, -0.195, 0.000, 1.330);
+        }
+
+        .btnc:hover:before {
+            width: 85%;
+            height: 85%;
+        }
+
+        .btnc:active:before,
+        .btnc:focus:before {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
     <section>
         <div class="gambar-depan">
+
+            <p class="w-100"
+                style="position: absolute; bottom: 150px; z-index: 100; text-align: center; font-size: 2rem; color: white">
+                Cek PAKET HONEYMOON kami</p>
+            <div class="w-100" style=" z-index: 100; position: absolute; bottom: 100px; text-align: center">
+                <a class="btnc ml-auto mr-auto" href="#paket-honeymoon"> <i data-feather="chevron-down" style="color: white" class="icons"></i></a>
+            </div>
 
             <div class="imagesContainer">
                 <img class="image-as-bg" src="{{ asset('assets/img/foto/bg1.jpg') }}">
@@ -68,7 +124,7 @@
     </section>
 
     {{-- OUR PACKAGE --}}
-    <section class="container-fluid">
+    <section class="container-fluid" id="paket-honeymoon">
         <div class="text-center mb-5" style="margin-top: 7rem">
             <a class="sukmatrip" style="color: black">SUKMATRIP</a>
             <hr class="mb-2" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">
@@ -79,7 +135,7 @@
 
     </section>
 
-    <section class="container">
+    <section class="container" >
         <div class="text-center mt-5 mb-5">
             <a class="sukmatrip" style="color: black">PAKET HONEYMOON KAMI</a>
             <hr class="mb-2" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">
@@ -104,7 +160,9 @@
 
                             </div>
                             <br>
-                                <button class=" t-accent " style="z-index: 10000; background-color: rgba(201, 76, 76, 0.0); border: 1px solid #FDD100;">Lihat Detail</button>
+                            <button class=" t-accent "
+                                style="z-index: 10000; background-color: rgba(201, 76, 76, 0.0); border: 1px solid #FDD100;">Lihat
+                                Detail</button>
 
 
                         </div>
