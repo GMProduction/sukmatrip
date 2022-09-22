@@ -17,7 +17,7 @@
     <!-- Argon CSS -->
     <link rel="stylesheet" href="{{ asset('/assets/css/argon.css?v=1.2.0') }}" type="text/css">
     <script src="{{asset('assets/js/swal.min.js')}}"></script>
-
+    <link rel="icon" href="{{asset("assets/img/common/logosukma.ico")}}" type="image/png">
 </head>
 
 <body class="bg-default">

@@ -13,43 +13,45 @@
     {{--    OUR PACKAGE--}}
     <section class="container  mt-5 text-center">
         <div class="text-center mb-4" style="margin-top: 7rem">
-            <a class="sukmatrip" style="color: black">CONTACT</a>
-            <hr class="mb-2" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">
+{{--            <a class="sukmatrip" style="color: black">CONTACT</a>--}}
+{{--            <hr class="mb-2" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">--}}
         </div>
-        <p class="text-center f26 mb-3">Contact <a class="t-accent">us:</a></p>
+        <p class="text-center f26 mb-3">Hubungi <a class="t-accent">kami:</a></p>
 
         <div class="slick-fade">
             <div class="ulasan mt-0 d-flex flex-column align-items-center justify-content-center">
                 <img src="{{asset('assets/img/common/logo.png')}}" style=" width: 9em">
-                <p style="color: #636363; font-weight: 300" class="mt-5 f14">SUKMATRIP office</p>
+                <p style="color: #636363; font-weight: 300" class="mt-5 f14">Kantor SUKMATRIP</p>
                    <p> GRIYA CALISTA B8
                     kel Wirogunan, Kec. Kartasura, Kabupaten Sukoharjo, Jawa Tengah</p>
             </div>
         </div>
         <div class="row mt-5">
-            <div class="col-4">
+            <div class="col-lg-4 col-sm-12 marbot-in-small">
                 <p style="color: var(--primaryColor);" class="f18 mb-0">Instagram</p>
                 <a style="color: black;" class="f12 mb-0" href="https://www.instagram.com/sukmatrip_/">@sukmatrip_</a>
             </div>
-            <div class="col-4">
-                <p style="color: var(--primaryColor);" class="f18 mb-0">Phone numbers</p>
+            <div class="col-lg-4 col-sm-12 marbot-in-small">
+                <p style="color: var(--primaryColor);" class="f18 mb-0">Nomor Telepon</p>
                 <a style="color: black;" href="tel:6283865442740" class="f12 mb-0">+62 83865442740</a>
             </div>
-            <div class="col-4">
+            <div class="col-lg-4 col-sm-12 marbot-in-small">
                 <p style="color: var(--primaryColor);" class="f18 mb-0">Facebook</p>
                 <a style="color: black;" class="f12 mb-0" href="https://www.facebook.com/pages/category/Product-Service/SUKMATRIP-794165044301310/">SUKMATRIP</a>
             </div>
         </div>
     </section>
 
-    <section class="container-fluid" style="height: 35em ;margin-top: 7rem; position:relative;">
+    <section class="container-fluid height-tentangkami" style=" margin-top: 7rem; position:relative;">
         <img class="image-as-bg" src="{{asset('assets/img/foto/sukmatrip2.jpg')}}">
         <div class="cover-black-all"></div>
         <div class="d-flex justify-content-center align-items-center h-100 flex-column front">
             <p class="sukmatrip mb-0">SUKMATRIP</p>
             <hr class="mb-2" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">
-            <p class="text-center text-white f36 mt-2">About <a class="t-accent">us</a></p>
-            <p style="font-weight: 300" class="text-white text-center f14 container">Kami adalah agen travel <a class="t-accent">"Profesional"</a> .</p>
+            <p class="text-center text-white f36 mt-2">Tentang <a class="t-accent">Kami</a></p>
+            <p style="font-weight: 300" class="text-white text-center f14 container">Sukmatrip adalah perusahaan jasa yang dikhususkan untuk perjalanan bulan madu serta perjalanan romantis lainnya. Kami hadir sejak tahun 2019, meski tergolong masih baru namun dengan kerja keras tim dan konsistensi tim dalam memberikan pelayanan yang terbaik kepada Sukmalove, sehingga kami dipercaya oleh banyak pasangan muda yang ingin mewujudkan momen romantis mereka.
+                Indonesia memiliki begitu banyak tempat keindahan alam yang romantis, tak hanya di Bali, melainkan di beberapa pulau lainnya seperti Pulau Komodo, Pulau Lombok, Pulau Sumba, dan untuk memanjakan pelanggan kami yang ingin merasakan keindahaan alam di pulau – pulau tersebut, maka kini Sukmatrip telah melebarkan sayapnya dengan hadir di Pulau Komodo, Pulau Lombok dan Pulau Sumba.
+                Berbagai pilihan paket menarik telah kami siapkan untuk SukmaLove.   <a class="t-accent">So, jangan ragu untuk mempercayakan kami sebagai agen perjalanan mu dalam mencipatkan momen romantis bersama orang terkasih !!</a> .</p>
         </div>
     </section>
 

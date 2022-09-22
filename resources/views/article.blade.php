@@ -27,15 +27,21 @@
         </div>
         <p class="text-center f26 mb-5">Lastest from the <a class="t-accent">Article</a></p>
 
-        <div class="row">
-            <div class="col-sm-12 col-md-6">
-                <a class="gen-card-article-page">
-                    <img src="{{asset('assets/img/foto/konten2.jpg')}}">
-                    <p class="judul mt-2">JELAJAHI PULAU BALI</p>
-                    <p class="sumber">Artikel Dari</p>
-                </a>
-            </div>
 
+        <div class="row">
+            @foreach($articles as $a)
+
+                <div class="col-sm-12 col-md-6 mb-5">
+                    <a class="gen-card-article-page d-block" href="/article/{{$a->id}}">
+                        @foreach($a->getImage as $img)
+                            <img src={{$img->image->url}}>
+                        @endforeach
+
+                        <p class="judul mt-2">{{$a->judul}}</p>
+{{--                        <p class="sumber">Artikel Dari</p>--}}
+                    </a>
+                </div>
+            @endforeach
         </div>
 
     </section>
@@ -48,9 +54,9 @@
             <hr class="mb-2" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">
         </div>
         <p class="text-center f26">Enjoy, Travel, <a class="t-accent">Relax</a></p>
-{{--        <p style="font-weight: 300; color: #636363;" class="text-center f14 container">Take a look at the most exclusive--}}
-{{--            & most visited locations in the world - hand-picked just for you.--}}
-{{--            Start traveling the world today!</p>--}}
+        {{--        <p style="font-weight: 300; color: #636363;" class="text-center f14 container">Take a look at the most exclusive--}}
+        {{--            & most visited locations in the world - hand-picked just for you.--}}
+        {{--            Start traveling the world today!</p>--}}
 
     </section>
 

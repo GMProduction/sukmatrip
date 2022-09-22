@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Main;
 
 use App\Helper\CustomController;
 use App\Http\Controllers\Controller;
+use App\Models\Article;
 use App\Models\Destinasi;
 use App\Models\Duration;
 use App\Models\Paket;
@@ -30,10 +31,11 @@ class MainController extends CustomController
     {
         $destinations = Destinasi::all();
         $durations = Duration::all();
-        $pakets = Paket::with(['duration', 'getImage.image'])->take(4)->get();
+        $pakets = Paket::with(['getImage.image'])->get();
+        $articles = Article::with(['getImage.image'])->take(3)->get();
 //        return $this->jsonResponse($pakets);
 //        return $pakets->toArray();
-        return view('beranda')->with(['destinations' => $destinations, 'durations' => $durations, 'pakets' => $pakets]);
+        return view('beranda')->with(['destinations' => $destinations, 'durations' => $durations, 'pakets' => $pakets, 'articles' => $articles]);
     }
 
     public function search()
