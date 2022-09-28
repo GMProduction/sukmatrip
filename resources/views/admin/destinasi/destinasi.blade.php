@@ -33,9 +33,9 @@
                             @csrf
                             <div class="form-group ">
                                 <label style="color: white" for="namaDestinasi">Nama Destinasi</label>
-                                <div class="d-flex justify-content-center">
+                                <div class="d-flex justify-content-center w-100">
                                     <input type="text" id="namaDestinasi" required name="namaDestinasi"
-                                           class="form-control flex-grow-1 mr-2">
+                                           class="form-control  mr-2">
                                     <button href="#" class="btn btn-md btn-neutral">Tambah</button>
                                 </div>
                             </div>
