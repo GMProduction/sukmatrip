@@ -83,6 +83,7 @@ section
     display: block;
 }
 
+
 body
 {
     font-family: Open Sans, sans-serif;
@@ -93,9 +94,19 @@ body
     margin: 0;
 
     text-align: left;
-    overflow: hidden; /* Hide scrollbars */
+
     color: #525f7f;
     background-color: #f8f9fe;
+}
+
+body {
+
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+
+body::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
 }
 
 [tabindex='-1']:focus:not(:focus-visible)
