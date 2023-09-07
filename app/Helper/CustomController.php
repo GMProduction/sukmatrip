@@ -111,11 +111,12 @@ class CustomController extends Controller
         return Storage::disk($disk)->put($targetName, File::get($file));
     }
 
-    public function uploadImageWatermark($targetName = '', $file = 'image'){
-//        $watermark = public_path('assets/img/common/logo.png');
+    public function uploadImageWatermark($targetName = '', $file = 'image')
+    {
+        //        $watermark = public_path('assets/img/common/logo.png');
         $image_water = \Intervention\Image\Facades\Image::make($this->request->file($file));
-//        $image_water->insert($watermark, 'bottom-left', 5, 5);
-        $image_water->save('/home/u3974397/public_html/uploads/images/'.$targetName);
+        //        $image_water->insert($watermark, 'bottom-left', 5, 5);
+        $image_water->save('/uploads/images/' . $targetName);
     }
 
     public function uuidGenerator()
@@ -201,7 +202,8 @@ class CustomController extends Controller
         return $this->request->query->get($key);
     }
 
-    public function jsonResponse($data = '', $status = 200){
+    public function jsonResponse($data = '', $status = 200)
+    {
         return response()->json([
             'status' => $status,
             'payload' => $data

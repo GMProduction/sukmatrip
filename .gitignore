@@ -22,3 +22,4 @@ yarn-error.log
 /.idea/workspace.xml
 /.idea/php.xml
 /.idea/sukmatrip.iml
+.env
