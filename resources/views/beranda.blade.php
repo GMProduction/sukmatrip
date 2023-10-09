@@ -70,18 +70,18 @@
                         <i data-feather="search" style="color: black" class="icons ml-3"></i>
                         <a style="line-height: 50px" class="ml-2 w-100 text-center">Cari Paket Tour Impianmu disini ?</a>
                     </div>
-                    <form class="dropdown-menu p-3" aria-labelledby="dropdownMenu2" style="width: 600px">
+                    <form action="/pencarian"  class="dropdown-menu p-3" aria-labelledby="dropdownMenu2" style="width: 600px">
 
                         <label>Durasi Trip</label>
-                        <select class="custom-select">
-                            <option selected>Semua Durasi</option>
-                            <option value="1">2 Hari 1 Malam</option>
-                            <option value="2">3 Hari 2 Malam</option>
-                            <option value="3">4 Hari 3 Malam</option>
+                        <select class="custom-select" id="selectDuration" name="q" required>
+                            <option value="">Pilih Durasi</option>
+                            @foreach($durations as $p)
+                                <option value="{{ $p->name }}">{{ $p->name }}</option>
+                            @endforeach
                         </select>
 
-                        <a class="d-block btn btn-warning  mt-3 text-center p-3 cursor" style="width: 100%; ">Terapkan
-                            Pencarian</a>
+                        <button type="submit" class="d-block btn btn-warning  mt-3 text-center p-3 cursor" id="btn-search1" style="width: 100%; ">Terapkan
+                            Pencarian</button>
 
                     </form>
                 </div>
@@ -134,7 +134,7 @@
             @foreach ($pakets as $paket)
                 <div class="col-md-3 col-sm-12">
                     <a class="gen-card-produk" href="/detail-paket/{{ $paket->id }}">
-                        <img src="{{ $paket->getImage[0]->image->url }}">
+                        <img src="{{ isset($paket->getImage[0]) ? $paket->getImage[0]->image->url : '' }}">
                         <div class="cover-black-bottom"></div>
                         <div class="content">
                             <p class="t-accent f08 text-center">{{ $paket->nama }}</p>
@@ -145,12 +145,10 @@
                                 <i data-feather="clock" class="icons"></i>
                                 <p style="font-weight: 300;" class="text-white f10 mb-0">
                                     {{ $paket->duration->name ?? '' }}</p>
-
-
                             </div>
                             <br>
                             <button class=" t-accent "
-                                style="z-index: 10000; background-color: rgba(201, 76, 76, 0.0); border: 1px solid #FDD100;">Lihat
+                                style="z-index: 100; background-color: rgba(201, 76, 76, 0.0); border: 1px solid #FDD100;">Lihat
                                 Detail</button>
 
 
@@ -251,5 +249,10 @@
                     '&duration=' + durationId;
             });
         })
+
+       function searchTrips() {
+           var duration = $('#selectDuration').val();
+           $(this).attr('href','/pencarian?q='+duration);
+       }
     </script>
 @endsection

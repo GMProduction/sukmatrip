@@ -31,7 +31,7 @@
     <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-transparent" style="height: 4em">
         <div class="givebgmobile">
             <div class="container">
-                <a class="navbar-brand text-xl text-primary" href="#" style=" font-weight: bold"><img
+                <a class="navbar-brand text-xl text-primary" href="/" style=" font-weight: bold"><img
                         style="height: 2em" src="{{ asset('assets/img/common/logo.png') }}"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
                     aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">

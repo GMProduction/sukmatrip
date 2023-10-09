@@ -919,3 +919,13 @@ textarea.md-textarea-scroll{
         margin: 0 15em;
     }
 }
+
+
+.pagination .page-item.active .page-link {
+    border-color: #014373;
+    background-color: #014373;
+}
+
+.pagination .page-link {
+    color : #014373;
+}

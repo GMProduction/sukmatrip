@@ -80,37 +80,37 @@
         </div>
 
 
-        <div class="d-flex mb-5 mt-3">
+        <form class="d-flex mb-5 mt-3">
             <div class="mr-3 flex-fill">
                 <label>Durasi Trip</label>
-                <select class="custom-select">
-                    <option selected>Semua Durasi</option>
-                    <option value="1">2 Hari 1 Malam</option>
-                    <option value="2">3 Hari 2 Malam</option>
-                    <option value="3">4 Hari 3 Malam</option>
+                <select class="custom-select" name="q">
+                    <option value="all">Semua</option>
+                    @foreach($durations as $p)
+                        <option value="{{ $p->name }}" @if(request('q') == $p->name) selected @endif>{{ $p->name }}</option>
+                    @endforeach
                 </select>
             </div>
             <div class="mr-3 flex-fill">
                 <label>Urutkan Berdasar</label>
-                <select class="custom-select">
-                    <option selected>Pilih Urutan</option>
-                    <option value="1">Durasi</option>
-                    <option value="2">Harga</option>
+                <select class="custom-select" name="s">
+                    <option value="all" selected>Semua</option>
+                    <option value="asc" @if(request('s') == 'asc') selected @endif>Harga Terendah</option>
+                    <option value="desc" @if(request('s') == 'desc') selected @endif>Harga Tertinggi</option>
                 </select>
             </div>
 
             <div>
-                <a class="d-block btn btn-warning  mt-3 text-center p-3 cursor" style="width: 100%; ">Terapkan
-                    Pencarian</a>
+                <button type="submit" class="d-block btn btn-warning  mt-3 text-center p-3 cursor" style="width: 100%; ">Terapkan
+                    Pencarian</button>
             </div>
-        </div>
+        </form>
 
 
         <div class="row">
             @foreach ($pakets ?? '' as $paket)
                 <div class="col-md-3 col-sm-12">
                     <a class="gen-card-produk" href="/detail-paket/{{ $paket->id }}">
-                        <img src="{{ $paket->getImage[0]->image->url }}">
+                        <img src="{{ isset($paket->getImage[0]) ? $paket->getImage[0]->image->url :'' }}">
                         <div class="cover-black-bottom"></div>
                         <div class="content">
                             <p class="t-accent f08 text-center">{{ $paket->nama }}</p>
@@ -126,7 +126,7 @@
                             </div>
                             <br>
                             <button class=" t-accent "
-                                style="z-index: 10000; background-color: rgba(201, 76, 76, 0.0); border: 1px solid #FDD100;">Lihat
+                                style="z-index: 100; background-color: rgba(201, 76, 76, 0.0); border: 1px solid #FDD100;">Lihat
                                 Detail</button>
 
 
@@ -135,6 +135,7 @@
                 </div>
             @endforeach
         </div>
+        {{$pakets->links()}}
 
     </section>
 

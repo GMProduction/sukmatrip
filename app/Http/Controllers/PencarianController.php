@@ -16,12 +16,25 @@ class PencarianController extends Controller
      */
     public function index()
     {
-        $destinations = Destinasi::all();
-        $durations = Duration::all();
-        $pakets = Paket::with(['getImage.image'])->get();
+        $sort = \request('s');
+        $dur = \request('q');
+        $duration = Duration::where('name',$dur)->first();
+
+        $pakets = Paket::with(['getImage.image']);
+        if ($duration){
+            $pakets = $pakets->where('duration_id',$duration->id);
+        }
+        if ($sort && $sort != 'all'){
+            $pakets = $pakets->orderBy('harga',$sort);
+        }
+        $pakets = $pakets->paginate(12)->withQueryString();
         $articles = Article::with(['getImage.image'])->take(3)->get();
         //        return $this->jsonResponse($pakets);
         //        return $pakets->toArray();
-        return view('pencarianpaket')->with(['destinations' => $destinations, 'durations' => $durations, 'pakets' => $pakets, 'articles' => $articles]);
+        $destinations = Destinasi::all();
+        $durationsAll = Duration::all();
+        return view('pencarianpaket')->with(['destinations' => $destinations, 'durations' => $durationsAll, 'pakets' => $pakets, 'articles' => $articles]);
     }
+
+
 }

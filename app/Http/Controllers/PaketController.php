@@ -51,7 +51,6 @@ class PaketController extends CustomController
             try {
                 $data = [
                     'nama'          => $this->postField('namaPaket'),
-                    'duration_id'          => 2,
                     'harga'         => str_replace(',', '', $this->postField('hargaPaket')),
                     'deskripsi'     => $this->postField('deskripsiPaket'),
                     'id_penginapan' => $this->postField('penginapan'),
