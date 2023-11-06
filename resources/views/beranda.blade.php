@@ -70,17 +70,19 @@
                         <i data-feather="search" style="color: black" class="icons ml-3"></i>
                         <a style="line-height: 50px" class="ml-2 w-100 text-center">Cari Paket Tour Impianmu disini ?</a>
                     </div>
-                    <form action="/pencarian"  class="dropdown-menu p-3" aria-labelledby="dropdownMenu2" style="width: 600px">
+                    <form action="/pencarian" class="dropdown-menu p-3" aria-labelledby="dropdownMenu2"
+                        style="width: 600px">
 
                         <label>Durasi Trip</label>
                         <select class="custom-select" id="selectDuration" name="q" required>
                             <option value="">Pilih Durasi</option>
-                            @foreach($durations as $p)
+                            @foreach ($durations as $p)
                                 <option value="{{ $p->name }}">{{ $p->name }}</option>
                             @endforeach
                         </select>
 
-                        <button type="submit" class="d-block btn btn-warning  mt-3 text-center p-3 cursor" id="btn-search1" style="width: 100%; ">Terapkan
+                        <button type="submit" class="d-block btn btn-warning  mt-3 text-center p-3 cursor" id="btn-search1"
+                            style="width: 100%; ">Terapkan
                             Pencarian</button>
 
                     </form>
@@ -250,9 +252,9 @@
             });
         })
 
-       function searchTrips() {
-           var duration = $('#selectDuration').val();
-           $(this).attr('href','/pencarian?q='+duration);
-       }
+        function searchTrips() {
+            var duration = $('#selectDuration').val();
+            $(this).attr('href', '/pencarian?q=' + duration);
+        }
     </script>
 @endsection
