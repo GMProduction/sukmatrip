@@ -12,13 +12,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::get('/admin/get-penginapan', 'DashboardController@getPenginapan');
 Route::get('/admin/get-tour', 'DashboardController@getTour');
 Route::get('/admin/get-paket', 'DashboardController@getPaket');
 
 Route::get('/', 'Main\MainController@index');
 
-Route::get('/pencarian', 'Main\MainController@search');
+// Route::get('/pencarian', 'Main\MainController@search');
 Route::get('/ajax-search-products', 'Main\MainController@ajaxSearch');
 
 Route::get('/detail/{id}', 'Main\MainController@detail');
@@ -47,15 +48,17 @@ Route::get('/login', function () {
 });
 Route::post('/post-login', 'Auth\AuthController@login');
 
+// PENCARIAN
+Route::get('/pencarian', 'PencarianController@index');
 
 //ADMIN
-Route::group(['middleware' => 'IfNotLogin' ], function (){
+Route::group(['middleware' => 'IfNotLogin'], function () {
     Route::get('/admin', 'DashboardController@index');
 
-    Route::get('/admin/penginapan/add','PenginapanController@pageAdd');
-    Route::post('/admin/penginapan/add','PenginapanController@pageAdd');
-    Route::get('/admin/penginapan/addImg','PenginapanController@uploadImg')->name('uploadimg');
-    Route::post('/admin/penginapan/addImg','PenginapanController@uploadImg')->name('uploadimg');
+    Route::get('/admin/penginapan/add', 'PenginapanController@pageAdd');
+    Route::post('/admin/penginapan/add', 'PenginapanController@pageAdd');
+    Route::get('/admin/penginapan/addImg', 'PenginapanController@uploadImg')->name('uploadimg');
+    Route::post('/admin/penginapan/addImg', 'PenginapanController@uploadImg')->name('uploadimg');
     Route::get('/admin/penginapan/datatable', 'PenginapanController@datatable');
     Route::get('/admin/penginapan', 'PenginapanController@index');
     Route::post('/admin/penginapan', 'PenginapanController@index');
@@ -124,6 +127,4 @@ Route::group(['middleware' => 'IfNotLogin' ], function (){
     Route::get('/admin/transaksi', 'TransaksiController@index');
 
     Route::get('/logout', 'Auth\AuthController@logout');
-
 });
-

@@ -1,39 +1,38 @@
 @extends('base')
 
 @section('moreCss')
-    <link rel="stylesheet" href="{{asset('assets/vendor/slick/slick.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{asset('assets/vendor/slick/slick-theme.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{asset('assets/vendor/bootstrap-datepicker/css/bootstrap-datepicker.css')}}"
-          type="text/css">
+    <link rel="stylesheet" href="{{ asset('assets/vendor/slick/slick.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('assets/vendor/slick/slick-theme.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('assets/vendor/bootstrap-datepicker/css/bootstrap-datepicker.css') }}"
+        type="text/css">
 @endsection
 
 
 @section('content')
-
     <div style="height: 8em"></div>
     <section class="container w-100">
-        @foreach($product->getImage as $v)
+        @foreach ($product->getImage as $v)
             <img src="{{ $v->image->url }}" style="object-fit: cover; width: 100%">
         @endforeach
     </section>
 
-    {{--    OUR PACKAGE--}}
+    {{--    OUR PACKAGE --}}
     <section class="container-fluid">
         <div class="text-center mt-4">
             <p style="font-weight: 500" class="text-center f22 mb-4">{{ $product->nama }}</p>
             <div class="d-flex justify-content-center align-items-center"
-                 style="margin-top: -1em; color: var(--primaryColor)">
+                style="margin-top: -1em; color: var(--primaryColor)">
                 <i data-feather="map-pin" class="mr-2"></i>
-                <p class="mb-0 mr-4">{{ $product->penginapan->destinasi->nama}}</p>
+                <p class="mb-0 mr-4">{{ $product->penginapan->destinasi->nama }}</p>
                 <i data-feather="clock" class="mr-2"></i>
-                <p class="mb-0">{{$product->duration->name}}</p>
+                <p class="mb-0">{{ $product->duration->name }}</p>
             </div>
             <hr class="mb-2" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">
         </div>
     </section>
 
     <section class="container mt-5 ">
-        {!!  $product->deskripsi !!}
+        {!! $product->deskripsi !!}
     </section>
 
 
@@ -43,61 +42,61 @@
         <hr class="mb-4" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">
 
         <div class="slider-for">
-            @foreach($product->penginapan->getImage as $img)
-                <a target="_blank" href="{{$img->image->url}}"><img
-                        src="{{$img->image->url}}"></a>
+            @foreach ($product->penginapan->getImage as $img)
+                <a target="_blank" href="{{ $img->image->url }}"><img src="{{ $img->image->url }}"
+                        style="height: 600px"></a>
             @endforeach
         </div>
 
         <div class="slider-nav mb-2">
-            @foreach($product->penginapan->getImage as $img)
-                <img src="{{$img->image->url}}">
-
+            @foreach ($product->penginapan->getImage as $img)
+                <img src="{{ $img->image->url }}" style="height: 150px;">
             @endforeach
         </div>
     </section>
 
     <section class="container mt-5 text-center">
-        {{--        {{$product->penginapan}}--}}
+        {{--        {{$product->penginapan}} --}}
         <div class="d-flex justify-content-center align-items-center mb-3"
-             style="margin-top: -1em; color: var(--primaryColor)">
+            style="margin-top: -1em; color: var(--primaryColor)">
             <i data-feather="send" class="mr-2"></i>
-            <p class="mb-0 mr-4">{{ $product->penginapan->nama}}</p>
+            <p class="mb-0 mr-4">{{ $product->penginapan->nama }}</p>
             <i data-feather="map-pin" class="mr-2"></i>
             <p class="mb-0">{{ $product->penginapan->lokasi }}</p>
         </div>
-        <div class="mt-5 text-center">        {!!  $product->penginapan->deskripsi !!}
+        <div class="mt-5 text-center"> {!! $product->penginapan->deskripsi !!}
         </div>
     </section>
 
     <section class="container " style="margin-top: 100px">
         <p style="font-weight: 500" class="text-center f22">Tour</p>
         <hr class="mb-4" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">
-        {{--        {{$product}}--}}
+        {{--        {{$product}} --}}
     </section>
 
     <section class="container w-100">
         <div class="row">
-            @foreach($product->paketTour as $tour)
+            @foreach ($product->paketTour as $tour)
                 <div class="col-md-3 col-sm-12">
-                    <img src="{{ $tour->tour->image }}" style="object-fit: cover; height: 300px; margin-top: 20px; width: 100%">
-{{--                    <div class="d-flex justify-content-center align-items-center mb-3"--}}
-{{--                         style="margin-top: -1em; color: var(--primaryColor)">--}}
-{{--                        <i data-feather="send" class="mr-2"></i>--}}
-                        <p class="mb-2 mr-4 mt-3 text-center">{{ $tour->tour->nama}}</p>
-{{--                    </div>--}}
-{{--                    <p class="mt-5">{!! $tour->tour->deskripsi !!}</p>--}}
+                    <img src="{{ $tour->tour->image }}"
+                        style="object-fit: cover; height: 300px; margin-top: 20px; width: 100%">
+                    {{--                    <div class="d-flex justify-content-center align-items-center mb-3" --}}
+                    {{--                         style="margin-top: -1em; color: var(--primaryColor)"> --}}
+                    {{--                        <i data-feather="send" class="mr-2"></i> --}}
+                    <p class="mb-2 mr-4 mt-3 text-center">{{ $tour->tour->nama }}</p>
+                    {{--                    </div> --}}
+                    {{--                    <p class="mt-5">{!! $tour->tour->deskripsi !!}</p> --}}
                 </div>
             @endforeach
         </div>
     </section>
     <section class="mt-5 container-fluid d-flex justify-content-center align-items-center flex-column"
-             style="height: 50em; position:relative;">
-        <img class="image-as-bg" src="{{asset('assets/img/foto/sukmatrip4.jpg')}}">
+        style="height: 50em; position:relative;">
+        <img class="image-as-bg" src="{{ asset('assets/img/foto/sukmatrip4.jpg') }}">
         <div class="cover-black-all"></div>
         <div class="d-flex justify-content-center align-items-center cover-white flex-column front">
             <div class="d-flex justify-content-center align-items-center flex-column front"
-                 style="width: 100%; padding: 5em 0">
+                style="width: 100%; padding: 5em 0">
                 <p class="sukmatrip mb-0" style="color: black">FORM DATA</p>
                 <hr class="mb-5" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">
                 <form id="form-submit" method="post">
@@ -109,8 +108,7 @@
                             <div class="form-group">
                                 <label for="tanggalCheckIn">Tanggal Check In</label>
                                 <input type="text" class="form-control form-data-input datepicker" id="tanggalCheckIn"
-                                       aria-describedby="tanggalHelp" placeholder="Tanggal CheckIn*" name="check_in"
-                                       required>
+                                    aria-describedby="tanggalHelp" placeholder="Tanggal CheckIn*" name="check_in" required>
                             </div>
                         </div>
 
@@ -118,7 +116,7 @@
                             <div class="form-group">
                                 <label for="nama">Nama Pemesan</label>
                                 <input type="text" class="form-control form-data-input" id="nama"
-                                       aria-describedby="namaHelp" placeholder="Nama*" name="pemesan" required>
+                                    aria-describedby="namaHelp" placeholder="Nama*" name="pemesan" required>
                             </div>
                         </div>
 
@@ -126,8 +124,8 @@
                             <div class="form-group">
                                 <label for="totalHarga">Harga Paket</label>
                                 <input type="text" readonly class="form-control form-data-input" id="totalHarga"
-                                       aria-describedby="emailHelp" placeholder="Total Harga*" name="harga"
-                                       value="{{ $product->harga }}">
+                                    aria-describedby="emailHelp" placeholder="Total Harga*" name="harga"
+                                    value="{{ $product->harga }}">
                             </div>
                         </div>
                     </div>
@@ -136,7 +134,7 @@
 
                 <div class="text-center mt-4 mb-a5">
                     <a id="btn-book" style="color: white; background: #4A4A4A; letter-spacing: .5rem;"
-                       class="bt-primary f08">BOOK
+                        class="bt-primary f08">BOOK
                         NOW</a>
                 </div>
             </div>
@@ -144,7 +142,7 @@
 
         <!-- Modal -->
         <div class="modal fade" id="modalKonfirmasi" tabindex="-1" role="dialog"
-             aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -154,15 +152,14 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        @foreach($product->getImage as $v)
-                            <img src="{{ $v->image->url }}"
-                                 style="height: 10em; width: 100%; object-fit: cover">
+                        @foreach ($product->getImage as $v)
+                            <img src="{{ $v->image->url }}" style="height: 10em; width: 100%; object-fit: cover">
                         @endforeach
 
 
                         <div class="text-center">
                             <p class="f12 bold t-accent  mb-0 mt-2">{{ $product->nama }}</p>
-{{--                            <p class="f12 bold ">{{ $product->penginapan->duration->name }}</p>--}}
+                            {{--                            <p class="f12 bold ">{{ $product->penginapan->duration->name }}</p> --}}
                             <div style="width: 10em" class="ml-auto mr-auto">
                                 <hr>
                             </div>
@@ -195,12 +192,8 @@
                     </div>
                     <div class="modal-footer">
                         <a type="button" class="btn btn-secondary" href="#" data-dismiss="modal">Batal</a>
-                        <a type="button"
-                           {{--                           id="btn-order"--}}
-                           onclick="order()"
-                           class="btn btn-primary"
-                            {{--                           href="https://wa.me/62838652740"--}}
-                        >Pesan</a>
+                        <a type="button" {{--                           id="btn-order" --}} onclick="order()" class="btn btn-primary"
+                            {{--                           href="https://wa.me/62838652740" --}}>Pesan</a>
                     </div>
                 </div>
             </div>
@@ -219,20 +212,15 @@
 
 
     </section>
-
-
-
 @endsection
 
 @section('script')
-
-    <script type="text/javascript" src="{{asset('assets/vendor/slick/slick.js')}}"></script>
-    <script type="text/javascript"
-            src="{{asset('assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('assets/vendor/slick/slick.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js') }}">
+    </script>
 
 
     <script>
-
         $('.datepicker').datepicker({
             format: 'dd/mm/yyyy',
             startDate: '3d'
@@ -251,16 +239,23 @@
             asNavFor: '.slider-for',
             dots: false,
             centerMode: false,
-            focusOnSelect: true
+            focusOnSelect: true,
+            adaptiveHeight: true,
+            autoplay: true
         });
     </script>
 
     <script>
-        var tgl = '', nama = '', qty = 0, harga = 0;
-        var duration = ' {{$product->duration->duration}}';
+        var tgl = '',
+            nama = '',
+            qty = 0,
+            harga = 0;
+        var duration = ' {{ $product->duration->duration }}';
 
         function order() {
-            var uri = "halo, saya " + nama + " tertarik untuk memesan " + '{{$product->nama}}' + " rencana berangkat tanggal " + tgl + " - " + "https://sukmatrip.com/detail-paket/" + '{{$product->id}}';
+            var uri = "halo, saya " + nama + " tertarik untuk memesan " + '{{ $product->nama }}' +
+                " rencana berangkat tanggal " + tgl + " - " + "https://sukmatrip.com/detail-paket/" +
+                '{{ $product->id }}';
             var res = encodeURI(uri);
             // window.location.href = 'https://wa.me/628975050520?text='+res;
             window.location.href = 'https://wa.me/6283865442740?text=' + res;
@@ -287,9 +282,9 @@
             return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
         }
 
-        $(document).ready(function () {
+        $(document).ready(function() {
 
-            $(".checkbox-gambar").on("click", function (e) {
+            $(".checkbox-gambar").on("click", function(e) {
                 var checkbox = $(this);
                 if (!checkbox.is(":checked")) {
                     e.preventDefault();
@@ -297,7 +292,7 @@
                 }
             });
 
-            $('#btn-book').on('click', function () {
+            $('#btn-book').on('click', function() {
                 tgl = $('#tanggalCheckIn').val();
                 nama = $('#nama').val();
                 qty = $('#jumlahOrang').val();
@@ -337,11 +332,19 @@
             //     $('#form-submit').submit();
             // });
 
-            $('#modalKonfirmasi').on('show.bs.modal', function (e) {
+            $('#modalKonfirmasi').on('show.bs.modal', function(e) {
                 let checkIn = stringToDate(tgl, 'dd/mm/yyyy', '/');
                 let checkOut = addDays(checkIn, parseInt(duration));
-                let checkInString = checkIn.toLocaleString('id-ID', {day: '2-digit', month: 'long', year: 'numeric'});
-                let checkOutString = checkOut.toLocaleString('id-ID', {day: '2-digit', month: 'long', year: 'numeric'});
+                let checkInString = checkIn.toLocaleString('id-ID', {
+                    day: '2-digit',
+                    month: 'long',
+                    year: 'numeric'
+                });
+                let checkOutString = checkOut.toLocaleString('id-ID', {
+                    day: '2-digit',
+                    month: 'long',
+                    year: 'numeric'
+                });
                 $('#str-chekcin').html(checkInString);
                 $('#str-chekout').html(checkOutString);
                 $('#str-qty').html(qty + ' Orang');
@@ -368,7 +371,5 @@
         //         $('#jumlahOrang').val(a);
         //     }
         // });
-
-
     </script>
 @endsection

@@ -58,58 +58,7 @@
             height: 100%;
         }
     </style>
-    <section>
-        <div class="gambar-depan">
 
-            <div style=" position: absolute; bottom: 500px;z-index: 100;width: 100%">
-                <div class="dropdown">
-
-                    <div style="background-color: white; height: 50px; width: 600px"
-                        class="flex ml-auto mr-auto rounded-pill" type="button" id="dropdownMenu2" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        <i data-feather="search" style="color: black" class="icons ml-3"></i>
-                        <a style="line-height: 50px" class="ml-2 w-100 text-center">Cari Paket Tour Impianmu disini ?</a>
-                    </div>
-                    <form action="/pencarian"  class="dropdown-menu p-3" aria-labelledby="dropdownMenu2" style="width: 600px">
-
-                        <label>Durasi Trip</label>
-                        <select class="custom-select" id="selectDuration" name="q" required>
-                            <option value="">Pilih Durasi</option>
-                            @foreach($durations as $p)
-                                <option value="{{ $p->name }}">{{ $p->name }}</option>
-                            @endforeach
-                        </select>
-
-                        <button type="submit" class="d-block btn btn-warning  mt-3 text-center p-3 cursor" id="btn-search1" style="width: 100%; ">Terapkan
-                            Pencarian</button>
-
-                    </form>
-                </div>
-            </div>
-
-
-        </div>
-
-        <p class="w-100"
-            style="position: absolute; bottom: 200px; z-index: 100; text-align: center; font-size: 3rem; color: white">
-            PAKET HONEYMOON KAMI</p>
-        <div class="w-100" style=" z-index: 100; position: absolute; bottom: 100px; text-align: center">
-            <a class="btnc ml-auto mr-auto" href="#paket-honeymoon"> <i data-feather="chevron-down" style="color: white"
-                    class="icons"></i></a>
-        </div>
-
-        <div class="imagesContainer">
-            <img class="image-as-bg" src="{{ asset('assets/img/foto/bg1.jpg') }}">
-            <img class="image-as-bg fadeInClass" src="{{ asset('assets/img/foto/bg2.jpg') }}">
-        </div>
-        <div class="gradien-putih"></div>
-        <div class="transparent-hitam"></div>
-
-        <div class="d-flex justify-content-center align-items-center h-100 flex-column">
-
-        </div>
-        </div>
-    </section>
 
     {{-- OUR PACKAGE --}}
     <section class="container-fluid" id="paket-honeymoon">
@@ -130,11 +79,38 @@
             <hr class="mb-2" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">
         </div>
 
+
+        <form class="d-flex mb-5 mt-3">
+            <div class="mr-3 flex-fill">
+                <label>Durasi Trip</label>
+                <select class="custom-select" name="q">
+                    <option value="all">Semua</option>
+                    @foreach($durations as $p)
+                        <option value="{{ $p->name }}" @if(request('q') == $p->name) selected @endif>{{ $p->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="mr-3 flex-fill">
+                <label>Urutkan Berdasar</label>
+                <select class="custom-select" name="s">
+                    <option value="all" selected>Semua</option>
+                    <option value="asc" @if(request('s') == 'asc') selected @endif>Harga Terendah</option>
+                    <option value="desc" @if(request('s') == 'desc') selected @endif>Harga Tertinggi</option>
+                </select>
+            </div>
+
+            <div>
+                <button type="submit" class="d-block btn btn-warning  mt-3 text-center p-3 cursor" style="width: 100%; ">Terapkan
+                    Pencarian</button>
+            </div>
+        </form>
+
+
         <div class="row">
-            @foreach ($pakets as $paket)
+            @foreach ($pakets ?? '' as $paket)
                 <div class="col-md-3 col-sm-12">
                     <a class="gen-card-produk" href="/detail-paket/{{ $paket->id }}">
-                        <img src="{{ isset($paket->getImage[0]) ? $paket->getImage[0]->image->url : '' }}">
+                        <img src="{{ isset($paket->getImage[0]) ? $paket->getImage[0]->image->url :'' }}">
                         <div class="cover-black-bottom"></div>
                         <div class="content">
                             <p class="t-accent f08 text-center">{{ $paket->nama }}</p>
@@ -145,6 +121,8 @@
                                 <i data-feather="clock" class="icons"></i>
                                 <p style="font-weight: 300;" class="text-white f10 mb-0">
                                     {{ $paket->duration->name ?? '' }}</p>
+
+
                             </div>
                             <br>
                             <button class=" t-accent "
@@ -157,6 +135,7 @@
                 </div>
             @endforeach
         </div>
+        {{$pakets->links()}}
 
     </section>
 
@@ -170,59 +149,6 @@
             <p style="font-weight: 300" class="text-white text-center f14 container">Enjoy, Travel, <a
                     class="t-accent">Relax</a>
             </p>
-        </div>
-    </section>
-
-    <section class="container mt-5 text-center">
-        <div style="margin-top: 7em;" class="text-center mb-5">
-            <a class="sukmatrip" style="color: black">Artikel</a>
-            <hr class="mb-2" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">
-
-        </div>
-        <p class="text-center f26 mb-5">Artikel <a class="t-accent">Terbaru</a></p>
-
-        <div class="row">
-            @foreach ($articles as $a)
-                <div class="col-sm-12 col-md-4">
-                    <a class="gen-card-article-page d-block" href="/article/{{ $a->id }}">
-                        @foreach ($a->getImage as $img)
-                            <img src={{ $img->image->url }}>
-                        @endforeach
-
-                        <p class="judul mt-2">{{ $a->judul }}</p>
-                        {{-- <p class="sumber">Artikel Dari</p> --}}
-                    </a>
-                </div>
-            @endforeach
-
-        </div>
-
-    </section>
-    <hr style="border-color: var(--accentColor); margin-top: 7em;" class="container">
-
-    <section class="container mt-5 text-center">
-        <div class="text-center mb-4" style="margin-top: 7rem">
-            <a class="sukmatrip" style="color: black">Testimoni</a>
-            <hr class="mb-2" style="z-index: 3; width: 5rem; border-top: 1px solid var(--accentColor);">
-        </div>
-        <p class="text-center f26 mb-3">Testimoni dari <a class="t-accent">klien kami:</a></p>
-
-        <div class="slick-fade">
-            <div class="ulasan mt-0 d-flex flex-column align-items-center justify-content-center">
-                <img src="{{ asset('assets/img/foto/1.png') }}" style="border-radius: 50%; width: 7em; height: 7em">
-                <p style="color: #636363; font-weight: 300" class="mt-3 f14">Sangat menyenanggkan sekali honeymoon
-                    bersama sukmatrip.</p>
-                <p style="color: black;" class="f12">.</p>
-            </div>
-
-            <div class="ulasan mt-0 d-flex flex-column align-items-center justify-content-center">
-                <img src="{{ asset('assets/img/foto/2.png') }}" style="border-radius: 50%; width: 7em; height: 7em">
-                <p style="color: #636363; font-weight: 300" class="mt-3 f14">Tidak bisa di lupakan honeymoon bersama
-                    sukmatrip, terima kasih sukmatrip.</p>
-                <p style="color: black;" class="f12">.</p>
-            </div>
-
-
         </div>
     </section>
 @endsection
@@ -249,10 +175,5 @@
                     '&duration=' + durationId;
             });
         })
-
-       function searchTrips() {
-           var duration = $('#selectDuration').val();
-           $(this).attr('href','/pencarian?q='+duration);
-       }
     </script>
 @endsection
