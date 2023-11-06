@@ -64,14 +64,12 @@
             <div style=" position: absolute; bottom: 500px;z-index: 100;width: 100%">
                 <div class="dropdown">
 
-                    <div style="background-color: white; height: 50px; width: 600px"
-                        class="flex ml-auto mr-auto rounded-pill" type="button" id="dropdownMenu2" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
+                    <div class="fieldpencarian" class="flex ml-auto mr-auto rounded-pill" type="button" id="dropdownMenu2"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i data-feather="search" style="color: black" class="icons ml-3"></i>
                         <a style="line-height: 50px" class="ml-2 w-100 text-center">Cari Paket Tour Impianmu disini ?</a>
                     </div>
-                    <form action="/pencarian" class="dropdown-menu p-3" aria-labelledby="dropdownMenu2"
-                        style="width: 600px">
+                    <form action="/pencarian" class="dropdown-menu p-3 penc" aria-labelledby="dropdownMenu2">
 
                         <label>Durasi Trip</label>
                         <select class="custom-select" id="selectDuration" name="q" required>
@@ -92,8 +90,7 @@
 
         </div>
 
-        <p class="w-100"
-            style="position: absolute; bottom: 200px; z-index: 100; text-align: center; font-size: 3rem; color: white">
+        <p class=" pakethoneymoon">
             PAKET HONEYMOON KAMI</p>
         <div class="w-100" style=" z-index: 100; position: absolute; bottom: 100px; text-align: center">
             <a class="btnc ml-auto mr-auto" href="#paket-honeymoon"> <i data-feather="chevron-down" style="color: white"

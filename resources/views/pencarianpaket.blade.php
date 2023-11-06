@@ -137,7 +137,6 @@
                 </div>
             @endforeach
         </div>
-        <<<<<<< HEAD {{ $pakets->links() }}=======>>>>>>> 7c6cb95e6156590581f8a9cdf0a386cea98a3f35
 
     </section>
 
