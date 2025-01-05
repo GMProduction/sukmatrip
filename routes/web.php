@@ -57,7 +57,7 @@ Route::group(['middleware' => 'IfNotLogin'], function () {
 
     Route::get('/admin/penginapan/add', 'PenginapanController@pageAdd');
     Route::post('/admin/penginapan/add', 'PenginapanController@pageAdd');
-    Route::get('/admin/penginapan/addImg', 'PenginapanController@uploadImg')->name('uploadimg');
+    Route::get('/admin/penginapan/addImg', 'PenginapanController@uploadImg')->name('getuploadimg');
     Route::post('/admin/penginapan/addImg', 'PenginapanController@uploadImg')->name('uploadimg');
     Route::get('/admin/penginapan/datatable', 'PenginapanController@datatable');
     Route::get('/admin/penginapan', 'PenginapanController@index');

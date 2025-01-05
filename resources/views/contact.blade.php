@@ -7,10 +7,11 @@
 
 @section('content')
     {{--    BIG MAP --}}
+
     <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d988.8154676581357!2d110.7329121291782!3d-7.546395899659835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a14bdd2214c4f%3A0xc8d1a3719f9d6585!2sGriya%20Calista%2C%20Wirogunan!5e0!3m2!1sid!2sid!4v1604336790552!5m2!1sid!2sid"frameborder="0"
-        style="height: 24em; width: 100%; position:relative; margin-top: 4em; border:0;" allowfullscreen=""
-        aria-hidden="false" tabindex="0"></iframe>
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d831.40629338882!2d110.81690099332637!3d-7.590526287938063!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a1729b9b85ab1%3A0xe17f1069e9cba7a0!2sSEE%20DIGITAL%20AGENCY!5e0!3m2!1sen!2sid!4v1704182015144!5m2!1sen!2sid"frameborder="0"
+        style="height: 24em; width: 100%; position:relative; margin-top: 4em; border:0;" allowfullscreen="" aria-hidden="false"
+        tabindex="0"></iframe>
     {{--    OUR PACKAGE --}}
     <section class="container  mt-5 text-center">
         <div class="text-center mb-4" style="margin-top: 7rem">
@@ -19,17 +20,20 @@
         </div>
         <p class="text-center f26 mb-3">Hubungi <a class="t-accent">kami:</a></p>
 
-            <div class="ulasan mt-0 d-flex flex-column align-items-center justify-content-center">
-                <img src="{{ asset('assets/img/common/logo.png') }}" style=" width: 9em">
-                <p style="color: #636363; font-weight: 300; display: flex; align-items: center; " class="mt-5 f14 mb-0">KANTOR PUSAT SUKMATRIP</p>
-                <p class="mt-2"> GRIYA CALISTA B8
-                    kel Wirogunan, Kec. Kartasura, Kabupaten Sukoharjo, Jawa Tengah</p>
-            </div>
+        <div class="ulasan mt-0 d-flex flex-column align-items-center justify-content-center">
+            <img src="{{ asset('assets/img/common/logo.png') }}" style=" width: 9em">
+            <p style="color: #636363; font-weight: 300; display: flex; align-items: center; " class="mt-5 f14 mb-0">KANTOR
+                PUSAT SUKMATRIP</p>
+            <p class="mt-2"> Jl. Yos Sudarso No.19B, Tj. Anom, Kwarasan, Kec. Grogol, Kabupaten Sukoharjo, Jawa Tengah
+                57552</p>
+        </div>
 
-            <div class="ulasan mt-0 d-flex flex-column align-items-center justify-content-center">
-                <p style="color: #636363; font-weight: 300; display: flex; align-items: center; " class="mt-5 f14 mb-0">KANTOR SUKMATRIP CABANG BALI</p>
-                <p class="mt-2"> Jl. Dukuh Sari, Gg Kembang Sari III/10 LAN, Kel Sesetan, Kec Denpasar, Kota Denpasar, BALI</p>
-            </div>
+        <div class="ulasan mt-0 d-flex flex-column align-items-center justify-content-center">
+            <p style="color: #636363; font-weight: 300; display: flex; align-items: center; " class="mt-5 f14 mb-0">KANTOR
+                SUKMATRIP CABANG BALI</p>
+            <p class="mt-2"> Jl. Dukuh Sari, Gg Kembang Sari III/10 LAN, Kel Sesetan, Kec Denpasar, Kota Denpasar, BALI
+            </p>
+        </div>
         <div class="row mt-5">
             <div class="col-lg-4 col-sm-12 marbot-in-small">
                 <p style="color: var(--primaryColor);" class="f18 mb-0">Instagram</p>
